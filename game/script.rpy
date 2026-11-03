@@ -372,16 +372,16 @@ label start:
     # first run only: say what the game is about before it starts
     if not persistent.endings_seen:
         scene black
-        narr "October 1962 could have ended ten different ways.{w=1.5} Find them all.{w=3}{nw}"
+        narr "October 1962 could have ended ten different ways.{w=1} Find them all.{w=2}{nw}"
 
     scene bg_intro_1 at bg_size
     narr "Washington. October 16, 1962. 8:45 a.m.{w=2}{nw}"
 
     scene bg_intro_2 at bg_size
-    bundy "Mr. President, there is now hard photographic evidence that the Russians have offensive missiles in Cuba.{w=7.0}{nw}"
+    bundy "Mr. President, there is now hard photographic evidence that the Russians have offensive missiles in Cuba.{w=2}{nw}"
 
     scene bg_intro_3 at bg_size
-    bundy "Mr. President... come with us.{w=6}{nw}"
+    bundy "Mr. President... come with us.{w=2}{nw}"
 
     scene black with Fade(0.2, 0.0, 0.2)
 

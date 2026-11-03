@@ -170,3 +170,6 @@ Después correr **Lint** (launcher de Ren'Py → Check Script) y jugar las rutas
 - **Sprites de Anderson y LeMay:** normalizados a la altura de cabeza y la escala de los demás, porque flotaban.
 - **Fotos `destroyer` y `television`:** sin el borde claro.
 - **`PER-SORENSEN`:** alejado, para que entre la cabeza.
+- **Informe:** se sacó el sello rojo, tanto el texto como el dibujo de `folder.png`.
+- **NEW CRISIS:** usa `Jump("start")`. `Start()` solo anda desde el menú principal, y por eso crasheaba.
+- **Intro:** las esperas después de cada línea bajan a 2 s.

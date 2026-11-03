@@ -595,7 +595,8 @@ screen endings_menu(new_ending=None, after_run=False):
             xalign 0.97
             yalign 0.92
             spacing 14
-            textbutton "NEW CRISIS" action Start() text_size 40
+            # Jump, not Start(): Start() only works from the main menu context and crashed here
+            textbutton "NEW CRISIS" action Jump("start") text_size 40
             textbutton "CODEX" action ShowMenu("codex") text_size 40
             textbutton "MAIN MENU" action MainMenu(confirm=False) text_size 40
     else:
@@ -2288,7 +2289,6 @@ define DB_Z = 1920 / 1672.0
 define DB_TABS = [(440, 35, 235, 57), (680, 35, 220, 57), (905, 35, 210, 57)]   # x, y, w, h of each tab
 define DB_LEFT = (285, 215, 520, 615)      # left page text area (starts below the paper clip)
 define DB_RIGHT = (880, 140, 520, 690)     # right page text area
-define DB_STAMP = (1245, 120, 165, 95)     # red stamp, top right of the right page
 define DB_TAB_NAMES = ["YOUR CRISIS", "WHAT REALLY HAPPENED", "THREE LENSES"]
 # the tab art is light on the first tab and dark on the other two: text color per tab (normal, selected)
 define DB_TAB_INK = [("#2a1d14", "#a01818"), ("#d8c8a8", "#ffd27a"), ("#d8c8a8", "#ffd27a")]
@@ -2323,13 +2323,6 @@ screen debrief(ending, d):
             hover_background Solid("#ffffff22")
             action SetScreenVariable("tab", i)
             text name style "db_ink" size (26 if tab == i else 24) align (0.5, 0.6) color DB_TAB_INK[i][1 if tab == i else 0] underline (tab == i)
-
-    # stamp: the ending's badge
-    $ sx, sy, sw, sh = db(DB_STAMP)
-    fixed:
-        pos (sx, sy)
-        xysize (sw, sh)
-        text ending["badge"].upper() style "db_ink" size 24 color "#7a0a0a" align (0.5, 0.5) text_align 0.5 xsize sw - 10 at Transform(rotate=-4)
 
     $ lx, ly, lw, lh = db(DB_LEFT)
     $ rx, ry, rw, rh = db(DB_RIGHT)
