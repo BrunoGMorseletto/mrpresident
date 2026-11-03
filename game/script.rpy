@@ -301,8 +301,8 @@ define air_force = Character("U.S. AIR FORCE", image="/images/sprites/McGeorge B
 define rfk = Character("ROBERT F. KENNEDY",image="/images/sprites/rfk.png", kind=bubble, retain=True,  callback=type_sound)
 define rob = Character("ROBERT McNAMARA",image="/images/sprites/Robert McNamara.png", kind=bubble, retain=True,  callback=type_sound)
 define taylor = Character("GEN. MAXWELL TAYLOR",image="/images/sprites/General Maxwell Taylora.png", kind=bubble, retain=True,  callback=type_sound)
-define anderson = Character("ADM. GEORGE ANDERSON", kind=bubble, retain=True, callback=type_sound)
-define lemay = Character("GEN. CURTIS LeMAY", kind=bubble, retain=True, callback=type_sound)
+define anderson = Character("ADM. GEORGE ANDERSON", image="/images/sprites/Admiral George Anderson.png",kind=bubble, retain=True, callback=type_sound)
+define lemay = Character("GEN. CURTIS LeMAY",  image="/images/sprites/General Curtis LeMay.png",kind=bubble, retain=True, callback=type_sound)
 define navy = Character("U.S. NAVY", image="/images/sprites/McGeorge Bundy.png",callback=type_sound, kind=bubble,)
 define operator = Character("WHITE HOUSE OPERATOR", image="/images/sprites/McGeorge Bundy.png",callback=type_sound, kind=bubble)
 define counsel = Character("WHITE HOUSE COUNSEL", image="/images/sprites/McGeorge Bundy.png",callback=type_sound, kind=bubble)
@@ -1119,10 +1119,10 @@ label ENDING:
     scene black with fade
     $name = chosen_ending["id"]
     if chosen_ending.get("cutscene"):
-        call ending_cutscene(chosen_ending["cutscene"])
+        call ending_cutscene(chosen_ending["cutscene"]) from _call_ending_cutscene
     elif find_final_newsreel(name):
         # the public version of how it ended, before the file (T06)
-        call newsreel(find_final_newsreel(name))
+        call newsreel(find_final_newsreel(name)) from _call_newsreel
         scene black with fade
     $bg = "bg_" + chosen_ending["background"].split(".")[0].lower()
     $title = chosen_ending["title"]
@@ -1189,7 +1189,7 @@ label intermission(date):
     # T06: if there is a newsreel for this day, it replaces the newspaper
     $ reel = find_newsreel(date)
     if reel:
-        call newsreel(reel)
+        call newsreel(reel) from _call_newsreel_1
         scene black with Fade(0.2,0.0, 0.2)
         return
     scene  bg_news at bg_size with Dissolve(0.2)
