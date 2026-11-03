@@ -190,6 +190,6 @@ Después correr **Lint** (launcher de Ren'Py → Check Script) y jugar las rutas
 
 # Créditos y cinemáticas de todos los finales
 
-- Créditos: "Music: Thiago Chalon and Gaston Posse".
+- Créditos: "Music: Thiago Chalon and Gastón Posse".
 - Los diez finales tienen cutscene (`cutscene` en `endings.json`), de 2 a 4 cuadros con texto. Las imágenes van en `images/cutscenes/end_eXX_N.png`. Mientras falten, cada cuadro se ve en negro con su texto.
 - Orden en `label ENDING`: noticiero final (la versión pública), después la cutscene (lo que pasó de verdad), después el expediente. E01 no tiene noticiero.
