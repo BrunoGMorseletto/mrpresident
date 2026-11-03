@@ -1,4 +1,4 @@
-# Cambios: rama de escalada (T01/T02) + orden del 27/10 (T17)
+# Cambios post beta test (rama beta-test-modification)
 
 Reemplazar estos 4 archivos dentro de `game/`:
 
@@ -51,3 +51,9 @@ Después correr **Lint** (launcher de Ren'Py → Check Script) y jugar las rutas
 **Datos (`endings.json`, E01).** Texto nuevo. El primer párrafo dice dónde empezó la cadena: desembarco, ataque aéreo, represalia contra el SAM o submarino en el mar. Hay 4 cuadros de cutscene.
 
 **Prueba rápida de E01:** D01-A D02-A D03-A D04-A D05-A D06-A D07-A D08-A D12-A D13-A D14-A D15-A C01-B X01-B X02-A
+
+---
+
+# D22-B
+
+*FULL ACCESS NOW* ya no suma escalada. Antes, pedir inspecciones después del anuncio del retiro podía disparar la regla nuclear.
