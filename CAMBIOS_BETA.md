@@ -57,3 +57,14 @@ Después correr **Lint** (launcher de Ren'Py → Check Script) y jugar las rutas
 # D22-B
 
 *FULL ACCESS NOW* ya no suma escalada. Antes, pedir inspecciones después del anuncio del retiro podía disparar la regla nuclear.
+
+---
+
+# Arreglos chicos (T09, T11, T13, T14, T18, T19)
+
+- **T09** (`screens.rpy`, `decision_folder`): la carta de la izquierda se elige al azar en cada decisión. Los IDs A/B no cambian.
+- **T11** (`screens.rpy`, `bubble`): el cargo aparece debajo del nombre (`SPEAKER_TITLES`). Como el namebox tiene `yoffset -35`, puede pisar el globo: ajustar si hace falta.
+- **T13** (`screens.rpy`, screen `crisis_hud`): arriba a la izquierda se ve la fecha de la escena y "DAY X OF 13". Se activa al empezar D01 y se apaga en el final. No aparece en el diario ni en el códex. La posición es provisoria.
+- **T14** (`script.rpy`, `label ENDING`): al terminar el expediente sale "END OF FILE" con el conteo de finales encontrados.
+- **T18** (`events.json`, C03): con represalia automática, el timer baja a 15 s (antes quedaba igual, en 30).
+- **T19**: en D01 decía "could... but They could". Corregido. El resto del texto coincide con el diseño y no tiene errores de tipeo.

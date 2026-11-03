@@ -278,6 +278,7 @@ label start:
 
     scene black with Fade(0.2,0.0, 0.2)
 
+    $ hud_on = True
     jump expression "D01"
 
  
@@ -293,7 +294,7 @@ label D01:
     $ card_b = events[current_scene][cards_key][b_card_key]
 
 
-    bundy "Mr. President, Sunday's U-2 pass over San Cristóbal. The analysts say medium-range missile sites. From seventy thousand feet we can't tell if they're ready. Low-level runs could... but They could also lose us a pilot."
+    bundy "Mr. President, Sunday's U-2 pass over San Cristóbal. The analysts say medium-range missile sites. From seventy thousand feet we can't tell if they're ready. Low-level runs could. They could also lose us a pilot."
     
     call screen decision_folder(card_a, card_b)
     $ choice = _return
@@ -1043,6 +1044,7 @@ label S02:
     jump expression next_e
 
 label ENDING:
+    $ hud_on = False
     scene black with fade
     $name = chosen_ending["id"]
     if chosen_ending.get("cutscene"):
@@ -1063,6 +1065,8 @@ label ENDING:
             ending_nvl(para)
         if "stamp" in chosen_ending:
             ending_nvl("{i}%s{/i}" % chosen_ending["stamp"])
+        # T14: make it explicit that the run is over
+        ending_nvl("{size=44}END OF FILE{/size}\n%d of %d outcomes found. Check the Endings menu and the codex for declassified files." % (len(persistent.endings_seen), len(endings)))
     scene black with fade
     nvl hide
     nvl clear

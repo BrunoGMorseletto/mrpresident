@@ -1679,8 +1679,11 @@ screen bubble(who, what):
                 id "namebox"
                 style "bubble_namebox"
 
-                text who:
-                    id "who"
+                vbox:
+                    text who:
+                        id "who"
+                    if who in SPEAKER_TITLES:
+                        text SPEAKER_TITLES[who] style "bubble_title"
 
         text what:
             id "what"
@@ -1710,6 +1713,21 @@ style bubble_who:
     textalign 0
     color "#ffffff"
     size 35
+
+style bubble_title:
+    font "gui/fonts/VT323-Regular.ttf"
+    color "#b8b8b8"
+    size 24
+
+init python:
+    # T11: role shown under each speaker's name
+    SPEAKER_TITLES = {
+        "ROBERT F. KENNEDY": "Attorney General",
+        "DEAN RUSK": "Secretary of State",
+        "ROBERT McNAMARA": "Secretary of Defense",
+        "McGEORGE BUNDY": "National Security Advisor",
+        "GEN. MAXWELL TAYLOR": "Chairman, Joint Chiefs of Staff",
+    }
 
 style bubble_what:
     font "gui/fonts/VT323-Regular.ttf"
@@ -1957,12 +1975,16 @@ transform folder_slide:
 
 screen decision_folder(card_a, card_b, seconds=0, default_card=None):
     default left = seconds
+    # T09: which card goes on the left is random, so players have to read them.
+    # IDs A/B never change (endings and timers use them), only the position on screen.
+    default swap = renpy.random.random() < 0.5
     $ card_zoom = 0.45
+    $ card_w = int(CARD_IMG_W * card_zoom)
     fixed at folder_fade:
         xpos 545
         ypos 505
-        use folder_card(card_a, "A", card_zoom, 0)
-        use folder_card(card_b, "B", card_zoom, int(CARD_IMG_W * card_zoom))
+        use folder_card(card_a, "A", card_zoom, card_w if swap else 0)
+        use folder_card(card_b, "B", card_zoom, 0 if swap else card_w)
     if seconds > 0:
         timer 0.1 repeat True action If(left <= 0.1, true=Return(default_card), false=[Function(crisis_tick, left), SetScreenVariable("left", left - 0.1)])
         use crisis_bar(left, seconds)
@@ -2111,3 +2133,27 @@ transform codex_pulse:
     linear 0.9 alpha 0.40
     linear 0.9 alpha 0.10
     repeat
+
+#### HUD: date and day of the crisis (T13) ###############################
+default hud_on = False
+
+init python:
+    def crisis_day(date):
+        """'OCT 24, 1962' -> 9 (October 16 is day 1 of 13)."""
+        try:
+            return int(date.replace(",", "").split()[1]) - 15
+        except Exception:
+            return None
+    config.overlay_screens.append("crisis_hud")
+
+screen crisis_hud():
+    zorder 80
+    $ hud_date = events.get(current_scene, {}).get("date") if hud_on else None
+    if hud_date and not renpy.get_screen("newspaper") and not renpy.get_screen("codex"):
+        frame:
+            pos (30, 24)
+            padding (18, 10)
+            background Solid("#000000aa")
+            vbox:
+                text hud_date font "gui/fonts/VT323-Regular.ttf" size 34 color "#ffffff"
+                text "DAY %d OF 13" % crisis_day(hud_date) font "gui/fonts/VT323-Regular.ttf" size 24 color "#b8b8b8"

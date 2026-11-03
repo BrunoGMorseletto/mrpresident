@@ -1000,7 +1000,7 @@
     "if": {
      "auto_retaliation": true
     },
-    "seconds": 30
+    "seconds": 15
    }
   },
   "next": [
