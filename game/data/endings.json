@@ -107,7 +107,8 @@
 				"image": "nuke_04_flash",
 				"text": ""
 			}
-		]
+		],
+		"hint": "Some orders, once given, do not come back up the chain."
 	},
 	{
 		"id": "E02",
@@ -135,7 +136,8 @@
 			"public_ultimatum",
 			"turkey_public"
 		],
-		"background": "E02.png"
+		"background": "E02.png",
+		"hint": "What if Moscow were simply invited in? Again and again."
 	},
 	{
 		"id": "E04",
@@ -174,7 +176,8 @@
 				"if": {},
 				"text": "The invasion was ready before the first bomb fell. Once the planes were in the air, nobody in the room argued for stopping there."
 			}
-		]
+		],
+		"hint": "Prepare the whole package. Then let the planes go."
 	},
 	{
 		"id": "E05",
@@ -210,7 +213,8 @@
 			"cuba_neutral_offer",
 			"non_invasion"
 		],
-		"background": "E05.png"
+		"background": "E05.png",
+		"hint": "Some doors in Havana stay closed unless someone knocks early."
 	},
 	{
 		"id": "E10",
@@ -250,7 +254,8 @@
 				},
 				"text": "You rejected Moscow's offer on the radio, and then had nothing to show for it."
 			}
-		]
+		],
+		"hint": "Promise the country something on television. Then fail to deliver it."
 	},
 	{
 		"id": "E03",
@@ -309,7 +314,8 @@
 				},
 				"text": "It started at sea, at the quarantine line, with ships that would not stop and a Navy that had its orders."
 			}
-		]
+		],
+		"hint": "Two sides answering each other's last move, and nobody looking for the way back."
 	},
 	{
 		"id": "E06",
@@ -346,7 +352,8 @@
 				},
 				"text": "You answered the U-2 with fire and still reached the deal. In 1962, Kennedy held back. You did not, and you were lucky."
 			}
-		]
+		],
+		"hint": "Firm in public. Generous in private."
 	},
 	{
 		"id": "E07",
@@ -379,7 +386,8 @@
 				},
 				"text": "The trade was on the table that morning. By the time it was done, American planes had already hit Cuba."
 			}
-		]
+		],
+		"hint": "Take Moscow's offer at face value, and say so on the radio."
 	},
 	{
 		"id": "E09",
@@ -428,7 +436,8 @@
 				},
 				"text": "You bombed the missile sites and then stopped. By then, Moscow had already moved the crisis to Berlin."
 			}
-		]
+		],
+		"hint": "Keep your promises private, keep the pressure on, and leave Moscow room to collect elsewhere."
 	},
 	{
 		"id": "E08",
@@ -473,6 +482,7 @@
 				},
 				"text": "Moscow never announced a withdrawal. Within a year, Americans had learned to live with Soviet missiles ninety miles away."
 			}
-		]
+		],
+		"hint": "Get the missiles out without anyone quite agreeing how."
 	}
 ]

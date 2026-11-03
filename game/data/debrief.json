@@ -1,0 +1,100 @@
+{
+	"_note": "Informe de fin de partida. recap_fragments: frases según banderas, en orden de prioridad (se muestran hasta 3, salteando las de recap_skip del final). lenses: textos de los tres modelos de Allison.",
+	"goal_line": "October 1962 could have ended ten different ways. Find them all.",
+	"recap_fragments": [
+		{
+			"flag": "strike_launched",
+			"text": "You launched the air strike."
+		},
+		{
+			"flag": "landing",
+			"text": "You sent the Marines ashore."
+		},
+		{
+			"flag": "invasion_ready",
+			"text": "You prepared an invasion."
+		},
+		{
+			"flag": "order_failed",
+			"text": "One of your orders arrived too late."
+		},
+		{
+			"flag": "strike_partial",
+			"text": "Some squadrons never heard the recall."
+		},
+		{
+			"flag": "auto_retaliation",
+			"text": "You let the military retaliate without asking you."
+		},
+		{
+			"flag": "defcon2",
+			"text": "You raised the alert to DEFCON 2."
+		},
+		{
+			"flag": "sam_strike",
+			"text": "You answered the U-2 shootdown with force."
+		},
+		{
+			"flag": "shootdown_absorbed",
+			"text": "You held back after the U-2 was shot down."
+		},
+		{
+			"flag": "berlin_standoff",
+			"text": "You held the line in Berlin."
+		},
+		{
+			"flag": "turkey_secret",
+			"text": "You made a promise about Turkey that could never be public."
+		},
+		{
+			"flag": "turkey_public",
+			"text": "You traded the Jupiters in public."
+		},
+		{
+			"flag": "cuba_neutral_offer",
+			"text": "You negotiated with Havana directly."
+		},
+		{
+			"flag": "non_invasion",
+			"text": "You promised not to invade Cuba."
+		},
+		{
+			"flag": "public_ultimatum",
+			"text": "You drew a public line."
+		},
+		{
+			"flag": "blockade",
+			"text": "You imposed a quarantine."
+		},
+		{
+			"flag": "private_channel",
+			"text": "You opened a back channel to Moscow."
+		},
+		{
+			"flag": "broad_consultation",
+			"text": "You widened the room, and the secret leaked."
+		},
+		{
+			"flag": "low_level_flights",
+			"text": "You sent pilots in low."
+		}
+	],
+	"lenses": {
+		"rational": {
+			"name": "RATIONAL ACTOR",
+			"line": "You weighed the options and chose.",
+			"dominant": "Most of your crisis was calculation: goals, options, consequences. Allison's first model, and the one the cards make easiest to believe."
+		},
+		"organizational": {
+			"name": "ORGANIZATIONAL BEHAVIOR",
+			"line": "The options came from plans already written.",
+			"dominant": "Most of your crisis was decided by what the organizations could do and when. You chose among plans you did not write."
+		},
+		"governmental": {
+			"name": "GOVERNMENTAL POLITICS",
+			"line": "The choice came out of the argument in the room.",
+			"dominant": "Most of your crisis was bargaining: who knew what, who leaked, whose voice carried. The decision was the result, not the starting point."
+		}
+	},
+	"timeout_line": "%d of your decisions were made by the clock: the organization did what it was already going to do."
+}

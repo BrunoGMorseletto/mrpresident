@@ -31,7 +31,12 @@
   },
   "next": [
    "D02"
-  ]
+  ],
+  "allison_model": "rational",
+  "in_1962": {
+   "choice": "A",
+   "text": "Low-level flights began on October 23, a week later than here. They brought back the clearest pictures of the crisis."
+  }
  },
  "D02": {
   "date": "OCT 16, 1962",
@@ -67,7 +72,12 @@
   },
   "next": [
    "D03"
-  ]
+  ],
+  "allison_model": "governmental",
+  "in_1962": {
+   "choice": "A",
+   "text": "Kennedy kept the circle small. The ExComm met in secret for six days before the public knew anything."
+  }
  },
  "D03": {
   "date": "OCT 16, 1962",
@@ -102,7 +112,12 @@
   },
   "next": [
    "D04"
-  ]
+  ],
+  "allison_model": "governmental",
+  "in_1962": {
+   "choice": "B",
+   "text": "Kennedy said nothing in public until October 22. He kept campaigning so the press would not notice."
+  }
  },
  "D04": {
   "date": "OCT 17, 1962",
@@ -136,7 +151,12 @@
   },
   "next": [
    "D05"
-  ]
+  ],
+  "allison_model": "organizational",
+  "in_1962": {
+   "choice": "AB",
+   "text": "Both plans were prepared at the same time. The services never had to choose."
+  }
  },
  "D05": {
   "date": "OCT 17, 1962",
@@ -171,7 +191,12 @@
   },
   "next": [
    "D06"
-  ]
+  ],
+  "allison_model": "rational",
+  "in_1962": {
+   "choice": "B",
+   "text": "Washington approved a message to Castro through Brazil on October 26. It was never delivered: Khrushchev gave in first."
+  }
  },
  "D06": {
   "date": "OCT 18, 1962",
@@ -205,7 +230,12 @@
   },
   "next": [
    "D07"
-  ]
+  ],
+  "allison_model": "governmental",
+  "in_1962": {
+   "choice": "A",
+   "text": "Dean Acheson flew to Paris with the photographs. De Gaulle said he did not need to see them."
+  }
  },
  "D07": {
   "date": "OCT 18, 1962",
@@ -243,7 +273,12 @@
   "next": [
    "D08",
    "D09"
-  ]
+  ],
+  "allison_model": "organizational",
+  "in_1962": {
+   "choice": "B",
+   "text": "Kennedy chose the quarantine on October 20. The air strike stayed ready, in reserve."
+  }
  },
  "D08": {
   "date": "OCT 19, 1962",
@@ -282,7 +317,12 @@
   },
   "next": [
    "D12"
-  ]
+  ],
+  "allison_model": "organizational",
+  "in_1962": {
+   "choice": "none",
+   "text": "Kennedy never ordered the strike, so this choice was never made. The Air Force had told him a strike on the missiles alone was not what it had planned."
+  }
  },
  "D09": {
   "date": "OCT 20, 1962",
@@ -324,7 +364,12 @@
   },
   "next": [
    "D10"
-  ]
+  ],
+  "allison_model": "rational",
+  "in_1962": {
+   "choice": "A",
+   "text": "The quarantine was meant to buy time. The deadline came later, on October 27, delivered in private by Robert Kennedy."
+  }
  },
  "A01": {
   "date": null,
@@ -382,7 +427,12 @@
   },
   "next": [
    "D11"
-  ]
+  ],
+  "allison_model": "rational",
+  "in_1962": {
+   "choice": "A",
+   "text": "The quarantine covered offensive weapons only. Adding fuel was discussed as a later step."
+  }
  },
  "D11": {
   "date": "OCT 21, 1962",
@@ -416,7 +466,12 @@
   },
   "next": [
    "D12"
-  ]
+  ],
+  "allison_model": "organizational",
+  "in_1962": {
+   "choice": "A",
+   "text": "Kennedy pulled the line in after talking with the British ambassador. The Soviet missile ships had already turned back."
+  }
  },
  "D12": {
   "date": "OCT 22, 1962",
@@ -453,7 +508,12 @@
   },
   "next": [
    "D13"
-  ]
+  ],
+  "allison_model": "governmental",
+  "in_1962": {
+   "choice": "A",
+   "text": "The speech of October 22 demanded that the missiles be removed."
+  }
  },
  "D13": {
   "date": "OCT 22, 1962",
@@ -487,7 +547,12 @@
   "next": [
    "D14",
    "D15"
-  ]
+  ],
+  "allison_model": "governmental",
+  "in_1962": {
+   "choice": "A",
+   "text": "Robert Kennedy and Ambassador Dobrynin became the real channel between the two governments."
+  }
  },
  "D14": {
   "date": "OCT 23, 1962",
@@ -531,7 +596,12 @@
   },
   "next": [
    "D15"
-  ]
+  ],
+  "allison_model": "organizational",
+  "in_1962": {
+   "choice": "A",
+   "text": "The ExComm agreed to retaliate if a U-2 was shot down. On October 27 one was, and Kennedy did not order the strike."
+  }
  },
  "D15": {
   "date": "OCT 24, 1962",
@@ -567,7 +637,12 @@
   "next": [
    "C01",
    "C02"
-  ]
+  ],
+  "allison_model": "organizational",
+  "in_1962": {
+   "choice": "A",
+   "text": "Strategic Air Command went to DEFCON 2 on October 24, the only time in the Cold War. Its commander announced it uncoded."
+  }
  },
  "C01": {
   "date": "OCT 24, 1962",
@@ -634,7 +709,12 @@
   "next": [
    "X01",
    "D17"
-  ]
+  ],
+  "allison_model": "organizational",
+  "in_1962": {
+   "choice": "none",
+   "text": "The air strike was never launched."
+  }
  },
  "X01": {
   "date": "OCT 25, 1962",
@@ -679,7 +759,12 @@
   "next": [
    "X03",
    "X02"
-  ]
+  ],
+  "allison_model": "organizational",
+  "in_1962": {
+   "choice": "none",
+   "text": "No American troops landed in Cuba. Soviet forces there had tactical nuclear weapons for exactly that case."
+  }
  },
  "X02": {
   "date": "OCT 26, 1962",
@@ -724,7 +809,12 @@
   },
   "next": [
    "ENDING"
-  ]
+  ],
+  "allison_model": "rational",
+  "in_1962": {
+   "choice": "none",
+   "text": "Berlin stayed quiet. Kennedy spent the whole crisis expecting that it would not."
+  }
  },
  "X03": {
   "date": "OCT 26, 1962",
@@ -778,7 +868,12 @@
   },
   "next": [
    "ENDING"
-  ]
+  ],
+  "allison_model": "organizational",
+  "in_1962": {
+   "choice": "none",
+   "text": "There was no landing, and no second wave."
+  }
  },
  "C02": {
   "date": "OCT 24, 1962",
@@ -827,7 +922,12 @@
   },
   "next": [
    "D17"
-  ]
+  ],
+  "allison_model": "organizational",
+  "in_1962": {
+   "choice": "B",
+   "text": "The first ships were let through. The first ship boarded, on October 26, carried nothing forbidden."
+  }
  },
  "D17": {
   "date": "OCT 26, 1962",
@@ -867,7 +967,12 @@
    "D18",
    "D21",
    "D22"
-  ]
+  ],
+  "allison_model": "rational",
+  "in_1962": {
+   "choice": "A",
+   "text": "Kennedy accepted the terms of the first letter: no invasion, if the missiles left."
+  }
  },
  "D19": {
   "date": "OCT 27, 1962",
@@ -909,7 +1014,12 @@
    "D18",
    "D21",
    "D22"
-  ]
+  ],
+  "allison_model": "rational",
+  "in_1962": {
+   "choice": "none",
+   "text": "Neither. Kennedy did not accept in public. He answered the first letter and accepted the Turkey trade in private."
+  }
  },
  "C03": {
   "date": "OCT 27, 1962",
@@ -1012,7 +1122,12 @@
    "D18",
    "D21",
    "D22"
-  ]
+  ],
+  "allison_model": "organizational",
+  "in_1962": {
+   "choice": "A",
+   "text": "Kennedy held back. The retaliation agreed four days earlier was never ordered."
+  }
  },
  "C04": {
   "date": "OCT 27, 1962",
@@ -1072,7 +1187,12 @@
    "D21",
    "D22",
    "ENDING"
-  ]
+  ],
+  "allison_model": "governmental",
+  "in_1962": {
+   "choice": "none",
+   "text": "Moscow never asked for a pause. Khrushchev learned of the shootdown after it happened and tightened control over his commanders."
+  }
  },
  "X04": {
   "date": "OCT 27, 1962",
@@ -1139,7 +1259,12 @@
    "D21",
    "D22",
    "ENDING"
-  ]
+  ],
+  "allison_model": "organizational",
+  "in_1962": {
+   "choice": "none",
+   "text": "Kennedy called off the retaliation. There was no dawn strike."
+  }
  },
  "D18": {
   "date": "OCT 27, 1962",
@@ -1185,7 +1310,12 @@
   "next": [
    "D21",
    "D22"
-  ]
+  ],
+  "allison_model": "governmental",
+  "in_1962": {
+   "choice": "A",
+   "text": "Robert Kennedy made the promise that night. It stayed secret for more than twenty years."
+  }
  },
  "D21": {
   "date": "OCT 27, 1962",
@@ -1225,7 +1355,12 @@
   "next": [
    "D22",
    "ENDING"
-  ]
+  ],
+  "allison_model": "rational",
+  "in_1962": {
+   "choice": "none",
+   "text": "Castro never offered to send the weapons home. He learned of the deal from a newspaper editor."
+  }
  },
  "D22": {
   "date": "OCT 28, 1962",
@@ -1306,7 +1441,12 @@
    "D23",
    "S01",
    "ENDING"
-  ]
+  ],
+  "allison_model": "organizational",
+  "in_1962": {
+   "choice": "A",
+   "text": "Castro refused inspections. The withdrawal was checked from the air, crate by crate."
+  }
  },
  "D23": {
   "date": "OCT 28, 1962",
@@ -1342,7 +1482,12 @@
   "next": [
    "S01",
    "ENDING"
-  ]
+  ],
+  "allison_model": "governmental",
+  "in_1962": {
+   "choice": "B",
+   "text": "The alert stayed up until November. LeMay wanted to attack anyway."
+  }
  },
  "S01": {
   "date": "OCT 28, 1962",
@@ -1390,7 +1535,8 @@
   "next": [
    "S02",
    "ENDING"
-  ]
+  ],
+  "allison_model": null
  },
  "S02": {
   "date": "OCT 28, 1962",
@@ -1423,6 +1569,7 @@
   },
   "next": [
    "ENDING"
-  ]
+  ],
+  "allison_model": null
  }
 }
