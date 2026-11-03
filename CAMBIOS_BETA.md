@@ -139,3 +139,23 @@ Después correr **Lint** (launcher de Ren'Py → Check Script) y jugar las rutas
 - E08 ahora es "acuerdo inconcluso" (badge "Unfinished deal"): retiro anunciado, pero sin acuerdo escrito. Casi todas las rutas que llegan a E08 tienen el retiro anunciado, y el texto viejo decía lo contrario.
 - Los párrafos de `body` pueden ser `{"if": ..., "text": ...}` (`ending_paragraphs` en `script.rpy`). En el raro caso sin retiro, el primer párrafo y el segundo cambian.
 - En el menú Endings, `gallery_paragraphs()` muestra la versión principal y omite los párrafos marcados `"gallery": false`.
+
+---
+
+# Cierre de partida: informe y galería
+
+**Flujo al terminar:** noticiero final → expediente → **informe** (screen `debrief`) → **galería de finales** (`endings_menu`, que se abre sola).
+
+- **Informe** (`screens.rpy`, screen `debrief`; fondo `gui/debrief/folder.png`). Una carpeta con tres pestañas:
+  - YOUR CRISIS: `recap_template` del final y hasta 3 fragmentos de `debrief.json`.
+  - WHAT REALLY HAPPENED: hasta 5 momentos en los que la partida se apartó de 1962, sacados de `in_1962` en `events.json`.
+  - THREE LENSES: cuántas decisiones caen en cada modelo de Allison (`allison_model`), cuál domina y cuántas decidió el reloj.
+  - Las posiciones están en `DB_TABS`, `DB_LEFT`, `DB_RIGHT` y `DB_STAMP`, en píxeles de la imagen. Ajustar si el texto no cae en las hojas.
+- **`script.rpy`**:
+  - `choices_made` y `timed_out` registran la partida. El timer llama a `note_timeout()`.
+  - `build_debrief()` arma los datos del informe.
+  - Se sacó la línea "END OF FILE".
+- **Galería** (`endings_menu(new_ending, after_run)`):
+  - A la izquierda, el conteo, la frase del objetivo y, al pasar el mouse por un final bloqueado, su pista (`hint` en `endings.json`).
+  - Sello "NEW" sobre el final recién obtenido.
+  - Al terminar una partida, en lugar de "Return" hay tres botones: NEW CRISIS, CODEX y MAIN MENU.

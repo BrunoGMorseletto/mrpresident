@@ -61,6 +61,8 @@ define cards_key = "cards" #dict key related to the cards info in events.json
 define a_card_key = "A" #dict key related to the A card info in events.json
 define b_card_key = "B" #dict key related to the A card info in events.json
 default flags = {}
+default choices_made = []      # [(scene, "A"/"B")] in order, for the end-of-run report
+default timed_out = []         # scenes where the timer ran out and the default order went ahead
 default stats = {}
 default chosen_ending = None
 default current_scene = "D01"
@@ -81,6 +83,8 @@ init python:
         day_transitions = json.load(f)
     with renpy.file("data/newsreels.json") as f:
         newsreels = json.load(f)["newsreels"]
+    with renpy.file("data/debrief.json") as f:
+        debrief_data = json.load(f)
     import operator
 
     OPS = {
@@ -161,6 +165,48 @@ init python:
         """Body for the Endings menu (outside a run): conditional paragraphs marked "gallery": false are left out."""
         return [b["text"] if isinstance(b, dict) else b for b in ending["body"]
                 if not isinstance(b, dict) or b.get("gallery", True)]
+    def note_timeout():
+        if current_scene not in timed_out:
+            timed_out.append(current_scene)
+
+    def build_debrief(ending):
+        """Everything the end-of-run report shows, computed from this run."""
+        d = {}
+        # YOUR CRISIS
+        skip = ending.get("recap_skip", [])
+        frags = [f["text"] for f in debrief_data["recap_fragments"]
+                 if flags.get(f["flag"]) and f["flag"] not in skip]
+        d["recap"] = ending.get("recap_template", "")
+        d["fragments"] = frags[:3]
+        # WHAT REALLY HAPPENED: where this run left the record (choices first, then things that never happened)
+        diverged, never = [], []
+        for scene, choice in choices_made:
+            h = events[scene].get("in_1962")
+            if not h:
+                continue
+            row = (scene, events[scene]["cards"][choice]["title"], h["text"])
+            if h["choice"] == "none":
+                never.append(row)
+            elif h["choice"] in ("A", "B") and h["choice"] != choice:
+                diverged.append(row)
+        picked = (diverged + never)[:5]
+        order = [sc for sc, _ in choices_made]
+        picked.sort(key=lambda r: order.index(r[0]))
+        d["history"] = picked
+        d["followed"] = len(diverged) == 0 and len(never) == 0
+        # THREE LENSES
+        counts = {"rational": 0, "organizational": 0, "governmental": 0}
+        for scene, choice in choices_made:
+            m = events[scene].get("allison_model")
+            if m in counts:
+                counts[m] += 1
+        d["lenses"] = counts
+        top = max(counts.values())
+        leaders = [k for k, v in counts.items() if v == top]
+        d["dominant"] = leaders[0] if len(leaders) == 1 else None
+        d["timeouts"] = len(timed_out)
+        return d
+
     def find_newsreel(date):
         """First newsreel for that date whose "if" holds, or None (T06)."""
         for reel in newsreels:
@@ -246,6 +292,7 @@ init python:
             else:
                 stats["escalation"] = 6
     def apply_choice(choice, current_scene):
+        choices_made.append((current_scene, choice))
         card = events[current_scene][cards_key][choice]
         if check_trigger(card["trigger"]):
             effects = card
@@ -311,6 +358,8 @@ define ending_nvl = Character(None, kind=nvl, callback=type_sound, what_font="gu
 
 label start:
     $ flags.clear()
+    $ choices_made = []
+    $ timed_out = []
     $ chosen_ending = None
     $ current_date = None
     $ codex_on_scene(current_scene, silent=True)
@@ -1140,11 +1189,13 @@ label ENDING:
             ending_nvl(para)
         if "stamp" in chosen_ending:
             ending_nvl("{i}%s{/i}" % chosen_ending["stamp"])
-        # T14: make it explicit that the run is over
-        ending_nvl("{size=44}END OF FILE{/size}\n%d of %d outcomes found. Check the Endings menu and the codex for declassified files." % (len(persistent.endings_seen), len(endings)))
     scene black with fade
     nvl hide
     nvl clear
+
+    # end-of-run report, then the endings gallery (the goal: find all ten)
+    call screen debrief(chosen_ending, build_debrief(chosen_ending))
+    call screen endings_menu(new_ending=chosen_ending, after_run=True)
 
     return
 
