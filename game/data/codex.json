@@ -1,0 +1,1576 @@
+{
+  "Intelligence": {
+    "The U-2 and Mission 3101": {
+      "id": "INT-01",
+      "unlock": {
+        "scene": "D01"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "On the morning of Sunday, October 14, 1962, Major Richard Heyser crossed western Cuba in a U-2 at 72,500 feet. He spent about seven minutes over the island. There had been no U-2 flight over Cuba since September 5: Washington feared the new Soviet SAM sites, and the odds of losing a plane were put at one in six. The film reached the photo interpreters on Monday.",
+        "declassified": "To avoid having a CIA pilot captured, an Air Force pilot flew a CIA plane: if shot down, he could say he had strayed from a routine flight over international waters. The five weeks without overflights were a gift to Moscow. When Heyser took his pictures, the first Soviet missile battery in Cuba had already been ready for six days."
+      },
+      "image": {
+        "file": null,
+        "suggestion": "U-2 reconnaissance photograph, San Cristóbal, 14 Oct 1962 (US government, public domain)"
+      },
+      "sources": [
+        "PLOKHY, ch. 10 \"Honeymoon\"",
+        "PLOKHY, ch. 19 \"Target Destroyed!\"",
+        "DOBBS, ch. 1"
+      ],
+      "allison_model": null
+    },
+    "Reading the Photographs": {
+      "id": "INT-02",
+      "unlock": {
+        "scene": "D01"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "The National Photographic Interpretation Center, run by Arthur Lundahl, occupied the top floors of a run-down building above a car showroom in Washington. Its analysts did not see missiles. They saw patterns: long canvas-covered trailers, erectors, cable lines, the layout of Soviet launch sites photographed inside the USSR. On the morning of October 16, Lundahl walked the President through the boards with a pointer. \"How do you know this is a medium-range ballistic missile?\" Kennedy asked. \"The length, sir.\"",
+        "declassified": "The method worked, but it had blind spots. It could see a launch site; it could not see a warhead. The analysts never found where the nuclear warheads were kept, and Washington went through the whole crisis believing there was no evidence they were on the island. They had been there since October 4."
+      },
+      "image": {
+        "file": null,
+        "suggestion": "Arthur Lundahl briefing board (public domain)"
+      },
+      "sources": [
+        "DOBBS, ch. 1 and ch. 6",
+        "ALLISON, ch. 4",
+        "PLOKHY, introduction"
+      ],
+      "allison_model": "Organizational Behavior"
+    },
+    "R-12 and R-14: The Missiles": {
+      "id": "INT-03",
+      "unlock": {
+        "scene": "D04"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "The first sites held medium-range ballistic missiles, the Soviet R-12 (NATO name SS-4). Range: about 2,000 km, enough to reach Washington from western Cuba. A second set of sites, found later that week, was being prepared for the R-14 (SS-5), an intermediate-range missile that could reach roughly 4,500 km, most of the continental United States. Each R-12 regiment could fire its missiles within hours once warheads were mated. Washington believed the warheads might not be in Cuba yet.",
+        "declassified": "Moscow planned 24 R-12 launchers and 16 R-14 launchers, with 60 missiles in all. The 36 R-12 missiles arrived and became operational in October. No R-14 missile ever reached Cuba: the ships carrying them turned back. Their warheads, however, were already there: the freighter Aleksandrovsk docked at La Isabela on October 23, the day the quarantine was proclaimed."
+      },
+      "image": {
+        "file": null,
+        "suggestion": "Department of Defense range map of Soviet missiles in Cuba (public domain)"
+      },
+      "sources": [
+        "PLOKHY, ch. 5 \"Going Nuclear\" and ch. 14",
+        "DOBBS, ch. 3"
+      ],
+      "allison_model": null
+    },
+    "Operation Anadyr": {
+      "id": "INT-04",
+      "unlock": {
+        "scene": "D07"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "How did the Soviets move missiles across the Atlantic without being seen? Washington did not know. Intelligence had tracked an unusual number of Soviet ships sailing to Cuba since July and assumed they carried defensive weapons and some technicians. The CIA estimated Soviet personnel on the island at a few thousand. McNamara gave the President a figure of six to eight thousand on October 20.",
+        "declassified": "The operation was named after a river in the Soviet Far East, to make the troops believe they were going north. Some were issued winter clothes. A fleet of 85 ships carried them across, with soldiers kept below deck in the tropical heat. By October 20 there were more than 40,000 Soviet troops in Cuba. Khrushchev's colleagues had approved the plan on May 24, 1962."
+      },
+      "image": {
+        "file": null,
+        "suggestion": "Soviet freighter photographed by US Navy aircraft (public domain)"
+      },
+      "sources": [
+        "PLOKHY, ch. 5 to 7",
+        "DOBBS, ch. 1",
+        "ALLISON, ch. 2"
+      ],
+      "allison_model": "Organizational Behavior"
+    },
+    "What Washington Did Not Know": {
+      "id": "INT-05",
+      "unlock": {
+        "scene": "D15"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "As of late October, the official picture was this: perhaps ten thousand Soviet troops, medium-range missiles that might or might not have warheads, defensive SAM sites, some bombers. Every plan for an air strike or an invasion was built on that picture. It was the best information any government had ever had about an adversary's deployment.",
+        "declassified": "It was wrong in the ways that mattered most. There were about 43,000 Soviet troops. There were 158 nuclear warheads in or near Cuba, including short-range Luna rockets and cruise missiles meant to destroy an invasion force on the beaches. Washington learned this in 1992, at a conference in Havana. McNamara reportedly had to hold on to a table. \"We didn't believe there were nuclear warheads in Cuba,\" he said."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "PLOKHY, introduction",
+        "DOBBS, ch. 1 and ch. 3"
+      ],
+      "allison_model": "Rational Actor"
+    }
+  },
+  "State": {
+    "The September Warnings": {
+      "id": "STA-01",
+      "unlock": {
+        "scene": "D03"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "On September 4 and again on September 13, 1962, Kennedy warned in public that if \"offensive\" weapons appeared in Cuba, \"the gravest issues would arise.\" Moscow answered through every channel that it was sending only defensive equipment. Kennedy had drawn a line, partly to contain Republican attacks before the November elections. Now the line had been crossed.",
+        "declassified": "Allison and Zelikow treat the September statements as a turning point: they turned a military question into a question of credibility. McNamara argued on October 16 that a missile in Cuba did not change the strategic balance much. It did not matter. The President had already said in public that it would not be tolerated."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "ALLISON, ch. 2 and ch. 6",
+        "STERN, ch. 2"
+      ],
+      "allison_model": "Governmental Politics"
+    },
+    "The Allies": {
+      "id": "STA-02",
+      "unlock": {
+        "scene": "D06"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Washington's European allies would carry the consequences of anything the United States did in Cuba, starting with Berlin. On October 22 Dean Acheson flew to Paris with U-2 photographs to brief Charles de Gaulle. De Gaulle waved them away: \"A great nation like yours would not act if there were any doubt about the evidence.\" Only later did he study them, with a magnifying glass. \"Extraordinaire.\"",
+        "declassified": "Allied support was not unconditional. Several governments privately thought the Americans were overreacting to missiles not much different from the ones NATO had pointed at the Soviet Union for years. That was the real problem with any trade involving Turkey: it would show the allies that their security could be bargained away."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "DOBBS, ch. 2",
+        "STERN, ch. 3 (Oct. 27)"
+      ],
+      "allison_model": "Governmental Politics"
+    },
+    "The Jupiters in Turkey": {
+      "id": "STA-03",
+      "unlock": {
+        "scene": "D17"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Under a decision taken by Eisenhower, the United States had deployed 15 Jupiter missiles in Turkey and 30 in Italy. They were liquid-fuelled, slow to launch and sat above ground: easy targets, more useful as a provocation than as a deterrent. Kennedy had ordered the deployment reviewed in 1961, but the Turks objected and, after a tense summit with Khrushchev in Vienna, he let it go ahead.",
+        "declassified": "For Khrushchev, the Jupiters were proof of a double standard: American missiles could sit on the Soviet border, but Soviet missiles could not sit near the United States. On October 27 almost every adviser opposed trading them; Kennedy pushed for it anyway. The Jupiters were quietly dismantled by April 1963. The story that Kennedy had ordered them out before the crisis and was disobeyed is a myth, as Allison and Zelikow show."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "PLOKHY, ch. 4 and ch. 17 \"Turkish Quagmire\"",
+        "STERN, conclusion",
+        "ALLISON, ch. 4, n. 116"
+      ],
+      "allison_model": "Rational Actor"
+    },
+    "The OAS Vote": {
+      "id": "STA-04",
+      "unlock": {
+        "scene": "D10"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "A blockade is an act of war under international law. To give the quarantine legal cover, the State Department asked the Organization of American States to approve it. On October 23 the OAS endorsed the quarantine unanimously. For a government criticized across Latin America for years, it was an unexpected success.",
+        "declassified": "Inside the White House, the vote was a relief before it was a principle. On the tapes, Robert Kennedy reminds his brother that the same governments had \"kicked us in the ass for two years.\" The legal argument was built after the decision, not before it: the vote made the quarantine defensible, it did not make the choice."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "STERN, ch. 3 (Oct. 23)"
+      ],
+      "allison_model": "Governmental Politics"
+    },
+    "Stevenson at the United Nations": {
+      "id": "STA-05",
+      "unlock": {
+        "scene": "D12"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "On October 25 the UN Ambassador, Adlai Stevenson, confronted the Soviet ambassador, Valerian Zorin, at the Security Council. He asked whether the USSR had placed missiles in Cuba, \"yes or no,\" and said he was prepared to wait for the answer \"until hell freezes over.\" Then he had easels carried in and showed the photographs, on television.",
+        "declassified": "Zorin had been left without instructions by Moscow and fell back on denial: \"We shall not look at your photographs.\" That same day, in Moscow, Khrushchev was privately admitting the missiles to an American businessman and deciding to pull them out in exchange for a promise not to invade."
+      },
+      "image": {
+        "file": null,
+        "suggestion": "Stevenson at the UN Security Council, 25 Oct 1962 (UN photo, check license)"
+      },
+      "sources": [
+        "DOBBS, ch. 5 \"Till Hell Freezes Over\"",
+        "PLOKHY, ch. 15 \"Wooden Knife\""
+      ],
+      "allison_model": "Governmental Politics"
+    },
+    "Khrushchev's Two Letters": {
+      "id": "STA-06",
+      "unlock": {
+        "scene": "D17"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Friday evening, October 26: a long, emotional private letter from Khrushchev arrives in pieces at the State Department. It suggests the missiles could go if the United States promised not to invade Cuba. Saturday morning, October 27: Radio Moscow broadcasts a second, harder letter that adds a new condition: the Jupiters in Turkey. Two letters, two prices. Which one is the real Khrushchev?",
+        "declassified": "Both were. The first was written under fear that an invasion was imminent. By Saturday, Khrushchev believed he had a little more time and raised the price. The standard story says Kennedy answered the first letter and ignored the second. The tapes show something else: his reply combined both, and the Turkey part went through Robert Kennedy, in secret."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "STERN, conclusion (\"Trollope Ploy\")",
+        "PLOKHY, ch. 16 and 17",
+        "ALLISON, ch. 6"
+      ],
+      "allison_model": "Rational Actor"
+    },
+    "The Back Channel": {
+      "id": "STA-07",
+      "unlock": {
+        "scene": "D13"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Robert Kennedy and the Soviet ambassador, Anatoly Dobrynin, had met informally before the crisis. During the crisis they became the most important line between the two governments, faster and more honest than the official one. What was said there did not go through the State Department and was not written into the record.",
+        "declassified": "On the night of October 27, at the Justice Department, Robert Kennedy told Dobrynin that the Jupiters would be removed within four or five months, on condition that the Soviets never present it as part of the deal. The ExComm was not told. A smaller group had agreed on it that evening in the Oval Office. The secret held until 1989."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "DOBBS, ch. 13",
+        "PLOKHY, ch. 20 \"Secret Rendezvous\"",
+        "ALLISON, ch. 6"
+      ],
+      "allison_model": "Governmental Politics"
+    },
+    "The Brazilian Message": {
+      "id": "STA-08",
+      "unlock": {
+        "scene": "D05"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Brazil kept good relations with both Washington and Havana, and its ambassador in Cuba, Luis Bastian Pinto, was trusted by both sides. On October 26 he passed Castro a warning from Brazil's president: the Americans would destroy the sites if work did not stop within 48 hours. The ExComm discussed using the same channel to talk to Castro without going through Moscow.",
+        "declassified": "On October 26 the President approved a message for Castro, to be delivered by the Brazilian ambassador: the Soviets were ready to trade Cuba away for concessions elsewhere, and an invasion was unlikely if the missiles left. It was never delivered. Khrushchev gave in first. In this game the Brazilian channel opens days earlier, and it can carry much more."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "ALLISON, ch. 2, n. 95",
+        "PLOKHY, ch. 24 \"Indignation\"",
+        "STERN, ch. 3 (Oct. 26)",
+        "DOBBS, ch. 7"
+      ],
+      "allison_model": "Rational Actor"
+    },
+    "U Thant": {
+      "id": "STA-09",
+      "unlock": {
+        "scene": "D17"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "The acting Secretary-General of the United Nations, U Thant of Burma, sent appeals to Kennedy and Khrushchev on October 24: suspend the quarantine and the arms shipments for two or three weeks, to make room for talks. Kennedy was skeptical. The proposal treated the two sides as equals.",
+        "declassified": "Both leaders used U Thant more than they admitted. His appeals gave Khrushchev a way to turn ships around without looking like he obeyed Kennedy. On the night of October 27 Rusk prepared a fallback with Andrew Cordier, a former UN official: if Khrushchev rejected the secret deal, U Thant would propose the Turkey trade as his own idea."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "PLOKHY, ch. 16 and ch. 20",
+        "STERN, ch. 3 (Oct. 25)",
+        "DOBBS, ch. 13"
+      ],
+      "allison_model": "Rational Actor"
+    }
+  },
+  "Defense": {
+    "Quarantine, Not Blockade": {
+      "id": "DEF-01",
+      "unlock": {
+        "scene": "D07"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "A blockade is an act of war. A \"quarantine\" is a word lawyers can defend. The difference was chosen deliberately in the drafts of October 20 and 21: the United States would stop only offensive weapons, not food or fuel, and it would do it with the backing of the OAS. It took effect at 10 a.m. on October 24.",
+        "declassified": "The word was political, the operation was not. To the ships at sea, a quarantine and a blockade involved the same procedures: hail, stop, board, search, and if necessary fire across the bow. Allison's point is that the President chose the label; the Navy chose almost everything else."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "ALLISON, ch. 4",
+        "STERN, ch. 3"
+      ],
+      "allison_model": "Organizational Behavior"
+    },
+    "The Interception Line": {
+      "id": "DEF-02",
+      "unlock": {
+        "scene": "D11"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "The Navy planned to intercept Soviet ships about 800 miles from Cuba, outside the range of Cuban-based jets. On the night of October 23, after a conversation with the British ambassador, Kennedy pulled the line back to 500 miles to give Khrushchev more time. McNamara objected. The President overruled him.",
+        "declassified": "The episode became a classic illustration of a President fighting his own Navy for control. Dobbs later plotted the ships' actual positions and found that the Soviet missile ships had turned back on the morning of October 23, hundreds of miles away. The line was moved to avoid a confrontation that was no longer coming."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "ALLISON, ch. 4",
+        "DOBBS, ch. 4 \"Eyeball to Eyeball\""
+      ],
+      "allison_model": "Organizational Behavior"
+    },
+    "DEFCON": {
+      "id": "DEF-03",
+      "unlock": {
+        "scene": "D15"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Defense Readiness Condition, five levels from DEFCON 5 (peace) to DEFCON 1 (war). On October 22 US forces went to DEFCON 3. On October 24, Strategic Air Command went to DEFCON 2, the only time in the Cold War: bombers on airborne alert around the clock, missiles ready, crews dispersed to civilian airfields.",
+        "declassified": "General Thomas Power, commander of Strategic Air Command, announced the alert to his forces in the clear, unencrypted, so the Soviets would hear it. Nobody had asked him to. It was an organization sending its own signal to Moscow, exactly the kind of move Allison's second model predicts and Kennedy most feared."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "DOBBS, ch. 4",
+        "ALLISON, ch. 4"
+      ],
+      "allison_model": "Organizational Behavior"
+    },
+    "OPLAN 312 and 316": {
+      "id": "DEF-04",
+      "unlock": {
+        "scene": "D08"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "The Joint Chiefs had plans ready. OPLAN 312: air strikes against Cuba, from a limited raid to hundreds of sorties. OPLAN 316: invasion, with about 120,000 troops landing after days of bombing. By October 24 forces were moving to Florida. The Air Force told the President it could not guarantee destroying every missile, and that a \"surgical\" strike on the launchers alone was not what it had planned.",
+        "declassified": "Allison's central example: the options a President has are the options his organizations have already written. Kennedy asked for a small strike and was told the plan was a big one. The Marine Corps warned in an internal study that Cuban resistance would not be crushed quickly. Nobody knew about the tactical nuclear weapons waiting for an invasion."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "ALLISON, ch. 4",
+        "DOBBS, ch. 1 and ch. 4"
+      ],
+      "allison_model": "Organizational Behavior"
+    },
+    "Signaling a Submarine": {
+      "id": "DEF-05",
+      "unlock": {
+        "scene": "C02"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Soviet diesel submarines were detected near the quarantine line. On October 23 McNamara had the Navy set up a new procedure: practice depth charges, small enough not to damage a hull, dropped as a signal to surface. The procedure was sent to Moscow that evening.",
+        "declassified": "On the tapes, McNamara explains the method calmly. Kennedy is visibly uneasy. From inside a submarine at depth, a \"signal\" depth charge and a real attack sound exactly the same. The sources disagree on whether the procedure reached the submarines: Plokhy says B-59 received it and still could not tell the charges from real ones; Dobbs says its captain knew nothing about it. Either way, the message did not work."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "ALLISON, ch. 4",
+        "STERN, conclusion",
+        "PLOKHY, ch. 21",
+        "DOBBS, ch. 13"
+      ],
+      "allison_model": "Organizational Behavior"
+    },
+    "B-59": {
+      "id": "DEF-06",
+      "unlock": {
+        "scene": "C02"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "On October 27, US destroyers spent hours hunting a Soviet submarine in the western Atlantic and dropping practice depth charges to force it up. That night it surfaced among the American ships, battered and out of contact with Moscow. To the Navy, it was a successful anti-submarine exercise.",
+        "declassified": "B-59 carried a nuclear torpedo. Its crew had been submerged for days in extreme heat, unable to reach Moscow. According to one officer, Vadim Orlov, the captain, Valentin Savitsky, ordered the torpedo prepared: \"We will perish ourselves, but we will sink them all.\" He was talked down, and surfaced together with the flotilla's senior officer, Vasily Arkhipov. Other veterans dispute Orlov's version. Nobody disputes the torpedo."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "DOBBS, ch. 13 \"Cat and Mouse\"",
+        "PLOKHY, ch. 21 \"Bermuda Triangle\""
+      ],
+      "allison_model": "Organizational Behavior"
+    },
+    "Rules of Engagement": {
+      "id": "DEF-07",
+      "unlock": {
+        "scene": "D14"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "On October 23 the ExComm agreed that if a U-2 were shot down over Cuba, the SAM site responsible would be attacked. The rule was meant to protect the pilots and show resolve. Aircraft were ready to carry it out within hours.",
+        "declassified": "On October 27 a U-2 was shot down. The retaliation the President had approved four days earlier was ready. He did not order it. Stern lists it among more than a dozen escalations Kennedy blocked or delayed while most of his advisers pressed for them."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "STERN, ch. 3 (Oct. 23 and 27) and conclusion",
+        "DOBBS, ch. 10"
+      ],
+      "allison_model": "Organizational Behavior"
+    },
+    "Black Saturday": {
+      "id": "DEF-08",
+      "unlock": {
+        "scene": "C03"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Saturday, October 27. A U-2 is shot down over eastern Cuba; the pilot is killed. Low-flying reconnaissance planes are fired on. A second letter from Khrushchev raises the price. Another U-2 wanders into Soviet airspace. The Joint Chiefs recommend air strikes for Monday. In the ExComm, the consensus is hardening against any deal.",
+        "declassified": "Moscow had not ordered the shootdown. Soviet officers in Cuba fired on their own initiative, believing the attack had begun. Khrushchev learned about it after the fact and tightened control: no nuclear weapons without Moscow's approval. That night, B-59 was under depth-charge attack in the Atlantic. Almost every danger of the day came from someone acting without orders."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "DOBBS, ch. 8 to 13",
+        "PLOKHY, ch. 16, 18 \"Losing Control\" and 19"
+      ],
+      "allison_model": "Organizational Behavior"
+    },
+    "Lost Over Chukotka": {
+      "id": "DEF-09",
+      "unlock": {
+        "scene": "C03"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "On the morning of October 27, Captain Charles Maultsby flew a U-2 on a routine air-sampling mission toward the North Pole, looking for traces of Soviet nuclear tests. Navigating by the stars, he lost his way and entered Soviet airspace over the Chukotka peninsula. Soviet fighters scrambled. American F-102 interceptors, each armed with a nuclear-tipped Falcon missile, went up to escort him home.",
+        "declassified": "\"There's always some sonofabitch who doesn't get the word,\" Kennedy said with a short, bitter laugh. The mission had not been cancelled during the crisis because nobody thought to cancel it. To Moscow, an American spy plane deep in Soviet airspace on the worst day of the crisis could look like a last reconnaissance before an attack."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "DOBBS, ch. 8 and ch. 11 \"Some Sonofabitch\""
+      ],
+      "allison_model": "Organizational Behavior"
+    }
+  },
+  "CIA": {
+    "The Cuban Revolution": {
+      "id": "CIA-01",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "On January 1, 1959, Fulgencio Batista fled Cuba and the guerrillas of Fidel Castro took power. Within two years the new government had nationalized American property, executed hundreds of opponents and turned to the Soviet Union for oil, money and weapons. In Washington, an island ninety miles from Florida had become an enemy base.",
+        "declassified": "Plokhy insists on a point Moscow missed: the revolution was more nationalist than communist. \"Patria o muerte\" was about sovereignty. Castro accepted Soviet missiles to protect the revolution from an invasion he was sure was coming. He was not willing to be treated as anyone's pawn, including Moscow's."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "PLOKHY, ch. 3 \"Triumph of Communism\" and ch. 24",
+        "GADDIS, We Now Know, ch. 9"
+      ],
+      "allison_model": null
+    },
+    "Bay of Pigs": {
+      "id": "CIA-02",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "In April 1961, about 1,400 Cuban exiles trained and armed by the CIA landed at the Bay of Pigs. The plan, inherited from Eisenhower, assumed the Cuban people would rise up. They did not. Kennedy refused to send American air cover. Within three days the invaders were killed or captured. Kennedy took public responsibility for the failure.",
+        "declassified": "The Bay of Pigs shaped October 1962 on both sides. Kennedy came out of it distrusting the confident advice of the Joint Chiefs and the CIA. Khrushchev and Castro came out of it convinced that the next invasion would not be run by exiles."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "DOBBS, ch. 1",
+        "PLOKHY, ch. 1",
+        "STERN, ch. 1"
+      ],
+      "allison_model": null
+    },
+    "Operation Mongoose": {
+      "id": "CIA-03",
+      "unlock": {
+        "scene": "D05"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "After the Bay of Pigs, the administration launched a covert program to overthrow Castro: sabotage, raids by exiles, economic warfare, propaganda. It was run by General Edward Lansdale and pushed hard by both Kennedy brothers. Lansdale's timetable aimed for an uprising in October 1962. It was secret from the American public. It was not secret from Havana.",
+        "declassified": "Stern makes an uncomfortable point: Kennedy's administration bears significant responsibility for the crisis. From Moscow and Havana, Mongoose and the 1962 military exercises in the Caribbean (one rehearsed the overthrow of a dictator named \"Ortsac\", Castro spelled backwards) looked like preparations for an invasion. Defending Cuba was not only a pretext for the missiles. It was a real fear, and Washington had fed it."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "STERN, ch. 2 and conclusion",
+        "DOBBS, ch. 1"
+      ],
+      "allison_model": "Governmental Politics"
+    },
+    "What Did Cuba Want?": {
+      "id": "CIA-04",
+      "unlock": {
+        "scene": "D21"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "In Washington's discussions, Cuba is almost always a place, not an actor. The ExComm debates what Moscow will do, what the allies will think, what Congress will say. Castro appears as a problem to be removed or a pawn to be split from Khrushchev.",
+        "declassified": "Castro learned of the final deal from a newspaper editor who called to ask how to cover it. He was furious: the missiles were leaving without consulting him, and the American base, the overflights and the blockade were not part of the bargain. He refused UN inspections. Anastas Mikoyan spent weeks in Havana trying to calm him. Cuba was the country most at risk, and the one least asked."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "PLOKHY, ch. 24 \"Indignation\" and 25",
+        "DOBBS, ch. 14"
+      ],
+      "allison_model": null
+    },
+    "The Letter of October 26": {
+      "id": "CIA-05",
+      "unlock": {
+        "scene": "D19"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "On the night of October 26, Castro spent about three hours at the Soviet embassy in Havana, convinced that an American attack would come within a day or two. He dictated a letter to Khrushchev. Washington knew nothing of it.",
+        "declassified": "In it, Castro urged that if the Americans invaded, the Soviet Union should not wait to be struck first: it should strike first, with nuclear weapons. Khrushchev recalled that when the letter was read in the Kremlin, the leaders sat in silence and looked at each other. His reply asked Castro for \"patience, restraint, and more restraint.\""
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "PLOKHY, ch. 22 \"Sunday Scare\"",
+        "DOBBS, ch. 8 \"Strike First\""
+      ],
+      "allison_model": null
+    }
+  },
+  "Excomm": {
+    "John F. Kennedy": {
+      "id": "PER-JFK",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "President of the United States. Age in October 1962: 45. Elected in 1960 by one of the narrowest margins in American history. A decorated naval officer in the Pacific during the Second World War. His first eighteen months in office included the Bay of Pigs, a disastrous summit with Khrushchev in Vienna and the building of the Berlin Wall. You are him.",
+        "declassified": "The tapes he secretly recorded show a President far more cautious than his public image. He resisted pressure to bomb or invade at almost every step, often against nearly all his advisers. He also kept supporting covert operations to remove Castro after the crisis. \"You will never know how much bad advice I had,\" he told an ambassador afterward."
+      },
+      "image": {
+        "file": "John F. Kennedy.png",
+        "suggestion": "Cecil Stoughton, White House photographs (public domain)"
+      },
+      "sources": [
+        "STERN, ch. 2 and conclusion",
+        "DOBBS, ch. 1"
+      ],
+      "allison_model": null
+    },
+    "Robert F. Kennedy": {
+      "id": "PER-RFK",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Attorney General. Age in October 1962: 36. The President's brother and closest confidant. He managed the 1960 campaign and was appointed Attorney General at 35. No formal role in foreign policy, the most influential voice in the room. When the President leaves, everyone treats him as the President's stand-in.",
+        "declassified": "His 1969 memoir, Thirteen Days, made him the hero of restraint. The tapes tell a different story: Stern counts him among the most consistently hawkish members of the ExComm, and he was the driving force behind Operation Mongoose. He was also the man who carried the secret Turkey promise to Dobrynin. Both things are true."
+      },
+      "image": {
+        "file": "Robert F. Kennedy BASE.png",
+        "suggestion": null
+      },
+      "sources": [
+        "STERN, ch. 2",
+        "DOBBS, ch. 1"
+      ],
+      "allison_model": null
+    },
+    "Dean Rusk": {
+      "id": "PER-RUSK",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Secretary of State. Age in October 1962: 53. Rhodes Scholar, army officer in the China-Burma-India theater, senior State Department official under Truman, president of the Rockefeller Foundation. Quiet, formal, hard to read. Some colleagues complain that he says little.",
+        "declassified": "Robert Kennedy and early historians criticized Rusk for a lack of leadership. The tapes do not support it: he offered careful analysis throughout and shifted position several times, like everyone else. He opposed the Turkey trade, then helped Kennedy prepare a secret UN fallback to make it happen."
+      },
+      "image": {
+        "file": "Dean Rusk BASE.png",
+        "suggestion": null
+      },
+      "sources": [
+        "STERN, ch. 2"
+      ],
+      "allison_model": null
+    },
+    "Robert McNamara": {
+      "id": "PER-MCNAMARA",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Secretary of Defense. Age in October 1962: 46. Former president of the Ford Motor Company, appointed weeks after taking that job. A statistician who worked on the bombing of Japan in 1945. Precise, fast, data-driven. He argues that the missiles change the political balance more than the military one.",
+        "declassified": "He broke with the Joint Chiefs, backed the quarantine and fought the Navy over how to run it. He also supported an invasion at several points and was ready to \"really escalate\" by October 27. Thirty years later, in Havana, he learned about the tactical nuclear weapons. He spent the rest of his life warning about how close it had been."
+      },
+      "image": {
+        "file": "Robert McNamara Base.png",
+        "suggestion": null
+      },
+      "sources": [
+        "STERN, ch. 2",
+        "PLOKHY, introduction",
+        "ALLISON, ch. 4"
+      ],
+      "allison_model": null
+    },
+    "McGeorge Bundy": {
+      "id": "PER-BUNDY",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "National Security Advisor. Age in October 1962: 43. Former dean at Harvard, appointed at 34 without a doctorate. A Republican who went to grade school with Kennedy. He runs the flow of information to the President and chairs meetings when Kennedy is away.",
+        "declassified": "Hard to classify, says Stern. He first backed the blockade, then argued for bombing the sites, and in the last meetings stubbornly opposed trading the Jupiters because he believed it would split NATO. He never hesitated to argue with the President."
+      },
+      "image": {
+        "file": "McGeorge Bundy Speaking.png",
+        "suggestion": null
+      },
+      "sources": [
+        "STERN, ch. 2"
+      ],
+      "allison_model": null
+    },
+    "Gen. Maxwell Taylor": {
+      "id": "PER-TAYLOR",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Chairman of the Joint Chiefs of Staff. Age in October 1962: 61. Commander of the 101st Airborne on D-Day, later Army Chief of Staff. Brought back by Kennedy after the Bay of Pigs, appointed Chairman of the Joint Chiefs in October 1962. A generation older than most of the room.",
+        "declassified": "He generally represented the Chiefs' hawkish position, but with a respect for the President the other generals did not show. He favored strikes over invasion, accepted the quarantine reluctantly and at one point suggested that using nuclear weapons in Cuba might not provoke a Soviet nuclear response."
+      },
+      "image": {
+        "file": "General Maxwell Taylor BASE.png",
+        "suggestion": null
+      },
+      "sources": [
+        "STERN, ch. 2 and conclusion"
+      ],
+      "allison_model": null
+    },
+    "John McCone": {
+      "id": "PER-MCCONE",
+      "unlock": {
+        "scene": "D01"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Director of Central Intelligence. Age in October 1962: 60. A conservative Republican businessman and former chairman of the Atomic Energy Commission, appointed after the Bay of Pigs. In August he warned that the Soviets might place offensive missiles in Cuba. Almost nobody believed him.",
+        "declassified": "He sent his warnings in cables from his honeymoon on the French Riviera. He was right when the analysts were wrong, and advocated removing the missiles by any means. Then, on October 27, he broke with most of the ExComm and supported the President's willingness to consider the Turkey trade."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "STERN, ch. 2",
+        "PLOKHY, ch. 10 \"Honeymoon\""
+      ],
+      "allison_model": null
+    },
+    "Llewellyn Thompson": {
+      "id": "PER-THOMPSON",
+      "unlock": {
+        "scene": "D17"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Ambassador-at-Large. Age in October 1962: 58. Ambassador in Moscow from 1957 to 1962. The only regular member of the ExComm who knows Khrushchev personally, has eaten with him, has watched him think. The President listens carefully when he talks.",
+        "declassified": "Historians disagree about him. Stern finds his advice generally hawkish: he opposed the Turkey trade to protect US credibility in Europe. Others credit him with reading Khrushchev correctly: the Soviet leader was looking for a way to say he had saved Cuba from invasion."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "STERN, ch. 2",
+        "ALLISON, ch. 6"
+      ],
+      "allison_model": null
+    },
+    "Theodore Sorensen": {
+      "id": "PER-SORENSEN",
+      "unlock": {
+        "scene": "D12"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Special Counsel to the President. Age in October 1962: 34. Kennedy's speechwriter and adviser since 1953. Not a foreign policy specialist. Principal author of the October 22 address to the nation.",
+        "declassified": "He spoke rarely in the meetings and usually on the side of caution. After Robert Kennedy's death he edited Thirteen Days for publication. In 1989 he admitted he had removed the explicit reference to the Turkey deal, because it was still secret."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "STERN, ch. 2",
+        "PLOKHY, ch. 20, n. 11"
+      ],
+      "allison_model": null
+    },
+    "Lyndon B. Johnson": {
+      "id": "PER-LBJ",
+      "unlock": {
+        "scene": "D19"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Vice President. Age in October 1962: 54. Formerly the most powerful man in the Senate, now a Vice President who feels ignored by the President's circle. He says little in the meetings, especially when Kennedy is in the room.",
+        "declassified": "On October 27, whenever Kennedy left the room, Johnson became animated: he worried that the administration was \"backing down\" and that the public could feel it. A year later he would inherit the presidency, most of the same advisers, and the war in Vietnam."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "STERN, ch. 2",
+        "DOBBS, ch. 13"
+      ],
+      "allison_model": null
+    },
+    "Gen. Curtis LeMay": {
+      "id": "PER-LEMAY",
+      "unlock": {
+        "scene": "D07"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Chief of Staff, US Air Force. Age in October 1962: 56. Architect of the firebombing of Japan and builder of Strategic Air Command. He wants to bomb the missile sites and invade, and says so to the President's face.",
+        "declassified": "On October 19 he told Kennedy the quarantine was \"almost as bad as the appeasement at Munich,\" a pointed insult to a man whose father had been ambassador in London at the time of Munich. After the deal he called it \"the greatest defeat in our history\" and proposed attacking anyway."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "STERN, ch. 3 (Oct. 19) and epilogue",
+        "DOBBS, ch. 14"
+      ],
+      "allison_model": null
+    },
+    "Adm. George Anderson": {
+      "id": "PER-ANDERSON-G",
+      "unlock": {
+        "scene": "D11"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Chief of Naval Operations. Age in October 1962: 56. Commander of the US Navy, responsible for running the quarantine at sea.",
+        "declassified": "On the night of October 23, McNamara went to the Navy's operations center and asked how a ship would be stopped. Anderson waved the Navy's manual at him: the Navy had been running blockades since the days of John Paul Jones. The argument became a textbook case of civilian control versus organizational routine. He was replaced in 1963."
+      },
+      "image": {
+        "file": "PER-ANDERSON-G.png",
+        "suggestion": null
+      },
+      "sources": [
+        "ALLISON, ch. 4",
+        "DOBBS, ch. 3",
+        "STERN, ch. 3 (Oct. 24)"
+      ],
+      "allison_model": null
+    },
+    "Adlai Stevenson": {
+      "id": "PER-STEVENSON",
+      "unlock": {
+        "scene": "D09"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Ambassador to the United Nations. Age in October 1962: 62. Twice the Democratic candidate for President, now ambassador at the UN. Respected abroad, mistrusted by many in the administration as soft.",
+        "declassified": "On October 17 he urged Kennedy to stay open to negotiating on all nuclear bases, Turkey included, and later suggested giving up Guantánamo. Kennedy rejected it, and after the crisis aides leaked that \"Adlai wanted a Munich.\" The deal that ended the crisis included a secret version of what he had proposed."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "STERN, ch. 3 (Oct. 17 and 20)",
+        "DOBBS, ch. 14"
+      ],
+      "allison_model": null
+    },
+    "Nikita Khrushchev": {
+      "id": "PER-KHRUSHCHEV",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "First Secretary of the Soviet Communist Party. Age in October 1962: 68. Leader of the Soviet Union since the mid-1950s. A peasant's son who rose through Stalin's system and then denounced him. Impulsive, theatrical, a gambler. Washington cannot agree on what he wants: Berlin, prestige, or Cuba.",
+        "declassified": "Plokhy reconstructs the decision: in May 1962, during a visit to Bulgaria, Khrushchev conceived the idea of putting missiles in Cuba to protect Castro and to answer the Jupiters in Turkey, and pushed it through the Presidium. He badly misjudged how Kennedy would react. He was removed from power in October 1964."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "PLOKHY, ch. 4 \"Rocket Man\" and ch. 5",
+        "GADDIS, We Now Know, ch. 9"
+      ],
+      "allison_model": null
+    },
+    "Fidel Castro": {
+      "id": "PER-CASTRO",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Prime Minister of Cuba. Age in October 1962: 36. Leader of the revolution that took power in 1959. Survived the Bay of Pigs and several CIA plots against his life. For Washington, the cause of the problem. For himself, its main target.",
+        "declassified": "He accepted the missiles to deter an invasion and was ready to see Cuba destroyed rather than occupied. He was excluded from the final deal and learned about it from a newspaper editor's phone call. He smashed a mirror. The crisis was resolved between two capitals, neither of them his."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "PLOKHY, ch. 3 and 24",
+        "DOBBS, ch. 8"
+      ],
+      "allison_model": null
+    },
+    "Anatoly Dobrynin": {
+      "id": "PER-DOBRYNIN",
+      "unlock": {
+        "scene": "D13"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "A career diplomat who arrived in Washington in the spring of 1962. He assured Robert Kennedy in September that there were no offensive weapons in Cuba.",
+        "declassified": "He was not lying: Moscow had not told him. He would remain ambassador for 24 years, through six presidents. His account of the October 27 meeting with Robert Kennedy is one of the key sources for the secret deal."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "DOBBS, ch. 13",
+        "PLOKHY, ch. 20 \"Secret Rendezvous\""
+      ],
+      "allison_model": null
+    },
+    "Andrei Gromyko": {
+      "id": "PER-GROMYKO",
+      "unlock": {
+        "scene": "D06"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Soviet Foreign Minister. Age in October 1962: 53. On October 18 he visited the White House and assured Kennedy that Soviet aid to Cuba was purely defensive. Kennedy, who had the photographs in his desk, did not mention them.",
+        "declassified": "Each side lied to the other in that meeting, and each thought the other did not know. Gromyko reported to Moscow that the situation was \"wholly satisfactory.\""
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "DOBBS, ch. 6",
+        "PLOKHY, ch. 12 \"Quarantine\""
+      ],
+      "allison_model": null
+    },
+    "Gen. Issa Pliyev": {
+      "id": "PER-PLIYEV",
+      "unlock": {
+        "scene": "C01"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Commander, Soviet Forces in Cuba. Age in October 1962: 59. Washington does not know his name. It does not know his command exists.",
+        "declassified": "A cavalry officer with little understanding of missiles, trusted by Khrushchev after he put down food riots in Novocherkassk in June 1962. He commanded about 43,000 men. On October 27 he authorized his air defenses to fire if American planes attacked. Two of his generals shot down a U-2 after failing to reach him by phone."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "DOBBS, ch. 8 and ch. 10",
+        "PLOKHY, ch. 6 and ch. 16"
+      ],
+      "allison_model": null
+    },
+    "Maj. Rudolf Anderson": {
+      "id": "PER-ANDERSON-R",
+      "unlock": {
+        "scene": "C03"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "U-2 Pilot, US Air Force. Age in October 1962: 35. One of the most experienced U-2 pilots, he flew several of the missions over Cuba in October.",
+        "declassified": "On October 27 his U-2 was hit by a Soviet SAM over eastern Cuba. Shrapnel pierced his pressure suit and he died instantly. He was the only person killed by enemy fire during the crisis."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "DOBBS, ch. 10 \"Shootdown\""
+      ],
+      "allison_model": null
+    },
+    "Vasily Arkhipov": {
+      "id": "PER-ARKHIPOV",
+      "unlock": {
+        "scene": "C02"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Soviet Navy, submarine flotilla. Age in October 1962: 36. Washington does not know his name.",
+        "declassified": "A survivor of the 1961 reactor accident on the submarine K-19. In October 1962 he sailed on B-59 as the senior officer of the submarine group. On the night of October 27, according to the crew's accounts, the captain was talked out of firing the nuclear torpedo, and he and Arkhipov decided together to surface. The accounts conflict on the details."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "PLOKHY, ch. 21",
+        "DOBBS, ch. 13"
+      ],
+      "allison_model": null
+    },
+    "Anastas Mikoyan": {
+      "id": "PER-MIKOYAN",
+      "unlock": {
+        "scene": "D22"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "First Deputy Premier of the USSR. Age in October 1962: 67. Khrushchev's most experienced deputy, sent to Havana after the crisis to deal with Castro.",
+        "declassified": "When Khrushchev asked him to go, his wife was dying. He went anyway. She died while he was in Cuba, and he stayed to finish the negotiations. He spent three weeks persuading a furious Castro to accept the removal of the bombers and most of the nuclear weapons."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "PLOKHY, ch. 25 \"Mission Impossible\""
+      ],
+      "allison_model": null
+    }
+  },
+  "Calendar": {
+    "Before October": {
+      "id": "CAL-00",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "1959: Castro takes power. 1961: Bay of Pigs (April), Vienna summit (June), Berlin Wall (August), Operation Mongoose (November). 1962: Jupiters operational in Turkey. August: McCone warns of missiles. September 4 and 13: Kennedy warns Moscow in public.",
+        "declassified": "May 1962: Khrushchev decides to send missiles to Cuba; the Presidium approves Operation Anadyr on May 24. July: the first ships sail. October 4: the first nuclear warheads arrive at Mariel aboard the Indigirka."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "PLOKHY, ch. 1 to 7",
+        "DOBBS, ch. 1 and 3"
+      ],
+      "allison_model": null
+    },
+    "Sunday, October 14": {
+      "id": "CAL-14",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Major Heyser's U-2 photographs western Cuba.",
+        "declassified": "In Cuba, the first R-12 battery has been ready to fire since October 8."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "PLOKHY, ch. 10 and ch. 19"
+      ],
+      "allison_model": null
+    },
+    "Monday, October 15": {
+      "id": "CAL-15",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "The photo interpreters identify medium-range missile equipment. Bundy is told in the evening and decides to let the President sleep.",
+        "declassified": "In Moscow, nothing suggests the operation has been discovered."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "PLOKHY, ch. 10 and 11"
+      ],
+      "allison_model": null
+    },
+    "Tuesday, October 16": {
+      "id": "CAL-16",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "8 a.m.: Bundy wakes the President. 11:50 a.m.: first meeting of the group that will be called the ExComm. Kennedy starts secretly taping the meetings. Air strikes dominate the discussion.",
+        "declassified": "In Moscow, Khrushchev tells the American ambassador, Foy Kohler, that he wants no trouble before the US elections."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "STERN, ch. 3 (Oct. 16)",
+        "PLOKHY, ch. 11",
+        "DOBBS, ch. 4"
+      ],
+      "allison_model": null
+    },
+    "Wednesday, October 17": {
+      "id": "CAL-17",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "New photographs show IRBM sites under construction. Kennedy keeps his public schedule and campaigns in Connecticut.",
+        "declassified": "The R-14 missiles are still at sea."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "STERN, ch. 3 (Oct. 17)"
+      ],
+      "allison_model": null
+    },
+    "Thursday, October 18": {
+      "id": "CAL-18",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Gromyko visits the White House and says Soviet weapons in Cuba are defensive. Kennedy does not show him the photographs.",
+        "declassified": "Gromyko reports to Moscow that the situation is \"in general wholly satisfactory.\""
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "DOBBS, ch. 6",
+        "PLOKHY, ch. 12"
+      ],
+      "allison_model": null
+    },
+    "Friday, October 19": {
+      "id": "CAL-19",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Kennedy meets the Joint Chiefs. LeMay compares a blockade to Munich. The President leaves for Ohio and Illinois.",
+        "declassified": "Colonel Sidorov's R-12 regiment reports itself combat-ready."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "STERN, ch. 3 (Oct. 19)",
+        "PLOKHY, ch. 19"
+      ],
+      "allison_model": null
+    },
+    "Saturday, October 20": {
+      "id": "CAL-20",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Kennedy cancels his trip, citing a cold. In a long National Security Council meeting he chooses the quarantine.",
+        "declassified": "More than 40,000 Soviet troops are now on the island."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "STERN, ch. 3 (Oct. 20)",
+        "DOBBS, ch. 1"
+      ],
+      "allison_model": null
+    },
+    "Sunday, October 21": {
+      "id": "CAL-21",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "The Air Force confirms it cannot guarantee destroying all the missiles. Kennedy asks newspapers to hold the story.",
+        "declassified": "Moscow still does not know."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "ALLISON, ch. 4",
+        "STERN, ch. 3 (Oct. 21)"
+      ],
+      "allison_model": null
+    },
+    "Monday, October 22": {
+      "id": "CAL-22",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "7 p.m.: Kennedy addresses the nation. US forces go to DEFCON 3.",
+        "declassified": "In Moscow it is the middle of the night. The Presidium, close to panic, considers letting the commanders in Cuba use tactical nuclear weapons against a landing. By morning the idea is dropped: no nuclear weapons without orders from Moscow."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "PLOKHY, ch. 13 \"Moscow Night\""
+      ],
+      "allison_model": null
+    },
+    "Tuesday, October 23": {
+      "id": "CAL-23",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "The OAS approves the quarantine. Kennedy signs the proclamation. First low-level reconnaissance flights over Cuba. At night, the interception line is pulled back to 500 miles.",
+        "declassified": "In the morning, the Soviet ships carrying missiles turn back, on orders from Moscow. Washington will not realize it for more than a day."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "ALLISON, ch. 4",
+        "DOBBS, ch. 4"
+      ],
+      "allison_model": null
+    },
+    "Wednesday, October 24": {
+      "id": "CAL-24",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "10 a.m.: the quarantine takes effect. Strategic Air Command goes to DEFCON 2. Late morning: reports that Soviet ships have stopped. Rusk: \"We're eyeball to eyeball, and the other fellow just blinked.\"",
+        "declassified": "The missile ships had turned around the previous morning, hundreds of miles from the line."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "DOBBS, ch. 4"
+      ],
+      "allison_model": null
+    },
+    "Thursday, October 25": {
+      "id": "CAL-25",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Stevenson confronts Zorin at the UN. A Soviet tanker, the Bucharest, is allowed through the line.",
+        "declassified": "Khrushchev decides to remove the missiles in exchange for a promise not to invade."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "DOBBS, ch. 5",
+        "PLOKHY, ch. 15"
+      ],
+      "allison_model": null
+    },
+    "Friday, October 26": {
+      "id": "CAL-26",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "The Navy boards the Marucla, a Lebanese freighter chartered by the Soviets. It carries nothing forbidden. In the evening, Khrushchev's first, private letter arrives.",
+        "declassified": "In Havana, Castro writes to Khrushchev urging a nuclear first strike if Cuba is invaded."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "DOBBS, ch. 6 and 8",
+        "PLOKHY, ch. 16 and 22"
+      ],
+      "allison_model": null
+    },
+    "Saturday, October 27": {
+      "id": "CAL-27",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Radio Moscow broadcasts the second letter. A U-2 is shot down over Cuba. Maultsby strays over the USSR. B-59 is forced to surface. At night, Robert Kennedy meets Dobrynin.",
+        "declassified": "The shootdown was ordered by local Soviet commanders, not by Moscow."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "DOBBS, ch. 8 to 13",
+        "PLOKHY, ch. 17 to 21"
+      ],
+      "allison_model": null
+    },
+    "Sunday, October 28": {
+      "id": "CAL-28",
+      "unlock": {
+        "scene": "start"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "9 a.m.: Radio Moscow announces that the missiles will be dismantled and shipped home.",
+        "declassified": "The Presidium heard that Kennedy would speak at 5 p.m. Moscow time and feared he would announce an attack. Khrushchev sent the answer by radio, the fastest channel he had. The speech was a rebroadcast of October 22."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "PLOKHY, ch. 22 \"Sunday Scare\" and 23"
+      ],
+      "allison_model": null
+    },
+    "After October": {
+      "id": "CAL-AFTER",
+      "unlock": {
+        "endings_found": 1
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "November 20: the Il-28 bombers leave and the quarantine is lifted. April 1963: the Jupiters are removed from Turkey. June 1963: the Moscow-Washington hotline is agreed. August 1963: Limited Test Ban Treaty. November 22, 1963: Kennedy is assassinated. October 1964: Khrushchev is removed from power.",
+        "declassified": "1989: Sorensen reveals the Turkey deal. 1992: Havana conference, the tactical nuclear weapons. 1997: the ExComm tapes are published."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "PLOKHY, ch. 25 to 27 and epilogue",
+        "STERN, ch. 1",
+        "DOBBS, ch. 11, notes"
+      ],
+      "allison_model": null
+    }
+  },
+  "Top Secret": {
+    "Three Ways to Explain a Decision": {
+      "id": "TS-01",
+      "unlock": {
+        "endings_found": 1
+      },
+      "description": {
+        "declassified": "Graham Allison's Essence of Decision (1971, revised with Philip Zelikow in 1999) asks one question: why did the crisis happen the way it did? It offers three answers. Model I, the Rational Actor: governments choose the option that best serves their goals. Model II, Organizational Behavior: governments act through organizations, which can only do what their routines and plans allow. Model III, Governmental Politics: decisions come out of bargaining among people with different interests, information and power. This game uses all three. The cards are Model I. The orders that arrive late, the plans that are bigger than you asked for and the alert announced in the clear are Model II. The advisers who disagree, leak and push are Model III. You were never really choosing alone."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "ALLISON, introduction and ch. 7"
+      ],
+      "allison_model": null
+    },
+    "The Secret Deal": {
+      "id": "TS-02",
+      "unlock": {
+        "endings_found": 1
+      },
+      "description": {
+        "declassified": "For more than twenty years, the official story was that Kennedy stood firm and Khrushchev backed down. The Jupiters in Turkey were removed in April 1963 \"for unrelated reasons.\" In 1989, at a conference in Moscow, Theodore Sorensen admitted that Robert Kennedy had promised their removal to Dobrynin on October 27, and that he had edited that promise out of Thirteen Days. The crisis was resolved by a trade. It was presented as a victory."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "STERN, conclusion",
+        "PLOKHY, ch. 20, n. 11",
+        "ALLISON, ch. 6"
+      ],
+      "allison_model": null
+    },
+    "Myths of October": {
+      "id": "TS-03",
+      "unlock": {
+        "endings_found": 1
+      },
+      "description": {
+        "declassified": "The red phone: there was no direct line between Washington and Moscow in 1962. Messages took hours. The hotline, a teletype, was set up in 1963 because of that. \"Eyeball to eyeball\": the Soviet missile ships turned back on October 23, far from the line; the standoff of October 24 never happened. The Trollope ploy: Kennedy did not simply ignore Khrushchev's second letter; his reply mixed both, and Turkey went through the back channel. Robert Kennedy the dove: the tapes show one of the hardest voices in the room. Thirteen days: Kennedy himself counted about twelve and ordered silver calendars from Tiffany's for his advisers; the name stuck with Robert Kennedy's 1969 book."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "DOBBS, ch. 4 and notes to ch. 11",
+        "STERN, ch. 3 (Oct. 28) and conclusion"
+      ],
+      "allison_model": null
+    },
+    "How Close Was It?": {
+      "id": "TS-04",
+      "unlock": {
+        "endings_found": 1
+      },
+      "description": {
+        "declassified": "Kennedy reportedly put the odds of war somewhere between one in three and even. He did not know about the 158 warheads, the tactical weapons aimed at the beaches, the submarine with a nuclear torpedo, or the Soviet officers who shot down a U-2 without orders. In 1992, McNamara said that an invasion would almost certainly have led to nuclear war. Historians still debate how close it really was. What the evidence shows is that the danger came less from the two leaders than from everything around them."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "ALLISON, introduction",
+        "DOBBS, ch. 14",
+        "PLOKHY, introduction"
+      ],
+      "allison_model": null
+    },
+    "What This Game Changed": {
+      "id": "TS-05",
+      "unlock": {
+        "endings_found": 1
+      },
+      "description": {
+        "declassified": "Every event in this game is based on a real decision, discussion or document, but the timing has been compressed and some choices opened earlier than they really were. Low-level flights began on October 23, not October 16. The Brazilian channel to Castro was approved on October 26 and never used. Some endings are history (Thirteen Days), some were seriously discussed (a public trade, an invasion, a conventional war), and some are speculation (Cuba Decides) or satire (The Fear Came True). Each ending's file tells you which is which."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "Design notes"
+      ],
+      "allison_model": null
+    },
+    "Sources": {
+      "id": "TS-06",
+      "unlock": {
+        "endings_found": 1
+      },
+      "description": {
+        "declassified": "Graham Allison and Philip Zelikow, Essence of Decision: Explaining the Cuban Missile Crisis, 2nd ed. (1999). Sheldon M. Stern, The Week the World Stood Still: Inside the Secret Cuban Missile Crisis (2005). Michael Dobbs, One Minute to Midnight: Kennedy, Khrushchev, and Castro on the Brink of Nuclear War (2008). Serhii Plokhy, Nuclear Folly: A History of the Cuban Missile Crisis (2021). John Lewis Gaddis, We Now Know: Rethinking Cold War History (1997) and The Cold War: A New History (2005). Alice L. George, Awaiting Armageddon: How Americans Faced the Cuban Missile Crisis (2003). Primary sources: Foreign Relations of the United States, 1961-1963, vol. XI; John F. Kennedy Presidential Library; National Security Archive; Wilson Center Digital Archive."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [],
+      "allison_model": null
+    }
+  }
+}

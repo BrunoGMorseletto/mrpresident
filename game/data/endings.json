@@ -1,0 +1,281 @@
+[
+	{
+		"id": "E01",
+		"title": "LAST TRANSMISSION",
+		"badge": "Catastrophe",
+		"header": "OCTOBER 1962 · ALTERNATE OUTCOME",
+		"tagline": "The crisis ended. No one could stop what came next.",
+		"body": [
+			"The first strike did not go unanswered. Retaliation followed retaliation until the Cuban crisis became a nuclear exchange. The orders to stop arrived late, were lost, or reached units that were already acting.",
+			"Mutual assured destruction rested on a threat: whoever started a nuclear war would also suffer unacceptable devastation. Fear of that outcome did not guarantee it could be avoided. The United States had clear nuclear superiority. It could not come out unharmed.",
+			"Essence of Decision shows how catastrophe could come without either leader wanting it: incomplete information, military routines, local decisions and reprisals chaining beyond anyone's control. In October 1962, war was avoided through decisions, negotiation and luck. Here, that combination broke."
+		],
+		"recap_template": "You let retaliation run on its own, raised the alert to its limit, and lost the chain of command.",
+		"condition": {
+      "flags":{
+			   "nuclear_use": true
+        },
+        "stats":{
+        }
+		},
+		"icon": "mushroom_cloud",
+		"recap_skip": [
+			"auto_retaliation",
+			"defcon2"
+		],
+		"background": "E01.png"
+	},
+	{
+		"id": "E02",
+		"title": "THE FEAR CAME TRUE",
+		"badge": "Secret · Satire",
+		"header": "OCTOBER 1962 · ALTERNATE OUTCOME",
+		"tagline": "The crisis ended. The enemy was closer than they thought.",
+		"body": [
+			"Communism was never close to taking over the United States. In 1962 the Communist Party USA was a marginal force, weakened by years of persecution, internal splits and lost members. Yet the fear of communist infiltration had taken up a disproportionate place in American politics for most of the postwar era.",
+			"In this timeline, that fear came true.",
+			"Your decisions during the crisis steadily weakened the American position, split the government and gave Moscow an influence no administration would have thought possible. What began as a negotiation to remove some missiles ended up shifting the balance of power inside the country itself.",
+			"The missile crisis ended. The revolution began."
+		],
+		"stamp": "One of the least likely outcomes. It took a very specific combination of decisions.",
+		"recap_template": "You drew a public line, conceded in public anyway, and let your authority run out.",
+		"condition": {
+      "flags":{
+          "soviet_access_dc": true,
+          "coalition_legalized": true
+      },
+       "stats":{}
+		},
+		"icon": "hammer_sickle",
+		"recap_skip": [
+			"public_ultimatum",
+			"turkey_public"
+		],
+		"background": "E02.png"
+	},
+	{
+		"id": "E04",
+		"title": "VICTORY AT ANY PRICE",
+		"badge": "Invasion",
+		"header": "OCTOBER 1962 · ALTERNATE OUTCOME",
+		"tagline": "The missiles are gone. So is everything that stood in the way.",
+		"body": [
+			"American forces landed in Cuba after days of air strikes. Havana fell. The missile sites were taken and the weapons shipped out under American guard. Casualties on all sides ran into the tens of thousands, and Cuba would stay occupied for years.",
+			"The invasion plans were real, and in October 1962 they had real support inside the government. What Washington did not know was that Soviet forces in Cuba also had tactical nuclear weapons, meant for exactly this situation. That only became public thirty years later.",
+			"In this timeline they were never fired. That was luck, not planning."
+		],
+		"recap_template": "You prepared the invasion, launched the strike, and did not call it back.",
+		"condition": {
+      "flags":{
+         "invasion_ready": true,
+         "strike_launched": true
+      },
+       "stats":{}
+		},
+		"icon": "helmet_palms",
+		"recap_skip": [
+			"invasion_ready",
+			"strike_launched"
+		],
+		"background": "E04.png"
+	},
+	{
+		"id": "E05",
+		"title": "CUBA DECIDES",
+		"badge": "Speculative",
+		"header": "OCTOBER 1962 · ALTERNATE OUTCOME",
+		"tagline": "The crisis ended. Havana settled it.",
+		"body": [
+			"Castro ordered the Soviet weapons out of Cuba in exchange for a formal guarantee of non-invasion and recognition of Cuban sovereignty. Moscow, left out of a deal it had started, withdrew without a word. Washington found itself negotiating with the man it had tried to overthrow eighteen months earlier.",
+			"Nothing like this happened. The real Castro was furious that Khrushchev negotiated over his head, learned of the agreement from the radio, and refused on-site inspections. The Brazilian channel to Havana existed, but it never carried an offer like this one.",
+			"It is the most speculative outcome in the game. It exists to ask a question the superpowers rarely asked in 1962: what did Cuba want?"
+		],
+		"stamp": "The most speculative outcome in the file.",
+		"recap_template": "You opened a channel to Havana, promised not to invade, and made no deal with Moscow over Castro's head.",
+		"condition": {
+      "flags":{"cuba_neutral_offer": true,
+      "non_invasion": true,
+      "turkey_secret": false,
+      "turkey_public": false
+    },
+    "stats":{
+      "escalation": {
+        "<=": 3
+      },
+      "diplomacy": {
+        ">=": 2
+      }
+
+    }
+		},
+		"icon": "star_triangle",
+		"recap_skip": [
+			"cuba_neutral_offer",
+			"non_invasion"
+		],
+		"background": "E05.png"
+	},
+	{
+		"id": "E10",
+		"title": "CRUCIFIED BY CUBA",
+		"badge": "Political collapse",
+		"header": "OCTOBER 1962 · ALTERNATE OUTCOME",
+		"tagline": "The crisis ended without war. The presidency did not survive it.",
+		"body": [
+			"War was avoided, but the missiles did not leave. The President had promised the country, on television, that they would. By Election Day the opposition had a single message, the cabinet was leaking against itself, and Congress stopped returning the White House's calls. Kennedy stayed in office. He no longer governed.",
+			"The danger was real. On October 23, on the Oval Office tapes, the Kennedy brothers agreed that if the President had done nothing, he would have been impeached. The midterm elections came nine days after the crisis ended.",
+			"In 1962 the promise was kept. Here, it wasn't."
+		],
+		"recap_template": "You made a public promise, lost the authority to keep it, and never got the missiles out.",
+		"condition": {
+      "flags":{
+          "public_ultimatum": true,
+          "soviet_withdrawal": false
+      },
+      "stats":{
+          "authority": {
+            "<=": 1
+          },
+          "escalation": {
+            "<=": 4
+          }
+      }
+
+		},
+		"icon": "empty_chair",
+		"recap_skip": [
+			"public_ultimatum"
+		],
+		"background": "E10.png"
+	},
+	{
+		"id": "E03",
+		"title": "THE GUNS OF OCTOBER",
+		"badge": "Conventional war",
+		"header": "OCTOBER 1962 · ALTERNATE OUTCOME",
+		"tagline": "Nobody pressed the button. Everyone went to war anyway.",
+		"body": [
+			"The strikes did not end the crisis. Soviet forces in Cuba fought back, Moscow moved on Berlin, and within days American and Soviet troops were in combat for the first time since 1945. No nuclear weapon had been used when this file was closed. Nobody could say for how long.",
+			"That October, Kennedy had been reading Barbara Tuchman's The Guns of August, about how the powers of 1914 slid into a war none of them had planned. He told his brother he would not follow a course that let someone write the same book about 1962.",
+			"Essence of Decision treats the military plans of 1962 as real options, prepared in detail and waiting. In this timeline, they were used as written."
+		],
+		"recap_template": "You let the escalation climb without a deal, and neither side found the way back.",
+		"condition": {
+      "flags":{
+        "soviet_withdrawal": false
+      },
+			"stats":{
+        "escalation": {
+            ">=": 5
+          }
+      }
+
+			
+		},
+		"icon": "crossed_rifles",
+		"recap_skip": [],
+		"background": "E03.png"
+	},
+	{
+		"id": "E06",
+		"title": "THIRTEEN DAYS",
+		"tagline": "The crisis ended. Almost nobody knew how.",
+		"header": "OCTOBER 1962 · HISTORICAL OUTCOME",
+		"body": [
+			"On October 28, Khrushchev announced on Radio Moscow that the missiles would be dismantled and shipped home. In public, the United States promised not to invade Cuba. In private, Robert Kennedy had told Ambassador Dobrynin that the Jupiter missiles in Turkey would be gone within months, on one condition: it could never be presented as part of the deal.",
+			"The secret held for more than twenty years. For a generation, the crisis was remembered as a showdown Washington won by standing firm.",
+			"Essence of Decision argues that no single explanation accounts for this outcome. It took a calculated choice, organizations that carried it out imperfectly, and men in a room who disagreed until the end. It also took luck. On October 27 a U-2 was shot down over Cuba. The retaliation was already planned. It was never ordered."
+		],
+		"recap_template": "You imposed a quarantine, promised not to invade, and made a promise that could never be made public.",
+		"badge": "Historical outcome",
+		"condition": {
+      "flags":{"soviet_withdrawal": true,
+      "turkey_secret": true,
+      "non_invasion": true,
+      "blockade": true
+      },
+			"stats":{}
+		},
+		"icon": "cargo_ship",
+		"recap_skip": [
+			"blockade",
+			"turkey_secret",
+			"non_invasion"
+		],
+		"background": "E06.png"
+	},
+	{
+		"id": "E07",
+		"title": "MISSILES FOR MISSILES",
+		"badge": "Public deal",
+		"header": "OCTOBER 1962 · ALTERNATE OUTCOME",
+		"tagline": "The crisis ended in public. The alliance paid for it.",
+		"body": [
+			"The Soviet missiles left Cuba. The American Jupiters left Turkey. Everyone knew why, because both governments said so. The world stepped back from the edge, and within days the argument moved to Ankara, Bonn and Paris: if Washington traded an ally's security under pressure, what else would it trade?",
+			"This was not a fantasy. On October 27 several members of the ExComm, and at moments Kennedy himself, thought a public trade was reasonable. The Jupiters were already obsolete. What stopped it was not strategy but politics: how it would look to the allies, and at home.",
+			"History took the same deal and made half of it secret."
+		],
+		"recap_template": "You accepted Khrushchev's public offer and ended the crisis on the radio.",
+		"condition": {
+      "flags":{     "soviet_withdrawal": true,
+      "turkey_public": true},
+      "stats":{}
+
+		},
+		"icon": "missile_swap",
+		"recap_skip": [
+			"turkey_public"
+		],
+		"background": "E07.png"
+	},
+	{
+		"id": "E09",
+		"title": "CHECKMATE IN BERLIN",
+		"badge": "Soviet strategic win",
+		"header": "OCTOBER 1962 · ALTERNATE OUTCOME",
+		"tagline": "The crisis ended in Cuba. It was never about Cuba.",
+		"body": [
+			"The missiles stayed long enough to matter. Moscow let the crisis cool and then raised the price somewhere else: West Berlin. With Washington unwilling to risk another confrontation so soon, the Western position in the city began to give way, one concession at a time.",
+			"Allison and Zelikow argue that Berlin was at the heart of Khrushchev's gamble. Kennedy thought so too: throughout the crisis he kept asking what Moscow would do in Berlin if the United States moved in Cuba.",
+			"In this timeline, Khrushchev got the answer he was looking for."
+		],
+		"recap_template": "You avoided a public commitment, never secured a withdrawal, and left Moscow room to collect elsewhere.",
+		"condition": {
+      "flags":{"soviet_withdrawal": false,
+      "public_ultimatum": false
+    },
+			"stats":{
+        "escalation": {
+        ">=": 2,
+        "<=": 4
+      },
+      "diplomacy": {
+        ">=": 2
+      }
+      }
+			
+		},
+		"icon": "chess_knight",
+		"recap_skip": [
+			"public_ultimatum"
+		],
+		"background": "E09.png"
+	},
+	{
+		"id": "E08",
+		"title": "THE NEW NORMAL",
+		"badge": "Missiles remain",
+		"header": "OCTOBER 1962 · ALTERNATE OUTCOME",
+		"tagline": "Nothing exploded. Nothing was settled.",
+		"body": [
+			"The crisis faded without a real settlement. The quarantine lapsed, the talks stalled, and nobody could say for certain what was still in Cuba. Within a year, Americans had learned to live with Soviet missiles ninety miles away, the way they had already learned to live with the ones in Siberia.",
+			"On the first day of the crisis, McNamara argued that the missiles did not really change the military balance: the Soviet Union could already hit the United States. Politically it was another matter. Kennedy had promised in public that this would not be tolerated.",
+			"This outcome is quieter than the others. Most real crises end this way."
+		],
+		"recap_template": "You avoided war and never forced a deal that could be checked.",
+		"condition": {"flags":{},"stats":{}},
+		"icon": "missile_palm",
+		"recap_skip": [],
+		"background": "E08.png"
+	}
+]

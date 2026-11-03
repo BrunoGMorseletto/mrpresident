@@ -1,0 +1,62 @@
+{
+    "ENDING_486c3d9a": {
+        "area": [
+            400,
+            90,
+            1280,
+            585
+        ],
+        "properties": "clear"
+    },
+    "ENDING_d1dd3f43": {
+        "area": [
+            640,
+            225,
+            640,
+            585
+        ],
+        "properties": "clear"
+    },
+    "start_34d6234b": {
+        "properties": "dbox"
+    },
+    "start_48694184": {
+        "properties": "dbox"
+    },
+    "start_57e70006": {
+        "properties": "dbox"
+    },
+    "start_6a0f72bf": {
+        "area": [
+            240,
+            225,
+            480,
+            180
+        ]
+    },
+    "start_7824451c": {
+        "properties": "dbox"
+    },
+    "start_8ab04d4c": {
+        "properties": "bottom_right"
+    },
+    "start_a170b500": {
+        "area": [
+            160,
+            675,
+            560,
+            225
+        ],
+        "clear_retain": true,
+        "properties": "dbox"
+    },
+    "start_f41f55d7": {
+        "area": [
+            1200,
+            360,
+            480,
+            225
+        ],
+        "properties": "dbox"
+    }
+}

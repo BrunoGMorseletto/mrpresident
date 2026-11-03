@@ -1,0 +1,11 @@
+{
+	"Intelligence":{},
+	"Excomm":{
+		"George Mcbundy":{
+			"unlock":{"scene":"D01"},
+			"description":{},
+			"image":{}, 
+		}
+	},
+	"State":{},
+}

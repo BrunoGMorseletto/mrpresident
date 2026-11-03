@@ -1,0 +1,34 @@
+{
+  "stance": {
+    "init": 0,
+    "min": -5,
+    "max": 5,
+    "visible": true,
+    "label": "HAWK / DOVE (positive = hawk)"
+  },
+  "intel": {
+    "init": 1,
+    "min": 0,
+    "max": 3
+  },
+  "diplomacy": {
+    "init": 1,
+    "min": 0,
+    "max": 3
+  },
+  "control": {
+    "init": 1,
+    "min": 0,
+    "max": 3
+  },
+  "escalation": {
+    "init": 0,
+    "min": 0,
+    "max": 7
+  },
+  "authority": {
+    "init": 2,
+    "min": 0,
+    "max": 3
+  }
+}
