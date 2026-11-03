@@ -290,6 +290,8 @@ define air_force = Character("U.S. AIR FORCE", image="/images/sprites/McGeorge B
 define rfk = Character("ROBERT F. KENNEDY",image="/images/sprites/rfk.png", kind=bubble, retain=True,  callback=type_sound)
 define rob = Character("ROBERT McNAMARA",image="/images/sprites/Robert McNamara.png", kind=bubble, retain=True,  callback=type_sound)
 define taylor = Character("GEN. MAXWELL TAYLOR",image="/images/sprites/General Maxwell Taylora.png", kind=bubble, retain=True,  callback=type_sound)
+define anderson = Character("ADM. GEORGE ANDERSON", kind=bubble, retain=True, callback=type_sound)
+define lemay = Character("GEN. CURTIS LeMAY", kind=bubble, retain=True, callback=type_sound)
 define navy = Character("U.S. NAVY", image="/images/sprites/McGeorge Bundy.png",callback=type_sound, kind=bubble,)
 define operator = Character("WHITE HOUSE OPERATOR", image="/images/sprites/McGeorge Bundy.png",callback=type_sound, kind=bubble)
 define counsel = Character("WHITE HOUSE COUNSEL", image="/images/sprites/McGeorge Bundy.png",callback=type_sound, kind=bubble)
@@ -578,9 +580,14 @@ label D11:
 
     scene bg_decisions at bg_size with  Dissolve(0.2)
 
-    show expression "robert mcnamara" at init_pos_decision
+    # T08: hawk (Navy) on the left, dove on the right. Anderson's sprite is optional until it exists.
+    if renpy.has_image("admiral george anderson"):
+        show expression "admiral george anderson" as hawk at duel_left
+    show expression "dean rusk" as dove at duel_right
 
-    rob "The Navy wants to intercept eight hundred miles out, beyond the range of Cuban jets. Pull the line in to five hundred and Khrushchev gets more hours to think before a ship has to stop."
+    anderson "Mr. President, the Navy has been running blockades since John Paul Jones. Eight hundred miles keeps my ships out of range of Cuban jets. Pull the line in and you put sailors under their guns."
+
+    dean "The British ambassador made a point last night. Every hour we give Khrushchev is an hour he can use to turn his ships around. Five hundred miles gives him those hours."
 
     $ card_a = events[current_scene][cards_key][a_card_key]
     $ card_b = events[current_scene][cards_key][b_card_key]
@@ -650,9 +657,13 @@ label D14:
 
     scene bg_decisions at bg_size with  Dissolve(0.2)
 
-    show expression "robert mcnamara" at init_pos_decision
+    # T08: hawk on the left, dove on the right
+    show expression "general maxwell taylor" as hawk at duel_left
+    show expression "mcgeorge bundy" as dove at duel_right
 
-    rob "If they shoot down one of our planes, the Air Force wants standing permission to hit the SAM site that fired, without calling you first. Otherwise every response waits for your order, however long that takes."
+    taylor "If they shoot down one of our planes, the pilots need to know the answer is already given. Standing permission to hit the SAM site that fired. No waiting for Washington."
+
+    bundy "Then the decision to start shooting gets made by a missile crew in Cuba and a squadron leader in Florida. Every response should come through you, however long that takes."
 
     $ card_a = events[current_scene][cards_key][a_card_key]
     $ card_b = events[current_scene][cards_key][b_card_key]
@@ -1022,9 +1033,14 @@ label D23:
 
     scene bg_decisions at bg_size with  Dissolve(0.2)
 
-    show expression "robert mcnamara" at init_pos_decision
+    # T08: hawk on the left, dove on the right. LeMay's sprite is optional until it exists.
+    if renpy.has_image("general curtis lemay"):
+        show expression "general curtis lemay" as hawk at duel_left
+    show expression "robert mcnamara" as dove at duel_right
 
-    rob "The Chiefs are asking whether to stand down. Some of them think we just gave something away. They want full readiness until the last missile is at sea."
+    lemay "We have been had. It's the greatest defeat in our history. They'll stall and hide what's left. I say we hit them Monday anyway, or at least keep every bomber up until the last missile is at sea."
+
+    rob "Khrushchev just gave us what we asked for. If the bombers stay up, Moscow reads it as a threat, and someone on our side reads it as permission. Stand them down."
 
     $ card_a = events[current_scene][cards_key][a_card_key]
     $ card_b = events[current_scene][cards_key][b_card_key]

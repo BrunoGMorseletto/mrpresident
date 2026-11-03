@@ -1727,6 +1727,8 @@ init python:
         "ROBERT McNAMARA": "Secretary of Defense",
         "McGEORGE BUNDY": "National Security Advisor",
         "GEN. MAXWELL TAYLOR": "Chairman, Joint Chiefs of Staff",
+        "ADM. GEORGE ANDERSON": "Chief of Naval Operations",
+        "GEN. CURTIS LeMAY": "Chief of Staff, U.S. Air Force",
     }
 
 style bubble_what:

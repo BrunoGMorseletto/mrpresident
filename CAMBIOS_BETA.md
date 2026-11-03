@@ -119,3 +119,6 @@ Después correr **Lint** (launcher de Ren'Py → Check Script) y jugar las rutas
 - D07 ahora tiene dos asesores en pantalla. Taylor, a la izquierda y espejado para que mire hacia el centro, pide el ataque. McNamara, a la derecha, defiende la cuarentena. Cada uno dice su línea antes de las cartas.
 - Hay dos transforms nuevos, `duel_left` y `duel_right`. Bruno: ajustar `xpos` a ojo.
 - Como las dos líneas son nuevas, los globos salen en la posición por defecto. Hay que ubicarlos con el editor de bubbles (Shift+B).
+- Pasan a ser debates D11 (Anderson contra Rusk), D14 (Taylor contra Bundy) y D23 (LeMay contra McNamara). Hay dos personajes nuevos, `anderson` y `lemay`, con su cargo en `SPEAKER_TITLES`.
+- Anderson y LeMay todavía no tienen sprite. El código los muestra solo si existe la imagen (`renpy.has_image`). Cuando estén, van a `images/sprites/` como `Admiral George Anderson.png` y `General Curtis LeMay.png`, y aparecen solos.
+- Las 6 líneas nuevas necesitan ubicar los globos con Shift+B.
