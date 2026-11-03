@@ -452,12 +452,13 @@ style custom_menu_button_text:
 ## Endings Menu Screen ############################################################
 image ending_clipboard = "images/ending.png"
 
-screen endings_menu():
+screen endings_menu(new_ending=None, after_run=False):
     tag menu
     for input_key in CHEAT_CODE:
         key ("K_"+input_key) action Function(cheat_key, input_key)
 
-    default current = None
+    default current = new_ending
+    default hint = None
 
     # --- Background: the selected ending's image, or plain black ---
     if current is not None:
@@ -549,8 +550,10 @@ screen endings_menu():
                 if got:
                     action SetScreenVariable("current", e)
                 else:
+                    # locked: no file, but hovering shows a clue
                     action NullAction()
-                    sensitive False
+                    hovered SetScreenVariable("hint", e.get("hint"))
+                    unhovered SetScreenVariable("hint", None)
 
                 if got:
                     image("/images/endings/" + e["icon"].lower() +".png"):
@@ -569,14 +572,36 @@ screen endings_menu():
                 elif got:
                     add Solid("#ffffff22") at ending_hover
 
-    text "%d / %d" % (len(persistent.endings_seen), len(endings)):
-        xpos 40
-        ypos 40
-        size 36
+    # --- Left column: the goal, the count, and clues for locked files ---
+    vbox:
+        pos (40, 40)
+        xsize 480
+        spacing 16
+        text "OUTCOMES FOUND" size 30 color "#d8d0c0"
+        text "%d / %d" % (len(persistent.endings_seen), len(endings)) size 72 color "#ffffff"
+        text debrief_data["goal_line"] size 26 color "#d8d0c0"
+        if hint:
+            null height 30
+            text "LOCKED FILE" size 26 color "#c81e1e"
+            text hint size 28 color "#ffffff" italic True
 
-    textbutton _("Return"):
-        style "return_button"
-        action Return()
+    # --- The ending you just reached gets a NEW stamp ---
+    if new_ending is not None and current is new_ending:
+        text "NEW" size 64 color "#c81e1e" bold True at Transform(rotate=-12):
+            pos (1300, 120)
+
+    if after_run:
+        vbox:
+            xalign 0.97
+            yalign 0.92
+            spacing 14
+            textbutton "NEW CRISIS" action Start() text_size 40
+            textbutton "CODEX" action ShowMenu("codex") text_size 40
+            textbutton "MAIN MENU" action MainMenu(confirm=False) text_size 40
+    else:
+        textbutton _("Return"):
+            style "return_button"
+            action Return()
 
 transform ending_fade:
     alpha 0.0
@@ -1988,7 +2013,7 @@ screen decision_folder(card_a, card_b, seconds=0, default_card=None):
         use folder_card(card_a, "A", card_zoom, card_w if swap else 0)
         use folder_card(card_b, "B", card_zoom, 0 if swap else card_w)
     if seconds > 0:
-        timer 0.1 repeat True action If(left <= 0.1, true=Return(default_card), false=[Function(crisis_tick, left), SetScreenVariable("left", left - 0.1)])
+        timer 0.1 repeat True action If(left <= 0.1, true=[Function(note_timeout), Return(default_card)], false=[Function(crisis_tick, left), SetScreenVariable("left", left - 0.1)])
         use crisis_bar(left, seconds)
 
 screen crisis_bar(left, total):
@@ -2253,3 +2278,136 @@ screen newsreel_frame(fr):
     textbutton "SKIP NEWS" action Return("skip") align (0.97, 0.03) text_font "gui/fonts/VT323-Regular.ttf" text_size 30
     timer fr.get("seconds", 9) action Return("next")
     key "dismiss" action Return("next")
+
+
+#### END-OF-RUN REPORT (debrief) #########################################
+# Background: gui/debrief/folder.png (1672x941). Coordinates below are in that image's pixels,
+# scaled to the screen by DB_Z. Bruno: nudge DB_* rectangles if the text does not sit on the pages.
+define DB_Z = 1920 / 1672.0
+define DB_TABS = [(440, 35, 235, 57), (680, 35, 220, 57), (905, 35, 210, 57)]   # x, y, w, h of each tab
+define DB_LEFT = (285, 215, 520, 615)      # left page text area (starts below the paper clip)
+define DB_RIGHT = (880, 140, 520, 690)     # right page text area
+define DB_STAMP = (1245, 120, 165, 95)     # red stamp, top right of the right page
+define DB_TAB_NAMES = ["YOUR CRISIS", "WHAT REALLY HAPPENED", "THREE LENSES"]
+# the tab art is light on the first tab and dark on the other two: text color per tab (normal, selected)
+define DB_TAB_INK = [("#2a1d14", "#a01818"), ("#d8c8a8", "#ffd27a"), ("#d8c8a8", "#ffd27a")]
+
+init python:
+    def db(r):
+        return tuple(int(v * DB_Z) for v in r)
+
+style db_ink is default:
+    font "gui/fonts/VT323-Regular.ttf"
+    color "#2a1d14"
+    size 30
+style db_head is db_ink:
+    size 40
+    color "#5a1010"
+style db_small is db_ink:
+    size 26
+    color "#4a3a2a"
+
+screen debrief(ending, d):
+    modal True
+    default tab = 0
+    add "gui/debrief/folder.png" xysize (config.screen_width, config.screen_height)
+
+    # tabs
+    for i, name in enumerate(DB_TAB_NAMES):
+        $ tx, ty, tw, th = db(DB_TABS[i])
+        button:
+            pos (tx, ty)
+            xysize (tw, th)
+            background (None if tab == i else Solid("#00000055"))
+            hover_background Solid("#ffffff22")
+            action SetScreenVariable("tab", i)
+            text name style "db_ink" size (26 if tab == i else 24) align (0.5, 0.6) color DB_TAB_INK[i][1 if tab == i else 0] underline (tab == i)
+
+    # stamp: the ending's badge
+    $ sx, sy, sw, sh = db(DB_STAMP)
+    fixed:
+        pos (sx, sy)
+        xysize (sw, sh)
+        text ending["badge"].upper() style "db_ink" size 24 color "#7a0a0a" align (0.5, 0.5) text_align 0.5 xsize sw - 10 at Transform(rotate=-4)
+
+    $ lx, ly, lw, lh = db(DB_LEFT)
+    $ rx, ry, rw, rh = db(DB_RIGHT)
+
+    if tab == 0:
+        # YOUR CRISIS
+        vbox:
+            pos (lx, ly)
+            xsize lw
+            spacing 24
+            text "AFTER-ACTION REPORT" style "db_small"
+            text ending["title"] style "db_head" size 48
+            text d["recap"] style "db_ink" size 34
+        vbox:
+            pos (rx, ry + 120)
+            xsize rw
+            spacing 22
+            text "WHAT TIPPED IT" style "db_small"
+            for f in d["fragments"]:
+                text "- " + f style "db_ink"
+
+    elif tab == 1:
+        # WHAT REALLY HAPPENED
+        $ rows = d["history"]
+        vbox:
+            pos (lx, ly)
+            xsize lw
+            spacing 20
+            text "WHAT REALLY HAPPENED" style "db_head"
+            if d["followed"]:
+                text "Your October followed 1962 closely." style "db_ink"
+                text "In 1962: what nobody in Washington knew was that nuclear warheads were already in Cuba, some of them aimed at the beaches." style "db_ink"
+            for scene, title, fact in rows[:3]:
+                vbox:
+                    spacing 4
+                    text "You: " + title style "db_small"
+                    text "In 1962: " + fact style "db_ink" size 28
+        vbox:
+            pos (rx, ry + 120)
+            xsize rw
+            spacing 20
+            for scene, title, fact in rows[3:]:
+                vbox:
+                    spacing 4
+                    text "You: " + title style "db_small"
+                    text "In 1962: " + fact style "db_ink" size 28
+
+    else:
+        # THREE LENSES (Allison & Zelikow)
+        vbox:
+            pos (lx, ly)
+            xsize lw
+            spacing 26
+            text "THREE LENSES" style "db_head"
+            for lk in ("rational", "organizational", "governmental"):
+                $ lens = debrief_data["lenses"][lk]
+                hbox:
+                    spacing 24
+                    text str(d["lenses"][lk]) style "db_head" size 64 color ("#a01818" if d["dominant"] == lk else "#2a1d14") min_width 70
+                    vbox:
+                        yalign 0.5
+                        text lens["name"] style "db_ink" size 30
+                        text lens["line"] style "db_small"
+        vbox:
+            pos (rx, ry + 120)
+            xsize rw
+            spacing 24
+            if d["dominant"]:
+                text debrief_data["lenses"][d["dominant"]]["dominant"] style "db_ink"
+            else:
+                text "No single lens explains your crisis. Allison's point exactly: each one sees something the others miss." style "db_ink"
+            if d["timeouts"]:
+                text debrief_data["timeout_line"] % d["timeouts"] style "db_ink" color "#a01818"
+            textbutton "Read the codex file: Three Ways to Explain a Decision" action ShowMenu("codex") text_style "db_small" text_underline True
+
+    textbutton "CONTINUE":
+        align (0.97, 0.97)
+        text_font "gui/fonts/VT323-Regular.ttf"
+        text_size 42
+        text_color "#e8e2d6"
+        text_hover_color "#ffffff"
+        action Return()
