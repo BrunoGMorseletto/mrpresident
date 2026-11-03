@@ -24,6 +24,22 @@ transform init_pos_decision:
     ypos 135
     alpha 0.0
     ease 0.5 alpha 1.0
+transform duel_left:
+    # T08: adviser on the left, mirrored to face the other one (Bruno: adjust xpos)
+    zoom 0.25
+    xanchor 0.5
+    xpos 800
+    ypos 135
+    xzoom -1.0
+    alpha 0.0
+    ease 0.5 alpha 1.0
+transform duel_right:
+    zoom 0.25
+    xanchor 0.5
+    xpos 1200
+    ypos 135
+    alpha 0.0
+    ease 0.5 alpha 1.0
 transform init_pos_crisis:
     zoom 0.55
     align (0.5, -0.05)
@@ -460,9 +476,13 @@ label D07:
 
     scene bg_decisions at bg_size with  Dissolve(0.2)
 
-    show expression "robert mcnamara" at init_pos_decision
+    # T08: two advisers, two positions. Hawk on the left (mirrored so he faces the room), dove on the right.
+    show expression "general maxwell taylor" as hawk at duel_left
+    show expression "robert mcnamara" as dove at duel_right
 
-    rob "The Air Force says a strike gets most of the missiles. Most. They won't promise all of them, and every one left standing is a missile that can still be fired."
+    taylor "Mr. President, every day we wait, more of those sites are ready to fire. Hit them now, while they're unfinished. The Chiefs are unanimous."
+
+    rob "The Air Force says a strike gets most of the missiles. Most. Every one left standing can still be fired. A quarantine keeps the strike in reserve. We can always escalate. We can't take a bombing back."
 
     $ card_a = events[current_scene][cards_key][a_card_key]
     $ card_b = events[current_scene][cards_key][b_card_key]

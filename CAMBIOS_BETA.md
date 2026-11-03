@@ -111,3 +111,11 @@ Después correr **Lint** (launcher de Ren'Py → Check Script) y jugar las rutas
 - Audio del 22/10: `audio/jfk_1962-10-22_excerpt.mp3`. Si no existe, no suena nada y el cuadro queda igual.
 
 **Códex.** Entrada nueva en State: "The Public" (STA-10). Se desbloquea con D12.
+
+---
+
+# T08: halcón y paloma en D07
+
+- D07 ahora tiene dos asesores en pantalla. Taylor, a la izquierda y espejado para que mire hacia el centro, pide el ataque. McNamara, a la derecha, defiende la cuarentena. Cada uno dice su línea antes de las cartas.
+- Hay dos transforms nuevos, `duel_left` y `duel_right`. Bruno: ajustar `xpos` a ojo.
+- Como las dos líneas son nuevas, los globos salen en la posición por defecto. Hay que ubicarlos con el editor de bubbles (Shift+B).
