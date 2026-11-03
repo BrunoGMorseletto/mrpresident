@@ -31,7 +31,7 @@ transform duel_left:
     zoom 0.25
     xanchor 0.5
     xpos 680        # both advisers sit left of center so the speech bubble (top right) does not cover them
-    ypos 135
+    ypos 165        # lower than single scenes: the table edge is lower toward the center
     xzoom -1.0
     alpha 0.0
     ease 0.5 alpha 1.0
@@ -41,7 +41,7 @@ transform duel_right(flip=False):
     zoom 0.25
     xanchor 0.5
     xpos 1000
-    ypos 135
+    ypos 165
     alpha 0.0
     ease 0.5 alpha 1.0
 transform init_pos_crisis(flip=False):
@@ -154,8 +154,8 @@ init python:
     def ending_paragraphs(ending):
         """Ending body, with an opening paragraph that depends on how the player got there (intro_variants)."""
         # a body paragraph can be a string, or {"if": ..., "text": ...} shown only when its condition holds
-        paras = [b["text"] if isinstance(b, dict) else b for b in ending["body"]
-                 if not isinstance(b, dict) or check_trigger(b.get("if", {}))]
+        paras = [b["text"] if hasattr(b, "keys") else b for b in ending["body"]
+                 if not hasattr(b, "keys") or check_trigger(b.get("if", {}))]
         if ending.get("intro_variants"):
             intro = pick_variant({"variants": ending["intro_variants"]})
             if intro.get("text"):
@@ -163,8 +163,8 @@ init python:
         return paras
     def gallery_paragraphs(ending):
         """Body for the Endings menu (outside a run): conditional paragraphs marked "gallery": false are left out."""
-        return [b["text"] if isinstance(b, dict) else b for b in ending["body"]
-                if not isinstance(b, dict) or b.get("gallery", True)]
+        return [b["text"] if hasattr(b, "keys") else b for b in ending["body"]
+                if not hasattr(b, "keys") or b.get("gallery", True)]
     def note_timeout():
         if current_scene not in timed_out:
             timed_out.append(current_scene)

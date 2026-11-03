@@ -395,34 +395,38 @@ screen codex():
             text CODEX_TABS[codex_tab]["label"].upper() style "codex_text" size cz(34) color "#7a2316" yalign 1.0
             text ("%d/%d" % (got, total)) style "codex_text" size cz(28) xalign 1.0 yalign 1.0
 
-        ## ---- left page: index on the ruled lines ----
-        for i, eid in enumerate(page_ids):
-            $ rx, ry, rang = codex_row(2 + i, CODEX_LIST_W, CODEX_ROW_H)
-            $ rtitle = CODEX_INDEX[eid][0]
-            $ ropen = codex_unlocked(eid)
-            fixed at codex_rot(rx, ry, rang):
-                xysize (cz(CODEX_LIST_W), cz(CODEX_ROW_H))
-                button:
+        if CODEX_TABS[codex_tab]["label"] != "Calendar":
+            ## ---- left page: index on the ruled lines ----
+            for i, eid in enumerate(page_ids):
+                $ rx, ry, rang = codex_row(2 + i, CODEX_LIST_W, CODEX_ROW_H)
+                $ rtitle = CODEX_INDEX[eid][0]
+                $ ropen = codex_unlocked(eid)
+                fixed at codex_rot(rx, ry, rang):
                     xysize (cz(CODEX_LIST_W), cz(CODEX_ROW_H))
-                    background (Solid("#9a2a1c2e") if eid == codex_sel else None)
-                    hover_background Solid("#0000001c")
-                    action Function(codex_select, eid)
-                    if ropen:
-                        if eid in persistent.codex_new:
-                            add Solid("#c0392b") xysize (cz(9), cz(9)) xpos cz(4) yalign .5
-                        $ rs = codex_fit(codex_esc(rtitle), "codex_text", cz(CODEX_LIST_W - 40), cz(CODEX_ROW_H), cz(27), cz(15))
-                        text codex_esc(rtitle) style "codex_text" size rs xpos cz(22) yalign .5
-                    else:
-                        add Solid("#1c1410") xysize (int(cz(CODEX_LIST_W - 60) * (0.35 + 0.65 * codex_frac(eid, 1))), cz(15)) xpos cz(22) yalign .5
+                    button:
+                        xysize (cz(CODEX_LIST_W), cz(CODEX_ROW_H))
+                        background (Solid("#9a2a1c2e") if eid == codex_sel else None)
+                        hover_background Solid("#0000001c")
+                        action Function(codex_select, eid)
+                        if ropen:
+                            if eid in persistent.codex_new:
+                                add Solid("#c0392b") xysize (cz(9), cz(9)) xpos cz(4) yalign .5
+                            $ rs = codex_fit(codex_esc(rtitle), "codex_text", cz(CODEX_LIST_W - 40), cz(CODEX_ROW_H), cz(27), cz(15))
+                            text codex_esc(rtitle) style "codex_text" size rs xpos cz(22) yalign .5
+                        else:
+                            add Solid("#1c1410") xysize (int(cz(CODEX_LIST_W - 60) * (0.35 + 0.65 * codex_frac(eid, 1))), cz(15)) xpos cz(22) yalign .5
 
-        ## ---- left page: pager on the last line ----
-        if pages > 1:
-            $ px, py, pang = codex_row(16, CODEX_LIST_W, CODEX_ROW_H)
-            fixed at codex_rot(px, py, pang):
-                xysize (cz(CODEX_LIST_W), cz(CODEX_ROW_H))
-                textbutton "<" action Function(codex_set_page, codex_page - 1) sensitive (codex_page > 0) xalign 0.0 yalign .5 text_style "codex_arrow_text" text_size cz(30)
-                text ("%d / %d" % (codex_page + 1, pages)) style "codex_text" size cz(26) align (.5, .5)
-                textbutton ">" action Function(codex_set_page, codex_page + 1) sensitive (codex_page < pages - 1) xalign 1.0 yalign .5 text_style "codex_arrow_text" text_size cz(30)
+            ## ---- left page: pager on the last line ----
+            if pages > 1:
+                $ px, py, pang = codex_row(16, CODEX_LIST_W, CODEX_ROW_H)
+                fixed at codex_rot(px, py, pang):
+                    xysize (cz(CODEX_LIST_W), cz(CODEX_ROW_H))
+                    textbutton "<" action Function(codex_set_page, codex_page - 1) sensitive (codex_page > 0) xalign 0.0 yalign .5 text_style "codex_arrow_text" text_size cz(30)
+                    text ("%d / %d" % (codex_page + 1, pages)) style "codex_text" size cz(26) align (.5, .5)
+                    textbutton ">" action Function(codex_set_page, codex_page + 1) sensitive (codex_page < pages - 1) xalign 1.0 yalign .5 text_style "codex_arrow_text" text_size cz(30)
+
+        else:
+            use codex_calendar(ids)
 
         ## ---- right page: the selected file ----
         if sel:
@@ -524,3 +528,69 @@ screen codex():
 ##        linear 0.9 alpha 0.10
 ##        repeat
 ## ---------------------------------------------------------------------------
+
+
+## ---- Calendar tab: a real October 1962 month grid ---------------------------------
+## October 1, 1962 was a Monday. Days with a file (CAL-14 ... CAL-28) are clickable;
+## the thirteen days of the crisis (16-28) are tinted. "Before" and "After" sit below the grid.
+init python:
+    def codex_calendar_days(ids):
+        days = {}
+        for eid in ids:
+            tail = eid.split("-")[-1]
+            if tail.isdigit() and int(tail) > 0:
+                days[int(tail)] = eid
+        return days
+
+screen codex_calendar(ids):
+    $ days = codex_calendar_days(ids)
+    $ cell_w = CODEX_LIST_W / 7.0
+
+    ## weekday header
+    $ rx, ry, rang = codex_row(2, CODEX_LIST_W, CODEX_ROW_H)
+    fixed at codex_rot(rx, ry, rang):
+        xysize (cz(CODEX_LIST_W), cz(CODEX_ROW_H))
+        for c, wd in enumerate(["MO", "TU", "WE", "TH", "FR", "SA", "SU"]):
+            text wd style "codex_text" size cz(22) color "#7a2316" xpos cz(int(c * cell_w + cell_w / 2)) xanchor 0.5 yalign 0.6
+
+    ## five weeks, two ruled lines each so the cells are tall enough to click
+    for w in range(5):
+        $ rx, ry, rang = codex_row(4 + w * 2, CODEX_LIST_W, CODEX_ROW_H * 2)   # a week spans two ruled lines
+        fixed at codex_rot(rx, ry, rang):
+            xysize (cz(CODEX_LIST_W), cz(CODEX_ROW_H * 2))
+            for c in range(7):
+                $ d = w * 7 + c + 1
+                if d <= 31:
+                    fixed:
+                        xpos cz(int(c * cell_w))
+                        xysize (cz(int(cell_w)) - 2, cz(CODEX_ROW_H * 2) - 4)
+                        if 16 <= d <= 28:
+                            add Solid("#a02a1e1f")
+                        if d in days:
+                            $ eid = days[d]
+                            $ dopen = codex_unlocked(eid)
+                            button:
+                                xfill True
+                                yfill True
+                                background (Solid("#9a2a1c55") if eid == codex_sel else None)
+                                hover_background Solid("#0000002a")
+                                action Function(codex_select, eid)
+                                text str(d) style "codex_text" size cz(30) align (.5, .5) color ("#2a1d14" if dopen else "#9a8a78")
+                                if dopen and eid in persistent.codex_new:
+                                    add Solid("#c0392b") xysize (cz(8), cz(8)) align (.9, .15)
+                        else:
+                            text str(d) style "codex_text" size cz(24) align (.5, .5) color "#8f7f68"
+
+    ## before / after
+    for line, eid, label in [(14, "CAL-00", "< BEFORE OCTOBER"), (15, "CAL-AFTER", "AFTER OCTOBER >")]:
+        if eid in ids:
+            $ rx, ry, rang = codex_row(line, CODEX_LIST_W, CODEX_ROW_H)
+            fixed at codex_rot(rx, ry, rang):
+                xysize (cz(CODEX_LIST_W), cz(CODEX_ROW_H))
+                button:
+                    xfill True
+                    yfill True
+                    background (Solid("#9a2a1c2e") if eid == codex_sel else None)
+                    hover_background Solid("#0000001c")
+                    action Function(codex_select, eid)
+                    text label style "codex_text" size cz(26) xpos cz(22) yalign .5 color ("#2a1d14" if codex_unlocked(eid) else "#9a8a78")

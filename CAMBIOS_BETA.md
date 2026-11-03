@@ -173,3 +173,12 @@ Después correr **Lint** (launcher de Ren'Py → Check Script) y jugar las rutas
 - **Informe:** se sacó el sello rojo, tanto el texto como el dibujo de `folder.png`.
 - **NEW CRISIS:** usa `Jump("start")`. `Start()` solo anda desde el menú principal, y por eso crasheaba.
 - **Intro:** las esperas después de cada línea bajan a 2 s.
+
+---
+
+# Segunda ronda de prueba
+
+- **Crash en E08** ("Character expects its what argument to be a string"): en el store de Ren'Py, `dict` es `RevertableDict`, así que `isinstance(b, dict)` daba falso con los datos del JSON. Ahora se usa `hasattr(b, "keys")`.
+- **Cartas en los debates:** la carta que defiende el asesor de la izquierda queda a la izquierda (`duel_left_card` en `events.json`: D07, D11, D14 y D23). En el resto de las decisiones sigue siendo al azar.
+- **Asesores en los debates:** bajan a `ypos 165` para que no floten sobre la mesa.
+- **Pestaña Calendar del códex:** es un calendario de octubre de 1962 (screen `codex_calendar`). Los días con archivo se pueden clickear, los trece días de la crisis van sombreados, y "Before" y "After" quedan abajo.

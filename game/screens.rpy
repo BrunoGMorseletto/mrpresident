@@ -2006,7 +2006,8 @@ screen decision_folder(card_a, card_b, seconds=0, default_card=None):
     default left = seconds
     # T09: which card goes on the left is random, so players have to read them.
     # IDs A/B never change (endings and timers use them), only the position on screen.
-    default swap = renpy.random.random() < 0.5
+    # In two-adviser scenes the hawk's card sits on the hawk's side (duel_left_card); elsewhere it is random.
+    default swap = (events[current_scene]["duel_left_card"] == "B") if events.get(current_scene, {}).get("duel_left_card") else (renpy.random.random() < 0.5)
     $ card_zoom = 0.45
     $ card_w = int(CARD_IMG_W * card_zoom)
     fixed at folder_fade:

@@ -278,7 +278,8 @@
   "in_1962": {
    "choice": "B",
    "text": "Kennedy chose the quarantine on October 20. The air strike stayed ready, in reserve."
-  }
+  },
+  "duel_left_card": "A"
  },
  "D08": {
   "date": "OCT 19, 1962",
@@ -471,7 +472,8 @@
   "in_1962": {
    "choice": "A",
    "text": "Kennedy pulled the line in after talking with the British ambassador. The Soviet missile ships had already turned back."
-  }
+  },
+  "duel_left_card": "B"
  },
  "D12": {
   "date": "OCT 22, 1962",
@@ -601,7 +603,8 @@
   "in_1962": {
    "choice": "A",
    "text": "The ExComm agreed to retaliate if a U-2 was shot down. On October 27 one was, and Kennedy did not order the strike."
-  }
+  },
+  "duel_left_card": "A"
  },
  "D15": {
   "date": "OCT 24, 1962",
@@ -1487,7 +1490,8 @@
   "in_1962": {
    "choice": "B",
    "text": "The alert stayed up until November. LeMay wanted to attack anyway."
-  }
+  },
+  "duel_left_card": "B"
  },
  "S01": {
   "date": "OCT 28, 1962",
