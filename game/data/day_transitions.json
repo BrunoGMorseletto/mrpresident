@@ -9,7 +9,7 @@
 					"if": {},
 					"headline": "YANKEES TAKE SERIES IN SEVENTH GAME",
 					"deck": "Terry's shutout beats Giants 1-0 in San Francisco",
-					"photo": "rally"
+					"photo": "baseball"
 				}
 			]
 		},
@@ -31,7 +31,7 @@
 					"if": {},
 					"headline": "GROMYKO CALLS AT WHITE HOUSE",
 					"deck": "Soviet foreign minister and President discuss Berlin",
-					"photo": "rally"
+					"photo": "gromyko"
 				}
 			]
 		},
@@ -53,7 +53,7 @@
 					"if": {},
 					"headline": "PRESIDENT CUTS TRIP SHORT WITH A COLD",
 					"deck": "White House: \"slight upper respiratory infection\"",
-					"photo": "rally"
+					"photo": "cold"
 				}
 			]
 		},
@@ -64,7 +64,7 @@
 					"if": {},
 					"headline": "UNUSUAL ACTIVITY AT PENTAGON, STATE DEPT.",
 					"deck": "Officials decline comment on weekend meetings",
-					"photo": "destroyer"
+					"photo": "pentagon_night"
 				}
 			]
 		},
@@ -128,7 +128,7 @@
 					},
 					"headline": "U.S. PLANES STRIKE CUBA",
 					"deck": "Pentagon confirms raids on missile sites; U Thant pleads for restraint",
-					"photo": "destroyer"
+					"photo": "strike"
 				},
 				{
 					"if": {
@@ -136,7 +136,7 @@
 					},
 					"headline": "NAVY STOPS SOVIET SHIP AT QUARANTINE LINE",
 					"deck": "U Thant appeals to both powers for talks",
-					"photo": "destroyer"
+					"photo": "boarding"
 				},
 				{
 					"if": {
@@ -144,7 +144,7 @@
 					},
 					"headline": "SOVIET FREIGHTER CROSSES LINE UNCHALLENGED",
 					"deck": "U Thant appeals to both powers for talks",
-					"photo": "destroyer"
+					"photo": "freighter"
 				},
 				{
 					"if": {},
@@ -169,7 +169,7 @@
 					"if": {},
 					"headline": "CUBAN SITES BURN; MOSCOW SILENT",
 					"deck": "Fleet holds offshore as world waits for Soviet reply",
-					"photo": "destroyer"
+					"photo": "sam_strike"
 				}
 			]
 		},
@@ -188,7 +188,7 @@
 					"if": {},
 					"headline": "STEVENSON SHOWS U.N. PHOTOS OF MISSILE SITES",
 					"deck": "Work on bases continues, Washington says",
-					"photo": "television"
+					"photo": "un_photos"
 				}
 			]
 		},
@@ -201,7 +201,7 @@
 					},
 					"headline": "U.S. PLANES HIT CUBAN SITE AFTER U-2 DOWNED",
 					"deck": "Moscow warns of 'grave consequences'",
-					"photo": "destroyer"
+					"photo": "sam_strike"
 				},
 				{
 					"if": {
@@ -209,7 +209,7 @@
 					},
 					"headline": "WASHINGTON ACCEPTS SOVIET SWAP OFFER",
 					"deck": "Missiles in Turkey to go; allies demand explanations",
-					"photo": "television"
+					"photo": "jupiter"
 				},
 				{
 					"if": {
@@ -217,7 +217,7 @@
 					},
 					"headline": "U.S. REJECTS MOSCOW'S TURKEY OFFER",
 					"deck": "U-2 lost over Cuba; pilot missing",
-					"photo": "television"
+					"photo": "u2"
 				},
 				{
 					"if": {},

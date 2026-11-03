@@ -68,3 +68,11 @@ Después correr **Lint** (launcher de Ren'Py → Check Script) y jugar las rutas
 - **T14** (`script.rpy`, `label ENDING`): al terminar el expediente sale "END OF FILE" con el conteo de finales encontrados.
 - **T18** (`events.json`, C03): con represalia automática, el timer baja a 15 s (antes quedaba igual, en 30).
 - **T19**: en D01 decía "could... but They could". Corregido. El resto del texto coincide con el diseño y no tiene errores de tipeo.
+
+---
+
+# Imágenes nuevas
+
+- `images/cutscenes/`: los 5 cuadros de la cutscene nuclear.
+- `images/news/`: 11 fotos de diario. En `day_transitions.json`, cada titular apunta ahora a su foto. Siguen con las fotos viejas: OCT 17 y 19 (`rally`, que corresponde), OCT 22, 23 y 27 "WORLD WAITS" (`television`), "BOMBERS ON ALERT" y "MARINES LAND" (`destroyer`).
+- La caja de foto del diario es casi 16:9 y las fotos son 4:3. Con `fit "cover"` se recortan arriba y abajo: revisar que no se corte nada importante.
