@@ -13,12 +13,14 @@ transform pos:
 transform bg_size:
     xsize 1920
     ysize 1080
-transform init_pos_despacho:
+transform init_pos_despacho(flip=False):
+    xzoom (-1.0 if flip else 1.0)
     zoom 0.55
     align (0.5, -0.26)
     alpha 0.0
     ease 0.5 alpha 1.0
-transform init_pos_decision:
+transform init_pos_decision(flip=False):
+    xzoom (-1.0 if flip else 1.0)
     zoom 0.25
     xpos 950
     ypos 135
@@ -33,14 +35,17 @@ transform duel_left:
     xzoom -1.0
     alpha 0.0
     ease 0.5 alpha 1.0
-transform duel_right:
+transform duel_right(flip=False):
+    # flip=True for sprites that already look to the right (Rusk), so both advisers face each other
+    xzoom (-1.0 if flip else 1.0)
     zoom 0.25
     xanchor 0.5
     xpos 1200
     ypos 135
     alpha 0.0
     ease 0.5 alpha 1.0
-transform init_pos_crisis:
+transform init_pos_crisis(flip=False):
+    xzoom (-1.0 if flip else 1.0)
     zoom 0.55
     align (0.5, -0.05)
     alpha 0.0
@@ -355,7 +360,7 @@ label D02:
 
     scene bg_despacho at bg_size with  Dissolve(0.2)
 
-    show expression "rfk" at init_pos_despacho
+    show expression "rfk" at init_pos_despacho(True)  # T23: mirrored, so not every portrait looks left
 
     rfk "Jack, the minute this gets past a dozen people it's in the Times. Keep it small and we decide on our own clock. Bring in the whole cabinet and the allies, and we decide on theirs."
 
@@ -583,7 +588,7 @@ label D11:
     # T08: hawk (Navy) on the left, dove on the right. Anderson's sprite is optional until it exists.
     if renpy.has_image("admiral george anderson"):
         show expression "admiral george anderson" as hawk at duel_left
-    show expression "dean rusk" as dove at duel_right
+    show expression "dean rusk" as dove at duel_right(True)
 
     anderson "Mr. President, the Navy has been running blockades since John Paul Jones. Eight hundred miles keeps my ships out of range of Cuban jets. Pull the line in and you put sailors under their guns."
 
@@ -609,7 +614,7 @@ label D12:
 
     scene bg_decisions at bg_size with  Dissolve(0.2)
 
-    show expression "rfk" at init_pos_decision
+    show expression "rfk" at init_pos_decision(True)  # T23: mirrored, so not every portrait looks left
 
     rfk "Seven o'clock tonight, every network. The draft demands the missiles come out, full stop. Or you ask for a halt to the work, checked by the UN, and keep the harder words for later."
 
@@ -882,7 +887,7 @@ label D18:
 
     scene bg_despacho at bg_size with  Dissolve(0.2)
 
-    show expression "rfk" at init_pos_despacho
+    show expression "rfk" at init_pos_despacho(True)  # T23: mirrored, so not every portrait looks left
 
     rfk "Jack, Dobrynin sees me tonight. I can tell him the Jupiters in Turkey will be gone in a few months, on one condition: they never say it was part of the deal."
 

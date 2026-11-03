@@ -162,7 +162,19 @@
 			"invasion_ready",
 			"strike_launched"
 		],
-		"background": "E04.png"
+		"background": "E04.png",
+		"intro_variants": [
+			{
+				"if": {
+					"landing": true
+				},
+				"text": "The landing was not the plan. It became the plan the morning after the strike."
+			},
+			{
+				"if": {},
+				"text": "The invasion was ready before the first bomb fell. Once the planes were in the air, nobody in the room argued for stopping there."
+			}
+		]
 	},
 	{
 		"id": "E05",
@@ -230,7 +242,15 @@
 		"recap_skip": [
 			"public_ultimatum"
 		],
-		"background": "E10.png"
+		"background": "E10.png",
+		"intro_variants": [
+			{
+				"if": {
+					"hard_line_public": true
+				},
+				"text": "You rejected Moscow's offer on the radio, and then had nothing to show for it."
+			}
+		]
 	},
 	{
 		"id": "E03",
@@ -256,7 +276,40 @@
 		},
 		"icon": "crossed_rifles",
 		"recap_skip": [],
-		"background": "E03.png"
+		"background": "E03.png",
+		"intro_variants": [
+			{
+				"if": {
+					"berlin_standoff": true
+				},
+				"text": "It started with an air strike on the missile sites. Moscow answered in Berlin, and you chose to hold the line there too."
+			},
+			{
+				"if": {
+					"landing_recalled": true
+				},
+				"text": "You pulled the Marines off the beach. It was not enough to undo what the landing had started."
+			},
+			{
+				"if": {
+					"sam_strike": true
+				},
+				"text": "It started with a single reprisal: one SAM site for one U-2. Each side answered the other's last move, and no one found the step back."
+			},
+			{
+				"if": {
+					"any": [
+						{
+							"ship_stopped": true
+						},
+						{
+							"total_blockade": true
+						}
+					]
+				},
+				"text": "It started at sea, at the quarantine line, with ships that would not stop and a Navy that had its orders."
+			}
+		]
 	},
 	{
 		"id": "E06",
@@ -285,7 +338,15 @@
 			"turkey_secret",
 			"non_invasion"
 		],
-		"background": "E06.png"
+		"background": "E06.png",
+		"intro_variants": [
+			{
+				"if": {
+					"sam_strike": true
+				},
+				"text": "You answered the U-2 with fire and still reached the deal. In 1962, Kennedy held back. You did not, and you were lucky."
+			}
+		]
 	},
 	{
 		"id": "E07",
@@ -310,7 +371,15 @@
 		"recap_skip": [
 			"turkey_public"
 		],
-		"background": "E07.png"
+		"background": "E07.png",
+		"intro_variants": [
+			{
+				"if": {
+					"sam_strike": true
+				},
+				"text": "The trade was on the table that morning. By the time it was done, American planes had already hit Cuba."
+			}
+		]
 	},
 	{
 		"id": "E09",
@@ -350,6 +419,14 @@
 					"strike_ceasefire": true
 				},
 				"stats": {}
+			}
+		],
+		"intro_variants": [
+			{
+				"if": {
+					"strike_ceasefire": true
+				},
+				"text": "You bombed the missile sites and then stopped. By then, Moscow had already moved the crisis to Berlin."
 			}
 		]
 	},

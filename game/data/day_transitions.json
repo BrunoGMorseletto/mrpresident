@@ -6,6 +6,14 @@
 			"after_date": "OCT 16, 1962",
 			"variants": [
 				{
+					"if": {
+						"public_ultimatum": true
+					},
+					"headline": "WHITE HOUSE: OFFENSIVE ARMS IN CUBA 'WILL NOT BE TOLERATED'",
+					"deck": "Statement repeats September warning; officials won't say why now",
+					"photo": "rally"
+				},
+				{
 					"if": {},
 					"headline": "YANKEES TAKE SERIES IN SEVENTH GAME",
 					"deck": "Terry's shutout beats Giants 1-0 in San Francisco",
@@ -16,6 +24,22 @@
 		{
 			"after_date": "OCT 17, 1962",
 			"variants": [
+				{
+					"if": {
+						"air_strike_ready": true
+					},
+					"headline": "MILITARY PLANES CROWD FLORIDA BASES",
+					"deck": "Pentagon calls movements a routine exercise",
+					"photo": "strike"
+				},
+				{
+					"if": {
+						"broad_consultation": true
+					},
+					"headline": "CABINET CALLED TO WHITE HOUSE IN MIDDLE OF CAMPAIGN",
+					"deck": "Aides cite 'routine business' as President stumps in Connecticut",
+					"photo": "pentagon_night"
+				},
 				{
 					"if": {},
 					"headline": "PRESIDENT STUMPS IN CONNECTICUT",
@@ -28,6 +52,14 @@
 			"after_date": "OCT 18, 1962",
 			"variants": [
 				{
+					"if": {
+						"allies_briefed": true
+					},
+					"headline": "U.S. ENVOYS FLY TO EUROPE ON SECRET ERRAND",
+					"deck": "London and Paris decline comment; Gromyko calls at White House",
+					"photo": "gromyko"
+				},
+				{
 					"if": {},
 					"headline": "GROMYKO CALLS AT WHITE HOUSE",
 					"deck": "Soviet foreign minister and President discuss Berlin",
@@ -38,6 +70,22 @@
 		{
 			"after_date": "OCT 19, 1962",
 			"variants": [
+				{
+					"if": {
+						"invasion_ready": true
+					},
+					"headline": "TROOPS AND LANDING CRAFT MOVE TO FLORIDA",
+					"deck": "Army calls it a long-planned exercise",
+					"photo": "destroyer"
+				},
+				{
+					"if": {
+						"broad_consultation": true
+					},
+					"headline": "CAPITAL RUMORS: 'SOMETHING BIG ON CUBA'",
+					"deck": "President campaigns in Ohio and Illinois as aides shuttle to Washington",
+					"photo": "rally"
+				},
 				{
 					"if": {},
 					"headline": "KENNEDY CAMPAIGNS IN OHIO AND ILLINOIS",
@@ -50,6 +98,22 @@
 			"after_date": "OCT 20, 1962",
 			"variants": [
 				{
+					"if": {
+						"blockade": true,
+						"any": [
+							{
+								"broad_consultation": true
+							},
+							{
+								"allies_briefed": true
+							}
+						]
+					},
+					"headline": "NAVY SHIPS SAIL FROM NORFOLK IN HASTE",
+					"deck": "President cuts trip short; White House cites a cold",
+					"photo": "destroyer"
+				},
+				{
 					"if": {},
 					"headline": "PRESIDENT CUTS TRIP SHORT WITH A COLD",
 					"deck": "White House: \"slight upper respiratory infection\"",
@@ -60,6 +124,21 @@
 		{
 			"after_date": "OCT 21, 1962",
 			"variants": [
+				{
+					"if": {
+						"any": [
+							{
+								"broad_consultation": true
+							},
+							{
+								"allies_briefed": true
+							}
+						]
+					},
+					"headline": "CUBA CRISIS FEARED AS CAPITAL BUZZES",
+					"deck": "President said to have asked editors to hold a story",
+					"photo": "pentagon_night"
+				},
 				{
 					"if": {},
 					"headline": "UNUSUAL ACTIVITY AT PENTAGON, STATE DEPT.",

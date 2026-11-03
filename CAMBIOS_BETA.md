@@ -122,3 +122,12 @@ Después correr **Lint** (launcher de Ren'Py → Check Script) y jugar las rutas
 - Pasan a ser debates D11 (Anderson contra Rusk), D14 (Taylor contra Bundy) y D23 (LeMay contra McNamara). Hay dos personajes nuevos, `anderson` y `lemay`, con su cargo en `SPEAKER_TITLES`.
 - Anderson y LeMay todavía no tienen sprite. El código los muestra solo si existe la imagen (`renpy.has_image`). Cuando estén, van a `images/sprites/` como `Admiral George Anderson.png` y `General Curtis LeMay.png`, y aparecen solos.
 - Las 6 líneas nuevas necesitan ubicar los globos con Shift+B.
+
+---
+
+# T07, T04, T23
+
+- **T07 (`day_transitions.json`)**: tapas con filtraciones del 16 al 21/10, según lo que decidió el jugador. Si ampliaste el círculo (D02-B) o compartiste las pruebas (D06-A), la prensa empieza a saber. Los movimientos militares (preparar el ataque o la invasión) se ven igual, decidas lo que decidas. Si mantuviste el círculo chico, salen las tapas de siempre.
+- **T04 (`endings.json`)**: `intro_variants` en E03, E04, E06, E07, E09 y E10. El primer párrafo cambia según el camino.
+- **T23 (`script.rpy`)**: `init_pos_despacho`, `init_pos_decision`, `init_pos_crisis` y `duel_right` aceptan `flip`. RFK aparece espejado en sus escenas sueltas, y Rusk en D11, para que mire a Anderson. Bruno: chequear que `xzoom -1` no corra el sprite de lugar.
+- **Sprites nuevos**: `General Curtis LeMay.png` y `Admiral George Anderson.png`, con fondo transparente.
