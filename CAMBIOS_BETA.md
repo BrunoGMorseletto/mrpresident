@@ -131,3 +131,11 @@ Después correr **Lint** (launcher de Ren'Py → Check Script) y jugar las rutas
 - **T04 (`endings.json`)**: `intro_variants` en E03, E04, E06, E07, E09 y E10. El primer párrafo cambia según el camino.
 - **T23 (`script.rpy`)**: `init_pos_despacho`, `init_pos_decision`, `init_pos_crisis` y `duel_right` aceptan `flip`. RFK aparece espejado en sus escenas sueltas, y Rusk en D11, para que mire a Anderson. Bruno: chequear que `xzoom -1` no corra el sprite de lugar.
 - **Sprites nuevos**: `General Curtis LeMay.png` y `Admiral George Anderson.png`, con fondo transparente.
+
+---
+
+# E08 reescrito
+
+- E08 ahora es "acuerdo inconcluso" (badge "Unfinished deal"): retiro anunciado, pero sin acuerdo escrito. Casi todas las rutas que llegan a E08 tienen el retiro anunciado, y el texto viejo decía lo contrario.
+- Los párrafos de `body` pueden ser `{"if": ..., "text": ...}` (`ending_paragraphs` en `script.rpy`). En el raro caso sin retiro, el primer párrafo y el segundo cambian.
+- En el menú Endings, `gallery_paragraphs()` muestra la versión principal y omite los párrafos marcados `"gallery": false`.

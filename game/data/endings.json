@@ -433,13 +433,30 @@
 	{
 		"id": "E08",
 		"title": "THE NEW NORMAL",
-		"badge": "Missiles remain",
+		"badge": "Unfinished deal",
 		"header": "OCTOBER 1962 · ALTERNATE OUTCOME",
 		"tagline": "Nothing exploded. Nothing was settled.",
 		"body": [
-			"The crisis faded without a real settlement. The quarantine lapsed, the talks stalled, and nobody could say for certain what was still in Cuba. Within a year, Americans had learned to live with Soviet missiles ninety miles away, the way they had already learned to live with the ones in Siberia.",
-			"On the first day of the crisis, McNamara argued that the missiles did not really change the military balance: the Soviet Union could already hit the United States. Politically it was another matter. Kennedy had promised in public that this would not be tolerated.",
-			"This outcome is quieter than the others. Most real crises end this way."
+			{
+				"if": {
+					"soviet_withdrawal": true
+				},
+				"text": "Moscow announced the withdrawal, and the ships began to sail. But the deal was never written down. Castro refused inspections, the bombers stayed on the island for weeks, and Washington could only count crates from the air. Each side told its own public a different story about what had been agreed."
+			},
+			{
+				"if": {
+					"soviet_withdrawal": true
+				},
+				"text": "This is closer to what happened than the legend admits. After October 28 the crisis dragged on for three more weeks over the Il-28 bombers, and the promise not to invade Cuba was never formalized."
+			},
+			{
+				"if": {
+					"soviet_withdrawal": false
+				},
+				"gallery": false,
+				"text": "On the first day of the crisis, McNamara argued that the missiles did not really change the military balance: the Soviet Union could already hit the United States. Politically it was another matter. Kennedy had promised in public that this would not be tolerated."
+			},
+			"This outcome is quieter than the others. Most real crises end this way: not with a signature, but with everyone deciding to stop."
 		],
 		"recap_template": "You avoided war and never forced a deal that could be checked.",
 		"condition": {
@@ -448,6 +465,14 @@
 		},
 		"icon": "missile_palm",
 		"recap_skip": [],
-		"background": "E08.png"
+		"background": "E08.png",
+		"intro_variants": [
+			{
+				"if": {
+					"soviet_withdrawal": false
+				},
+				"text": "Moscow never announced a withdrawal. Within a year, Americans had learned to live with Soviet missiles ninety miles away."
+			}
+		]
 	}
 ]

@@ -149,12 +149,18 @@ init python:
         return item["variants"][-1]
     def ending_paragraphs(ending):
         """Ending body, with an opening paragraph that depends on how the player got there (intro_variants)."""
-        paras = list(ending["body"])
+        # a body paragraph can be a string, or {"if": ..., "text": ...} shown only when its condition holds
+        paras = [b["text"] if isinstance(b, dict) else b for b in ending["body"]
+                 if not isinstance(b, dict) or check_trigger(b.get("if", {}))]
         if ending.get("intro_variants"):
             intro = pick_variant({"variants": ending["intro_variants"]})
             if intro.get("text"):
                 paras.insert(0, intro["text"])
         return paras
+    def gallery_paragraphs(ending):
+        """Body for the Endings menu (outside a run): conditional paragraphs marked "gallery": false are left out."""
+        return [b["text"] if isinstance(b, dict) else b for b in ending["body"]
+                if not isinstance(b, dict) or b.get("gallery", True)]
     def find_newsreel(date):
         """First newsreel for that date whose "if" holds, or None (T06)."""
         for reel in newsreels:

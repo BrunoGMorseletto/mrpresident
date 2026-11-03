@@ -510,7 +510,7 @@ screen endings_menu():
                     text current["header"]:
                         size 16
                         color "#a01818"
-                    for paragraph in current["body"]:
+                    for paragraph in gallery_paragraphs(current):
                         text paragraph:
                             size 16
                             color "#2a1d14"
