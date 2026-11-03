@@ -542,47 +542,60 @@ init python:
                 days[int(tail)] = eid
         return days
 
+define CAL_IMG = "gui/codex_calendar.png"                 # generated sheet, grid detected from its lines
+define CAL_SIZE = (981, 1204)
+define CAL_ROWS = [333, 408, 554, 700, 846, 990, 1139]      # header band top, grid top, week lines... (image px)
+define CAL_COLS = [21, 157, 292, 426, 558, 692, 824, 962]   # column lines (image px)
+define CAL_BOX = (344, 190, 407)                            # x, y, width on the codex page (bg px)
+define CAL_TILT = 1.4                                       # the left page is slightly rotated
+
 screen codex_calendar(ids):
     $ days = codex_calendar_days(ids)
-    $ cell_w = CODEX_LIST_W / 7.0
+    $ bx, by, bw = CAL_BOX
+    $ k = bw / float(CAL_SIZE[0])
+    $ bh = CAL_SIZE[1] * k
+    $ P = lambda v: cz(v * k)            # image px -> screen px
 
-    ## weekday header
-    $ rx, ry, rang = codex_row(2, CODEX_LIST_W, CODEX_ROW_H)
-    fixed at codex_rot(rx, ry, rang):
-        xysize (cz(CODEX_LIST_W), cz(CODEX_ROW_H))
-        for c, wd in enumerate(["MO", "TU", "WE", "TH", "FR", "SA", "SU"]):
-            text wd style "codex_text" size cz(22) color "#7a2316" xpos cz(int(c * cell_w + cell_w / 2)) xanchor 0.5 yalign 0.6
+    fixed at codex_rot(cz(bx + bw / 2.0), cz(by + bh / 2.0), CAL_TILT):
+        xysize (cz(bw), cz(bh))
+        add CAL_IMG xysize (cz(bw), cz(bh))
 
-    ## five weeks, two ruled lines each so the cells are tall enough to click
-    for w in range(5):
-        $ rx, ry, rang = codex_row(4 + w * 2, CODEX_LIST_W, CODEX_ROW_H * 2)   # a week spans two ruled lines
-        fixed at codex_rot(rx, ry, rang):
-            xysize (cz(CODEX_LIST_W), cz(CODEX_ROW_H * 2))
+        text "OCTOBER 1962" style "codex_text" size P(110) color "#2a1d14" xalign 0.5 ycenter P(230)
+
+        for c, wd in enumerate(["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]):
+            text wd style "codex_text" size P(48) color "#7a2316" xcenter P((CAL_COLS[c] + CAL_COLS[c + 1]) / 2.0) ycenter P((CAL_ROWS[0] + CAL_ROWS[1]) / 2.0)
+
+        for w in range(5):
             for c in range(7):
-                $ d = w * 7 + c + 1
+                $ d = w * 7 + c + 1          # October 1, 1962 was a Monday
                 if d <= 31:
+                    $ x0 = P(CAL_COLS[c]) + 2
+                    $ y0 = P(CAL_ROWS[w + 1]) + 2
+                    $ cw = P(CAL_COLS[c + 1]) - P(CAL_COLS[c]) - 4
+                    $ ch = P(CAL_ROWS[w + 2]) - P(CAL_ROWS[w + 1]) - 4
                     fixed:
-                        xpos cz(int(c * cell_w))
-                        xysize (cz(int(cell_w)) - 2, cz(CODEX_ROW_H * 2) - 4)
+                        pos (x0, y0)
+                        xysize (cw, ch)
                         if 16 <= d <= 28:
-                            add Solid("#a02a1e1f")
+                            # the thirteen days, crossed out in red pen
+                            text "X" style "codex_text" size int(ch * 1.1) color "#b0201a66" align (.5, .55)
                         if d in days:
                             $ eid = days[d]
                             $ dopen = codex_unlocked(eid)
                             button:
                                 xfill True
                                 yfill True
-                                background (Solid("#9a2a1c55") if eid == codex_sel else None)
+                                background (Solid("#9a2a1c40") if eid == codex_sel else None)
                                 hover_background Solid("#0000002a")
                                 action Function(codex_select, eid)
-                                text str(d) style "codex_text" size cz(30) align (.5, .5) color ("#2a1d14" if dopen else "#9a8a78")
+                                text str(d) style "codex_text" size P(56) xpos P(12) ypos P(4) color ("#2a1d14" if dopen else "#9a8a78")
                                 if dopen and eid in persistent.codex_new:
-                                    add Solid("#c0392b") xysize (cz(8), cz(8)) align (.9, .15)
+                                    add Solid("#c0392b") xysize (P(18), P(18)) align (.92, .1)
                         else:
-                            text str(d) style "codex_text" size cz(24) align (.5, .5) color "#8f7f68"
+                            text str(d) style "codex_text" size P(56) xpos P(12) ypos P(4) color "#8f7f68"
 
-    ## before / after
-    for line, eid, label in [(14, "CAL-00", "< BEFORE OCTOBER"), (15, "CAL-AFTER", "AFTER OCTOBER >")]:
+    ## before / after, on the last two ruled lines
+    for line, eid, label in [(15, "CAL-00", "< BEFORE OCTOBER"), (16, "CAL-AFTER", "AFTER OCTOBER >")]:
         if eid in ids:
             $ rx, ry, rang = codex_row(line, CODEX_LIST_W, CODEX_ROW_H)
             fixed at codex_rot(rx, ry, rang):

@@ -182,3 +182,6 @@ Después correr **Lint** (launcher de Ren'Py → Check Script) y jugar las rutas
 - **Cartas en los debates:** la carta que defiende el asesor de la izquierda queda a la izquierda (`duel_left_card` en `events.json`: D07, D11, D14 y D23). En el resto de las decisiones sigue siendo al azar.
 - **Asesores en los debates:** bajan a `ypos 165` para que no floten sobre la mesa.
 - **Pestaña Calendar del códex:** es un calendario de octubre de 1962 (screen `codex_calendar`). Los días con archivo se pueden clickear, los trece días de la crisis van sombreados, y "Before" y "After" quedan abajo.
+- **Pista de los finales bloqueados:** va en la franja de papel debajo de los casilleros de la planilla.
+- **Sala de crisis:** la carta que se ejecuta si se acaba el tiempo lleva una etiqueta roja, "IF THE CLOCK RUNS OUT", y la línea de abajo del reloj la nombra ("IF THE CLOCK RUNS OUT: LET THEM GO. Aircraft take off as planned.").
+- **Calendario:** se arma sobre `gui/codex_calendar.png`, la hoja generada por Julián. Las líneas de la grilla se detectaron de la imagen (`CAL_ROWS`, `CAL_COLS`). Números, días y "OCTOBER 1962" van por código. Los trece días de la crisis aparecen tachados con una X roja. "Before" y "After" quedan en las dos últimas líneas.

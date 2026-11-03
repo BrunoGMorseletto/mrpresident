@@ -1961,7 +1961,7 @@ style card_hint_text is card_title_text:
     text_align 0.0
     justify True
 
-screen folder_card(card, cid, zoom, xoff=0):
+screen folder_card(card, cid, zoom, xoff=0, is_default=False):
     $ w = int(CARD_IMG_W * zoom)
     $ h = int(CARD_IMG_H * zoom)
     $ k = zoom / 0.45                                 
@@ -1995,6 +1995,16 @@ screen folder_card(card, cid, zoom, xoff=0):
             $ hint_size = fit_size(hint_txt, "card_hint_text", hw, hh, int(35*k), int(14*k))
             text hint_txt style "card_hint_text" size hint_size xsize hw
 
+    # crisis room: mark the card that will be carried out if the clock runs out
+    if is_default:
+        frame:
+            xpos xoff + w // 2
+            xanchor 0.5
+            ypos -int(40 * k)
+            background Solid("#a01818")
+            padding (16, 4)
+            text "IF THE CLOCK RUNS OUT" font "gui/fonts/VT323-Regular.ttf" size int(30 * k) color "#ffffff"
+
 transform folder_fade:
     on show:
         alpha 0.0
@@ -2021,13 +2031,13 @@ screen decision_folder(card_a, card_b, seconds=0, default_card=None):
     fixed at folder_fade:
         xpos 545
         ypos 505
-        use folder_card(card_a, "A", card_zoom, card_w if swap else 0)
-        use folder_card(card_b, "B", card_zoom, 0 if swap else card_w)
+        use folder_card(card_a, "A", card_zoom, card_w if swap else 0, seconds > 0 and default_card == "A")
+        use folder_card(card_b, "B", card_zoom, 0 if swap else card_w, seconds > 0 and default_card == "B")
     if seconds > 0:
         timer 0.1 repeat True action If(left <= 0.1, true=[Function(note_timeout), Return(default_card)], false=[Function(crisis_tick, left), SetScreenVariable("left", left - 0.1)])
-        use crisis_bar(left, seconds)
+        use crisis_bar(left, seconds, (card_a if default_card == "A" else card_b)["title"])
 
-screen crisis_bar(left, total):
+screen crisis_bar(left, total, default_title=None):
     $ secs = int(left + 0.99)
     $ low = secs <= 10
     $ colon = ":" if (left % 1.0) > 0.5 else " "
@@ -2060,7 +2070,7 @@ screen crisis_bar(left, total):
             ypos 20 + ph + 6
             background Solid("#000000bb")
             padding (24, 8)
-            text "IF NO ORDER IS GIVEN: " + at_zero:
+            text ("IF THE CLOCK RUNS OUT: " + (default_title + ". " if default_title else "") + at_zero):
                 font "gui/fonts/VT323-Regular.ttf"
                 size 30
                 color "#ff8a7a"
