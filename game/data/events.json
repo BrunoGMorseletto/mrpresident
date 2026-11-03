@@ -1272,9 +1272,7 @@
     "icon": "papers",
     "aftermath": "Moscow accepts, grudgingly. The crates start moving.",
     "aftermath_if_failed": "Moscow calls the demand humiliating. The announcement is 'under review'.",
-    "stats": {
-     "escalation": 1
-    },
+    "stats": {},
     "flag": {
      "soviet_withdrawal": true
     },
@@ -1292,9 +1290,7 @@
      ]
     },
     "else": {
-     "stats": {
-      "escalation": 1
-     },
+     "stats": {},
      "flag": {},
      "fail": true
     }
