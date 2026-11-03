@@ -1172,12 +1172,12 @@ label ENDING:
     $ hud_on = False
     scene black with fade
     $name = chosen_ending["id"]
-    if chosen_ending.get("cutscene"):
-        call ending_cutscene(chosen_ending["cutscene"]) from _call_ending_cutscene
-    elif find_final_newsreel(name):
-        # the public version of how it ended, before the file (T06)
+    # first the public version (newsreel), then what really happened (cutscene), then the file
+    if find_final_newsreel(name):
         call newsreel(find_final_newsreel(name)) from _call_newsreel
         scene black with fade
+    if chosen_ending.get("cutscene"):
+        call ending_cutscene(chosen_ending["cutscene"]) from _call_ending_cutscene
     $bg = "bg_" + chosen_ending["background"].split(".")[0].lower()
     $title = chosen_ending["title"]
     $tagline = chosen_ending["tagline"]

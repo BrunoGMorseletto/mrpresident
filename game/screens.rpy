@@ -650,6 +650,7 @@ init python:
         ("Game by", "Julián Stordeur and Bruno Gabriel Morseletto"),
         ("Script", "Julián Stordeur"),
         ("Programming", "Bruno Gabriel Morseletto"),
+        ("Music", "Thiago Chalon and Gaston Posse"),
         ("Special thanks to", "Jesus Godoy Savoia, Luciano Micael Leone y Franco Ceriani")
 
     ]

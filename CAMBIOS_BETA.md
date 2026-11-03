@@ -185,3 +185,11 @@ Después correr **Lint** (launcher de Ren'Py → Check Script) y jugar las rutas
 - **Pista de los finales bloqueados:** va en la franja de papel debajo de los casilleros de la planilla.
 - **Sala de crisis:** la carta que se ejecuta si se acaba el tiempo lleva una etiqueta roja, "IF THE CLOCK RUNS OUT", y la línea de abajo del reloj la nombra ("IF THE CLOCK RUNS OUT: LET THEM GO. Aircraft take off as planned.").
 - **Calendario:** se arma sobre `gui/codex_calendar.png`, la hoja generada por Julián. Las líneas de la grilla se detectaron de la imagen (`CAL_ROWS`, `CAL_COLS`). Números, días y "OCTOBER 1962" van por código. Los trece días de la crisis aparecen tachados con una X roja. "Before" y "After" quedan en las dos últimas líneas.
+
+---
+
+# Créditos y cinemáticas de todos los finales
+
+- Créditos: "Music: Thiago Chalon and Gaston Posse".
+- Los diez finales tienen cutscene (`cutscene` en `endings.json`), de 2 a 4 cuadros con texto. Las imágenes van en `images/cutscenes/end_eXX_N.png`. Mientras falten, cada cuadro se ve en negro con su texto.
+- Orden en `label ENDING`: noticiero final (la versión pública), después la cutscene (lo que pasó de verdad), después el expediente. E01 no tiene noticiero.
