@@ -81,6 +81,8 @@ Después correr **Lint** (launcher de Ren'Py → Check Script) y jugar las rutas
 
 # Hotspot del códex y última foto
 
-- El rectángulo blanco del hotspot del códex se reemplazó por un contorno rojo pixelado, uno por fondo (`gui/codex_hotspot/`), dibujado con `tools/draw_hotspots.py`. Para corregir un contorno se editan los puntos del polígono en ese script y se vuelve a correr. Pulsa mientras hay archivos sin leer y queda fijo con el mouse encima.
+- El rectángulo blanco del hotspot del códex se reemplazó por un contorno rojo, uno por fondo (`gui/codex_hotspot/`, PNG transparente estirado a toda la pantalla). Pulsa mientras hay archivos sin leer y queda fijo con el mouse encima. **Bruno: la posición final se ajusta a mano.** Para moverlo se edita el PNG. Para ver el área clickeable, poner `CODEX_DEBUG = True`.
 - `CODEX_SPOTS` ahora coincide con cada contorno: lo que se ilumina es el área clickeable.
 - `tv_window` es la foto de "WORLD WAITS ON MOSCOW".
+
+- `images/codex/PER-LBJ.png`: retrato de Lyndon B. Johnson para el códex, recortado con `recortar_caras.py`.
