@@ -12,11 +12,10 @@
 		],
 		"recap_template": "You let retaliation run on its own, raised the alert to its limit, and lost the chain of command.",
 		"condition": {
-      "flags":{
-			   "nuclear_use": true
-        },
-        "stats":{
-        }
+			"flags": {
+				"nuclear_use": true
+			},
+			"stats": {}
 		},
 		"icon": "mushroom_cloud",
 		"recap_skip": [
@@ -40,11 +39,11 @@
 		"stamp": "One of the least likely outcomes. It took a very specific combination of decisions.",
 		"recap_template": "You drew a public line, conceded in public anyway, and let your authority run out.",
 		"condition": {
-      "flags":{
-          "soviet_access_dc": true,
-          "coalition_legalized": true
-      },
-       "stats":{}
+			"flags": {
+				"soviet_access_dc": true,
+				"coalition_legalized": true
+			},
+			"stats": {}
 		},
 		"icon": "hammer_sickle",
 		"recap_skip": [
@@ -66,11 +65,12 @@
 		],
 		"recap_template": "You prepared the invasion, launched the strike, and did not call it back.",
 		"condition": {
-      "flags":{
-         "invasion_ready": true,
-         "strike_launched": true
-      },
-       "stats":{}
+			"flags": {
+				"invasion_ready": true,
+				"strike_launched": true,
+				"landing_recalled": false
+			},
+			"stats": {}
 		},
 		"icon": "helmet_palms",
 		"recap_skip": [
@@ -93,20 +93,20 @@
 		"stamp": "The most speculative outcome in the file.",
 		"recap_template": "You opened a channel to Havana, promised not to invade, and made no deal with Moscow over Castro's head.",
 		"condition": {
-      "flags":{"cuba_neutral_offer": true,
-      "non_invasion": true,
-      "turkey_secret": false,
-      "turkey_public": false
-    },
-    "stats":{
-      "escalation": {
-        "<=": 3
-      },
-      "diplomacy": {
-        ">=": 2
-      }
-
-    }
+			"flags": {
+				"cuba_neutral_offer": true,
+				"non_invasion": true,
+				"turkey_secret": false,
+				"turkey_public": false
+			},
+			"stats": {
+				"escalation": {
+					"<=": 3
+				},
+				"diplomacy": {
+					">=": 2
+				}
+			}
 		},
 		"icon": "star_triangle",
 		"recap_skip": [
@@ -128,19 +128,18 @@
 		],
 		"recap_template": "You made a public promise, lost the authority to keep it, and never got the missiles out.",
 		"condition": {
-      "flags":{
-          "public_ultimatum": true,
-          "soviet_withdrawal": false
-      },
-      "stats":{
-          "authority": {
-            "<=": 1
-          },
-          "escalation": {
-            "<=": 4
-          }
-      }
-
+			"flags": {
+				"public_ultimatum": true,
+				"soviet_withdrawal": false
+			},
+			"stats": {
+				"authority": {
+					"<=": 1
+				},
+				"escalation": {
+					"<=": 4
+				}
+			}
 		},
 		"icon": "empty_chair",
 		"recap_skip": [
@@ -161,16 +160,14 @@
 		],
 		"recap_template": "You let the escalation climb without a deal, and neither side found the way back.",
 		"condition": {
-      "flags":{
-        "soviet_withdrawal": false
-      },
-			"stats":{
-        "escalation": {
-            ">=": 5
-          }
-      }
-
-			
+			"flags": {
+				"soviet_withdrawal": false
+			},
+			"stats": {
+				"escalation": {
+					">=": 5
+				}
+			}
 		},
 		"icon": "crossed_rifles",
 		"recap_skip": [],
@@ -189,12 +186,13 @@
 		"recap_template": "You imposed a quarantine, promised not to invade, and made a promise that could never be made public.",
 		"badge": "Historical outcome",
 		"condition": {
-      "flags":{"soviet_withdrawal": true,
-      "turkey_secret": true,
-      "non_invasion": true,
-      "blockade": true
-      },
-			"stats":{}
+			"flags": {
+				"soviet_withdrawal": true,
+				"turkey_secret": true,
+				"non_invasion": true,
+				"blockade": true
+			},
+			"stats": {}
 		},
 		"icon": "cargo_ship",
 		"recap_skip": [
@@ -217,10 +215,11 @@
 		],
 		"recap_template": "You accepted Khrushchev's public offer and ended the crisis on the radio.",
 		"condition": {
-      "flags":{     "soviet_withdrawal": true,
-      "turkey_public": true},
-      "stats":{}
-
+			"flags": {
+				"soviet_withdrawal": true,
+				"turkey_public": true
+			},
+			"stats": {}
 		},
 		"icon": "missile_swap",
 		"recap_skip": [
@@ -241,25 +240,33 @@
 		],
 		"recap_template": "You avoided a public commitment, never secured a withdrawal, and left Moscow room to collect elsewhere.",
 		"condition": {
-      "flags":{"soviet_withdrawal": false,
-      "public_ultimatum": false
-    },
-			"stats":{
-        "escalation": {
-        ">=": 2,
-        "<=": 4
-      },
-      "diplomacy": {
-        ">=": 2
-      }
-      }
-			
+			"flags": {
+				"soviet_withdrawal": false,
+				"public_ultimatum": false
+			},
+			"stats": {
+				"escalation": {
+					">=": 2,
+					"<=": 4
+				},
+				"diplomacy": {
+					">=": 2
+				}
+			}
 		},
 		"icon": "chess_knight",
 		"recap_skip": [
 			"public_ultimatum"
 		],
-		"background": "E09.png"
+		"background": "E09.png",
+		"alt_conditions": [
+			{
+				"flags": {
+					"strike_ceasefire": true
+				},
+				"stats": {}
+			}
+		]
 	},
 	{
 		"id": "E08",
@@ -273,7 +280,10 @@
 			"This outcome is quieter than the others. Most real crises end this way."
 		],
 		"recap_template": "You avoided war and never forced a deal that could be checked.",
-		"condition": {"flags":{},"stats":{}},
+		"condition": {
+			"flags": {},
+			"stats": {}
+		},
 		"icon": "missile_palm",
 		"recap_skip": [],
 		"background": "E08.png"

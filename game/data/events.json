@@ -631,7 +631,151 @@
    "on_timeout": "B"
   },
   "next": [
+   "X01",
    "D17"
+  ]
+ },
+ "X01": {
+  "date": "OCT 25, 1962",
+  "trigger": {
+   "any": [
+    {
+     "strike_launched": true
+    },
+    {
+     "strike_partial": true
+    }
+   ]
+  },
+  "cards": {
+   "A": {
+    "title": "SEND IN THE TROOPS",
+    "hint": "Finish it on the ground.",
+    "icon": "helmet",
+    "aftermath": "Landing craft leave Key West at dusk. Nobody knows what is waiting on the beaches.",
+    "stats": {
+     "escalation": 1
+    },
+    "flag": {
+     "landing": true,
+     "invasion_ready": true,
+     "strike_launched": true
+    },
+    "trigger": {}
+   },
+   "B": {
+    "title": "HOLD THE SHORE",
+    "hint": "No landing. Make Moscow answer first.",
+    "icon": "hourglass",
+    "aftermath": "The ships stay over the horizon. In Havana, Soviet officers count what they have left.",
+    "stats": {
+     "control": 1
+    },
+    "flag": {},
+    "trigger": {}
+   }
+  },
+  "next": [
+   "X03",
+   "X02"
+  ]
+ },
+ "X02": {
+  "date": "OCT 26, 1962",
+  "trigger": {
+   "landing": false
+  },
+  "cards": {
+   "A": {
+    "title": "STAND FIRM IN BERLIN",
+    "hint": "No trades under fire. Anywhere.",
+    "icon": "helmet",
+    "aftermath": "American tanks roll up to Checkpoint Charlie. Soviet tanks are already there.",
+    "stats": {
+     "escalation": 2,
+     "stance": 1
+    },
+    "flag": {
+     "berlin_standoff": true
+    },
+    "trigger": {}
+   },
+   "B": {
+    "title": "STOP AND TALK",
+    "hint": "Ceasefire now. Berlin pays for it.",
+    "icon": "handshake",
+    "aftermath": "The bombing stops at midnight. The roads into Berlin stay closed.",
+    "stats": {
+     "escalation": -1,
+     "diplomacy": 1
+    },
+    "flag": {
+     "strike_ceasefire": true
+    },
+    "trigger": {},
+    "available_if": {
+     "diplomacy": {
+      ">=": 1
+     }
+    },
+    "locked_text": "Nobody in Moscow is taking our calls."
+   }
+  },
+  "next": [
+   "ENDING"
+  ]
+ },
+ "X03": {
+  "date": "OCT 26, 1962",
+  "trigger": {
+   "landing": true
+  },
+  "cards": {
+   "A": {
+    "title": "PULL THEM BACK",
+    "hint": "Lose the beach. Keep the war small.",
+    "icon": "stop_hand",
+    "aftermath": "The landing force re-embarks under fire. Moscow does not say whether it noticed.",
+    "stats": {
+     "escalation": -1
+    },
+    "flag": {
+     "landing_recalled": true
+    },
+    "trigger": {
+     "control": {
+      ">=": 2
+     }
+    },
+    "else": {
+     "stats": {
+      "escalation": 1
+     },
+     "flag": {
+      "order_failed": true
+     },
+     "fail": true
+    },
+    "aftermath_if_failed": "The recall reaches the beach too late. The second wave is already ashore."
+   },
+   "B": {
+    "title": "PUSH INLAND",
+    "hint": "Take the sites before they can fire.",
+    "icon": "crosshair",
+    "aftermath": "The second wave goes in. Nobody has told the Marines what the Soviets brought with them.",
+    "stats": {
+     "escalation": 2
+    },
+    "flag": {},
+    "trigger": {}
+   }
+  },
+  "crisis": {
+   "timer": 30,
+   "on_timeout": "B"
+  },
+  "next": [
+   "ENDING"
   ]
  },
  "C02": {
@@ -869,9 +1013,16 @@
  "C04": {
   "date": "OCT 27, 1962",
   "trigger": {
-   "escalation": {
-    ">=": 4
-   }
+   "any": [
+    {
+     "escalation": {
+      ">=": 4
+     }
+    },
+    {
+     "sam_strike": true
+    }
+   ]
   },
   "cards": {
    "A": {
@@ -911,7 +1062,74 @@
    "on_timeout": "B"
   },
   "next": [
+   "X04",
    "D18",
+   "D21",
+   "D22",
+   "ENDING"
+  ]
+ },
+ "X04": {
+  "date": "OCT 27, 1962",
+  "trigger": {
+   "sam_strike": true,
+   "reciprocal_pause": false
+  },
+  "cards": {
+   "A": {
+    "title": "CALL OFF THE DAWN STRIKE",
+    "hint": "Take the losses. Keep a door open.",
+    "icon": "stop_hand",
+    "aftermath": "The bases stand down. On the tapes, the President says it twice to be sure.",
+    "stats": {
+     "escalation": -1
+    },
+    "flag": {
+     "strike_halted": true
+    },
+    "trigger": {
+     "any": [
+      {
+       "control": {
+        ">=": 2
+       }
+      },
+      {
+       "private_channel": true
+      }
+     ]
+    },
+    "else": {
+     "stats": {
+      "escalation": 1
+     },
+     "flag": {
+      "strike_launched": true,
+      "order_failed": true
+     },
+     "fail": true
+    },
+    "aftermath_if_failed": "The stand-down reaches the bases after the first squadrons are airborne."
+   },
+   "B": {
+    "title": "STRIKE AT DAWN",
+    "hint": "Air defenses first. Then the missiles.",
+    "icon": "squadron",
+    "aftermath": "At first light, the strike on Cuba begins. In Moscow, it is already afternoon.",
+    "stats": {
+     "escalation": 2
+    },
+    "flag": {
+     "strike_launched": true
+    },
+    "trigger": {}
+   }
+  },
+  "crisis": {
+   "timer": 30,
+   "on_timeout": "B"
+  },
+  "next": [
    "D21",
    "D22",
    "ENDING"
@@ -921,7 +1139,15 @@
   "date": "OCT 27, 1962",
   "trigger": {
    "private_channel": true,
-   "turkey_public": false
+   "turkey_public": false,
+   "any": [
+    {
+     "sam_strike": false
+    },
+    {
+     "reciprocal_pause": true
+    }
+   ]
   },
   "cards": {
    "A": {
@@ -959,7 +1185,8 @@
   "date": "OCT 27, 1962",
   "trigger": {
    "castro_channel": true,
-   "non_invasion": true
+   "non_invasion": true,
+   "sam_strike": false
   },
   "cards": {
    "A": {
@@ -997,10 +1224,8 @@
  "D22": {
   "date": "OCT 28, 1962",
   "trigger": {
-   "not": {
-    "invasion_ready": true,
-    "strike_launched": true
-   }
+   "strike_launched": false,
+   "strike_partial": false
   },
   "cards": {
    "A": {

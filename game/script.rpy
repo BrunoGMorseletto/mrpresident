@@ -100,24 +100,20 @@ init python:
                     if not OPS[op](value, n):
                         return False
         return True
+    def condition_met(conditions):
+        for ed_flag, boolean in conditions["flags"].items():
+            if bool(flags.get(ed_flag, False)) != boolean:
+                return False
+        for ed_stat, stat_checks in conditions["stats"].items():
+            for op, value in stat_checks.items():
+                if not OPS[op](stats[ed_stat], value):
+                    return False
+        return True
     def decide_ending():
+        # an ending wins if its main condition OR any of its "alt_conditions" is met
         for ending in endings:
-            checks_passed = True
-            conditions = ending["condition"]
-            active_flags=flags.keys()
-            for ed_flag, boolean in conditions["flags"].items():
-                if ed_flag not in active_flags:
-                    flags[ed_flag] = False
-                if flags[ed_flag] != boolean:
-                    checks_passed = False
-            if checks_passed == False:
-                continue
-            for ed_stat, stat_checks in conditions["stats"].items():
-                stat = stats[ed_stat]
-                for op, value in stat_checks.items():
-                    if not OPS[op](stat, value):
-                        checks_passed = False
-            if checks_passed:
+            options = [ending["condition"]] + ending.get("alt_conditions", [])
+            if any(condition_met(c) for c in options):
                 return ending
         return endings[-1]
     def check_nuclear():
@@ -236,6 +232,7 @@ define air_force = Character("U.S. AIR FORCE", image="/images/sprites/McGeorge B
 define rfk = Character("ROBERT F. KENNEDY",image="/images/sprites/rfk.png", kind=bubble, retain=True,  callback=type_sound)
 define rob = Character("ROBERT McNAMARA",image="/images/sprites/Robert McNamara.png", kind=bubble, retain=True,  callback=type_sound)
 define taylor = Character("GEN. MAXWELL TAYLOR",image="/images/sprites/General Maxwell Taylora.png", kind=bubble, retain=True,  callback=type_sound)
+define navy = Character("U.S. NAVY", image="/images/sprites/McGeorge Bundy.png",callback=type_sound, kind=bubble,)
 define operator = Character("WHITE HOUSE OPERATOR", image="/images/sprites/McGeorge Bundy.png",callback=type_sound, kind=bubble)
 define counsel = Character("WHITE HOUSE COUNSEL", image="/images/sprites/McGeorge Bundy.png",callback=type_sound, kind=bubble)
 define narr_bubble = Character("", image="/images/sprites/McGeorge Bundy.png",callback=type_sound, kind=bubble)
@@ -669,7 +666,7 @@ label C02:
 
     #show expression "general maxwell taylor" at init_pos_decision
 
-    air_force "Soviet freighter approaching the line. A submarine is shadowing her. Destroyers request instructions."
+    navy "Soviet freighter approaching the line. A submarine is shadowing her. Destroyers request instructions."
 
     $ card_a = events[current_scene][cards_key][a_card_key]
     $ card_b = events[current_scene][cards_key][b_card_key]
@@ -686,6 +683,102 @@ label C02:
     scene black with Fade(0.2,0.0, 0.2)
     $ next_e = next_event(events[current_scene]["next"],events)
     
+    jump expression next_e
+
+# ---- rama de escalada (T01/T02): se abre al disparar ----
+
+label X01:
+    $ current_scene = "X01"
+
+    scene bg_crisis_normal at bg_size with  Dissolve(0.2)
+
+    show expression "robert mcnamara" at init_pos_crisis
+
+    rob "Damage reports are in. Most of the launch sites are gone. Most. Soviet troops are firing on our planes, and Moscow has said nothing for twelve hours. The Chiefs want to land before whatever is left can be used."
+
+    $ card_a = events[current_scene][cards_key][a_card_key]
+    $ card_b = events[current_scene][cards_key][b_card_key]
+
+    call screen decision_folder(card_a, card_b)
+
+    $ choice = _return
+
+    $ aftermath=apply_choice(choice, current_scene)
+    narr_bubble "[aftermath]"
+    scene black with Fade(0.2,0.0, 0.2)
+    $ next_e = next_event(events[current_scene]["next"],events)
+
+    jump expression next_e
+
+label X02:
+    $ current_scene = "X02"
+
+    scene bg_decisions at bg_size with  Dissolve(0.2)
+
+    show expression "dean rusk" at init_pos_decision
+
+    dean "Moscow has answered, and not in Cuba. Soviet troops have closed the roads into West Berlin. Khrushchev says they reopen when the bombing stops and we promise never to land."
+
+    $ card_a = events[current_scene][cards_key][a_card_key]
+    $ card_b = events[current_scene][cards_key][b_card_key]
+
+    call screen decision_folder(card_a, card_b)
+
+    $ choice = _return
+
+    $ aftermath=apply_choice(choice, current_scene)
+    narr_bubble "[aftermath]"
+    scene black with Fade(0.2,0.0, 0.2)
+    $ next_e = next_event(events[current_scene]["next"],events)
+
+    jump expression next_e
+
+label X03:
+    $ current_scene = "X03"
+
+    scene bg_crisis_normal at bg_size with  Dissolve(0.2)
+
+    show expression "general maxwell taylor" at init_pos_crisis
+
+    taylor "The first wave is ashore. They are taking fire from weapons that are not on any of our lists. Our people think the Soviet commanders on the island have lost contact with Moscow."
+
+    $ card_a = events[current_scene][cards_key][a_card_key]
+    $ card_b = events[current_scene][cards_key][b_card_key]
+
+    $ seconds, default_card = crisis_info(current_scene)
+    call screen decision_folder(card_a, card_b, seconds, default_card)
+
+    $ choice = _return
+
+    $ aftermath=apply_choice(choice, current_scene)
+    narr_bubble "[aftermath]"
+    scene black with Fade(0.2,0.0, 0.2)
+    $ next_e = next_event(events[current_scene]["next"],events)
+
+    jump expression next_e
+
+label X04:
+    $ current_scene = "X04"
+
+    scene bg_crisis_normal at bg_size with  Dissolve(0.2)
+
+    show expression "general maxwell taylor" at init_pos_crisis
+
+    taylor "Every Soviet battery on the island has orders to fire on anything that flies. Two more of our planes are overdue. The Chiefs have the air strike set for dawn, and they are not asking."
+
+    $ card_a = events[current_scene][cards_key][a_card_key]
+    $ card_b = events[current_scene][cards_key][b_card_key]
+
+    $ seconds, default_card = crisis_info(current_scene)
+    call screen decision_folder(card_a, card_b, seconds, default_card)
+
+    $ choice = _return
+
+    $ aftermath=apply_choice(choice, current_scene)
+    narr_bubble "[aftermath]"
+    scene black with Fade(0.2,0.0, 0.2)
+    $ next_e = next_event(events[current_scene]["next"],events)
+
     jump expression next_e
 
 label D17:

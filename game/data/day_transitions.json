@@ -117,7 +117,14 @@
 			"variants": [
 				{
 					"if": {
-						"strike_launched": true
+						"any": [
+							{
+								"strike_launched": true
+							},
+							{
+								"strike_partial": true
+							}
+						]
 					},
 					"headline": "U.S. PLANES STRIKE CUBA",
 					"deck": "Pentagon confirms raids on missile sites; U Thant pleads for restraint",
@@ -143,6 +150,25 @@
 					"if": {},
 					"headline": "BOMBERS ON ALERT AS CRISIS DEEPENS",
 					"deck": "U Thant appeals to both powers for talks",
+					"photo": "destroyer"
+				}
+			]
+		},
+		{
+			"after_date": "OCT 25, 1962",
+			"variants": [
+				{
+					"if": {
+						"landing": true
+					},
+					"headline": "MARINES LAND IN CUBA",
+					"deck": "Pentagon calls it a limited operation; Moscow silent",
+					"photo": "destroyer"
+				},
+				{
+					"if": {},
+					"headline": "CUBAN SITES BURN; MOSCOW SILENT",
+					"deck": "Fleet holds offshore as world waits for Soviet reply",
 					"photo": "destroyer"
 				}
 			]
