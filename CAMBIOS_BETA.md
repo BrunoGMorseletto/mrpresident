@@ -86,3 +86,28 @@ Después correr **Lint** (launcher de Ren'Py → Check Script) y jugar las rutas
 - `tv_window` es la foto de "WORLD WAITS ON MOSCOW".
 
 - `images/codex/PER-LBJ.png`: retrato de Lyndon B. Johnson para el códex, recortado con `recortar_caras.py`.
+
+---
+
+# Noticiero (T06) y opinión pública
+
+**Cómo funciona.** El noticiero **reemplaza** al diario en los días en que pasa algo grande. No se suma.
+
+- **Al cambiar de día**, `intermission` busca en `data/newsreels.json` un noticiero de esa fecha cuyo `if` se cumpla. Si encuentra uno, lo muestra en lugar del diario. Si no, sale el diario como siempre.
+  - 22/10: va siempre (el discurso).
+  - 24/10: si hubo ataque o abordaje.
+  - 25/10: si hubo desembarco.
+  - 27/10: si hubo represalia contra el SAM o canje público.
+- **Antes del expediente final** (`label ENDING`), sale el noticiero `FINAL` que corresponde al final obtenido. Se elige por `endings` y `if`. E01 tiene su cutscene y E02 no lleva noticiero.
+- **Cuadros "classified"**: tarjeta roja con lo que el público no supo. Por ejemplo, la promesa sobre Turquía en E06, o el canal de Robert Kennedy el 22/10.
+- Se puede saltear con "SKIP NEWS" o avanzar con click. Cada cuadro dura 9 s, o lo que diga `seconds`.
+
+**Archivos.**
+
+- `script.rpy`: `find_newsreel`, `find_final_newsreel`, `newsreel_frames`, `label newsreel`, y los ganchos en `intermission` y en `ENDING`.
+- `screens.rpy`: screen `newsreel_frame` y sus estilos. `NR_SCREEN` es el área de la imagen dentro del televisor.
+- `gui/newsreel/`: `bezel.png` (marco de TV) y `scanlines.png`, dibujados por código.
+- Las imágenes van en `images/newsreel/<nombre>.png`. Mientras falten, el cuadro se ve gris con el texto.
+- Audio del 22/10: `audio/jfk_1962-10-22_excerpt.mp3`. Si no existe, no suena nada y el cuadro queda igual.
+
+**Códex.** Entrada nueva en State: "The Public" (STA-10). Se desbloquea con D12.

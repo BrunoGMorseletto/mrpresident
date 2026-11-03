@@ -1,0 +1,379 @@
+{
+	"_note": "Noticieros (T06). Reemplazan al diario del día. Por fecha: al cambiar de día se busca en orden el primero de esa fecha cuyo 'if' se cumple. date 'FINAL': se muestra antes del expediente; se elige por 'endings' (id del final) + 'if'. E01 y E02 no tienen (E01 tiene su cutscene). Frames: image (images/newsreel/<image>.png), lower_third, caption, seconds, audio, variants, if, classified.",
+	"newsreels": [
+		{
+			"id": "NR-22",
+			"date": "OCT 22, 1962",
+			"if": {},
+			"frames": [
+				{
+					"image": "nr_anchor",
+					"lower_third": "SPECIAL REPORT",
+					"caption": "Good evening. At seven o'clock tonight the President spoke to the nation from the White House. For most Americans, it was the first they had heard of missiles in Cuba."
+				},
+				{
+					"image": "nr_speech",
+					"audio": "audio/jfk_1962-10-22_excerpt.mp3",
+					"seconds": 14,
+					"caption": "\"It shall be the policy of this Nation to regard any nuclear missile launched from Cuba against any nation in the Western Hemisphere as an attack by the Soviet Union on the United States...\"",
+					"variants": [
+						{
+							"if": {
+								"public_ultimatum": true
+							},
+							"lower_third": "PRESIDENT DEMANDS REMOVAL OF SOVIET MISSILES"
+						},
+						{
+							"if": {},
+							"lower_third": "PRESIDENT CALLS FOR HALT TO SOVIET BUILDUP"
+						}
+					]
+				},
+				{
+					"image": "nr_supermarket",
+					"lower_third": "RUN ON GROCERY STORES",
+					"caption": "By the next morning, stores in several cities reported shelves cleared of canned food and bottled water."
+				},
+				{
+					"classified": true,
+					"caption": "Not broadcast: that same evening, Robert Kennedy asked the Soviet embassy for a private meeting. No camera was there.",
+					"if": {
+						"private_channel": true
+					}
+				}
+			]
+		},
+		{
+			"id": "NR-24-STRIKE",
+			"date": "OCT 24, 1962",
+			"if": {
+				"any": [
+					{
+						"strike_launched": true
+					},
+					{
+						"strike_partial": true
+					}
+				]
+			},
+			"frames": [
+				{
+					"image": "nr_anchor",
+					"lower_third": "BULLETIN",
+					"caption": "We interrupt this program. The Defense Department has confirmed air strikes against the Soviet missile sites in Cuba."
+				},
+				{
+					"image": "nr_strike",
+					"lower_third": "U.S. AIRCRAFT STRIKE MISSILE SITES IN CUBA",
+					"caption": "The Pentagon will not say how many sites were destroyed. Moscow has not responded."
+				},
+				{
+					"image": "nr_schoolkids",
+					"lower_third": "SCHOOLS HOLD AIR-RAID DRILLS",
+					"caption": "Across the country, schools ran air-raid drills this afternoon. Some parents kept their children home."
+				}
+			]
+		},
+		{
+			"id": "NR-24-BOARD",
+			"date": "OCT 24, 1962",
+			"if": {
+				"ship_stopped": true
+			},
+			"frames": [
+				{
+					"image": "nr_anchor",
+					"lower_third": "BULLETIN",
+					"caption": "The quarantine of Cuba has been tested for the first time."
+				},
+				{
+					"image": "nr_quarantine",
+					"lower_third": "NAVY STOPS SOVIET SHIP AT QUARANTINE LINE",
+					"caption": "American sailors have stopped a ship bound for Cuba. Moscow calls the quarantine piracy."
+				},
+				{
+					"image": "nr_pickets",
+					"lower_third": "PROTESTS OUTSIDE THE WHITE HOUSE",
+					"caption": "Outside the White House, two crowds tonight: one asking for peace, one asking for more."
+				}
+			]
+		},
+		{
+			"id": "NR-25-LANDING",
+			"date": "OCT 25, 1962",
+			"if": {
+				"landing": true
+			},
+			"frames": [
+				{
+					"image": "nr_anchor",
+					"lower_third": "BULLETIN",
+					"caption": "American troops are in Cuba."
+				},
+				{
+					"image": "nr_landing",
+					"lower_third": "MARINES LAND IN CUBA",
+					"caption": "The Defense Department calls it a limited operation. Reporters have not been allowed near the beaches."
+				},
+				{
+					"image": "nr_supermarket",
+					"lower_third": "CIVIL DEFENSE ON ALERT",
+					"caption": "Civil defense offices report thousands of calls an hour. Most callers ask the same thing: where is the nearest shelter?"
+				}
+			]
+		},
+		{
+			"id": "NR-27-SAM",
+			"date": "OCT 27, 1962",
+			"if": {
+				"sam_strike": true
+			},
+			"frames": [
+				{
+					"image": "nr_anchor",
+					"lower_third": "BULLETIN",
+					"caption": "An American reconnaissance plane has been shot down over Cuba."
+				},
+				{
+					"image": "nr_u2_wreck",
+					"lower_third": "U-2 DOWNED; U.S. PLANES STRIKE BACK",
+					"caption": "The pilot, Major Rudolf Anderson, was killed. Within hours, American planes hit the site that fired."
+				},
+				{
+					"variants": [
+						{
+							"if": {
+								"strike_launched": true
+							},
+							"image": "nr_strike",
+							"lower_third": "AIR STRIKES ON CUBA BEGIN",
+							"caption": "At dawn, a wider strike began against the missile sites."
+						},
+						{
+							"if": {},
+							"image": "nr_schoolkids",
+							"lower_third": "THE COUNTRY WAITS",
+							"caption": "Schools stayed open. In many homes, the radio was not turned off all night."
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "NR-27-SWAP",
+			"date": "OCT 27, 1962",
+			"if": {
+				"turkey_public": true
+			},
+			"frames": [
+				{
+					"image": "nr_anchor",
+					"lower_third": "BULLETIN",
+					"caption": "The White House has answered Moscow's offer on the radio."
+				},
+				{
+					"image": "nr_turkey",
+					"lower_third": "U.S. ACCEPTS MISSILE SWAP",
+					"caption": "Soviet missiles out of Cuba, American missiles out of Turkey. In Ankara and Bonn, governments ask why they heard it on the radio."
+				},
+				{
+					"image": "nr_pickets",
+					"lower_third": "\"A MUNICH ON THE CARIBBEAN?\"",
+					"caption": "Republican leaders accuse the President of trading an ally's security under pressure. The election is ten days away."
+				}
+			]
+		},
+		{
+			"id": "NR-F-E03",
+			"date": "FINAL",
+			"endings": [
+				"E03"
+			],
+			"frames": [
+				{
+					"image": "nr_anchor",
+					"lower_third": "BULLETIN",
+					"caption": "American and Soviet forces are in combat for the first time since 1945."
+				},
+				{
+					"image": "nr_strike",
+					"lower_third": "FIGHTING IN CUBA",
+					"caption": "Soviet units on the island are fighting back. The Pentagon has stopped giving numbers."
+				},
+				{
+					"image": "nr_berlin",
+					"lower_third": "SOVIET TROOPS MOVE ON BERLIN",
+					"caption": "In Europe, the roads into West Berlin are closed. NATO forces are on full alert."
+				},
+				{
+					"classified": true,
+					"caption": "Not broadcast: neither side has used a nuclear weapon. Both sides have them ready."
+				}
+			]
+		},
+		{
+			"id": "NR-F-E04",
+			"date": "FINAL",
+			"endings": [
+				"E04"
+			],
+			"frames": [
+				{
+					"image": "nr_anchor",
+					"lower_third": "BULLETIN",
+					"caption": "The Defense Department says organized resistance in Cuba is ending."
+				},
+				{
+					"image": "nr_landing",
+					"lower_third": "U.S. FORCES ENTER HAVANA",
+					"caption": "American troops control the missile sites. The weapons will be shipped out under guard."
+				},
+				{
+					"classified": true,
+					"caption": "Not broadcast: Soviet forces in Cuba had tactical nuclear weapons aimed at the beaches. Washington did not know. They were not fired."
+				}
+			]
+		},
+		{
+			"id": "NR-F-E05",
+			"date": "FINAL",
+			"endings": [
+				"E05"
+			],
+			"frames": [
+				{
+					"image": "nr_anchor",
+					"lower_third": "SURPRISE FROM HAVANA",
+					"caption": "The news this morning did not come from Moscow."
+				},
+				{
+					"image": "nr_castro",
+					"lower_third": "CASTRO: CUBA WILL SEND THE WEAPONS HOME",
+					"caption": "Fidel Castro says Cuba will return the Soviet weapons itself, in exchange for a guarantee against invasion. Moscow has not commented."
+				}
+			]
+		},
+		{
+			"id": "NR-F-E06",
+			"date": "FINAL",
+			"endings": [
+				"E06"
+			],
+			"frames": [
+				{
+					"image": "nr_radio_moscow",
+					"lower_third": "KHRUSHCHEV BACKS DOWN",
+					"caption": "Radio Moscow announced this morning that the missiles will be dismantled and shipped home. In Washington, officials speak of firmness."
+				},
+				{
+					"image": "nr_crates",
+					"lower_third": "SOVIET MISSILES LEAVE CUBA",
+					"caption": "The United States has pledged not to invade Cuba. Asked whether anything else was offered, the White House says no."
+				},
+				{
+					"classified": true,
+					"caption": "Not broadcast: the Jupiter missiles in Turkey will be removed within months. If Moscow ever says so in public, the deal is off. The public will not learn of it for more than twenty years."
+				}
+			]
+		},
+		{
+			"id": "NR-F-E07",
+			"date": "FINAL",
+			"endings": [
+				"E07"
+			],
+			"frames": [
+				{
+					"image": "nr_radio_moscow",
+					"lower_third": "SOVIET UNION TO REMOVE MISSILES",
+					"caption": "Radio Moscow confirms the deal: missiles out of Cuba, missiles out of Turkey."
+				},
+				{
+					"image": "nr_crates",
+					"lower_third": "MISSILES FOR MISSILES",
+					"caption": "The world has stepped back from the edge. In NATO capitals, the question now is what else Washington would trade."
+				}
+			]
+		},
+		{
+			"id": "NR-F-E08-DEAL",
+			"date": "FINAL",
+			"endings": [
+				"E08"
+			],
+			"if": {
+				"soviet_withdrawal": true
+			},
+			"frames": [
+				{
+					"image": "nr_radio_moscow",
+					"lower_third": "MOSCOW: MISSILES WILL GO",
+					"caption": "Radio Moscow says the missiles will be dismantled and shipped home."
+				},
+				{
+					"image": "nr_crates",
+					"lower_third": "HOW DO WE KNOW?",
+					"caption": "Reconnaissance flights show crates on the docks. Nobody in Washington can say what is still on the island."
+				}
+			]
+		},
+		{
+			"id": "NR-F-E09-CEASEFIRE",
+			"date": "FINAL",
+			"endings": [
+				"E09"
+			],
+			"if": {
+				"strike_ceasefire": true
+			},
+			"frames": [
+				{
+					"image": "nr_anchor",
+					"lower_third": "CEASEFIRE IN CUBA",
+					"caption": "The bombing has stopped. The roads into West Berlin remain closed."
+				},
+				{
+					"image": "nr_pickets",
+					"lower_third": "WHAT WAS PROMISED?",
+					"caption": "The White House says only that talks will continue. It will not say what it offered."
+				},
+				{
+					"classified": true,
+					"caption": "Not broadcast: the price of the ceasefire is being negotiated over Berlin."
+				}
+			]
+		},
+		{
+			"id": "NR-F-NODEAL",
+			"date": "FINAL",
+			"endings": [
+				"E08",
+				"E09",
+				"E10"
+			],
+			"frames": [
+				{
+					"image": "nr_anchor",
+					"lower_third": "TALKS STALL",
+					"caption": "Moscow has not announced a withdrawal. The missiles are still in Cuba."
+				},
+				{
+					"image": "nr_pickets",
+					"lower_third": "NINE DAYS TO THE ELECTION",
+					"variants": [
+						{
+							"if": {
+								"public_ultimatum": true
+							},
+							"caption": "The President promised the country the missiles would go. The opposition has found its message."
+						},
+						{
+							"if": {},
+							"caption": "Washington says the situation is under control. Fewer people believe it every day."
+						}
+					]
+				}
+			]
+		}
+	]
+}

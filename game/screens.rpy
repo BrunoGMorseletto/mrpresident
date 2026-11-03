@@ -2175,3 +2175,66 @@ screen crisis_hud():
             vbox:
                 text hud_date font "gui/fonts/VT323-Regular.ttf" size 34 color "#ffffff"
                 text "DAY %d OF 13" % crisis_day(hud_date) font "gui/fonts/VT323-Regular.ttf" size 24 color "#b8b8b8"
+
+
+#### NEWSREEL (T06) ######################################################
+# TV frame and scanlines are drawn by code (gui/newsreel/), footage images stay clean.
+define NR_SCREEN = (400, 60, 1120, 840)          # x, y, w, h of the TV picture (4:3), matches bezel.png
+
+style nr_lower is default:
+    font "gui/fonts/VT323-Regular.ttf"
+    color "#ffffff"
+    size 40
+style nr_caption is default:
+    font "gui/fonts/VT323-Regular.ttf"
+    color "#e8e2d6"
+    size 32
+    text_align 0.5
+    xalign 0.5
+style nr_classified is default:
+    font "gui/fonts/VT323-Regular.ttf"
+    color "#e8e2d6"
+    size 36
+    text_align 0.5
+    xalign 0.5
+
+screen newsreel_frame(fr):
+    modal True
+    zorder 100
+    $ nx, ny, nw, nh = NR_SCREEN
+    add Solid("#000000")
+
+    if fr.get("classified"):
+        # what the public was not told
+        vbox:
+            xalign 0.5
+            yalign 0.45
+            xsize 1100
+            spacing 30
+            text "CLASSIFIED · NOT FOR BROADCAST" style "nr_classified" color "#c81e1e" size 52
+            text fr.get("caption", "") style "nr_classified"
+    else:
+        fixed:
+            pos (nx, ny)
+            xysize (nw, nh)
+            clipping True
+            $ img = "images/newsreel/%s.png" % fr.get("image", "")
+            if renpy.loadable(img):
+                add img fit "cover" xysize (nw, nh) align (.5, .5)
+            else:
+                add Solid("#1a1a1a")
+            add "gui/newsreel/scanlines.png" pos (-nx, -ny)
+            if fr.get("lower_third"):
+                frame:
+                    xfill True
+                    yalign 0.88
+                    background Solid("#000000cc")
+                    padding (30, 12)
+                    text fr["lower_third"] style "nr_lower"
+        add "gui/newsreel/bezel.png"
+        if fr.get("caption"):
+            text fr["caption"] style "nr_caption" xsize 1500 ypos 945
+
+    textbutton "SKIP NEWS" action Return("skip") align (0.97, 0.03) text_font "gui/fonts/VT323-Regular.ttf" text_size 30
+    timer fr.get("seconds", 9) action Return("next")
+    key "dismiss" action Return("next")

@@ -58,6 +58,8 @@ init python:
         endings = json.load(f)
     with renpy.file("data/day_transitions.json") as f:
         day_transitions = json.load(f)
+    with renpy.file("data/newsreels.json") as f:
+        newsreels = json.load(f)["newsreels"]
     import operator
 
     OPS = {
@@ -132,6 +134,30 @@ init python:
             if intro.get("text"):
                 paras.insert(0, intro["text"])
         return paras
+    def find_newsreel(date):
+        """First newsreel for that date whose "if" holds, or None (T06)."""
+        for reel in newsreels:
+            if reel["date"] == date and check_trigger(reel.get("if", {})):
+                return reel
+        return None
+    def find_final_newsreel(ending_id):
+        """Newsreel shown before the ending file: chosen by ending id, then by "if"."""
+        for reel in newsreels:
+            if reel["date"] == "FINAL" and ending_id in reel.get("endings", []) and check_trigger(reel.get("if", {})):
+                return reel
+        return None
+    def newsreel_frames(reel):
+        """Frames that apply to this run, with their variant merged in."""
+        out = []
+        for fr in reel["frames"]:
+            if not check_trigger(fr.get("if", {})):
+                continue
+            base = dict((k, v) for k, v in fr.items() if k not in ("variants", "if"))
+            if "variants" in fr:
+                v = pick_variant(fr)
+                base.update(dict((k, x) for k, x in v.items() if k != "if"))
+            out.append(base)
+        return out
     def check_nuclear():
         checks_passed = True
         conditions = endings[0]["condition"]
@@ -1049,6 +1075,10 @@ label ENDING:
     $name = chosen_ending["id"]
     if chosen_ending.get("cutscene"):
         call ending_cutscene(chosen_ending["cutscene"])
+    elif find_final_newsreel(name):
+        # the public version of how it ended, before the file (T06)
+        call newsreel(find_final_newsreel(name))
+        scene black with fade
     $bg = "bg_" + chosen_ending["background"].split(".")[0].lower()
     $title = chosen_ending["title"]
     $tagline = chosen_ending["tagline"]
@@ -1073,6 +1103,23 @@ label ENDING:
 
     return
 
+# Newsreel (T06): a few TV frames. Images live in images/newsreel/<image>.png (black if missing).
+# "classified" frames show what the public was NOT told.
+label newsreel(reel):
+    $ hud_was_on = hud_on
+    $ hud_on = False
+    scene black with Dissolve(0.4)
+    python:
+        for fr in newsreel_frames(reel):
+            if fr.get("audio") and renpy.loadable(fr["audio"]):
+                renpy.music.play(fr["audio"], channel="voice", loop=False)
+            result = renpy.call_screen("newsreel_frame", fr=fr)
+            renpy.music.stop(channel="voice")
+            if result == "skip":
+                break
+    $ hud_on = hud_was_on
+    return
+
 # Cutscene before an ending. Each frame: {"image", "text"} or {"variants": [{"if", "image", "text"}, ...]}.
 # Images live in images/cutscenes/<image>.png; if one is missing, the frame is shown on black.
 label ending_cutscene(frames):
@@ -1094,6 +1141,12 @@ label ending_cutscene(frames):
     return
 
 label intermission(date):
+    # T06: if there is a newsreel for this day, it replaces the newspaper
+    $ reel = find_newsreel(date)
+    if reel:
+        call newsreel(reel)
+        scene black with Fade(0.2,0.0, 0.2)
+        return
     scene  bg_news at bg_size with Dissolve(0.2)
     $ paper = next((n for n in day_transitions["newspapers"] if n["after_date"] == date), None)
     if paper is None:
