@@ -2100,38 +2100,54 @@ init python:
     CODEX_BG_SIZE = (1672, 941)             
 
     CODEX_SPOTS = {                          # image tag: (x, y, w, h) in background pixels
-        "bg_despacho":      (0, 615, 285, 140),   # stack of papers
-        "bg_crisis_normal": (0, 765, 495, 176),   # folder with the seal
-        "bg_decisions":     (0, 750, 470, 191),   # TOP SECRET folder
+        "bg_despacho":      (10, 621, 549, 301),  # papers on the desk (matches the outline image)
+        "bg_crisis_normal": (17, 766, 505, 159),  # folder with the seal
+        "bg_decisions":     (9, 736, 533, 205),   # TOP SECRET folder
     }
+    # red pixel outline drawn over the clickable object, one per background (1672x941, transparent)
+    CODEX_OUTLINES = {tag: "gui/codex_hotspot/%s.png" % tag for tag in CODEX_SPOTS}
+
+    def codex_bg_tag():
+        for tag in CODEX_SPOTS:
+            if renpy.showing(tag):
+                return tag
+        return None
 
     def codex_spot():
         """Hotspot rectangle in screen pixels for the background being shown, or None."""
-        for tag, (x, y, w, h) in CODEX_SPOTS.items():
-            if renpy.showing(tag):
-                zx = config.screen_width / float(CODEX_BG_SIZE[0])
-                zy = config.screen_height / float(CODEX_BG_SIZE[1])
-                return int(x*zx), int(y*zy), int(w*zx), int(h*zy)
-        return None
+        tag = codex_bg_tag()
+        if tag is None:
+            return None
+        x, y, w, h = CODEX_SPOTS[tag]
+        zx = config.screen_width / float(CODEX_BG_SIZE[0])
+        zy = config.screen_height / float(CODEX_BG_SIZE[1])
+        return int(x*zx), int(y*zy), int(w*zx), int(h*zy)
 
     config.overlay_screens.append("codex_hotspot")
 
 screen codex_hotspot():
     zorder 90
+    default hot = False
     $ spot = codex_spot()
     if spot and not codex_locked:
-        if persistent.codex_new:
-            add Solid("#ffd27a") pos (spot[0], spot[1]) xysize (spot[2], spot[3]) at codex_pulse
+        $ outline = CODEX_OUTLINES.get(codex_bg_tag())
+        # outline: solid on hover, pulsing while there are unread files, hidden otherwise
+        if outline and renpy.loadable(outline):
+            if hot:
+                add Transform(outline, xysize=(config.screen_width, config.screen_height))
+            elif persistent.codex_new:
+                add Transform(outline, xysize=(config.screen_width, config.screen_height)) at codex_pulse
         button:
             area spot
             background (Solid("#ff000050") if CODEX_DEBUG else None)
-            hover_background Solid("#ffffff1c")
-            action [Function(codex_focus_scene, current_scene), ShowMenu("codex")]
+            hovered SetScreenVariable("hot", True)
+            unhovered SetScreenVariable("hot", False)
+            action [SetScreenVariable("hot", False), Function(codex_focus_scene, current_scene), ShowMenu("codex")]
 
 transform codex_pulse:
-    alpha 0.10
-    linear 0.9 alpha 0.40
-    linear 0.9 alpha 0.10
+    alpha 0.25
+    linear 0.9 alpha 1.0
+    linear 0.9 alpha 0.25
     repeat
 
 #### HUD: date and day of the crisis (T13) ###############################

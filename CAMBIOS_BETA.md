@@ -76,3 +76,11 @@ Después correr **Lint** (launcher de Ren'Py → Check Script) y jugar las rutas
 - `images/cutscenes/`: los 5 cuadros de la cutscene nuclear.
 - `images/news/`: 11 fotos de diario. En `day_transitions.json`, cada titular apunta ahora a su foto. Siguen con las fotos viejas: OCT 17 y 19 (`rally`, que corresponde), OCT 22, 23 y 27 "WORLD WAITS" (`television`), "BOMBERS ON ALERT" y "MARINES LAND" (`destroyer`).
 - La caja de foto del diario es casi 16:9 y las fotos son 4:3. Con `fit "cover"` se recortan arriba y abajo: revisar que no se corte nada importante.
+
+---
+
+# Hotspot del códex y última foto
+
+- El rectángulo blanco del hotspot del códex se reemplazó por un contorno rojo pixelado, uno por fondo (`gui/codex_hotspot/`). Pulsa mientras hay archivos sin leer y queda fijo cuando pasás el mouse por encima.
+- `CODEX_SPOTS` ahora coincide con cada contorno, así que lo que se ilumina es exactamente el área clickeable. En el despacho el área quedó más grande que antes.
+- `tv_window` es la foto de "WORLD WAITS ON MOSCOW".
