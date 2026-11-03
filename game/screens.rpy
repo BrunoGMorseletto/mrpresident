@@ -537,6 +537,18 @@ screen endings_menu(new_ending=None, after_run=False):
                     xsize 610
                     text_align 0.5
 
+        # --- Clue for a locked file, on the paper strip under the slots ---
+        if hint:
+            fixed:
+                pos (100, 950)
+                xysize (637, 42)
+                text "{color=#a01818}LOCKED FILE:{/color} " + hint:
+                    align (0.5, 0.5)
+                    size 20
+                    color "#2a1d14"
+                    xsize 630
+                    text_align 0.5
+
         # --- Bottom row: one slot per ending ---
         for i, e in enumerate(endings):
             $ got = e["id"] in persistent.endings_seen
@@ -580,10 +592,6 @@ screen endings_menu(new_ending=None, after_run=False):
         text "OUTCOMES FOUND" size 30 color "#d8d0c0"
         text "%d / %d" % (len(persistent.endings_seen), len(endings)) size 72 color "#ffffff"
         text debrief_data["goal_line"] size 26 color "#d8d0c0"
-        if hint:
-            null height 30
-            text "LOCKED FILE" size 26 color "#c81e1e"
-            text hint size 28 color "#ffffff" italic True
 
     # --- The ending you just reached gets a NEW stamp ---
     if new_ending is not None and current is new_ending:
