@@ -2402,7 +2402,7 @@ screen debrief(ending, d):
                 text "No single lens explains your crisis. Allison's point exactly: each one sees something the others miss." style "db_ink"
             if d["timeouts"]:
                 text debrief_data["timeout_line"] % d["timeouts"] style "db_ink" color "#a01818"
-            textbutton "Read the codex file: Three Ways to Explain a Decision" action ShowMenu("codex") text_style "db_small" text_underline True
+            textbutton "Read the codex file: Three Ways to Explain a Decision" action [Function(codex_open_entry, "TS-01"), ShowMenu("codex")] text_style "db_small" text_underline True
 
     textbutton "CONTINUE":
         align (0.97, 0.97)

@@ -369,6 +369,11 @@ label start:
     $ current_scene = "intro"
     play music "audio/oval_office.ogg" fadeout 2.0 fadein 0.0
 
+    # first run only: say what the game is about before it starts
+    if not persistent.endings_seen:
+        scene black
+        narr "October 1962 could have ended ten different ways.{w=1.5} Find them all.{w=3}{nw}"
+
     scene bg_intro_1 at bg_size
     narr "Washington. October 16, 1962. 8:45 a.m.{w=2}{nw}"
 

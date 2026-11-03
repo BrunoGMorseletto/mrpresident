@@ -238,6 +238,15 @@ init python:
         else:
             codex_sfx("page")
 
+    def codex_open_entry(eid):
+        """Open the codex on a given file (used by the end-of-run report)."""
+        global codex_tab
+        for t in range(len(CODEX_TABS)):
+            if eid in codex_tab_ids(t):
+                codex_tab = t
+                codex_select(eid, play=False)
+                return
+
     def codex_focus_scene(scene_id):
         """Open on the file that belongs to the event the player is in, if there is one."""
         global codex_tab, codex_page
