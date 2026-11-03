@@ -116,6 +116,22 @@ init python:
             if any(condition_met(c) for c in options):
                 return ending
         return endings[-1]
+    def pick_variant(item):
+        """First variant whose "if" is true (check_trigger syntax); the item itself if it has no variants."""
+        if "variants" not in item:
+            return item
+        for v in item["variants"]:
+            if check_trigger(v.get("if", {})):
+                return v
+        return item["variants"][-1]
+    def ending_paragraphs(ending):
+        """Ending body, with an opening paragraph that depends on how the player got there (intro_variants)."""
+        paras = list(ending["body"])
+        if ending.get("intro_variants"):
+            intro = pick_variant({"variants": ending["intro_variants"]})
+            if intro.get("text"):
+                paras.insert(0, intro["text"])
+        return paras
     def check_nuclear():
         checks_passed = True
         conditions = endings[0]["condition"]
@@ -1027,12 +1043,14 @@ label S02:
     jump expression next_e
 
 label ENDING:
-    scene black with fade 
+    scene black with fade
     $name = chosen_ending["id"]
+    if chosen_ending.get("cutscene"):
+        call ending_cutscene(chosen_ending["cutscene"])
     $bg = "bg_" + chosen_ending["background"].split(".")[0].lower()
-    $body = "\n\n".join(chosen_ending["body"])
     $title = chosen_ending["title"]
     $tagline = chosen_ending["tagline"]
+    $paragraphs = ending_paragraphs(chosen_ending)
     scene expression bg at bg_size with dissolve
     nvl clear
     nvl show dissolve
@@ -1041,14 +1059,34 @@ label ENDING:
 
     python:
         unlock_ending(name)
-        for para in chosen_ending["body"]:
+        for para in paragraphs:
             ending_nvl(para)
         if "stamp" in chosen_ending:
             ending_nvl("{i}%s{/i}" % chosen_ending["stamp"])
     scene black with fade
     nvl hide
     nvl clear
-    
+
+    return
+
+# Cutscene before an ending. Each frame: {"image", "text"} or {"variants": [{"if", "image", "text"}, ...]}.
+# Images live in images/cutscenes/<image>.png; if one is missing, the frame is shown on black.
+label ending_cutscene(frames):
+    python:
+        for frame in frames:
+            v = pick_variant(frame)
+            path = "images/cutscenes/%s.png" % v.get("image", "")
+            renpy.scene()
+            if renpy.loadable(path):
+                renpy.show("cutscene_frame", what=Transform(path, xysize=(config.screen_width, config.screen_height)))
+            else:
+                renpy.show("black")
+            renpy.with_statement(Dissolve(0.8))
+            if v.get("text"):
+                narr(v["text"])
+            else:
+                renpy.pause(2.5, hard=True)
+    scene black with Fade(0.2, 0.6, 0.2)
     return
 
 label intermission(date):

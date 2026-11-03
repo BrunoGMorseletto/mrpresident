@@ -37,3 +37,17 @@ Después correr **Lint** (launcher de Ren'Py → Check Script) y jugar las rutas
 | D01-A D02-A D03-A D04-A D05-A D06-A D07-A D08-A D12-B D13-A D14-B D15-B C01-B X01-B X02-B | E09 |
 
 (Verificadas con una simulación que copia la lógica de `script.rpy`.)
+
+---
+
+# T03: final nuclear (E01) y cutscene
+
+**Código (`script.rpy`).**
+
+- `label ENDING`: si el final tiene `"cutscene"` en `endings.json`, la reproduce antes del expediente (`label ending_cutscene`). Si tiene `"intro_variants"`, el primer párrafo cambia según cómo llegó el jugador. Las dos funciones son genéricas y sirven para cualquier final (T04).
+- Funciones nuevas: `pick_variant()` y `ending_paragraphs()`, junto a `check_nuclear()`. Las condiciones usan la misma sintaxis que los triggers (`check_trigger`).
+- Las imágenes van en `game/images/cutscenes/` (ver LEEME.txt ahí). Mientras no estén, cada cuadro se ve en negro con su texto, así que se puede probar ya.
+
+**Datos (`endings.json`, E01).** Texto nuevo. El primer párrafo dice dónde empezó la cadena: desembarco, ataque aéreo, represalia contra el SAM o submarino en el mar. Hay 4 cuadros de cutscene.
+
+**Prueba rápida de E01:** D01-A D02-A D03-A D04-A D05-A D06-A D07-A D08-A D12-A D13-A D14-A D15-A C01-B X01-B X02-A

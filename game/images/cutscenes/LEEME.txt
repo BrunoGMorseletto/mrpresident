@@ -1,0 +1,7 @@
+Cuadros de la cutscene nuclear (antes del final E01). PNG 16:9, 1920x1080.
+nuke_01_commander.png  (casi todas las rutas)
+nuke_01_submarine.png  (solo si la cadena empezó en el mar)
+nuke_02_radar.png
+nuke_03_map.png
+nuke_04_flash.png
+Si falta alguno, ese cuadro se muestra en negro con el texto.

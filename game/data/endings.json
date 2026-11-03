@@ -6,9 +6,9 @@
 		"header": "OCTOBER 1962 · ALTERNATE OUTCOME",
 		"tagline": "The crisis ended. No one could stop what came next.",
 		"body": [
-			"The first strike did not go unanswered. Retaliation followed retaliation until the Cuban crisis became a nuclear exchange. The orders to stop arrived late, were lost, or reached units that were already acting.",
-			"Mutual assured destruction rested on a threat: whoever started a nuclear war would also suffer unacceptable devastation. Fear of that outcome did not guarantee it could be avoided. The United States had clear nuclear superiority. It could not come out unharmed.",
-			"Essence of Decision shows how catastrophe could come without either leader wanting it: incomplete information, military routines, local decisions and reprisals chaining beyond anyone's control. In October 1962, war was avoided through decisions, negotiation and luck. Here, that combination broke."
+			"From there, the chain ran on its own. On the American side, the decisions that mattered had been taken days earlier: retaliation without asking the President, forces at maximum alert, a chain of command that no longer reported back. Orders to stop went out from Washington and from Moscow. They arrived late, were lost, or reached units that were already acting.",
+			"Mutual assured destruction rested on a threat: whoever started a nuclear war would also be destroyed. The threat made war irrational. It did not make it impossible. The United States had clear nuclear superiority in 1962. It could not come out unharmed.",
+			"Essence of Decision shows how catastrophe could come without either leader choosing it: incomplete information, military routines, local commanders, reprisals that followed a plan written in advance. In October 1962 war was avoided through decisions, negotiation and luck. Here, that combination broke."
 		],
 		"recap_template": "You let retaliation run on its own, raised the alert to its limit, and lost the chain of command.",
 		"condition": {
@@ -22,7 +22,92 @@
 			"auto_retaliation",
 			"defcon2"
 		],
-		"background": "E01.png"
+		"background": "E01.png",
+		"intro_variants": [
+			{
+				"if": {
+					"landing": true
+				},
+				"text": "The Marines were ashore when the first Soviet tactical weapon was fired. Washington did not know those weapons were in Cuba: short-range rockets with nuclear warheads, sent to destroy exactly this kind of landing. The officer who fired had lost contact with Moscow and believed the island was about to fall."
+			},
+			{
+				"if": {
+					"any": [
+						{
+							"strike_launched": true
+						},
+						{
+							"strike_partial": true
+						}
+					]
+				},
+				"text": "The air strike destroyed most of the missile sites. Not all of them. The Soviet officers in charge of what was left had been told to expect an invasion and had lost contact with Moscow. Under bombardment, with no orders arriving, one of them decided not to wait."
+			},
+			{
+				"if": {
+					"sam_strike": true
+				},
+				"text": "The retaliation on the SAM site killed the Soviet crew that manned it. On the island, local commanders read it as the opening of the invasion they had been expecting for weeks. They had already fired once without asking Moscow. This time they did not ask either."
+			},
+			{
+				"if": {
+					"any": [
+						{
+							"ship_stopped": true
+						},
+						{
+							"total_blockade": true
+						}
+					]
+				},
+				"text": "The first nuclear weapon was fired at sea. A Soviet submarine, cut off from Moscow for days and pounded by American depth charges meant only as signals, could not tell a warning from an attack. Her captain had a nuclear torpedo and the authority to use it."
+			},
+			{
+				"if": {},
+				"text": "Nobody could say afterward who fired first. Each side was reading the other's alerts as preparations for an attack, and each side had already put its forces where an order to fire would take minutes, not hours."
+			}
+		],
+		"cutscene": [
+			{
+				"variants": [
+					{
+						"if": {
+							"any": [
+								{
+									"ship_stopped": true
+								},
+								{
+									"total_blockade": true
+								}
+							],
+							"landing": false,
+							"strike_launched": false,
+							"strike_partial": false,
+							"sam_strike": false
+						},
+						"image": "nuke_01_submarine",
+						"text": "Western Atlantic. The submarine has not heard from Moscow in four days."
+					},
+					{
+						"if": {},
+						"image": "nuke_01_commander",
+						"text": "Cuba. The line to Moscow has been silent for hours."
+					}
+				]
+			},
+			{
+				"image": "nuke_02_radar",
+				"text": "Washington. The first report says “detonation.” The second report never comes."
+			},
+			{
+				"image": "nuke_03_map",
+				"text": "The plans written in advance are carried out as written."
+			},
+			{
+				"image": "nuke_04_flash",
+				"text": ""
+			}
+		]
 	},
 	{
 		"id": "E02",
