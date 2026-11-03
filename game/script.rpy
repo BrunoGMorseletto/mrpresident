@@ -251,19 +251,17 @@ label start:
             stats[stat] = info["init"]
     $ current_scene = "intro"
     play music "audio/oval_office.ogg" fadeout 2.0 fadein 0.0
-    scene bg_intro_1 at bg_size
 
-    narr "Washington. October 16, 1962. 8:45 a.m."
+    scene bg_intro_1 at bg_size
+    narr "Washington. October 16, 1962. 8:45 a.m.{w=2}{nw}"
 
     scene bg_intro_2 at bg_size
-
-    bundy "Mr. President, there is now hard photographic evidence that the Russians have offensive missiles in Cuba."
+    bundy "Mr. President, there is now hard photographic evidence that the Russians have offensive missiles in Cuba.{w=7.0}{nw}"
 
     scene bg_intro_3 at bg_size
-    
-    bundy "Mr. President... come with us."
+    bundy "Mr. President... come with us.{w=6}{nw}"
 
-    scene black with Fade(0.2,0.0, 0.2)
+    scene black with Fade(0.2, 0.0, 0.2)
 
     jump expression "D01"
 
