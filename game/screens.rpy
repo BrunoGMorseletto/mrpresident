@@ -2100,9 +2100,9 @@ init python:
     CODEX_BG_SIZE = (1672, 941)             
 
     CODEX_SPOTS = {                          # image tag: (x, y, w, h) in background pixels
-        "bg_despacho":      (10, 621, 549, 301),  # papers on the desk (matches the outline image)
-        "bg_crisis_normal": (17, 766, 505, 159),  # folder with the seal
-        "bg_decisions":     (9, 736, 533, 205),   # TOP SECRET folder
+        "bg_despacho":      (42, 620, 238, 102),  # stack of papers
+        "bg_crisis_normal": (0, 764, 500, 177),   # folder with the seal
+        "bg_decisions":     (0, 754, 480, 187),   # TOP SECRET folder
     }
     # red pixel outline drawn over the clickable object, one per background (1672x941, transparent)
     CODEX_OUTLINES = {tag: "gui/codex_hotspot/%s.png" % tag for tag in CODEX_SPOTS}

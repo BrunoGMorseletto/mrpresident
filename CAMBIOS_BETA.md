@@ -81,6 +81,6 @@ Después correr **Lint** (launcher de Ren'Py → Check Script) y jugar las rutas
 
 # Hotspot del códex y última foto
 
-- El rectángulo blanco del hotspot del códex se reemplazó por un contorno rojo pixelado, uno por fondo (`gui/codex_hotspot/`). Pulsa mientras hay archivos sin leer y queda fijo cuando pasás el mouse por encima.
-- `CODEX_SPOTS` ahora coincide con cada contorno, así que lo que se ilumina es exactamente el área clickeable. En el despacho el área quedó más grande que antes.
+- El rectángulo blanco del hotspot del códex se reemplazó por un contorno rojo pixelado, uno por fondo (`gui/codex_hotspot/`), dibujado con `tools/draw_hotspots.py`. Para corregir un contorno se editan los puntos del polígono en ese script y se vuelve a correr. Pulsa mientras hay archivos sin leer y queda fijo con el mouse encima.
+- `CODEX_SPOTS` ahora coincide con cada contorno: lo que se ilumina es el área clickeable.
 - `tv_window` es la foto de "WORLD WAITS ON MOSCOW".
