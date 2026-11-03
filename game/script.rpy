@@ -30,7 +30,7 @@ transform duel_left:
     # T08: adviser on the left, mirrored to face the other one (Bruno: adjust xpos)
     zoom 0.25
     xanchor 0.5
-    xpos 800
+    xpos 680        # both advisers sit left of center so the speech bubble (top right) does not cover them
     ypos 135
     xzoom -1.0
     alpha 0.0
@@ -40,7 +40,7 @@ transform duel_right(flip=False):
     xzoom (-1.0 if flip else 1.0)
     zoom 0.25
     xanchor 0.5
-    xpos 1200
+    xpos 1000
     ypos 135
     alpha 0.0
     ease 0.5 alpha 1.0

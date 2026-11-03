@@ -159,3 +159,14 @@ Después correr **Lint** (launcher de Ren'Py → Check Script) y jugar las rutas
   - A la izquierda, el conteo, la frase del objetivo y, al pasar el mouse por un final bloqueado, su pista (`hint` en `endings.json`).
   - Sello "NEW" sobre el final recién obtenido.
   - Al terminar una partida, en lugar de "Return" hay tres botones: NEW CRISIS, CODEX y MAIN MENU.
+
+---
+
+# Ajustes después de la primera prueba en Ren'Py
+
+- **Debates:** `duel_left` y `duel_right` corridos a la izquierda (`xpos` 680 y 1000), para que el globo de arriba a la derecha no tape al asesor.
+- **Aviso del códex:** `gui.notify_ypos` pasa de 68 a 150, debajo de la fecha.
+- **Hotspot debajo de las cartas:** `decision_folder` tiene ahora `zorder 95`, y el hotspot sigue en 90.
+- **Sprites de Anderson y LeMay:** normalizados a la altura de cabeza y la escala de los demás, porque flotaban.
+- **Fotos `destroyer` y `television`:** sin el borde claro.
+- **`PER-SORENSEN`:** alejado, para que entre la cabeza.

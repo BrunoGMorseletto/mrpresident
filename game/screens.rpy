@@ -2001,6 +2001,7 @@ transform folder_slide:
         easein_back 0.3 yoffset 900 
 
 screen decision_folder(card_a, card_b, seconds=0, default_card=None):
+    zorder 95   # above the codex hotspot (90): the outline stays under the cards
     default left = seconds
     # T09: which card goes on the left is random, so players have to read them.
     # IDs A/B never change (endings and timers use them), only the position on screen.
