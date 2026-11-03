@@ -2016,6 +2016,19 @@ screen crisis_bar(left, total):
             xcenter int(0.4993 * pw)
             ycenter int(0.4230 * ph)
 
+    # what happens if the timer runs out (design rule: always visible). Organizations follow their routine.
+    $ at_zero = events.get(current_scene, {}).get("crisis", {}).get("at_zero")
+    if at_zero:
+        frame:
+            xalign 0.5
+            ypos 20 + ph + 6
+            background Solid("#000000bb")
+            padding (24, 8)
+            text "IF NO ORDER IS GIVEN: " + at_zero:
+                font "gui/fonts/VT323-Regular.ttf"
+                size 30
+                color "#ff8a7a"
+
 init python:
     NEWS_W, NEWS_H = 1672, 941                     # real size of bg_news.png
     NEWS_PHOTO_SHEAR = 0.05 

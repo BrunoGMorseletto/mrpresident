@@ -628,7 +628,8 @@
   },
   "crisis": {
    "timer": 30,
-   "on_timeout": "B"
+   "on_timeout": "B",
+   "at_zero": "Aircraft take off as planned."
   },
   "next": [
    "X01",
@@ -772,7 +773,8 @@
   },
   "crisis": {
    "timer": 30,
-   "on_timeout": "B"
+   "on_timeout": "B",
+   "at_zero": "The second wave goes in as planned."
   },
   "next": [
    "ENDING"
@@ -820,7 +822,8 @@
     },
     "then": "A",
     "else": "B"
-   }
+   },
+   "at_zero": "The Navy applies standing orders. Under a total quarantine, it boards."
   },
   "next": [
    "D17"
@@ -1001,7 +1004,8 @@
      "auto_retaliation": true
     },
     "seconds": 15
-   }
+   },
+   "at_zero": "Retaliation proceeds if it was pre-authorized. Otherwise, it waits."
   },
   "next": [
    "C04",
@@ -1059,7 +1063,8 @@
   },
   "crisis": {
    "timer": 30,
-   "on_timeout": "B"
+   "on_timeout": "B",
+   "at_zero": "No reply is sent. Moscow reads it as a refusal."
   },
   "next": [
    "X04",
@@ -1127,7 +1132,8 @@
   },
   "crisis": {
    "timer": 30,
-   "on_timeout": "B"
+   "on_timeout": "B",
+   "at_zero": "The strike goes ahead at dawn."
   },
   "next": [
    "D21",
