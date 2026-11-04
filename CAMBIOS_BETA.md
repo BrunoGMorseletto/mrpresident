@@ -193,3 +193,12 @@ Después correr **Lint** (launcher de Ren'Py → Check Script) y jugar las rutas
 - Créditos: "Music: Thiago Chalon and Gastón Posse".
 - Los diez finales tienen cutscene (`cutscene` en `endings.json`), de 2 a 4 cuadros con texto. Las imágenes van en `images/cutscenes/end_eXX_N.png`. Mientras falten, cada cuadro se ve en negro con su texto.
 - Orden en `label ENDING`: noticiero final (la versión pública), después la cutscene (lo que pasó de verdad), después el expediente. E01 no tiene noticiero.
+
+---
+
+# Noticiero: imágenes y televisor
+
+- `images/newsreel/`: nr_anchor, nr_speech, nr_strike, nr_landing, nr_quarantine, nr_u2_wreck, nr_turkey, nr_radio_moscow. A las que traían el borde de tubo dibujado se les recortó, porque el televisor lo pone el juego.
+- `gui/newsreel/bezel.png` es ahora el televisor de Julián, con la pantalla transparente. `NR_SCREEN` quedó ajustado al hueco, y las scanlines se regeneraron para ese tamaño.
+- El zócalo va centrado con margen lateral (las esquinas de la pantalla son redondeadas). La narración va sobre una franja oscura.
+- Faltan nr_supermarket, nr_schoolkids, nr_pickets, nr_berlin, nr_crates y nr_castro. Mientras tanto se ven grises con el texto.

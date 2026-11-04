@@ -2241,7 +2241,7 @@ screen crisis_hud():
 
 #### NEWSREEL (T06) ######################################################
 # TV frame and scanlines are drawn by code (gui/newsreel/), footage images stay clean.
-define NR_SCREEN = (400, 60, 1120, 840)          # x, y, w, h of the TV picture (4:3), matches bezel.png
+define NR_SCREEN = (424, 152, 891, 700)          # x, y, w, h of the TV picture, matches the magenta hole of bezel.png
 
 style nr_lower is default:
     font "gui/fonts/VT323-Regular.ttf"
@@ -2291,11 +2291,17 @@ screen newsreel_frame(fr):
                     xfill True
                     yalign 0.88
                     background Solid("#000000cc")
-                    padding (30, 12)
-                    text fr["lower_third"] style "nr_lower"
+                    padding (90, 12)     # wide side padding: the screen corners are rounded
+                    text fr["lower_third"] style "nr_lower" xalign 0.5
         add "gui/newsreel/bezel.png"
         if fr.get("caption"):
-            text fr["caption"] style "nr_caption" xsize 1500 ypos 945
+            frame:
+                xalign 0.5
+                ypos 960
+                xmaximum 1600
+                background Solid("#000000cc")
+                padding (24, 10)
+                text fr["caption"] style "nr_caption"
 
     textbutton "SKIP NEWS" action Return("skip") align (0.97, 0.03) text_font "gui/fonts/VT323-Regular.ttf" text_size 30
     timer fr.get("seconds", 9) action Return("next")
