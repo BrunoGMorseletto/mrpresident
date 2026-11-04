@@ -550,7 +550,7 @@ screen endings_menu(new_ending=None, after_run=False):
                     text_align 0.5
 
         # --- Bottom row: one slot per ending ---
-        for i, e in enumerate(endings):
+        for i, e in enumerate(gallery_endings()):
             $ got = e["id"] in persistent.endings_seen
             $ slot_x = [100, 165, 230, 295, 360, 424, 487, 552, 616, 680][i]
 
@@ -625,6 +625,13 @@ transform ending_hover:
 
 
 init python:
+    # display order in the gallery (the order in endings.json is the resolver's priority and must not change):
+    # the historical outcome first, the nuclear one second, the satirical secret last
+    GALLERY_ORDER = ["E06", "E01", "E07", "E09", "E10", "E08", "E05", "E04", "E03", "E02"]
+    def gallery_endings():
+        by_id = dict((e["id"], e) for e in endings)
+        return [by_id[i] for i in GALLERY_ORDER if i in by_id] + [e for e in endings if e["id"] not in GALLERY_ORDER]
+
     CHEAT_CODE = list("arkhipov")
     cheat_buffer = []
 

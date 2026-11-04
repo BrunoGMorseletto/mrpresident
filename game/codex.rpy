@@ -441,7 +441,7 @@ screen codex():
 
             text ("FILE " + sentry["id"]) style "codex_text" size cz(20) color "#7a2316" xpos cz(CODEX_R_X) ypos cz(168)
             if s_open and sentry["allison_model"] in CODEX_MODELS:
-                text CODEX_MODELS[sentry["allison_model"]] style "codex_text" size cz(20) color "#7a2316" xpos cz(CODEX_R_X + CODEX_R_W) xanchor 1.0 ypos cz(168)
+                text CODEX_MODELS[sentry["allison_model"]] style "codex_text" size cz(20) color "#7a2316" xpos cz(CODEX_R_X + CODEX_R_W - 70) xanchor 1.0 ypos cz(168)
 
             ## title (or a redaction bar while locked)
             fixed:

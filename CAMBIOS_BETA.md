@@ -241,3 +241,10 @@ Se revisaron los textos nuevos (cartas X, debates, E01, E08, intros, cinemática
   - Ranuras de guardado como fichas de cartón (`gui/button/slot_*`) con texto oscuro y "EMPTY FILE".
   - Se ocultó "Upload Sync".
 - **THREE LENSES:** se explica en la misma página (`lenses_intro`), con nombre llano para cada modelo (CALCULATION, ROUTINE, BARGAINING), qué significa y una carta de la partida como ejemplo (`examples` en `build_debrief`). El códex queda como ampliación.
+
+---
+
+- **Galería:** orden de muestra en `GALLERY_ORDER` (E06 primero, E01 segundo, E02 último). El orden de `endings.json` no se toca, porque es la prioridad del resolutor.
+- **Pista de E02:** "?????".
+- **Manchas:** se sacaron de la franja inferior de la planilla de finales (`images/ending.png`) y de la hoja derecha del códex (`images/codex/codex.png`).
+- **Códex:** la etiqueta del modelo ("MODEL I") se corrió 70 px hacia adentro de la hoja.
