@@ -93,7 +93,7 @@
 		"governmental": {
 			"name": "GOVERNMENTAL POLITICS",
 			"line": "The choice came out of the argument in the room.",
-			"dominant": "Most of your crisis was bargaining: who knew what, who leaked, whose voice carried. The decision was the result, not the starting point."
+			"dominant": "Most of your crisis was bargaining: who knew what, who leaked, whose voice carried. The decision came out of that argument."
 		}
 	},
 	"timeout_line": "%d of your decisions were made by the clock: the organization did what it was already going to do."

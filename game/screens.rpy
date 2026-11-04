@@ -2380,7 +2380,7 @@ screen debrief(ending, d):
             text "WHAT REALLY HAPPENED" style "db_head"
             if d["followed"]:
                 text "Your October followed 1962 closely." style "db_ink"
-                text "In 1962: what nobody in Washington knew was that nuclear warheads were already in Cuba, some of them aimed at the beaches." style "db_ink"
+                text "In 1962: Washington did not know that nuclear warheads were already in Cuba, some of them meant for the beaches." style "db_ink"
             for scene, title, fact in rows[:3]:
                 vbox:
                     spacing 4
@@ -2419,7 +2419,7 @@ screen debrief(ending, d):
             if d["dominant"]:
                 text debrief_data["lenses"][d["dominant"]]["dominant"] style "db_ink"
             else:
-                text "No single lens explains your crisis. Allison's point exactly: each one sees something the others miss." style "db_ink"
+                text "No single lens explains your crisis. Allison and Zelikow argue that each model shows part of what happened and misses the rest." style "db_ink"
             if d["timeouts"]:
                 text debrief_data["timeout_line"] % d["timeouts"] style "db_ink" color "#a01818"
             textbutton "Read the codex file: Three Ways to Explain a Decision" action [Function(codex_open_entry, "TS-01"), ShowMenu("codex")] text_style "db_small" text_underline True

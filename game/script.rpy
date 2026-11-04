@@ -549,7 +549,7 @@ label D07:
 
     taylor "Mr. President, every day we wait, more of those sites are ready to fire. Hit them now, while they're unfinished. The Chiefs are unanimous."
 
-    rob "The Air Force says a strike gets most of the missiles. Most. Every one left standing can still be fired. A quarantine keeps the strike in reserve. We can always escalate. We can't take a bombing back."
+    rob "The Air Force says a strike gets most of the missiles. Most. Every one left standing can still be fired. A quarantine keeps the strike in reserve, and a strike cannot be taken back."
 
     $ card_a = events[current_scene][cards_key][a_card_key]
     $ card_b = events[current_scene][cards_key][b_card_key]
@@ -652,7 +652,7 @@ label D11:
 
     anderson "Mr. President, the Navy has been running blockades since John Paul Jones. Eight hundred miles keeps my ships out of range of Cuban jets. Pull the line in and you put sailors under their guns."
 
-    dean "The British ambassador made a point last night. Every hour we give Khrushchev is an hour he can use to turn his ships around. Five hundred miles gives him those hours."
+    dean "The British ambassador made a point to you last night: every extra hour is time Khrushchev can use to turn his ships around."
 
     $ card_a = events[current_scene][cards_key][a_card_key]
     $ card_b = events[current_scene][cards_key][b_card_key]

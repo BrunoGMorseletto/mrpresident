@@ -7,8 +7,8 @@
 		"tagline": "The crisis ended. No one could stop what came next.",
 		"body": [
 			"From there, the chain ran on its own. On the American side, the decisions that mattered had been taken days earlier: retaliation without asking the President, forces at maximum alert, a chain of command that no longer reported back. Orders to stop went out from Washington and from Moscow. They arrived late, were lost, or reached units that were already acting.",
-			"Mutual assured destruction rested on a threat: whoever started a nuclear war would also be destroyed. The threat made war irrational. It did not make it impossible. The United States had clear nuclear superiority in 1962. It could not come out unharmed.",
-			"Essence of Decision shows how catastrophe could come without either leader choosing it: incomplete information, military routines, local commanders, reprisals that followed a plan written in advance. In October 1962 war was avoided through decisions, negotiation and luck. Here, that combination broke."
+			"Mutual assured destruction rested on a threat: whoever started a nuclear war would also be destroyed. That made war irrational for both leaders, but it did nothing about the crews, commanders and standing plans that could start one without them. In 1962 the United States had clear nuclear superiority, and an exchange would still have destroyed American cities.",
+			"Essence of Decision shows how catastrophe could come without either leader choosing it: incomplete information, military routines, local commanders, reprisals that followed a plan written in advance. In October 1962 war was avoided through decisions, negotiation and luck. In this run the decisions left everything to luck."
 		],
 		"recap_template": "You let retaliation run on its own, raised the alert to its limit, and lost the chain of command.",
 		"condition": {
@@ -47,7 +47,7 @@
 				"if": {
 					"sam_strike": true
 				},
-				"text": "The retaliation on the SAM site killed the Soviet crew that manned it. On the island, local commanders read it as the opening of the invasion they had been expecting for weeks. They had already fired once without asking Moscow. This time they did not ask either."
+				"text": "The retaliation on the SAM site killed the Soviet crew that manned it. On the island, local commanders read it as the opening of the invasion they had been expecting for weeks. They had already fired once without asking Moscow, and they did so again."
 			},
 			{
 				"if": {
@@ -137,7 +137,7 @@
 			"turkey_public"
 		],
 		"background": "E02.png",
-		"hint": "What if Moscow were simply invited in? Again and again.",
+		"hint": "What if every door were opened to Moscow, one after another?",
 		"cutscene": [
 			{
 				"image": "end_e02_1",
@@ -180,11 +180,11 @@
 				"if": {
 					"landing": true
 				},
-				"text": "The landing was not the plan. It became the plan the morning after the strike."
+				"text": "The first order said nothing about a landing. The morning after the strike, the Chiefs had one ready and you approved it."
 			},
 			{
 				"if": {},
-				"text": "The invasion was ready before the first bomb fell. Once the planes were in the air, nobody in the room argued for stopping there."
+				"text": "The invasion was ready before the first bomb fell, and once the planes were in the air the plan ran to its end."
 			}
 		],
 		"hint": "Prepare the whole package. Then let the planes go.",
@@ -195,7 +195,7 @@
 			},
 			{
 				"image": "end_e04_2",
-				"text": "Near the beach, a Soviet officer sat beside a rocket nobody in Washington knew existed, waiting for an order. It never came."
+				"text": "Near the beach, a Soviet officer sat beside a tactical rocket that Washington did not know was in Cuba. The order to fire never came."
 			}
 		]
 	},
@@ -355,7 +355,7 @@
 				"text": "It started at sea, at the quarantine line, with ships that would not stop and a Navy that had its orders."
 			}
 		],
-		"hint": "Two sides answering each other's last move, and nobody looking for the way back.",
+		"hint": "Answer every move with a bigger one, and make no deal.",
 		"cutscene": [
 			{
 				"image": "end_e03_1",
@@ -363,7 +363,7 @@
 			},
 			{
 				"image": "end_e03_2",
-				"text": "Berlin. The first shot at the checkpoint came from a tank nobody had ordered to fire."
+				"text": "Berlin. The first shot at the checkpoint came from a tank whose crew had no order to fire."
 			},
 			{
 				"image": "end_e03_3",
@@ -404,7 +404,7 @@
 				"if": {
 					"sam_strike": true
 				},
-				"text": "You answered the U-2 with fire and still reached the deal. In 1962, Kennedy held back. You did not, and you were lucky."
+				"text": "You answered the U-2 with fire and still reached the deal. In 1962 Kennedy held back the retaliation; here the deal survived a strike that could have ended it."
 			}
 		],
 		"hint": "Firm in public. Generous in private.",
@@ -415,7 +415,7 @@
 			},
 			{
 				"image": "end_e06_2",
-				"text": "October 28. The missiles go home. The world calls it a victory for firmness."
+				"text": "October 28. The missiles go home. In Washington, the story going around is that Khrushchev blinked."
 			},
 			{
 				"image": "end_e06_3",
@@ -459,11 +459,11 @@
 		"cutscene": [
 			{
 				"image": "end_e07_1",
-				"text": "The deal was read on the radio. Both sides signed it in public."
+				"text": "The deal was read on the radio. Both sides confirmed it in public."
 			},
 			{
 				"image": "end_e07_2",
-				"text": "At NATO headquarters, the allies asked the question nobody in Washington wanted to answer: what else would you trade?"
+				"text": "At NATO headquarters, the allies asked who in Washington had consulted them before the broadcast."
 			}
 		]
 	},
@@ -523,7 +523,7 @@
 			},
 			{
 				"image": "end_e09_2",
-				"text": "The next one was smaller. In Moscow, Khrushchev had his answer."
+				"text": "The next ones were smaller still, and each was announced as a technical arrangement."
 			}
 		]
 	},
@@ -544,7 +544,7 @@
 				"if": {
 					"soviet_withdrawal": true
 				},
-				"text": "This is closer to what happened than the legend admits. After October 28 the crisis dragged on for three more weeks over the Il-28 bombers, and the promise not to invade Cuba was never formalized."
+				"text": "After October 28 the crisis dragged on for three more weeks over the Il-28 bombers, and the promise not to invade Cuba was never formalized. The story of a clean Soviet retreat leaves those weeks out."
 			},
 			{
 				"if": {
@@ -553,7 +553,7 @@
 				"gallery": false,
 				"text": "On the first day of the crisis, McNamara argued that the missiles did not really change the military balance: the Soviet Union could already hit the United States. Politically it was another matter. Kennedy had promised in public that this would not be tolerated."
 			},
-			"This outcome is quieter than the others. Most real crises end this way: not with a signature, but with everyone deciding to stop."
+			"This outcome is quieter than the others. Most real crises end this way."
 		],
 		"recap_template": "You avoided war and never forced a deal that could be checked.",
 		"condition": {
@@ -596,7 +596,7 @@
 							"soviet_withdrawal": true
 						},
 						"image": "end_e08_2",
-						"text": "The bombers stayed on the island for weeks. Nobody signed anything."
+						"text": "The bombers stayed on the island for weeks, and no agreement was ever signed."
 					},
 					{
 						"if": {},

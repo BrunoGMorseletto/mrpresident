@@ -736,7 +736,7 @@
     "title": "SEND IN THE TROOPS",
     "hint": "Finish it on the ground.",
     "icon": "helmet",
-    "aftermath": "Landing craft leave Key West at dusk. Nobody knows what is waiting on the beaches.",
+    "aftermath": "Landing craft leave Key West at dusk. The maps of the beaches are three weeks old.",
     "stats": {
      "escalation": 1
     },
@@ -807,7 +807,7 @@
       ">=": 1
      }
     },
-    "locked_text": "Nobody in Moscow is taking our calls."
+    "locked_text": "Moscow is not answering."
    }
   },
   "next": [
@@ -856,7 +856,7 @@
     "title": "PUSH INLAND",
     "hint": "Take the sites before they can fire.",
     "icon": "crosshair",
-    "aftermath": "The second wave goes in. Nobody has told the Marines what the Soviets brought with them.",
+    "aftermath": "The second wave goes in. Its orders say nothing about what the Soviets brought with them.",
     "stats": {
      "escalation": 2
     },
@@ -1208,7 +1208,7 @@
     "title": "CALL OFF THE DAWN STRIKE",
     "hint": "Take the losses. Keep a door open.",
     "icon": "stop_hand",
-    "aftermath": "The bases stand down. On the tapes, the President says it twice to be sure.",
+    "aftermath": "The bases stand down. The order goes out twice, to make sure it arrives.",
     "stats": {
      "escalation": -1
     },

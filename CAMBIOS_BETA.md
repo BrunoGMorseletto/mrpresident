@@ -202,3 +202,9 @@ Después correr **Lint** (launcher de Ren'Py → Check Script) y jugar las rutas
 - `gui/newsreel/bezel.png` es ahora el televisor de Julián, con la pantalla transparente. `NR_SCREEN` quedó ajustado al hueco, y las scanlines se regeneraron para ese tamaño.
 - El zócalo va centrado con margen lateral (las esquinas de la pantalla son redondeadas). La narración va sobre una franja oscura.
 - Faltan nr_supermarket, nr_schoolkids, nr_pickets, nr_berlin, nr_crates y nr_castro. Mientras tanto se ven grises con el texto.
+
+---
+
+# Pasada de texto
+
+Se revisaron los textos nuevos (cartas X, debates, E01, E08, intros, cinemáticas, noticiero, informe, STA-10) para sacar los cierres efectistas, las frases que anuncian en lugar de decir y las repeticiones entre el noticiero, la cinemática y el expediente de un mismo final. En D11, la frase del embajador británico ahora está dirigida a Kennedy ("to you"), que fue a quien se la dijo.

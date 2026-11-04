@@ -36,7 +36,7 @@
 				},
 				{
 					"classified": true,
-					"caption": "Not broadcast: that same evening, Robert Kennedy asked the Soviet embassy for a private meeting. No camera was there.",
+					"caption": "Not broadcast: that same evening, Robert Kennedy asked the Soviet embassy for a private meeting.",
 					"if": {
 						"private_channel": true
 					}
@@ -94,7 +94,7 @@
 				{
 					"image": "nr_pickets",
 					"lower_third": "PROTESTS OUTSIDE THE WHITE HOUSE",
-					"caption": "Outside the White House, two crowds tonight: one asking for peace, one asking for more."
+					"caption": "Outside the White House, two crowds tonight, one asking for talks and one asking for an invasion."
 				}
 			]
 		},
@@ -268,7 +268,7 @@
 				},
 				{
 					"classified": true,
-					"caption": "Not broadcast: the Jupiter missiles in Turkey will be removed within months. If Moscow ever says so in public, the deal is off. The public will not learn of it for more than twenty years."
+					"caption": "Not broadcast: the Jupiter missiles in Turkey will be removed within months. If Moscow ever says so in public, the deal is off."
 				}
 			]
 		},
@@ -287,7 +287,7 @@
 				{
 					"image": "nr_crates",
 					"lower_third": "MISSILES FOR MISSILES",
-					"caption": "The world has stepped back from the edge. In NATO capitals, the question now is what else Washington would trade."
+					"caption": "The world has stepped back from the edge. The State Department says the Jupiters were obsolete anyway."
 				}
 			]
 		},
@@ -309,7 +309,7 @@
 				{
 					"image": "nr_crates",
 					"lower_third": "HOW DO WE KNOW?",
-					"caption": "Reconnaissance flights show crates on the docks. Nobody in Washington can say what is still on the island."
+					"caption": "Reconnaissance flights show crates on the docks. Washington cannot say what is still on the island."
 				}
 			]
 		},
@@ -361,11 +361,11 @@
 							"if": {
 								"public_ultimatum": true
 							},
-							"caption": "The President promised the country the missiles would go. The opposition has found its message."
+							"caption": "The President promised the country the missiles would go. Republican candidates are quoting his speech back to him."
 						},
 						{
 							"if": {},
-							"caption": "Washington says the situation is under control. Fewer people believe it every day."
+							"caption": "Washington says the situation is under control. Congressional leaders are asking for a briefing."
 						}
 					]
 				}
