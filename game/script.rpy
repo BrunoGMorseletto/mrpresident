@@ -29,9 +29,9 @@ transform init_pos_decision(flip=False):
 transform duel_left:
     # T08: adviser on the left, mirrored to face the other one (Bruno: adjust xpos)
     zoom 0.25
-    xanchor 0.5
-    xpos 680        # both advisers sit left of center so the speech bubble (top right) does not cover them
-    ypos 138        # bottom of the sprite on the far edge of the table, like the single-adviser scenes
+    #xanchor 0.5
+    xpos 825        # both advisers sit left of center so the speech bubble (top right) does not cover them
+    ypos 145        # bottom of the sprite on the far edge of the table, like the single-adviser scenes
     xzoom -1.0
     alpha 0.0
     ease 0.5 alpha 1.0
@@ -39,9 +39,9 @@ transform duel_right(flip=False):
     # flip=True for sprites that already look to the right (Rusk), so both advisers face each other
     xzoom (-1.0 if flip else 1.0)
     zoom 0.25
-    xanchor 0.5
-    xpos 1000
-    ypos 138
+    #xanchor 0.5
+    xpos 1100
+    ypos 145
     alpha 0.0
     ease 0.5 alpha 1.0
 transform init_pos_crisis(flip=False):
@@ -155,7 +155,7 @@ init python:
         """Ending body, with an opening paragraph that depends on how the player got there (intro_variants)."""
         # a body paragraph can be a string, or {"if": ..., "text": ...} shown only when its condition holds
         paras = [b["text"] if hasattr(b, "keys") else b for b in ending["body"]
-                 if not hasattr(b, "keys") or check_trigger(b.get("if", {}))]
+        if not hasattr(b, "keys") or check_trigger(b.get("if", {}))]
         if ending.get("intro_variants"):
             intro = pick_variant({"variants": ending["intro_variants"]})
             if intro.get("text"):
@@ -175,7 +175,7 @@ init python:
         # YOUR CRISIS
         skip = ending.get("recap_skip", [])
         frags = [f["text"] for f in debrief_data["recap_fragments"]
-                 if flags.get(f["flag"]) and f["flag"] not in skip]
+        if flags.get(f["flag"]) and f["flag"] not in skip]
         d["recap"] = ending.get("recap_template", "")
         d["fragments"] = frags[:3]
         # WHAT REALLY HAPPENED: where this run left the record (choices first, then things that never happened)
@@ -660,9 +660,7 @@ label D11:
 
     scene bg_decisions at bg_size with  Dissolve(0.2)
 
-    # T08: hawk (Navy) on the left, dove on the right. Anderson's sprite is optional until it exists.
-    if renpy.has_image("admiral george anderson"):
-        show expression "admiral george anderson" as hawk at duel_left
+    show expression "admiral george anderson" as hawk at duel_left
     show expression "dean rusk" as dove at duel_right(True)
 
     anderson "Mr. President, the Navy has been running blockades since John Paul Jones. Eight hundred miles keeps my ships out of range of Cuban jets. Pull the line in and you put sailors under their guns."
@@ -1126,8 +1124,7 @@ label D23:
     scene bg_decisions at bg_size with  Dissolve(0.2)
 
     # T08: hawk on the left, dove on the right. LeMay's sprite is optional until it exists.
-    if renpy.has_image("general curtis lemay"):
-        show expression "general curtis lemay" as hawk at duel_left
+    show expression "general curtis lemay" as hawk at duel_left
     show expression "robert mcnamara" as dove at duel_right
 
     lemay "We have been had. It's the greatest defeat in our history. They'll stall and hide what's left. I say we hit them Monday anyway, or at least keep every bomber up until the last missile is at sea."
