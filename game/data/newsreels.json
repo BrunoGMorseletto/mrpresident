@@ -13,8 +13,8 @@
 				},
 				{
 					"image": "nr_speech",
-					"audio": "audio/jfk_1962-10-22_excerpt.mp3",
-					"seconds": 14,
+					"audio": "audio/jfk_1962-10-22_excerpt.ogg",
+					"seconds": 20,
 					"caption": "\"It shall be the policy of this Nation to regard any nuclear missile launched from Cuba against any nation in the Western Hemisphere as an attack by the Soviet Union on the United States...\"",
 					"variants": [
 						{

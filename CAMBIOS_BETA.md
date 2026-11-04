@@ -216,3 +216,10 @@ Se revisaron los textos nuevos (cartas X, debates, E01, E08, intros, cinemática
 - `audio/crisis.ogg`: tema nuevo (40 s, se repite en loop). Recortado y nivelado al mismo volumen que `oval_office.ogg`.
 - Suena en las escenas de la sala de crisis con reloj (C01 a C04, X03 y X04) y en las cinemáticas de los diez finales. `if_changed` hace que no se reinicie si dos escenas de crisis van seguidas.
 - Al salir de la sala de crisis, `next_event()` vuelve a `oval_office.ogg`. Al terminar la cinemática también vuelve esa música.
+
+---
+
+# Audio del discurso del 22/10
+
+- `audio/jfk_1962-10-22_excerpt.ogg`: el fragmento "It shall be the policy of this Nation... upon the Soviet Union" (19 s), recortado del discurso completo.
+- Suena en el segundo cuadro del noticiero del 22/10, que ahora dura 20 s. Mientras habla, la música baja al 25%.

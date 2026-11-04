@@ -1221,10 +1221,14 @@ label newsreel(reel):
     scene black with Dissolve(0.4)
     python:
         for fr in newsreel_frames(reel):
-            if fr.get("audio") and renpy.loadable(fr["audio"]):
+            speaking = fr.get("audio") and renpy.loadable(fr["audio"])
+            if speaking:
+                renpy.music.set_volume(0.25, delay=0.5, channel="music")   # duck the music under the speech
                 renpy.music.play(fr["audio"], channel="voice", loop=False)
             result = renpy.call_screen("newsreel_frame", fr=fr)
-            renpy.music.stop(channel="voice")
+            if speaking:
+                renpy.music.stop(channel="voice")
+                renpy.music.set_volume(1.0, delay=1.0, channel="music")
             if result == "skip":
                 break
     $ hud_on = hud_was_on
