@@ -263,6 +263,9 @@ init python:
                     renpy.call_in_new_context("intermission", current_date)
                 current_date = new_date or current_date
                 codex_on_scene(name)
+                # leaving the crisis room: back from the tension track to the office music
+                if not events[name].get("crisis") and renpy.music.get_playing() == "audio/crisis.ogg":
+                    renpy.music.play("audio/oval_office.ogg", fadeout=2.0, fadein=2.0)
                 return name
         chosen_ending = decide_ending()
         return "ENDING"
@@ -784,6 +787,7 @@ label C01:
     $ card_b = events[current_scene][cards_key][b_card_key]
 
     $ seconds, default_card = crisis_info(current_scene)
+    play music "audio/crisis.ogg" fadeout 1.0 fadein 1.0 if_changed
     call screen decision_folder(card_a, card_b, seconds, default_card)
     $ choice = _return
 
@@ -809,6 +813,7 @@ label C02:
     $ card_b = events[current_scene][cards_key][b_card_key]
 
     $ seconds, default_card = crisis_info(current_scene)
+    play music "audio/crisis.ogg" fadeout 1.0 fadein 1.0 if_changed
     call screen decision_folder(card_a, card_b, seconds, default_card)
     $ choice = _return
 
@@ -883,6 +888,7 @@ label X03:
     $ card_b = events[current_scene][cards_key][b_card_key]
 
     $ seconds, default_card = crisis_info(current_scene)
+    play music "audio/crisis.ogg" fadeout 1.0 fadein 1.0 if_changed
     call screen decision_folder(card_a, card_b, seconds, default_card)
 
     $ choice = _return
@@ -907,6 +913,7 @@ label X04:
     $ card_b = events[current_scene][cards_key][b_card_key]
 
     $ seconds, default_card = crisis_info(current_scene)
+    play music "audio/crisis.ogg" fadeout 1.0 fadein 1.0 if_changed
     call screen decision_folder(card_a, card_b, seconds, default_card)
 
     $ choice = _return
@@ -1005,6 +1012,7 @@ label C03:
     $ card_b = events[current_scene][cards_key][b_card_key]
 
     $ seconds, default_card = crisis_info(current_scene)
+    play music "audio/crisis.ogg" fadeout 1.0 fadein 1.0 if_changed
     call screen decision_folder(card_a, card_b, seconds, default_card)
     $ choice = _return
 
@@ -1032,6 +1040,7 @@ label C04:
     $ card_b = events[current_scene][cards_key][b_card_key]
 
     $ seconds, default_card = crisis_info(current_scene)
+    play music "audio/crisis.ogg" fadeout 1.0 fadein 1.0 if_changed
     call screen decision_folder(card_a, card_b, seconds, default_card)
     $ choice = _return
 
@@ -1224,6 +1233,7 @@ label newsreel(reel):
 # Cutscene before an ending. Each frame: {"image", "text"} or {"variants": [{"if", "image", "text"}, ...]}.
 # Images live in images/cutscenes/<image>.png; if one is missing, the frame is shown on black.
 label ending_cutscene(frames):
+    play music "audio/crisis.ogg" fadeout 1.5 fadein 1.5
     python:
         for frame in frames:
             v = pick_variant(frame)
@@ -1239,6 +1249,7 @@ label ending_cutscene(frames):
             else:
                 renpy.pause(2.5, hard=True)
     scene black with Fade(0.2, 0.6, 0.2)
+    play music "audio/oval_office.ogg" fadeout 2.0 fadein 2.0
     return
 
 label intermission(date):

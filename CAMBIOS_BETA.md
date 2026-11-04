@@ -208,3 +208,11 @@ Después correr **Lint** (launcher de Ren'Py → Check Script) y jugar las rutas
 # Pasada de texto
 
 Se revisaron los textos nuevos (cartas X, debates, E01, E08, intros, cinemáticas, noticiero, informe, STA-10) para sacar los cierres efectistas, las frases que anuncian en lugar de decir y las repeticiones entre el noticiero, la cinemática y el expediente de un mismo final. En D11, la frase del embajador británico ahora está dirigida a Kennedy ("to you"), que fue a quien se la dijo.
+
+---
+
+# Música de tensión
+
+- `audio/crisis.ogg`: tema nuevo (40 s, se repite en loop). Recortado y nivelado al mismo volumen que `oval_office.ogg`.
+- Suena en las escenas de la sala de crisis con reloj (C01 a C04, X03 y X04) y en las cinemáticas de los diez finales. `if_changed` hace que no se reinicie si dos escenas de crisis van seguidas.
+- Al salir de la sala de crisis, `next_event()` vuelve a `oval_office.ogg`. Al terminar la cinemática también vuelve esa música.
