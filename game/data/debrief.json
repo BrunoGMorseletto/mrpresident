@@ -81,20 +81,26 @@
 	],
 	"lenses": {
 		"rational": {
-			"name": "RATIONAL ACTOR",
-			"line": "You weighed the options and chose.",
-			"dominant": "Most of your crisis was calculation: goals, options, consequences. Allison's first model, and the one the cards make easiest to believe."
+			"plain": "CALCULATION",
+			"name": "Rational Actor",
+			"line": "You compared the options and picked the one that served your goal.",
+			"dominant": "You played this crisis mostly as a calculation: what do I want, what does each option cost, which one gets me there. It is how most people imagine a president deciding."
 		},
 		"organizational": {
-			"name": "ORGANIZATIONAL BEHAVIOR",
-			"line": "The options came from plans already written.",
-			"dominant": "Most of your crisis was decided by what the organizations could do and when. You chose among plans you did not write."
+			"plain": "ROUTINE",
+			"name": "Organizational Behavior",
+			"line": "You chose between plans the Navy, the Air Force or the CIA had already written.",
+			"dominant": "Most of your crisis was shaped by what the military and the agencies were already prepared to do. You picked between their plans, and they carried them out their way."
 		},
 		"governmental": {
-			"name": "GOVERNMENTAL POLITICS",
-			"line": "The choice came out of the argument in the room.",
-			"dominant": "Most of your crisis was bargaining: who knew what, who leaked, whose voice carried. The decision came out of that argument."
+			"plain": "BARGAINING",
+			"name": "Governmental Politics",
+			"line": "The decision came out of an argument between your advisers.",
+			"dominant": "Most of your crisis was settled by argument: who was in the room, who leaked, whose advice you took. The decision came out of that struggle."
 		}
 	},
-	"timeout_line": "%d of your decisions were made by the clock: the organization did what it was already going to do."
+	"timeout_line": "%d of your decisions were made by the clock: the organization did what it was already going to do.",
+	"lenses_intro": "Political scientist Graham Allison asked why governments decide what they decide. He found three different kinds of answer. Each decision you made fits one of them best. These are not scores.",
+	"lenses_tie": "Your crisis was split between the three. That is Allison's point: you need all three to explain what happened in 1962.",
+	"lenses_note": "None of them is the right way to play. Allison's argument is that each one explains part of what happened and misses the rest."
 }

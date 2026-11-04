@@ -31,7 +31,7 @@ transform duel_left:
     zoom 0.25
     xanchor 0.5
     xpos 680        # both advisers sit left of center so the speech bubble (top right) does not cover them
-    ypos 165        # lower than single scenes: the table edge is lower toward the center
+    ypos 138        # bottom of the sprite on the far edge of the table, like the single-adviser scenes
     xzoom -1.0
     alpha 0.0
     ease 0.5 alpha 1.0
@@ -41,7 +41,7 @@ transform duel_right(flip=False):
     zoom 0.25
     xanchor 0.5
     xpos 1000
-    ypos 165
+    ypos 138
     alpha 0.0
     ease 0.5 alpha 1.0
 transform init_pos_crisis(flip=False):
@@ -201,6 +201,13 @@ init python:
             if m in counts:
                 counts[m] += 1
         d["lenses"] = counts
+        # one card from this run for each lens, so the categories have a concrete example
+        examples = {}
+        for scene, choice in choices_made:
+            m = events[scene].get("allison_model")
+            if m in counts and m not in examples:
+                examples[m] = events[scene]["cards"][choice]["title"]
+        d["examples"] = examples
         top = max(counts.values())
         leaders = [k for k, v in counts.items() if v == top]
         d["dominant"] = leaders[0] if len(leaders) == 1 else None
@@ -370,7 +377,8 @@ label start:
         for stat, info in state.items():
             stats[stat] = info["init"]
     $ current_scene = "intro"
-    play music "audio/oval_office.ogg" fadeout 2.0 fadein 0.0
+    # intro theme (starts 20 s into the track); it is cut the moment the player reaches the Oval Office
+    play music "audio/intro.ogg" fadeout 1.0 fadein 0.5 noloop
 
     # first run only: say what the game is about before it starts
     if not persistent.endings_seen:
@@ -389,6 +397,7 @@ label start:
     scene black with Fade(0.2, 0.0, 0.2)
 
     $ hud_on = True
+    play music "audio/oval_office.ogg" fadeout 0.5 fadein 1.0
     jump expression "D01"
 
  
@@ -552,6 +561,9 @@ label D07:
 
     taylor "Mr. President, every day we wait, more of those sites are ready to fire. Hit them now, while they're unfinished. The Chiefs are unanimous."
 
+    # two retained bubbles land on the same spot: drop the first one before the second adviser speaks
+    $ renpy.clear_retain()
+
     rob "The Air Force says a strike gets most of the missiles. Most. Every one left standing can still be fired. A quarantine keeps the strike in reserve, and a strike cannot be taken back."
 
     $ card_a = events[current_scene][cards_key][a_card_key]
@@ -655,6 +667,9 @@ label D11:
 
     anderson "Mr. President, the Navy has been running blockades since John Paul Jones. Eight hundred miles keeps my ships out of range of Cuban jets. Pull the line in and you put sailors under their guns."
 
+    # two retained bubbles land on the same spot: drop the first one before the second adviser speaks
+    $ renpy.clear_retain()
+
     dean "The British ambassador made a point to you last night: every extra hour is time Khrushchev can use to turn his ships around."
 
     $ card_a = events[current_scene][cards_key][a_card_key]
@@ -731,6 +746,9 @@ label D14:
 
     taylor "If they shoot down one of our planes, the pilots need to know the answer is already given. Standing permission to hit the SAM site that fired. No waiting for Washington."
 
+    # two retained bubbles land on the same spot: drop the first one before the second adviser speaks
+    $ renpy.clear_retain()
+
     bundy "Then the decision to start shooting gets made by a missile crew in Cuba and a squadron leader in Florida. Every response should come through you, however long that takes."
 
     $ card_a = events[current_scene][cards_key][a_card_key]
@@ -777,6 +795,7 @@ label C01:
     #TODO TIMEOUT SYSTEM
     $ current_scene = "C01"
 
+    play music "audio/crisis.ogg" fadeout 0.5 fadein 0.3 if_changed
     scene bg_crisis_normal at bg_size with  Dissolve(0.2)
 
     #show expression "general maxwell taylor" at init_pos_decision
@@ -787,7 +806,6 @@ label C01:
     $ card_b = events[current_scene][cards_key][b_card_key]
 
     $ seconds, default_card = crisis_info(current_scene)
-    play music "audio/crisis.ogg" fadeout 1.0 fadein 1.0 if_changed
     call screen decision_folder(card_a, card_b, seconds, default_card)
     $ choice = _return
 
@@ -803,6 +821,7 @@ label C02:
     #TODO TIMEOUT SYSTEM
     $ current_scene = "C02"
 
+    play music "audio/crisis.ogg" fadeout 0.5 fadein 0.3 if_changed
     scene bg_crisis_normal at bg_size with  Dissolve(0.2)
 
     #show expression "general maxwell taylor" at init_pos_decision
@@ -813,7 +832,6 @@ label C02:
     $ card_b = events[current_scene][cards_key][b_card_key]
 
     $ seconds, default_card = crisis_info(current_scene)
-    play music "audio/crisis.ogg" fadeout 1.0 fadein 1.0 if_changed
     call screen decision_folder(card_a, card_b, seconds, default_card)
     $ choice = _return
 
@@ -878,6 +896,7 @@ label X02:
 label X03:
     $ current_scene = "X03"
 
+    play music "audio/crisis.ogg" fadeout 0.5 fadein 0.3 if_changed
     scene bg_crisis_normal at bg_size with  Dissolve(0.2)
 
     show expression "general maxwell taylor" at init_pos_crisis
@@ -888,7 +907,6 @@ label X03:
     $ card_b = events[current_scene][cards_key][b_card_key]
 
     $ seconds, default_card = crisis_info(current_scene)
-    play music "audio/crisis.ogg" fadeout 1.0 fadein 1.0 if_changed
     call screen decision_folder(card_a, card_b, seconds, default_card)
 
     $ choice = _return
@@ -903,6 +921,7 @@ label X03:
 label X04:
     $ current_scene = "X04"
 
+    play music "audio/crisis.ogg" fadeout 0.5 fadein 0.3 if_changed
     scene bg_crisis_normal at bg_size with  Dissolve(0.2)
 
     show expression "general maxwell taylor" at init_pos_crisis
@@ -913,7 +932,6 @@ label X04:
     $ card_b = events[current_scene][cards_key][b_card_key]
 
     $ seconds, default_card = crisis_info(current_scene)
-    play music "audio/crisis.ogg" fadeout 1.0 fadein 1.0 if_changed
     call screen decision_folder(card_a, card_b, seconds, default_card)
 
     $ choice = _return
@@ -1002,6 +1020,7 @@ label C03:
     #TODO TIMEOUT SYSTEM
     $ current_scene = "C03"
 
+    play music "audio/crisis.ogg" fadeout 0.5 fadein 0.3 if_changed
     scene bg_crisis_normal at bg_size with  Dissolve(0.2)
 
     #show expression "general maxwell taylor" at init_pos_decision
@@ -1012,7 +1031,6 @@ label C03:
     $ card_b = events[current_scene][cards_key][b_card_key]
 
     $ seconds, default_card = crisis_info(current_scene)
-    play music "audio/crisis.ogg" fadeout 1.0 fadein 1.0 if_changed
     call screen decision_folder(card_a, card_b, seconds, default_card)
     $ choice = _return
 
@@ -1030,6 +1048,7 @@ label C04:
     #TODO TIMEOUT SYSTEM
     $ current_scene = "C04"
 
+    play music "audio/crisis.ogg" fadeout 0.5 fadein 0.3 if_changed
     scene bg_crisis_normal at bg_size with  Dissolve(0.2)
 
     show expression "mcgeorge bundy" at init_pos_crisis
@@ -1040,7 +1059,6 @@ label C04:
     $ card_b = events[current_scene][cards_key][b_card_key]
 
     $ seconds, default_card = crisis_info(current_scene)
-    play music "audio/crisis.ogg" fadeout 1.0 fadein 1.0 if_changed
     call screen decision_folder(card_a, card_b, seconds, default_card)
     $ choice = _return
 
@@ -1113,6 +1131,9 @@ label D23:
     show expression "robert mcnamara" as dove at duel_right
 
     lemay "We have been had. It's the greatest defeat in our history. They'll stall and hide what's left. I say we hit them Monday anyway, or at least keep every bomber up until the last missile is at sea."
+
+    # two retained bubbles land on the same spot: drop the first one before the second adviser speaks
+    $ renpy.clear_retain()
 
     rob "Khrushchev just gave us what we asked for. If the bombers stay up, Moscow reads it as a threat, and someone on our side reads it as permission. Stand them down."
 

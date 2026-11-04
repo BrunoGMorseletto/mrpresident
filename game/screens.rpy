@@ -921,7 +921,7 @@ screen file_slots(title):
 
                         add FileScreenshot(slot) xalign 0.5
 
-                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
+                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("EMPTY FILE")):
                             style "slot_time_text"
 
                         text FileSaveName(slot):
@@ -957,7 +957,7 @@ screen file_slots(title):
                     textbutton _(">") action FilePageNext()
                     key "save_page_next" action FilePageNext()
 
-                if config.has_sync:
+                if False and config.has_sync:   # cloud sync hidden: not used by this game
                     if CurrentScreenName() == "save":
                         textbutton _("Upload Sync"):
                             action UploadSync()
@@ -2397,32 +2397,38 @@ screen debrief(ending, d):
                     text "In 1962: " + fact style "db_ink" size 28
 
     else:
-        # THREE LENSES (Allison & Zelikow)
+        # THREE LENSES (Allison & Zelikow), explained on the page itself
         vbox:
             pos (lx, ly)
             xsize lw
-            spacing 26
+            spacing 14
             text "THREE LENSES" style "db_head"
+            text debrief_data["lenses_intro"] style "db_small"
+            null height 6
             for lk in ("rational", "organizational", "governmental"):
                 $ lens = debrief_data["lenses"][lk]
                 hbox:
-                    spacing 24
-                    text str(d["lenses"][lk]) style "db_head" size 64 color ("#a01818" if d["dominant"] == lk else "#2a1d14") min_width 70
+                    spacing 20
+                    text str(d["lenses"][lk]) style "db_head" size 60 color ("#a01818" if d["dominant"] == lk else "#2a1d14") min_width 60 yalign 0.0
                     vbox:
-                        yalign 0.5
-                        text lens["name"] style "db_ink" size 30
-                        text lens["line"] style "db_small"
+                        xsize lw - 80
+                        text "{b}" + lens["plain"] + "{/b}  (" + lens["name"] + ")" style "db_ink" size 28
+                        text lens["line"] style "db_small" size 24
+                        if lk in d["examples"]:
+                            text "From your run: " + d["examples"][lk] style "db_small" size 22 color "#7a2316"
         vbox:
-            pos (rx, ry + 120)
+            pos (rx, ry + 60)
             xsize rw
-            spacing 24
+            spacing 22
+            text "WHAT IT SAYS ABOUT YOUR CRISIS" style "db_small"
             if d["dominant"]:
                 text debrief_data["lenses"][d["dominant"]]["dominant"] style "db_ink"
             else:
-                text "No single lens explains your crisis. Allison and Zelikow argue that each model shows part of what happened and misses the rest." style "db_ink"
+                text debrief_data["lenses_tie"] style "db_ink"
             if d["timeouts"]:
                 text debrief_data["timeout_line"] % d["timeouts"] style "db_ink" color "#a01818"
-            textbutton "Read the codex file: Three Ways to Explain a Decision" action [Function(codex_open_entry, "TS-01"), ShowMenu("codex")] text_style "db_small" text_underline True
+            text debrief_data["lenses_note"] style "db_small"
+            textbutton "More in the codex" action [Function(codex_open_entry, "TS-01"), ShowMenu("codex")] text_style "db_small" text_underline True
 
     textbutton "CONTINUE":
         align (0.97, 0.97)

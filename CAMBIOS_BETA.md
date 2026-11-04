@@ -223,3 +223,21 @@ Se revisaron los textos nuevos (cartas X, debates, E01, E08, intros, cinemática
 
 - `audio/jfk_1962-10-22_excerpt.ogg`: el fragmento "It shall be the policy of this Nation... upon the Soviet Union" (19 s), recortado del discurso completo.
 - Suena en el segundo cuadro del noticiero del 22/10, que ahora dura 20 s. Mientras habla, la música baja al 25%.
+
+---
+
+# Tercera ronda de prueba
+
+- **Sprites:** se limpió el halo violeta del fondo magenta en todos los personajes, quitando el tono magenta en los bordes.
+- **Debates:**
+  - Los dos asesores vuelven a `ypos 138`: el borde inferior queda sobre el fondo de la mesa, igual que en las escenas con un solo asesor.
+  - `renpy.clear_retain()` entre la primera línea y la segunda. Los dos globos retenidos caían en el mismo lugar y se mezclaban los nombres ("McNAMARAYLOR").
+- **Música:**
+  - La de la sala de crisis arranca apenas se entra a la escena (antes arrancaba recién en las cartas).
+  - La intro usa `audio/intro.ogg`, que es el tema nuevo desde el segundo 20, y se corta cuando se entra al Despacho Oval.
+- **Menú de Esc:**
+  - Fondo del despacho desenfocado y oscurecido (`gui/game_menu.png`).
+  - Panel oscuro a la izquierda (`gui/overlay/game_menu.png`).
+  - Ranuras de guardado como fichas de cartón (`gui/button/slot_*`) con texto oscuro y "EMPTY FILE".
+  - Se ocultó "Upload Sync".
+- **THREE LENSES:** se explica en la misma página (`lenses_intro`), con nombre llano para cada modelo (CALCULATION, ROUTINE, BARGAINING), qué significa y una carta de la partida como ejemplo (`examples` en `build_debrief`). El códex queda como ampliación.
