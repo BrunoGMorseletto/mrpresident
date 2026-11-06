@@ -252,3 +252,7 @@ Se revisaron los textos nuevos (cartas X, debates, E01, E08, intros, cinemática
 ---
 
 - **D04 aclarado como preparación:** las cartas pasan a "DRAW UP STRIKE PLANS" / "DRAW UP A BLOCKADE", con "Nothing is ordered yet". McNamara aclara que la decisión real viene después (D07). Los efectos no cambian. La línea de D04 es nueva, así que hay que volver a ubicar su globo con Shift+B.
+
+---
+
+- **Galería, volver a ver un final:** con doble click (primer click selecciona, segundo click reproduce) o con Enter sobre el final seleccionado, se repiten su noticiero y su cinemática (`replay_ending()` → `label replay_ending_label`, en un contexto nuevo). Las banderas de la partida en curso se guardan y se restauran, y lo mismo la música. En la columna izquierda aparece una línea que lo explica.

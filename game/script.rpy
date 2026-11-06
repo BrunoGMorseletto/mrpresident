@@ -214,6 +214,10 @@ init python:
         d["timeouts"] = len(timed_out)
         return d
 
+    def replay_ending(eid):
+        """Gallery: watch an ending's newsreel and film again, in its main version."""
+        renpy.call_in_new_context("replay_ending_label", eid)
+
     def find_newsreel(date):
         """First newsreel for that date whose "if" holds, or None (T06)."""
         for reel in newsreels:
@@ -1250,6 +1254,30 @@ label newsreel(reel):
             if result == "skip":
                 break
     $ hud_on = hud_was_on
+    return
+
+# Gallery replay: the ending's newsreel and film, without touching the run in progress.
+label replay_ending_label(eid):
+    python:
+        _saved_flags = dict(flags)
+        _saved_music = renpy.music.get_playing()
+        _rep = [x for x in endings if x["id"] == eid][0]
+        # flags that select the main version of each film (e.g. E08 with the withdrawal announced)
+        flags.clear()
+        flags.update(_rep["condition"]["flags"])
+        if eid == "E08":
+            flags["soviet_withdrawal"] = True
+    if find_final_newsreel(eid):
+        call newsreel(find_final_newsreel(eid)) from _call_replay_newsreel
+    if _rep.get("cutscene"):
+        call ending_cutscene(_rep["cutscene"]) from _call_replay_cutscene
+    python:
+        flags.clear()
+        flags.update(_saved_flags)
+        if _saved_music:
+            renpy.music.play(_saved_music, fadeout=1.0, fadein=1.0)
+        else:
+            renpy.music.stop(fadeout=1.0)
     return
 
 # Cutscene before an ending. Each frame: {"image", "text"} or {"variants": [{"if", "image", "text"}, ...]}.

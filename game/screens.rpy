@@ -461,6 +461,9 @@ screen endings_menu(new_ending=None, after_run=False):
         key ("K_"+input_key) action Function(cheat_key, input_key)
 
     default current = new_ending
+    if current is not None:
+        key "K_RETURN" action Function(replay_ending, current["id"])
+        key "K_KP_ENTER" action Function(replay_ending, current["id"])
     default hint = None
 
     # --- Background: the selected ending's image, or plain black ---
@@ -563,7 +566,8 @@ screen endings_menu(new_ending=None, after_run=False):
                 background None
 
                 if got:
-                    action SetScreenVariable("current", e)
+                    # first click selects the file; clicking the selected one again replays its film
+                    action If(current is e, Function(replay_ending, e["id"]), SetScreenVariable("current", e))
                 else:
                     # locked: no file, but hovering shows a clue
                     action NullAction()
@@ -595,6 +599,8 @@ screen endings_menu(new_ending=None, after_run=False):
         text "OUTCOMES FOUND" size 30 color "#d8d0c0"
         text "%d / %d" % (len(persistent.endings_seen), len(endings)) size 72 color "#ffffff"
         text debrief_data["goal_line"] size 26 color "#d8d0c0"
+        null height 16
+        text "Double-click a file or press Enter to watch its ending again." size 22 color "#a89880"
 
     # --- The ending you just reached gets a NEW stamp ---
     if new_ending is not None and current is new_ending:
