@@ -460,7 +460,7 @@ screen endings_menu(new_ending=None, after_run=False):
     for input_key in CHEAT_CODE:
         key ("K_"+input_key) action Function(cheat_key, input_key)
 
-    default current = new_ending
+    default current = new_ending if new_ending is not None else next((e for e in gallery_endings() if e["id"] in persistent.endings_seen), None)
     if current is not None:
         key "K_RETURN" action Function(replay_ending, current["id"])
         key "K_KP_ENTER" action Function(replay_ending, current["id"])
@@ -478,6 +478,7 @@ screen endings_menu(new_ending=None, after_run=False):
         add "gui/mainmenu.png":
             fit "cover"
 
+    
     # --- Clipboard, centered ---
     fixed:
         xysize (832, 1040)
@@ -601,6 +602,18 @@ screen endings_menu(new_ending=None, after_run=False):
         text debrief_data["goal_line"] size 26 color "#d8d0c0"
         null height 16
         text "Double-click a file or press Enter to watch its ending again." size 22 color "#a89880"
+    
+    if len(persistent.endings_seen) >= len(endings) and not after_run and current is not None:
+            fixed:
+                pos (650, 575)
+                xysize (631, 226)
+                textbutton "EPILOGUE":
+                    align (0.5, 0.5)
+                    action If(main_menu, Start("epilogue"), Jump("epilogue"))
+                    text_size 150
+                    text_idle_color "#c81e1e"
+                    text_hover_color "#ff4a3a"
+                    at epilogue_pulse
 
     # --- The ending you just reached gets a NEW stamp ---
     if new_ending is not None and current is new_ending:
@@ -631,6 +644,12 @@ transform ending_hover:
         linear 0.1 alpha 1.0
     on idle:
         linear 0.1 alpha 0.0
+
+transform epilogue_pulse:
+    alpha 0.75
+    linear 0.9 alpha 1.0
+    linear 0.9 alpha 0.75
+    repeat
 
 
 init python:

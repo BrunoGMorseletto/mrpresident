@@ -1231,7 +1231,10 @@ label ENDING:
 
     # end-of-run report, then the endings gallery (the goal: find all ten)
     call screen debrief(chosen_ending, build_debrief(chosen_ending))
-    call screen endings_menu(new_ending=chosen_ending, after_run=True)
+    #call screen endings_menu(new_ending=chosen_ending, after_run=True)
+
+    if len(persistent.endings_seen) >= len(endings) and not persistent.epilogue_seen:
+        call epilogue
 
     return
 
