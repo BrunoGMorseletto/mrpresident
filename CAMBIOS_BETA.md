@@ -248,3 +248,7 @@ Se revisaron los textos nuevos (cartas X, debates, E01, E08, intros, cinemática
 - **Pista de E02:** "?????".
 - **Manchas:** se sacaron de la franja inferior de la planilla de finales (`images/ending.png`) y de la hoja derecha del códex (`images/codex/codex.png`).
 - **Códex:** la etiqueta del modelo ("MODEL I") se corrió 70 px hacia adentro de la hoja.
+
+---
+
+- **D04 aclarado como preparación:** las cartas pasan a "DRAW UP STRIKE PLANS" / "DRAW UP A BLOCKADE", con "Nothing is ordered yet". McNamara aclara que la decisión real viene después (D07). Los efectos no cambian. La línea de D04 es nueva, así que hay que volver a ubicar su globo con Shift+B.

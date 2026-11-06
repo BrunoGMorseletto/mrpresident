@@ -484,7 +484,7 @@ label D04:
 
     show expression "robert mcnamara" at init_pos_decision
 
-    rob "Whatever we decide, the services need a plan they can actually execute. The Air Force can be ready to hit the sites within days. The Navy can stand up a quarantine. I can't make both the priority."
+    rob "You'll decide later what we actually do. Today the services need to know which plan to get ready first. The Air Force can be ready to hit the sites within days. The Navy can stand up a quarantine. I can't make both the priority."
 
     $ card_a = events[current_scene][cards_key][a_card_key]
     $ card_b = events[current_scene][cards_key][b_card_key]

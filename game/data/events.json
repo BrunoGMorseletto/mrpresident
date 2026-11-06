@@ -124,10 +124,10 @@
   "trigger": {},
   "cards": {
    "A": {
-    "title": "READY THE STRIKE",
-    "hint": "Fastest to use. Hardest to take back.",
+    "title": "DRAW UP STRIKE PLANS",
+    "hint": "Planes on standby. Nothing is ordered yet.",
     "icon": "squadron",
-    "aftermath": "Tactical Air Command starts moving aircraft to bases in Florida.",
+    "aftermath": "Tactical Air Command starts moving aircraft to bases in Florida. No one has been ordered to fly.",
     "stats": {
      "escalation": 1,
      "stance": 1
@@ -138,10 +138,10 @@
     "trigger": {}
    },
    "B": {
-    "title": "READY A BLOCKADE",
-    "hint": "Ships instead of bombs. Slower. Louder.",
+    "title": "DRAW UP A BLOCKADE",
+    "hint": "Ships on standby. Nothing is ordered yet.",
     "icon": "destroyer",
-    "aftermath": "Navy staff start writing the rules for stopping a Soviet ship.",
+    "aftermath": "Navy staff start writing the rules for stopping a Soviet ship. No ship has sailed yet.",
     "stats": {},
     "flag": {
      "blockade_ready": true
