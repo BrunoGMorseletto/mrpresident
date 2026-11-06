@@ -2412,7 +2412,7 @@ screen debrief(ending, d):
             text "THREE LENSES" style "db_head"
             text debrief_data["lenses_intro"] style "db_small"
             $ total = sum(d["lenses"].values())
-            text "Your %d decisions, sorted by lens:" % total style "db_ink" size 26
+            text "You made %d decisions in this run:" % total style "db_ink" size 26
             null height 2
             for lk in ("rational", "organizational", "governmental"):
                 $ lens = debrief_data["lenses"][lk]

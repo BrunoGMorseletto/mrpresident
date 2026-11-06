@@ -100,7 +100,7 @@
 		}
 	},
 	"timeout_line": "%d of your decisions were made by the clock: the organization did what it was already going to do.",
-	"lenses_intro": "Political scientist Graham Allison asked why governments decide what they decide. He found three different kinds of answer. Each decision you made fits one of them best. These are not scores.",
+	"lenses_intro": "Political scientist Graham Allison asked why governments decide what they decide. He found three different kinds of answer. Each number below counts how many of your decisions fit that kind of answer best.",
 	"lenses_tie": "Your crisis was split between the three. That is Allison's point: you need all three to explain what happened in 1962.",
 	"lenses_note": "None of them is the right way to play. Allison's argument is that each one explains part of what happened and misses the rest."
 }
