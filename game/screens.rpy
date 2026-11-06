@@ -326,6 +326,9 @@ screen navigation():
 
         else:
 
+            # restart from the game menu; start resets flags, stats and the run log
+            textbutton _("New Game") action Confirm(_("Start a new crisis? Anything you haven't saved will be lost."), Start())
+
             textbutton _("History") action ShowMenu("history")
 
             textbutton _("Save") action ShowMenu("save")
