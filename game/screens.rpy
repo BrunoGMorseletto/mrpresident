@@ -2411,14 +2411,20 @@ screen debrief(ending, d):
             spacing 14
             text "THREE LENSES" style "db_head"
             text debrief_data["lenses_intro"] style "db_small"
-            null height 6
+            $ total = sum(d["lenses"].values())
+            text "Your %d decisions, sorted by lens:" % total style "db_ink" size 26
+            null height 2
             for lk in ("rational", "organizational", "governmental"):
                 $ lens = debrief_data["lenses"][lk]
                 hbox:
                     spacing 20
-                    text str(d["lenses"][lk]) style "db_head" size 60 color ("#a01818" if d["dominant"] == lk else "#2a1d14") min_width 60 yalign 0.0
+                    # how many of this run's decisions fall under this lens
                     vbox:
-                        xsize lw - 80
+                        xsize 70
+                        text str(d["lenses"][lk]) style "db_head" size 56 color ("#a01818" if d["dominant"] == lk else "#2a1d14") xalign 0.5
+                        text ("decision" if d["lenses"][lk] == 1 else "decisions") style "db_small" size 18 xalign 0.5
+                    vbox:
+                        xsize lw - 90
                         text "{b}" + lens["plain"] + "{/b}  (" + lens["name"] + ")" style "db_ink" size 28
                         text lens["line"] style "db_small" size 24
                         if lk in d["examples"]:
