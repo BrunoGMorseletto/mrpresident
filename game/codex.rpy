@@ -549,30 +549,34 @@ define CAL_COLS = [21, 157, 292, 426, 558, 692, 824, 962]   # column lines (imag
 define CAL_BOX = (344, 190, 407)                            # x, y, width on the codex page (bg px)
 define CAL_TILT = 1.4                                       # the left page is slightly rotated
 
+init python:
+    def cal_px(v):
+        """Calendar image px -> screen px. (A lambda inside the screen cannot see screen variables.)"""
+        return cz(v * CAL_BOX[2] / float(CAL_SIZE[0]))
+
 screen codex_calendar(ids):
     $ days = codex_calendar_days(ids)
     $ bx, by, bw = CAL_BOX
     $ k = bw / float(CAL_SIZE[0])
     $ bh = CAL_SIZE[1] * k
-    $ P = lambda v: cz(v * k)            # image px -> screen px
 
     fixed at codex_rot(cz(bx + bw / 2.0), cz(by + bh / 2.0), CAL_TILT):
         xysize (cz(bw), cz(bh))
         add CAL_IMG xysize (cz(bw), cz(bh))
 
-        text "OCTOBER 1962" style "codex_text" size P(110) color "#2a1d14" xalign 0.5 ycenter P(230)
+        text "OCTOBER 1962" style "codex_text" size cal_px(110) color "#2a1d14" xalign 0.5 ycenter cal_px(230)
 
         for c, wd in enumerate(["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]):
-            text wd style "codex_text" size P(48) color "#7a2316" xcenter P((CAL_COLS[c] + CAL_COLS[c + 1]) / 2.0) ycenter P((CAL_ROWS[0] + CAL_ROWS[1]) / 2.0)
+            text wd style "codex_text" size cal_px(48) color "#7a2316" xcenter cal_px((CAL_COLS[c] + CAL_COLS[c + 1]) / 2.0) ycenter cal_px((CAL_ROWS[0] + CAL_ROWS[1]) / 2.0)
 
         for w in range(5):
             for c in range(7):
                 $ d = w * 7 + c + 1          # October 1, 1962 was a Monday
                 if d <= 31:
-                    $ x0 = P(CAL_COLS[c]) + 2
-                    $ y0 = P(CAL_ROWS[w + 1]) + 2
-                    $ cw = P(CAL_COLS[c + 1]) - P(CAL_COLS[c]) - 4
-                    $ ch = P(CAL_ROWS[w + 2]) - P(CAL_ROWS[w + 1]) - 4
+                    $ x0 = cal_px(CAL_COLS[c]) + 2
+                    $ y0 = cal_px(CAL_ROWS[w + 1]) + 2
+                    $ cw = cal_px(CAL_COLS[c + 1]) - cal_px(CAL_COLS[c]) - 4
+                    $ ch = cal_px(CAL_ROWS[w + 2]) - cal_px(CAL_ROWS[w + 1]) - 4
                     fixed:
                         pos (x0, y0)
                         xysize (cw, ch)
@@ -588,11 +592,11 @@ screen codex_calendar(ids):
                                 background (Solid("#9a2a1c40") if eid == codex_sel else None)
                                 hover_background Solid("#0000002a")
                                 action Function(codex_select, eid)
-                                text str(d) style "codex_text" size P(56) xpos P(12) ypos P(4) color ("#2a1d14" if dopen else "#9a8a78")
+                                text str(d) style "codex_text" size cal_px(56) xpos cal_px(12) ypos cal_px(4) color ("#2a1d14" if dopen else "#9a8a78")
                                 if dopen and eid in persistent.codex_new:
-                                    add Solid("#c0392b") xysize (P(18), P(18)) align (.92, .1)
+                                    add Solid("#c0392b") xysize (cal_px(18), cal_px(18)) align (.92, .1)
                         else:
-                            text str(d) style "codex_text" size P(56) xpos P(12) ypos P(4) color "#8f7f68"
+                            text str(d) style "codex_text" size cal_px(56) xpos cal_px(12) ypos cal_px(4) color "#8f7f68"
 
     ## before / after, on the last two ruled lines
     for line, eid, label in [(15, "CAL-00", "< BEFORE OCTOBER"), (16, "CAL-AFTER", "AFTER OCTOBER >")]:
