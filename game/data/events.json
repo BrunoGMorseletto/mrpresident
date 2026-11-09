@@ -36,7 +36,8 @@
   "in_1962": {
    "choice": "A",
    "text": "Low-level flights began on October 23, a week later than here. They brought back the clearest pictures of the crisis."
-  }
+  },
+  "question": "Send planes in low over Cuba?"
  },
  "D02": {
   "date": "OCT 16, 1962",
@@ -77,7 +78,8 @@
   "in_1962": {
    "choice": "A",
    "text": "Kennedy kept the circle small. The ExComm met in secret for six days before the public knew anything."
-  }
+  },
+  "question": "Who gets told?"
  },
  "D03": {
   "date": "OCT 16, 1962",
@@ -117,7 +119,8 @@
   "in_1962": {
    "choice": "B",
    "text": "Kennedy said nothing in public until October 22. He kept campaigning so the press would not notice."
-  }
+  },
+  "question": "Repeat the September warning in public?"
  },
  "D04": {
   "date": "OCT 17, 1962",
@@ -156,7 +159,8 @@
   "in_1962": {
    "choice": "AB",
    "text": "Both plans were prepared at the same time. The services never had to choose."
-  }
+  },
+  "question": "Which plan gets ready first?"
  },
  "D05": {
   "date": "OCT 17, 1962",
@@ -196,7 +200,8 @@
   "in_1962": {
    "choice": "B",
    "text": "Washington approved a message to Castro through Brazil on October 26. It was never delivered: Khrushchev gave in first."
-  }
+  },
+  "question": "Open a channel to Castro?"
  },
  "D06": {
   "date": "OCT 18, 1962",
@@ -235,7 +240,8 @@
   "in_1962": {
    "choice": "A",
    "text": "Dean Acheson flew to Paris with the photographs. De Gaulle said he did not need to see them."
-  }
+  },
+  "question": "Show the allies the photographs?"
  },
  "D07": {
   "date": "OCT 18, 1962",
@@ -279,7 +285,8 @@
    "choice": "B",
    "text": "Kennedy chose the quarantine on October 20. The air strike stayed ready, in reserve."
   },
-  "duel_left_card": "A"
+  "duel_left_card": "A",
+  "question": "Strike now, or blockade first?"
  },
  "D08": {
   "date": "OCT 19, 1962",
@@ -323,7 +330,8 @@
   "in_1962": {
    "choice": "none",
    "text": "Kennedy never ordered the strike, so this choice was never made. The Air Force had told him a strike on the missiles alone was not what it had planned."
-  }
+  },
+  "question": "How big a strike?"
  },
  "D09": {
   "date": "OCT 20, 1962",
@@ -370,7 +378,8 @@
   "in_1962": {
    "choice": "A",
    "text": "The quarantine was meant to buy time. The deadline came later, on October 27, delivered in private by Robert Kennedy."
-  }
+  },
+  "question": "What is the quarantine for?"
  },
  "A01": {
   "date": null,
@@ -433,7 +442,8 @@
   "in_1962": {
    "choice": "A",
    "text": "The quarantine covered offensive weapons only. Adding fuel was discussed as a later step."
-  }
+  },
+  "question": "What does the quarantine stop?"
  },
  "D11": {
   "date": "OCT 21, 1962",
@@ -473,7 +483,8 @@
    "choice": "A",
    "text": "Kennedy pulled the line in after talking with the British ambassador. The Soviet missile ships had already turned back."
   },
-  "duel_left_card": "B"
+  "duel_left_card": "B",
+  "question": "Where do the ships intercept?"
  },
  "D12": {
   "date": "OCT 22, 1962",
@@ -515,7 +526,8 @@
   "in_1962": {
    "choice": "A",
    "text": "The speech of October 22 demanded that the missiles be removed."
-  }
+  },
+  "question": "What do you demand on television?"
  },
  "D13": {
   "date": "OCT 22, 1962",
@@ -554,7 +566,8 @@
   "in_1962": {
    "choice": "A",
    "text": "Robert Kennedy and Ambassador Dobrynin became the real channel between the two governments."
-  }
+  },
+  "question": "Talk to Moscow off the record?"
  },
  "D14": {
   "date": "OCT 23, 1962",
@@ -604,7 +617,8 @@
    "choice": "A",
    "text": "The ExComm agreed to retaliate if a U-2 was shot down. On October 27 one was, and Kennedy did not order the strike."
   },
-  "duel_left_card": "A"
+  "duel_left_card": "A",
+  "question": "If a plane is shot down, who decides the answer?"
  },
  "D15": {
   "date": "OCT 24, 1962",
@@ -645,7 +659,8 @@
   "in_1962": {
    "choice": "A",
    "text": "Strategic Air Command went to DEFCON 2 on October 24, the only time in the Cold War. Its commander announced it uncoded."
-  }
+  },
+  "question": "Raise the alert to DEFCON 2?"
  },
  "C01": {
   "date": "OCT 24, 1962",
@@ -717,7 +732,8 @@
   "in_1962": {
    "choice": "none",
    "text": "The air strike was never launched."
-  }
+  },
+  "question": "The strike is about to launch."
  },
  "X01": {
   "date": "OCT 25, 1962",
@@ -767,7 +783,8 @@
   "in_1962": {
    "choice": "none",
    "text": "No American troops landed in Cuba. Soviet forces there had tactical nuclear weapons for exactly that case."
-  }
+  },
+  "question": "Land troops in Cuba?"
  },
  "X02": {
   "date": "OCT 26, 1962",
@@ -817,7 +834,8 @@
   "in_1962": {
    "choice": "none",
    "text": "Berlin stayed quiet. Kennedy spent the whole crisis expecting that it would not."
-  }
+  },
+  "question": "Moscow closes Berlin. Hold firm or stop?"
  },
  "X03": {
   "date": "OCT 26, 1962",
@@ -876,7 +894,8 @@
   "in_1962": {
    "choice": "none",
    "text": "There was no landing, and no second wave."
-  }
+  },
+  "question": "The landing is taking fire."
  },
  "C02": {
   "date": "OCT 24, 1962",
@@ -930,7 +949,8 @@
   "in_1962": {
    "choice": "B",
    "text": "The first ships were let through. The first ship boarded, on October 26, carried nothing forbidden."
-  }
+  },
+  "question": "A Soviet ship reaches the line."
  },
  "D17": {
   "date": "OCT 26, 1962",
@@ -975,7 +995,8 @@
   "in_1962": {
    "choice": "A",
    "text": "Kennedy accepted the terms of the first letter: no invasion, if the missiles left."
-  }
+  },
+  "question": "Promise not to invade Cuba?"
  },
  "D19": {
   "date": "OCT 27, 1962",
@@ -1022,7 +1043,8 @@
   "in_1962": {
    "choice": "none",
    "text": "Neither. Kennedy did not accept in public. He answered the first letter and accepted the Turkey trade in private."
-  }
+  },
+  "question": "Accept Moscow's public offer?"
  },
  "C03": {
   "date": "OCT 27, 1962",
@@ -1130,7 +1152,8 @@
   "in_1962": {
    "choice": "A",
    "text": "Kennedy held back. The retaliation agreed four days earlier was never ordered."
-  }
+  },
+  "question": "A U-2 is down. Retaliate?"
  },
  "C04": {
   "date": "OCT 27, 1962",
@@ -1195,7 +1218,8 @@
   "in_1962": {
    "choice": "none",
    "text": "Moscow never asked for a pause. Khrushchev learned of the shootdown after it happened and tightened control over his commanders."
-  }
+  },
+  "question": "Moscow asks for a pause."
  },
  "X04": {
   "date": "OCT 27, 1962",
@@ -1267,7 +1291,8 @@
   "in_1962": {
    "choice": "none",
    "text": "Kennedy called off the retaliation. There was no dawn strike."
-  }
+  },
+  "question": "The dawn strike is ready."
  },
  "D18": {
   "date": "OCT 27, 1962",
@@ -1318,7 +1343,8 @@
   "in_1962": {
    "choice": "A",
    "text": "Robert Kennedy made the promise that night. It stayed secret for more than twenty years."
-  }
+  },
+  "question": "Promise to remove the missiles in Turkey, in secret?"
  },
  "D21": {
   "date": "OCT 27, 1962",
@@ -1363,7 +1389,8 @@
   "in_1962": {
    "choice": "none",
    "text": "Castro never offered to send the weapons home. He learned of the deal from a newspaper editor."
-  }
+  },
+  "question": "Deal with Castro directly?"
  },
  "D22": {
   "date": "OCT 28, 1962",
@@ -1449,7 +1476,8 @@
   "in_1962": {
    "choice": "A",
    "text": "Castro refused inspections. The withdrawal was checked from the air, crate by crate."
-  }
+  },
+  "question": "How do we verify the withdrawal?"
  },
  "D23": {
   "date": "OCT 28, 1962",
@@ -1491,7 +1519,8 @@
    "choice": "B",
    "text": "The alert stayed up until November. LeMay wanted to attack anyway."
   },
-  "duel_left_card": "B"
+  "duel_left_card": "B",
+  "question": "Stand the forces down?"
  },
  "S01": {
   "date": "OCT 28, 1962",
@@ -1540,7 +1569,8 @@
    "S02",
    "ENDING"
   ],
-  "allison_model": null
+  "allison_model": null,
+  "question": "A Soviet office in the White House?"
  },
  "S02": {
   "date": "OCT 28, 1962",
@@ -1574,6 +1604,7 @@
   "next": [
    "ENDING"
   ],
-  "allison_model": null
+  "allison_model": null,
+  "question": "Sign the emergency order?"
  }
 }

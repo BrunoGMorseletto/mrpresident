@@ -264,3 +264,26 @@ Se revisaron los textos nuevos (cartas X, debates, E01, E08, intros, cinemática
 ---
 
 - **Ícono del .exe:** `icon.ico` (Windows) e `icon.icns` (Mac) en la raíz del proyecto, al lado de `game/`. Salen de la carpeta "Mr. President" que se usa como ícono de la ventana (`gui/window_icon.png`). Ren'Py los toma solos al armar las distribuciones. Hay que volver a construir el .exe para verlo.
+
+---
+
+# Ronda 2 de beta (versión 4.1)
+
+- **T31 (bug: CONTINUE volvía a la última decisión):** el botón "Back" del menú rápido hacía retroceder la partida, y `ENDING` permitía retroceder hasta la última decisión.
+  - Se sacó "Back" del menú rápido.
+  - `renpy.block_rollback()` en cada decisión (`apply_choice`) y al entrar al final.
+  - El menú rápido se oculta en el final (`quick_menu = False`) y vuelve en `start`.
+- **T27:** en el menú rápido, "Log" (antes "History") permite releer el texto sin deshacer nada. Las decisiones ya no se pueden revertir.
+- **T07:** el HUD muestra "CRISIS: SECRET" hasta el 22/10 inclusive y "CRISIS: PUBLIC" desde el 23.
+- **T28:** cada decisión tiene una pregunta corta (`question` en `events.json`), que se muestra arriba de las cartas.
+- **T29 (códex):**
+  - Las solapas muestran la palabra entera, de costado (INTEL, STATE, DEFENSE, PEOPLE, DAYS, SECRET).
+  - Al pasar el mouse aparece el nombre completo.
+- **T30:** el noticiero muestra una barra de tiempo y "CLICK TO CONTINUE". Las cinemáticas también avisan "CLICK TO CONTINUE", y los cuadros sin texto ya se pueden saltear con click.
+- **T34:**
+  - DEF-03 "DEFCON" explica solo qué son los niveles y se abre en D15.
+  - DEF-10 "DEFCON 2" tiene el hecho del 24/10 y se abre después de la decisión (C01, C02, D17 o X01).
+  - `unlock.scene` ahora acepta una lista de escenas.
+- **T14:**
+  - Se guarda el último informe de cada final (`persistent.last_reports`). En la galería, "READ YOUR LAST REPORT" lo vuelve a mostrar.
+  - "Codex" en el menú principal.

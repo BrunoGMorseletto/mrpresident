@@ -61,6 +61,7 @@ define cards_key = "cards" #dict key related to the cards info in events.json
 define a_card_key = "A" #dict key related to the A card info in events.json
 define b_card_key = "B" #dict key related to the A card info in events.json
 default flags = {}
+default persistent.last_reports = {}   # ending id -> last end-of-run report (T14)
 default choices_made = []      # [(scene, "A"/"B")] in order, for the end-of-run report
 default timed_out = []         # scenes where the timer ran out and the default order went ahead
 default stats = {}
@@ -214,6 +215,11 @@ init python:
         d["timeouts"] = len(timed_out)
         return d
 
+    def show_last_report(eid):
+        """Gallery: read again the last report written for this ending."""
+        e = [x for x in endings if x["id"] == eid][0]
+        renpy.call_in_new_context("show_last_report_label", e, persistent.last_reports[eid])
+
     def replay_ending(eid):
         """Gallery: watch an ending's newsreel and film again, in its main version."""
         renpy.call_in_new_context("replay_ending_label", eid)
@@ -306,6 +312,7 @@ init python:
             else:
                 stats["escalation"] = 6
     def apply_choice(choice, current_scene):
+        renpy.block_rollback()   # T27/T31: rolling back can re-read text, never undo a decision
         choices_made.append((current_scene, choice))
         card = events[current_scene][cards_key][choice]
         if check_trigger(card["trigger"]):
@@ -371,6 +378,7 @@ define narr_bubble = Character("", image="/images/sprites/McGeorge Bundy.png",ca
 define ending_nvl = Character(None, kind=nvl, callback=type_sound, what_font="gui/fonts/VT323-Regular.ttf",what_xalign=0.5,)
 
 label start:
+    $ quick_menu = True
     $ flags.clear()
     $ choices_made = []
     $ timed_out = []
@@ -1200,6 +1208,8 @@ label S02:
     jump expression next_e
 
 label ENDING:
+    $ renpy.block_rollback()
+    $ quick_menu = False
     $ hud_on = False
     scene black with fade
     $name = chosen_ending["id"]
@@ -1230,7 +1240,11 @@ label ENDING:
     nvl clear
 
     # end-of-run report, then the endings gallery (the goal: find all ten)
-    call screen debrief(chosen_ending, build_debrief(chosen_ending))
+    $ renpy.block_rollback()
+    $ last_report = build_debrief(chosen_ending)
+    # T14: keep the last report of each ending, to read it again from the gallery
+    $ persistent.last_reports = dict(persistent.last_reports, **{name: last_report})   # reassign so it is saved
+    call screen debrief(chosen_ending, last_report)
     #call screen endings_menu(new_ending=chosen_ending, after_run=True)
 
     if len(persistent.endings_seen) >= len(endings) and not persistent.epilogue_seen:
@@ -1257,6 +1271,10 @@ label newsreel(reel):
             if result == "skip":
                 break
     $ hud_on = hud_was_on
+    return
+
+label show_last_report_label(e, rep):
+    call screen debrief(e, rep) from _call_screen_last_report
     return
 
 # Gallery replay: the ending's newsreel and film, without touching the run in progress.
@@ -1287,6 +1305,7 @@ label replay_ending_label(eid):
 # Images live in images/cutscenes/<image>.png; if one is missing, the frame is shown on black.
 label ending_cutscene(frames):
     play music "audio/crisis.ogg" fadeout 1.5 fadein 1.5
+    show screen cutscene_hint
     python:
         for frame in frames:
             v = pick_variant(frame)
@@ -1300,7 +1319,8 @@ label ending_cutscene(frames):
             if v.get("text"):
                 narr(v["text"])
             else:
-                renpy.pause(2.5, hard=True)
+                renpy.pause(2.5)
+    hide screen cutscene_hint
     scene black with Fade(0.2, 0.6, 0.2)
     play music "audio/oval_office.ogg" fadeout 2.0 fadein 2.0
     return

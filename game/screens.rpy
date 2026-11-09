@@ -269,8 +269,8 @@ screen quick_menu():
             style_prefix "quick"
             style "quick_menu"
 
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
+            # T27: "Back" removed (it could roll back into a decision, T31). The log re-reads text without undoing anything.
+            textbutton _("Log") action ShowMenu('history')
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Save") action ShowMenu('save')
@@ -411,6 +411,7 @@ screen main_menu():
         textbutton _("New Game") action Start() style "custom_menu_button"
         textbutton _("Load Game") action ShowMenu("load") style "custom_menu_button"
         textbutton _("Endings") action ShowMenu("endings_menu") style "custom_menu_button"
+        textbutton _("Codex") action ShowMenu("codex") style "custom_menu_button"
         textbutton _("Credits") action ShowMenu("credits") style "custom_menu_button"
         textbutton _("Settings") action ShowMenu("preferences") style "custom_menu_button"
         textbutton _("Exit") action Quit(confirm=False) style "custom_menu_button"
@@ -603,6 +604,9 @@ screen endings_menu(new_ending=None, after_run=False):
         text debrief_data["goal_line"] size 30 color "#d8d0c0"
         null height 16
         text "Double-click a file or press Enter to watch its ending again." size 26 color "#a89880"
+        if current is not None and current["id"] in persistent.last_reports:
+            null height 10
+            textbutton "READ YOUR LAST REPORT" action Function(show_last_report, current["id"]) text_size 28 text_color "#e8dcc0" text_hover_color "#ffffff"
     
     if len(persistent.endings_seen) >= len(endings) and not after_run and current is not None:
             fixed:
@@ -2065,6 +2069,15 @@ screen decision_folder(card_a, card_b, seconds=0, default_card=None):
     default swap = (events[current_scene]["duel_left_card"] == "B") if events.get(current_scene, {}).get("duel_left_card") else (renpy.random.random() < 0.5)
     $ card_zoom = 0.45
     $ card_w = int(CARD_IMG_W * card_zoom)
+    # T28: one line that sums up the decision, above the cards
+    $ dq = events.get(current_scene, {}).get("question")
+    if dq:
+        frame:
+            xalign 0.5
+            ypos 455
+            background Solid("#000000bb")
+            padding (28, 8)
+            text dq.upper() font "gui/fonts/VT323-Regular.ttf" size 38 color "#f0e6d0"
     fixed at folder_fade:
         xpos 545
         ypos 505
@@ -2273,6 +2286,11 @@ screen crisis_hud():
             vbox:
                 text hud_date font "gui/fonts/VT323-Regular.ttf" size 34 color "#ffffff"
                 text "DAY %d OF 13" % crisis_day(hud_date) font "gui/fonts/VT323-Regular.ttf" size 24 color "#b8b8b8"
+                # T07: secret until the speech of October 22, 7 p.m. (the decisions of the 22nd come before it)
+                if crisis_day(hud_date) <= 7:
+                    text "CRISIS: SECRET" font "gui/fonts/VT323-Regular.ttf" size 24 color "#d8b04a"
+                else:
+                    text "CRISIS: PUBLIC" font "gui/fonts/VT323-Regular.ttf" size 24 color "#e05a4a"
 
 
 #### NEWSREEL (T06) ######################################################
@@ -2340,6 +2358,9 @@ screen newsreel_frame(fr):
                 text fr["caption"] style "nr_caption"
 
     textbutton "SKIP NEWS" action Return("skip") align (0.97, 0.03) text_font "gui/fonts/VT323-Regular.ttf" text_size 30
+    # T30: visible timer and how to advance
+    bar value AnimatedValue(0, fr.get("seconds", 9), fr.get("seconds", 9), fr.get("seconds", 9)) xysize (600, 6) xalign 0.5 ypos 1050 left_bar Solid("#e8e2d6") right_bar Solid("#ffffff22")
+    text "CLICK TO CONTINUE" font "gui/fonts/VT323-Regular.ttf" size 24 color "#a89880" xalign 0.97 yalign 0.97
     timer fr.get("seconds", 9) action Return("next")
     key "dismiss" action Return("next")
 
@@ -2479,3 +2500,9 @@ screen debrief(ending, d):
         text_color "#e8e2d6"
         text_hover_color "#ffffff"
         action Return()
+
+
+# T30: during ending films, say how to advance
+screen cutscene_hint():
+    zorder 90
+    text "CLICK TO CONTINUE" font "gui/fonts/VT323-Regular.ttf" size 24 color "#a89880aa" xalign 0.97 yalign 0.97

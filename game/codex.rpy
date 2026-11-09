@@ -33,12 +33,13 @@ init python:
 
     # Tabs. Intelligence and CIA share one tab; "Excomm" is shown as "People".
     CODEX_TABS = [
-        {"label": "Intelligence", "code": "INT", "cats": ["Intelligence", "CIA"]},
-        {"label": "State",        "code": "STA", "cats": ["State"]},
-        {"label": "Defense",      "code": "DEF", "cats": ["Defense"]},
-        {"label": "People",       "code": "PPL", "cats": ["Excomm"]},
-        {"label": "Calendar",     "code": "CAL", "cats": ["Calendar"]},
-        {"label": "Top Secret",   "code": "TS",  "cats": ["Top Secret"]},
+        # "tab": word written sideways on the tab; "full": shown on hover (T29)
+        {"label": "Intelligence", "code": "INT", "tab": "INTEL",    "full": "Intelligence and the CIA", "cats": ["Intelligence", "CIA"]},
+        {"label": "State",        "code": "STA", "tab": "STATE",    "full": "State Department: diplomacy", "cats": ["State"]},
+        {"label": "Defense",      "code": "DEF", "tab": "DEFENSE",  "full": "Defense: the military", "cats": ["Defense"]},
+        {"label": "People",       "code": "PPL", "tab": "PEOPLE",   "full": "People of the crisis", "cats": ["Excomm"]},
+        {"label": "Calendar",     "code": "CAL", "tab": "DAYS",     "full": "Calendar: October 1962, day by day", "cats": ["Calendar"]},
+        {"label": "Top Secret",   "code": "TS",  "tab": "SECRET",   "full": "Top Secret: unlocked by finding endings", "cats": ["Top Secret"]},
     ]
 
     # Clickable area of each tab on codex.png: (x, y, w, h)
@@ -113,7 +114,9 @@ init python:
             return persistent.codex_day >= int(eid[4:])
         rule = entry["unlock"]
         if "scene" in rule:
-            return rule["scene"] == "start" or rule["scene"] in persistent.codex_scenes
+            # one scene, or a list (any of them): e.g. a fact that opens after the decision, whatever branch follows
+            scenes = rule["scene"] if isinstance(rule["scene"], (list, tuple)) or hasattr(rule["scene"], "append") else [rule["scene"]]
+            return "start" in scenes or any(sc in persistent.codex_scenes for sc in scenes)
         if "endings_found" in rule:
             return codex_endings() >= int(rule["endings_found"])
         return True
@@ -349,6 +352,7 @@ screen codex_redacted(eid, w, h, stamp, hint):
 
 
 screen codex():
+    default tab_tip = None
     tag menu
     modal True
 
@@ -381,11 +385,24 @@ screen codex():
                 background (None if i == codex_tab else Solid("#2a1a0c38"))
                 hover_background Solid("#ffffff26")
                 action Function(codex_set_tab, i)
-                text tab["code"] style "codex_text" size cz(24) align (.5, .5) color ("#8a1f14" if i == codex_tab else "#3a2412")
+                hovered SetScreenVariable("tab_tip", i)
+                unhovered SetScreenVariable("tab_tip", None)
+                # the full word, written sideways so it fits the narrow tab (T29)
+                text tab["tab"] style "codex_text" size cz(20) align (.5, .5) color ("#8a1f14" if i == codex_tab else "#3a2412") at Transform(rotate=90, rotate_pad=False)
                 if i == codex_tab:
                     add Solid("#a02a1e") xsize cz(5) xalign 1.0
                 if codex_unread_in_tab(i):
                     add Solid("#d63a2a") xysize (cz(11), cz(11)) align (.9, .08)
+
+        ## ---- tooltip with the tab's full name ----
+        if tab_tip is not None:
+            $ ttx, tty, ttw, tth = [cz(v) for v in CODEX_TAB_RECTS[tab_tip]]
+            frame:
+                pos (ttx - cz(8), tty + tth // 2)
+                anchor (1.0, 0.5)
+                background Solid("#1a120bdd")
+                padding (cz(14), cz(6))
+                text CODEX_TABS[tab_tip]["full"] style "codex_text" size cz(24) color "#f0e6d0"
 
         ## ---- left page: title line ----
         $ hx, hy, hang = codex_row(1, CODEX_LIST_W, CODEX_ROW_H)

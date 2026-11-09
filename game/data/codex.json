@@ -399,7 +399,34 @@
         "endings_found": 1
       },
       "description": {
-        "1962": "Defense Readiness Condition, five levels from DEFCON 5 (peace) to DEFCON 1 (war). On October 22 US forces went to DEFCON 3. On October 24, Strategic Air Command went to DEFCON 2, the only time in the Cold War: bombers on airborne alert around the clock, missiles ready, crews dispersed to civilian airfields.",
+        "1962": "Defense Readiness Condition: five levels, from DEFCON 5 (normal peacetime readiness) to DEFCON 1 (war imminent). Each step up shortens the time between an order and an attack: more bombers in the air, more missiles ready to fire, crews moved away from bases that could be hit first. In normal times US forces sat at DEFCON 5 or 4. On October 22, after the President's speech, they went to DEFCON 3.",
+        "declassified": "The level was not one switch for the whole military. Each command could be set on its own, and the commanders who ran an alert also decided how it was carried out and how it was announced. Raising the level was a political signal as much as a military measure."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "DOBBS, ch. 4",
+        "ALLISON, ch. 4"
+      ],
+      "allison_model": "Organizational Behavior"
+    },
+    "DEFCON 2": {
+      "id": "DEF-10",
+      "unlock": {
+        "scene": [
+          "C01",
+          "C02",
+          "D17",
+          "X01"
+        ]
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "On October 24, Strategic Air Command went to DEFCON 2, the only time in the Cold War: bombers on airborne alert around the clock, missiles ready, crews dispersed to civilian airfields. The rest of the armed forces stayed at DEFCON 3.",
         "declassified": "General Thomas Power, commander of Strategic Air Command, announced the alert to his forces in the clear, unencrypted, so the Soviets would hear it. Nobody had asked him to. It was an organization sending its own signal to Moscow, exactly the kind of move Allison's second model predicts and Kennedy most feared."
       },
       "image": {
