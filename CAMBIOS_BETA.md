@@ -256,3 +256,7 @@ Se revisaron los textos nuevos (cartas X, debates, E01, E08, intros, cinemática
 ---
 
 - **Galería, volver a ver un final:** con doble click (primer click selecciona, segundo click reproduce) o con Enter sobre el final seleccionado, se repiten su noticiero y su cinemática (`replay_ending()` → `label replay_ending_label`, en un contexto nuevo). Las banderas de la partida en curso se guardan y se restauran, y lo mismo la música. En la columna izquierda aparece una línea que lo explica.
+
+---
+
+- **Epílogo:** las imágenes estaban corridas con respecto a cada lámina (el carguero salía con los Júpiter, la graduación con el teletipo, etc.). Se reasignaron, así que ahora `ep_0N.png` es la imagen de la lámina N. La lámina del pabellón de caza (Castro y Khrushchev) pasa a ir entre abril y junio de 1963, para respetar la cronología (antes salía después de octubre de 1964), y la fecha "SPRING 1963" pasa a "MAY 1963".

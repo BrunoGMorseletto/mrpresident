@@ -118,6 +118,16 @@ label epilogue:
     ep_narr "Officially, it is a modernization. Rusk and McNamara have told Congress there was no deal.{w=3.0}{nw}"
     ep_narr "On April 24, the last missile comes down.{w=3.0}{nw}"
 
+    # ---- PLATE 7 (va entre abril y junio de 1963, por orden cronológico): el pabellón de caza
+    hide screen ep_date
+    scene ep_07 at ep_zoom_in(36) with Dissolve(1.5)
+    show screen ep_date("MAY 1963")
+    pause 1.0
+    ep_narr "No one had asked Fidel Castro. He heard about the deal from the news, and he took it as a betrayal.{w=3.0}{nw}"
+    ep_narr "At a hunting lodge, Khrushchev reads him messages from Washington. By Castro's account, one mentions missiles in Turkey.{w=3.0}{nw}"
+    ep_narr "He asks Khrushchev to read it again. Khrushchev laughs.{w=3.0}{nw}"
+    ep_narr "Castro stays in power for another forty-five years.{w=3.5}{nw}"
+
     # ---- PLATE 3: American University
     hide screen ep_date
     scene ep_03 at ep_zoom_in(28) with Dissolve(1.5)
@@ -152,16 +162,6 @@ label epilogue:
     pause 1.0
     ep_narr "Khrushchev's colleagues remove him from power. The Soviet public is told it is a matter of age and health.{w=3.0}{nw}"
     ep_narr "The charges drawn up in private include Cuba. He had presented a defeat as a victory.{w=4.0}{nw}"
-
-    # ---- PLATE 7: el pabellón de caza
-    hide screen ep_date
-    scene ep_07 at ep_zoom_in(36) with Dissolve(1.5)
-    show screen ep_date("SPRING 1963")
-    pause 1.0
-    ep_narr "No one had asked Fidel Castro. He heard about the deal from the news, and he took it as a betrayal.{w=3.0}{nw}"
-    ep_narr "At a hunting lodge, Khrushchev reads him messages from Washington. By Castro's account, one mentions missiles in Turkey.{w=3.0}{nw}"
-    ep_narr "He asks Khrushchev to read it again. Khrushchev laughs.{w=3.0}{nw}"
-    ep_narr "Castro stays in power for another forty-five years.{w=3.5}{nw}"
 
     # ---- PLATE 8: Moscú, 1989
     hide screen ep_date
