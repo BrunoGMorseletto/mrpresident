@@ -494,7 +494,7 @@ screen endings_menu(new_ending=None, after_run=False):
                 xysize (246, 46)
                 text current["badge"].upper():
                     align (0.5, 0.5)
-                    size 20
+                    size 24
                     color "#2a1d14"
 
             # Top right: file id
@@ -503,7 +503,7 @@ screen endings_menu(new_ending=None, after_run=False):
                 xysize (248, 46)
                 text "FILE " + current["id"]:
                     align (0.5, 0.5)
-                    size 20
+                    size 24
                     color "#2a1d14"
 
             # Big box: header + body text (scrolls if too long)
@@ -512,17 +512,18 @@ screen endings_menu(new_ending=None, after_run=False):
                 xysize (606, 254)
                 mousewheel True
                 draggable True
+                scrollbars "vertical"   # bigger text no longer fits: the file scrolls
 
                 vbox:
-                    spacing 12
+                    spacing 14
                     text current["header"]:
-                        size 16
+                        size 22
                         color "#a01818"
                     for paragraph in gallery_paragraphs(current):
                         text paragraph:
-                            size 16
+                            size 24
                             color "#2a1d14"
-                            xsize 590
+                            xsize 570
 
             # Title box
             fixed:
@@ -530,7 +531,7 @@ screen endings_menu(new_ending=None, after_run=False):
                 xysize (634, 66)
                 text current["title"]:
                     align (0.5, 0.5)
-                    size 34
+                    size 40
                     color "#2a1d14"
 
             # Red box: tagline
@@ -539,7 +540,7 @@ screen endings_menu(new_ending=None, after_run=False):
                 xysize (637, 59)
                 text current["tagline"]:
                     align (0.5, 0.5)
-                    size 20
+                    size 26
                     color "#a01818"
                     xsize 610
                     text_align 0.5
@@ -551,7 +552,7 @@ screen endings_menu(new_ending=None, after_run=False):
                 xysize (637, 42)
                 text "{color=#a01818}LOCKED FILE:{/color} " + hint:
                     align (0.5, 0.5)
-                    size 20
+                    size 24
                     color "#2a1d14"
                     xsize 630
                     text_align 0.5
@@ -599,9 +600,9 @@ screen endings_menu(new_ending=None, after_run=False):
         spacing 16
         text "OUTCOMES FOUND" size 30 color "#d8d0c0"
         text "%d / %d" % (len(persistent.endings_seen), len(endings)) size 72 color "#ffffff"
-        text debrief_data["goal_line"] size 26 color "#d8d0c0"
+        text debrief_data["goal_line"] size 30 color "#d8d0c0"
         null height 16
-        text "Double-click a file or press Enter to watch its ending again." size 22 color "#a89880"
+        text "Double-click a file or press Enter to watch its ending again." size 26 color "#a89880"
     
     if len(persistent.endings_seen) >= len(endings) and not after_run and current is not None:
             fixed:
