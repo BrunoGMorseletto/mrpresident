@@ -2029,6 +2029,9 @@ screen folder_card(card, cid, zoom, xoff=0, is_default=False):
         fixed:
             area (ax, ay, aw, ah)
             add "gui/interactives/%s.png" % card["icon"] fit "contain" xysize (aw, ah) align (.5, .5)
+            # T07: who will know about this order (eye = public, crossed eye = secret)
+            if card.get("visibility"):
+                add "gui/interactives/vis_%s.png" % card["visibility"] fit "contain" xysize (int(aw * 0.42), int(ah * 0.22)) align (1.0, 0.0) offset (int(6*k), -int(6*k))
 
         fixed:
             area (hx, hy, hw, hh)

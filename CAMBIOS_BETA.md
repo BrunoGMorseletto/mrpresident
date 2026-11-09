@@ -287,3 +287,4 @@ Se revisaron los textos nuevos (cartas X, debates, E01, E08, intros, cinemática
 - **T14:**
   - Se guarda el último informe de cada final (`persistent.last_reports`). En la galería, "READ YOUR LAST REPORT" lo vuelve a mostrar.
   - "Codex" en el menú principal.
+- **T07 (segunda vuelta):** el HUD no alcanzaba. Ahora cada carta tiene un sello: SECRET (ojo tachado) o PUBLIC (ojo). El campo es `visibility` en cada carta de `events.json`, y las imágenes están en `gui/interactives/vis_secret.png` y `vis_public.png`. Son provisorias: Julián va a generar las definitivas.
