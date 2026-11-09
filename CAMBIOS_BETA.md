@@ -260,3 +260,7 @@ Se revisaron los textos nuevos (cartas X, debates, E01, E08, intros, cinemática
 ---
 
 - **Epílogo:** las imágenes estaban corridas con respecto a cada lámina (el carguero salía con los Júpiter, la graduación con el teletipo, etc.). Se reasignaron, así que ahora `ep_0N.png` es la imagen de la lámina N. La lámina del pabellón de caza (Castro y Khrushchev) pasa a ir entre abril y junio de 1963, para respetar la cronología (antes salía después de octubre de 1964), y la fecha "SPRING 1963" pasa a "MAY 1963".
+
+---
+
+- **Ícono del .exe:** `icon.ico` (Windows) e `icon.icns` (Mac) en la raíz del proyecto, al lado de `game/`. Salen de la carpeta "Mr. President" que se usa como ícono de la ventana (`gui/window_icon.png`). Ren'Py los toma solos al armar las distribuciones. Hay que volver a construir el .exe para verlo.
