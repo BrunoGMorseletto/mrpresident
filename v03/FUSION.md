@@ -20,3 +20,7 @@ Sale de `beta-test-modification` (9574f71), con todo lo de las rondas de beta, y
 - Ubicar los globos de los personajes de voz nuevos.
 - Las cinemáticas y los noticieros finales se eligen por familia, con condiciones del sistema viejo. Hay que revisar que cada variante muestre algo que tenga sentido.
 - Las labels viejas que ya no se usan (D04, D05, D07, D08, D12, D18, D19, D21, D22, C01 a C04, X01 a X04) siguen en `script.rpy`. Nunca se llega a ellas.
+
+## Cambios después de la primera prueba (Julián, 10/11)
+- **NEG_LEAK:** GO PUBLIC ya no termina la partida. Abre NEG_OFFER (22/10), donde Moscú ofrece por radio cambiar los misiles de Cuba por los de Turquía. Si aceptás, terminás en E07b. Si rechazás, terminás en E09c, una variante nueva llamada "Refused on the radio". Antes, E07b decía que habías aceptado el canje sin que lo hubieras elegido.
+- **Carta bloqueada:** se ve gris, con una banda NOT AVAILABLE, y el motivo aparece en rojo.

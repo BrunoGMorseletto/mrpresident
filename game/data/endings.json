@@ -993,6 +993,51 @@
   "hint": "Keep your promises private, keep the pressure on, and leave Moscow room to collect elsewhere."
  },
  {
+  "id": "E09c",
+  "family": "E09",
+  "title": "CHECKMATE IN BERLIN",
+  "badge": "Soviet strategic win",
+  "variant_label": "Refused on the radio",
+  "header": "OCTOBER 1962 · ALTERNATE OUTCOME",
+  "tagline": "The crisis ended in Cuba. It was never about Cuba.",
+  "body": [
+   "You told the country about the missiles before you had anything to do about them, and when Moscow offered a trade on the radio, you said no. There was no quarantine ready and no deal left on the table. The missiles stayed.",
+   "A month later Khrushchev raised the price somewhere else: West Berlin. With the missiles in Cuba operational and the public already told, Washington had no appetite for a second confrontation. The Western position in the city began to give way, one concession at a time.",
+   "In the real crisis, Kennedy spent six days preparing his answer before anyone outside the room knew. Going public first left you only two moves, and you refused the one Moscow offered."
+  ],
+  "recap_template": "You went public before you had a plan, then refused the only deal on the table.",
+  "condition": {
+   "flags": {
+    "end_E09c": true
+   },
+   "stats": {}
+  },
+  "icon": "chess_knight",
+  "recap_skip": [
+   "public_ultimatum"
+  ],
+  "background": "E09.png",
+  "sealed_by": [
+   {
+    "if": {
+     "went_public": true
+    },
+    "text": "On October 21 you went on television before the Times could print the story, with no quarantine ready. From then on, every answer had to be public."
+   }
+  ],
+  "cutscene": [
+   {
+    "image": "end_e09_1",
+    "text": "Berlin, November. The first concession was small."
+   },
+   {
+    "image": "end_e09_2",
+    "text": "The next ones were smaller still, and each was announced as a technical arrangement."
+   }
+  ],
+  "hint": "Keep your promises private, keep the pressure on, and leave Moscow room to collect elsewhere."
+ },
+ {
   "id": "E10a",
   "family": "E10",
   "title": "CRUCIFIED BY CUBA",

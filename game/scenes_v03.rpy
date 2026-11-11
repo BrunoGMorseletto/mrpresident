@@ -421,3 +421,24 @@ label NEG_CASTRO:
     scene black with Fade(0.2,0.0, 0.2)
     $ next_e = next_event(events[current_scene]["next"],events)
     jump expression next_e
+
+label NEG_OFFER:
+    $ current_scene = "NEG_OFFER"
+
+    scene bg_despacho at bg_size with  Dissolve(0.2)
+
+    show expression "dean rusk" at init_pos_despacho
+
+    dean "Radio Moscow, Mr. President, an hour ago. Khrushchev will take his missiles out of Cuba if we take ours out of Turkey. He said it in public, so whatever we answer, we answer in public too."
+
+    $ card_a = events[current_scene][cards_key][a_card_key]
+    $ card_b = events[current_scene][cards_key][b_card_key]
+
+    call screen decision_folder(card_a, card_b)
+    $ choice = _return
+
+    $ aftermath=apply_choice(choice, current_scene)
+    narr_bubble "[aftermath]"
+    scene black with Fade(0.2,0.0, 0.2)
+    $ next_e = next_event(events[current_scene]["next"],events)
+    jump expression next_e
