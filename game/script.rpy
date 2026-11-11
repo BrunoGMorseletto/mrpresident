@@ -69,6 +69,7 @@ default chosen_ending = None
 default current_scene = "D01"
 default current_date = None
 default persistent.endings_seen = set()
+default persistent.variants_seen = set()
 
 init python:
     import json
@@ -96,13 +97,28 @@ init python:
         "<":  operator.lt,
         ">":  operator.gt,
     }
+    # v0.3: endings.json holds variants (E01a, E01b...); gallery, achievements and the "x / 10" count go by family
+    FAMILIES = []
+    FAMILY_REP = {}
     for e in endings:
-        achievement.register("ending_" + e["id"].lower())
-    achievement.register("all_endings", stat_max=len(endings), stat_modulo=1)
-    def unlock_ending(ending_id):
+        _fam = e.get("family", e["id"])
+        if _fam not in FAMILY_REP:
+            FAMILY_REP[_fam] = e
+            FAMILIES.append(_fam)
+    def ending_family(e):
+        return e.get("family", e["id"])
+    def family_endings():
+        """One entry per family (the first variant), with the family as its id."""
+        return [dict(FAMILY_REP[f], id=f) for f in FAMILIES]
+    for f in FAMILIES:
+        achievement.register("ending_" + f.lower())
+    achievement.register("all_endings", stat_max=len(FAMILIES), stat_modulo=1)
+    def unlock_ending(ending):
         before = codex_unlocked_set()
-        persistent.endings_seen.add(ending_id)
-        achievement.grant("ending_" + ending_id.lower())
+        fam = ending_family(ending)
+        persistent.endings_seen.add(fam)
+        persistent.variants_seen.add(ending["id"])
+        achievement.grant("ending_" + fam.lower())
         achievement.progress("all_endings", len(persistent.endings_seen))
         renpy.save_persistent()
         codex_check_new(before)
@@ -217,7 +233,7 @@ init python:
 
     def show_last_report(eid):
         """Gallery: read again the last report written for this ending."""
-        e = [x for x in endings if x["id"] == eid][0]
+        e = [x for x in family_endings() if x["id"] == eid][0]
         renpy.call_in_new_context("show_last_report_label", e, persistent.last_reports[eid])
 
     def replay_ending(eid):
@@ -266,6 +282,10 @@ init python:
 
     def next_event(possible_events, events):
         global chosen_ending, current_date
+        # v0.3: a final card sets game_over and end_<variant>; the run ends right there
+        if flags.get("game_over"):
+            chosen_ending = decide_ending()
+            return "ENDING"
         if check_nuclear():
             chosen_ending = endings[0]
             return "ENDING"
@@ -1212,7 +1232,7 @@ label ENDING:
     $ quick_menu = False
     $ hud_on = False
     scene black with fade
-    $name = chosen_ending["id"]
+    $name = ending_family(chosen_ending)   # newsreel, gallery and saved report go by family
     # first the public version (newsreel), then what really happened (cutscene), then the file
     if find_final_newsreel(name):
         call newsreel(find_final_newsreel(name)) from _call_newsreel
@@ -1228,11 +1248,18 @@ label ENDING:
     nvl show dissolve
     $ ending_nvl("{size=60}{i}%s{/i}" % chosen_ending["title"])
     $ ending_nvl("{i}%s{/i}" % chosen_ending["tagline"])
+    if chosen_ending.get("variant_label"):
+        $ ending_nvl("{size=-6}%s{/size}" % chosen_ending["variant_label"].upper())
 
     python:
-        unlock_ending(name)
+        unlock_ending(chosen_ending)
         for para in paragraphs:
             ending_nvl(para)
+        # v0.3: the earlier decision that sealed this ending, so late deaths don't feel random
+        for s in chosen_ending.get("sealed_by", []):
+            if check_trigger(s["if"]):
+                ending_nvl("{i}%s{/i}" % s["text"])
+                break
         if "stamp" in chosen_ending:
             ending_nvl("{i}%s{/i}" % chosen_ending["stamp"])
     scene black with fade
@@ -1247,7 +1274,7 @@ label ENDING:
     call screen debrief(chosen_ending, last_report)
     #call screen endings_menu(new_ending=chosen_ending, after_run=True)
 
-    if len(persistent.endings_seen) >= len(endings) and not persistent.epilogue_seen:
+    if len(persistent.endings_seen) >= len(FAMILIES) and not persistent.epilogue_seen:
         call epilogue
 
     return
@@ -1282,7 +1309,7 @@ label replay_ending_label(eid):
     python:
         _saved_flags = dict(flags)
         _saved_music = renpy.music.get_playing()
-        _rep = [x for x in endings if x["id"] == eid][0]
+        _rep = [x for x in family_endings() if x["id"] == eid][0]
         # flags that select the main version of each film (e.g. E08 with the withdrawal announced)
         flags.clear()
         flags.update(_rep["condition"]["flags"])

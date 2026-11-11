@@ -49,7 +49,7 @@
     "R-12 and R-14: The Missiles": {
       "id": "INT-03",
       "unlock": {
-        "scene": "D04"
+        "scene": "ROOT_1"
       },
       "unlock_declassified": {
         "endings_found": 1
@@ -71,7 +71,7 @@
     "Operation Anadyr": {
       "id": "INT-04",
       "unlock": {
-        "scene": "D07"
+        "scene": "ROOT_1"
       },
       "unlock_declassified": {
         "endings_found": 1
@@ -206,7 +206,7 @@
     "Stevenson at the United Nations": {
       "id": "STA-05",
       "unlock": {
-        "scene": "D12"
+        "scene": "TRK_SPEECH"
       },
       "unlock_declassified": {
         "endings_found": 1
@@ -274,7 +274,7 @@
     "The Brazilian Message": {
       "id": "STA-08",
       "unlock": {
-        "scene": "D05"
+        "scene": "NEG_WHO"
       },
       "unlock_declassified": {
         "endings_found": 1
@@ -298,7 +298,7 @@
     "U Thant": {
       "id": "STA-09",
       "unlock": {
-        "scene": "D17"
+        "scene": "TRK_SHIP"
       },
       "unlock_declassified": {
         "endings_found": 1
@@ -318,10 +318,85 @@
       ],
       "allison_model": "Rational Actor"
     },
-    "The Public": {
+    "Senator Keating": {
       "id": "STA-10",
       "unlock": {
-        "scene": "D12"
+        "scene": "NEG_KEATING"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "On August 31, Senator Kenneth Keating told the Senate he had reliable information that Soviet troops had arrived in Cuba. On October 10 he went further: there were \"rocket\" bases. He never said where his information came from. With midterm elections weeks away, the administration treated him as a partisan nuisance.",
+        "declassified": "Keating was early and partly right, and he was never forced to name a source. Historians still speculate about who told him, West German intelligence among the candidates. For the White House, his speeches were the domestic price of the September warnings: every week without action made the President look like the man who had been warned."
+      },
+      "image": {
+        "file": null,
+        "archival": true,
+        "status": "pending_photo_search",
+        "suggestion": "foto real: Keating en el Senado, 1962, verificar licencia"
+      },
+      "sources": [
+        "Wilson Center, \"Senator Keating's Source\"",
+        "STERN, ch. 2"
+      ],
+      "allison_model": "Governmental Politics"
+    },
+    "The Paper That Waited": {
+      "id": "STA-11",
+      "unlock": {
+        "scene": "NEG_LEAK"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "By the weekend of October 20, reporters at The New York Times had pieced together most of the story from troop movements and cancelled leaves. Kennedy persuaded the Washington bureau chief, James Reston, and the publisher, Orvil Dryfoos, to hold it until he had spoken to the nation.",
+        "declassified": "It was not the first time. Reston asked for a promise in exchange for silence: the government would shed no blood and start no war while the Times kept quiet. A free press keeping a government secret to avoid a war is part of how the crisis ended. It is also an arrangement nobody would put in a textbook on democracy."
+      },
+      "image": {
+        "file": null,
+        "archival": true,
+        "status": "pending_photo_search",
+        "suggestion": "foto real: redaccion o rotativa del New York Times, 1962, verificar licencia"
+      },
+      "sources": [
+        "James B. Reston Papers, University of Illinois Archives",
+        "STERN, ch. 3 (Oct. 21)"
+      ],
+      "allison_model": "Governmental Politics"
+    },
+    "Khrushchev's November": {
+      "id": "STA-12",
+      "unlock": {
+        "scene": "NEG_TIME"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "On October 16, the morning Kennedy first saw the photographs, Khrushchev received the American ambassador in Moscow. He said he wanted no trouble before the American elections, confirmed that he would come to New York for the United Nations in the latter part of November, and said he hoped to meet the President.",
+        "declassified": "Many historians read the trip as the planned moment of revelation: elections over, missiles operational, a fait accompli presented face to face. Nothing in writing proves it. If the plan was real, the U-2 photographs of October 14 broke it by six weeks."
+      },
+      "image": {
+        "file": null,
+        "archival": true,
+        "status": "pending_photo_search",
+        "suggestion": "foto real: Jruschov en la ONU (1960) o telegrama de Kohler del 16/10 (FRUS), verificar licencia"
+      },
+      "sources": [
+        "FRUS 1961-1963, vol. V, doc. 248",
+        "PLOKHY (verificar capitulo)"
+      ],
+      "allison_model": "Rational Actor"
+    },
+    "The Public": {
+      "id": "STA-13",
+      "unlock": {
+        "scene": [
+          "TRK_SPEECH",
+          "NEG_LEAK"
+        ]
       },
       "unlock_declassified": {
         "endings_found": 1
@@ -349,7 +424,7 @@
     "Quarantine, Not Blockade": {
       "id": "DEF-01",
       "unlock": {
-        "scene": "D07"
+        "scene": "ROOT_1"
       },
       "unlock_declassified": {
         "endings_found": 1
@@ -399,34 +474,7 @@
         "endings_found": 1
       },
       "description": {
-        "1962": "Defense Readiness Condition: five levels, from DEFCON 5 (normal peacetime readiness) to DEFCON 1 (war imminent). Each step up shortens the time between an order and an attack: more bombers in the air, more missiles ready to fire, crews moved away from bases that could be hit first. In normal times US forces sat at DEFCON 5 or 4. On October 22, after the President's speech, they went to DEFCON 3.",
-        "declassified": "The level was not one switch for the whole military. Each command could be set on its own, and the commanders who ran an alert also decided how it was carried out and how it was announced. Raising the level was a political signal as much as a military measure."
-      },
-      "image": {
-        "file": null,
-        "suggestion": null
-      },
-      "sources": [
-        "DOBBS, ch. 4",
-        "ALLISON, ch. 4"
-      ],
-      "allison_model": "Organizational Behavior"
-    },
-    "DEFCON 2": {
-      "id": "DEF-10",
-      "unlock": {
-        "scene": [
-          "C01",
-          "C02",
-          "D17",
-          "X01"
-        ]
-      },
-      "unlock_declassified": {
-        "endings_found": 1
-      },
-      "description": {
-        "1962": "On October 24, Strategic Air Command went to DEFCON 2, the only time in the Cold War: bombers on airborne alert around the clock, missiles ready, crews dispersed to civilian airfields. The rest of the armed forces stayed at DEFCON 3.",
+        "1962": "Defense Readiness Condition, five levels from DEFCON 5 (peace) to DEFCON 1 (war). On October 22 US forces went to DEFCON 3. On October 24, Strategic Air Command went to DEFCON 2, the only time in the Cold War: bombers on airborne alert around the clock, missiles ready, crews dispersed to civilian airfields.",
         "declassified": "General Thomas Power, commander of Strategic Air Command, announced the alert to his forces in the clear, unencrypted, so the Soviets would hear it. Nobody had asked him to. It was an organization sending its own signal to Moscow, exactly the kind of move Allison's second model predicts and Kennedy most feared."
       },
       "image": {
@@ -442,7 +490,7 @@
     "OPLAN 312 and 316": {
       "id": "DEF-04",
       "unlock": {
-        "scene": "D08"
+        "scene": "ATK_SCOPE"
       },
       "unlock_declassified": {
         "endings_found": 1
@@ -464,7 +512,7 @@
     "Signaling a Submarine": {
       "id": "DEF-05",
       "unlock": {
-        "scene": "C02"
+        "scene": "TRK_SUBMARINE"
       },
       "unlock_declassified": {
         "endings_found": 1
@@ -488,7 +536,7 @@
     "B-59": {
       "id": "DEF-06",
       "unlock": {
-        "scene": "C02"
+        "scene": "TRK_SUBMARINE"
       },
       "unlock_declassified": {
         "endings_found": 1
@@ -532,7 +580,7 @@
     "Black Saturday": {
       "id": "DEF-08",
       "unlock": {
-        "scene": "C03"
+        "scene": "TRK_U2"
       },
       "unlock_declassified": {
         "endings_found": 1
@@ -554,7 +602,7 @@
     "Lost Over Chukotka": {
       "id": "DEF-09",
       "unlock": {
-        "scene": "C03"
+        "scene": "TRK_MAULTSBY"
       },
       "unlock_declassified": {
         "endings_found": 1
@@ -569,6 +617,104 @@
       },
       "sources": [
         "DOBBS, ch. 8 and ch. 11 \"Some Sonofabitch\""
+      ],
+      "allison_model": "Organizational Behavior"
+    },
+    "Berlin, the Hostage": {
+      "id": "DEF-10",
+      "unlock": {
+        "scene": "ATK_BERLIN"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "West Berlin sat about 110 miles inside East Germany, held by American, British and French garrisons that could not be defended by conventional means. The Wall had gone up fourteen months earlier. In the ExComm meetings Kennedy kept coming back to the same question: if we hit Cuba, what does Khrushchev do in Berlin? Allied planners had a staff for that, code-named LIVE OAK.",
+        "declassified": "Khrushchev did nothing in Berlin during the crisis. Allison and Zelikow argue that Berlin was close to the heart of his gamble, and Kennedy believed it too. In this branch, Moscow does what Washington feared."
+      },
+      "image": {
+        "file": null,
+        "archival": true,
+        "status": "pending_photo_search",
+        "suggestion": "foto real: Checkpoint Charlie, 1961 (US Army, dominio publico)"
+      },
+      "sources": [
+        "ALLISON, ch. 2",
+        "STERN, ch. 3"
+      ],
+      "allison_model": "Rational Actor"
+    },
+    "Release Authority": {
+      "id": "DEF-11",
+      "unlock": {
+        "scene": "ATK_TACTICAL"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "NATO's plans assumed that Soviet conventional forces in Europe could not be stopped without nuclear weapons. American tactical nuclear weapons in Western Europe stayed in American custody, and only the President could release them. In a war over Berlin, the Supreme Allied Commander, General Lauris Norstad, would be the man asking.",
+        "declassified": "No such request was made in October 1962. The game invents the moment, not the dilemma: a ground war over Berlin would have put it on the President's desk within days."
+      },
+      "image": {
+        "file": null,
+        "archival": true,
+        "status": "pending_photo_search",
+        "suggestion": "foto real: Norstad en SHAPE o depositos de armas tacticas en Europa, verificar licencia"
+      },
+      "sources": [
+        "Design notes",
+        "See TS-04"
+      ],
+      "allison_model": "Organizational Behavior"
+    },
+    "The Moorestown Tape": {
+      "id": "DEF-12",
+      "unlock": {
+        "scene": "TRK_FALSE_ALARM"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "America's big early-warning radars faced north, toward the Soviet Union. Nobody had built one to watch Cuba. During the crisis the Air Force improvised, pressing radars in the southern states into service along with a prototype at Moorestown, New Jersey.",
+        "declassified": "On October 28, Moorestown reported a missile launched from Cuba with an impact point near Tampa. Nothing came. A test tape simulating a launch had been fed into the system while it was on watch. Later that day, an unknown radar track over Georgia turned out to be a satellite. The improvised network worked as improvised networks do."
+      },
+      "image": {
+        "file": null,
+        "archival": true,
+        "status": "pending_photo_search",
+        "suggestion": "foto real: domos del radar AN/FPS-49 de Moorestown, verificar licencia"
+      },
+      "sources": [
+        "GEORGE, Awaiting Armageddon, p. 57",
+        "JEANES, Forecast and Solution (1996), p. 151",
+        "SAGAN, The Limits of Safety (1993)"
+      ],
+      "allison_model": "Organizational Behavior"
+    },
+    "DEFCON 2": {
+      "id": "DEF-13",
+      "unlock": {
+        "scene": [
+          "TRK_SHIP",
+          "ATK_BERLIN"
+        ]
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "On October 24, Strategic Air Command went to DEFCON 2, the only time in the Cold War: bombers on airborne alert around the clock, missiles ready, crews dispersed to civilian airfields. The rest of the armed forces stayed at DEFCON 3.",
+        "declassified": "General Thomas Power, commander of Strategic Air Command, announced the alert to his forces in the clear, unencrypted, so the Soviets would hear it. Nobody had asked him to. It was an organization sending its own signal to Moscow, exactly the kind of move Allison's second model predicts and Kennedy most feared."
+      },
+      "image": {
+        "file": null,
+        "suggestion": null
+      },
+      "sources": [
+        "DOBBS, ch. 4",
+        "ALLISON, ch. 4"
       ],
       "allison_model": "Organizational Behavior"
     }
@@ -622,7 +768,7 @@
     "Operation Mongoose": {
       "id": "CIA-03",
       "unlock": {
-        "scene": "D05"
+        "scene": "ROOT_2"
       },
       "unlock_declassified": {
         "endings_found": 1
@@ -644,7 +790,7 @@
     "What Did Cuba Want?": {
       "id": "CIA-04",
       "unlock": {
-        "scene": "D21"
+        "scene": "NEG_CASTRO"
       },
       "unlock_declassified": {
         "endings_found": 1
@@ -666,7 +812,7 @@
     "The Letter of October 26": {
       "id": "CIA-05",
       "unlock": {
-        "scene": "D19"
+        "scene": "TRK_TURKEY"
       },
       "unlock_declassified": {
         "endings_found": 1
@@ -864,7 +1010,7 @@
     "Theodore Sorensen": {
       "id": "PER-SORENSEN",
       "unlock": {
-        "scene": "D12"
+        "scene": "TRK_SPEECH"
       },
       "unlock_declassified": {
         "endings_found": 1
@@ -886,7 +1032,7 @@
     "Lyndon B. Johnson": {
       "id": "PER-LBJ",
       "unlock": {
-        "scene": "D19"
+        "scene": "TRK_TURKEY"
       },
       "unlock_declassified": {
         "endings_found": 1
@@ -908,7 +1054,7 @@
     "Gen. Curtis LeMay": {
       "id": "PER-LEMAY",
       "unlock": {
-        "scene": "D07"
+        "scene": "ROOT_1"
       },
       "unlock_declassified": {
         "endings_found": 1
@@ -953,7 +1099,7 @@
     "Adlai Stevenson": {
       "id": "PER-STEVENSON",
       "unlock": {
-        "scene": "D09"
+        "scene": "ROOT_2"
       },
       "unlock_declassified": {
         "endings_found": 1
@@ -1041,7 +1187,7 @@
     "Andrei Gromyko": {
       "id": "PER-GROMYKO",
       "unlock": {
-        "scene": "D06"
+        "scene": "NEG_WHO"
       },
       "unlock_declassified": {
         "endings_found": 1
@@ -1063,7 +1209,7 @@
     "Gen. Issa Pliyev": {
       "id": "PER-PLIYEV",
       "unlock": {
-        "scene": "C01"
+        "scene": "ATK_PREAUTH"
       },
       "unlock_declassified": {
         "endings_found": 1
@@ -1085,7 +1231,7 @@
     "Maj. Rudolf Anderson": {
       "id": "PER-ANDERSON-R",
       "unlock": {
-        "scene": "C03"
+        "scene": "TRK_U2"
       },
       "unlock_declassified": {
         "endings_found": 1
@@ -1106,7 +1252,7 @@
     "Vasily Arkhipov": {
       "id": "PER-ARKHIPOV",
       "unlock": {
-        "scene": "C02"
+        "scene": "TRK_SUBMARINE"
       },
       "unlock_declassified": {
         "endings_found": 1
@@ -1128,7 +1274,7 @@
     "Anastas Mikoyan": {
       "id": "PER-MIKOYAN",
       "unlock": {
-        "scene": "D22"
+        "scene": "TRK_VERIFY"
       },
       "unlock_declassified": {
         "endings_found": 1
@@ -1143,6 +1289,48 @@
       },
       "sources": [
         "PLOKHY, ch. 25 \"Mission Impossible\""
+      ],
+      "allison_model": null
+    },
+    "Sen. Kenneth Keating": {
+      "id": "PER-KEATING",
+      "unlock": {
+        "scene": "NEG_KEATING"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Republican Senator from New York. Age in October 1962: 62. A lawyer and former congressman, elected to the Senate in 1958. Since August he has been the loudest voice in Washington saying there are Soviet missiles in Cuba.",
+        "declassified": "He never revealed his source. In 1964 he lost his Senate seat to Robert F. Kennedy."
+      },
+      "image": {
+        "file": "codex/PER-KEATING.png",
+        "suggestion": null
+      },
+      "sources": [
+        "Wilson Center, \"Senator Keating's Source\""
+      ],
+      "allison_model": null
+    },
+    "Gen. Lauris Norstad": {
+      "id": "PER-NORSTAD",
+      "unlock": {
+        "scene": "ATK_TACTICAL"
+      },
+      "unlock_declassified": {
+        "endings_found": 1
+      },
+      "description": {
+        "1962": "Supreme Allied Commander Europe. Age in October 1962: 55. A US Air Force general, NATO's top military commander since 1956, with headquarters outside Paris. If war comes in Europe, he is the man who will ask for nuclear weapons.",
+        "declassified": "He left NATO command in January 1963. In this game, his request is fiction. The weapons and the plans that would have prompted it were not."
+      },
+      "image": {
+        "file": "codex/PER-NORSTAD.png",
+        "suggestion": null
+      },
+      "sources": [
+        "Design notes"
       ],
       "allison_model": null
     }

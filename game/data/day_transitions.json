@@ -53,6 +53,22 @@
 			"variants": [
 				{
 					"if": {
+						"lied_to_senate": true
+					},
+					"headline": "WHITE HOUSE SEES NO PROOF OF OFFENSIVE ARMS IN CUBA",
+					"deck": "Keating stands by his charges; Gromyko calls on President",
+					"photo": "rally"
+				},
+				{
+					"if": {
+						"congress_briefed": true
+					},
+					"headline": "PRESIDENT MEETS CONGRESS LEADERS BEHIND CLOSED DOORS",
+					"deck": "Gromyko calls at White House; no statement issued",
+					"photo": "rally"
+				},
+				{
+					"if": {
 						"allies_briefed": true
 					},
 					"headline": "U.S. ENVOYS FLY TO EUROPE ON SECRET ERRAND",
@@ -196,6 +212,14 @@
 			"variants": [
 				{
 					"if": {
+						"berlin_convoy": true
+					},
+					"headline": "SOVIETS SEAL BERLIN; ALLIED CONVOY ON AUTOBAHN",
+					"deck": "Raids on Cuba continue; NATO forces on alert",
+					"photo": "destroyer"
+				},
+				{
+					"if": {
 						"any": [
 							{
 								"strike_launched": true
@@ -255,6 +279,14 @@
 		{
 			"after_date": "OCT 26, 1962",
 			"variants": [
+				{
+					"if": {
+						"invasion_launched": true
+					},
+					"headline": "MARINES LAND IN CUBA",
+					"deck": "Pentagon: resistance 'heavier than expected'",
+					"photo": "destroyer"
+				},
 				{
 					"if": {
 						"strike_launched": true

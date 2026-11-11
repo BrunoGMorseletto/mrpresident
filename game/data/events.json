@@ -8,10 +8,7 @@
     "hint": "Clear pictures. Planes Havana can shoot at.",
     "icon": "plane",
     "aftermath": "Navy reconnaissance squadrons in Florida are put on alert.",
-    "stats": {
-     "intel": 2,
-     "escalation": 1
-    },
+    "stats": {},
     "flag": {
      "low_level_flights": true
     },
@@ -34,12 +31,13 @@
   "next": [
    "D02"
   ],
-  "allison_model": "rational",
+  "kind": "tramo",
+  "question": "Send planes in low over Cuba?",
   "in_1962": {
    "choice": "A",
    "text": "Low-level flights began on October 23, a week later than here. They brought back the clearest pictures of the crisis."
   },
-  "question": "Send planes in low over Cuba?"
+  "allison_model": "rational"
  },
  "D02": {
   "date": "OCT 16, 1962",
@@ -50,10 +48,7 @@
     "hint": "Fewer leaks. Fewer voices in the room.",
     "icon": "padlock",
     "aftermath": "A dozen men start meeting in the Cabinet Room. The press is told nothing.",
-    "stats": {
-     "control": 1,
-     "authority": 1
-    },
+    "stats": {},
     "flag": {
      "small_group": true
     },
@@ -65,9 +60,7 @@
     "hint": "More support. More people who know.",
     "icon": "people",
     "aftermath": "Cabinet secretaries are briefed by evening. One of them talks to his wife.",
-    "stats": {
-     "diplomacy": 1
-    },
+    "stats": {},
     "flag": {
      "broad_consultation": true
     },
@@ -78,12 +71,13 @@
   "next": [
    "D03"
   ],
-  "allison_model": "governmental",
+  "kind": "tramo",
+  "question": "Who gets told?",
   "in_1962": {
    "choice": "A",
    "text": "Kennedy kept the circle small. The ExComm met in secret for six days before the public knew anything."
   },
-  "question": "Who gets told?"
+  "allison_model": "governmental"
  },
  "D03": {
   "date": "OCT 16, 1962",
@@ -94,10 +88,7 @@
     "hint": "A public line. Hard to step back from.",
     "icon": "microphone",
     "aftermath": "The press office drafts a statement. It cannot be unsaid.",
-    "stats": {
-     "stance": 1,
-     "authority": 1
-    },
+    "stats": {},
     "flag": {
      "public_ultimatum": true
     },
@@ -109,122 +100,42 @@
     "hint": "Room to move. Time to lose.",
     "icon": "stop_hand",
     "aftermath": "The schedule stays normal. Tomorrow the President campaigns in Connecticut.",
-    "stats": {
-     "stance": -1,
-     "diplomacy": 1
-    },
+    "stats": {},
     "flag": {},
     "trigger": {},
     "visibility": "secret"
    }
   },
   "next": [
-   "D04"
+   "ROOT_1"
   ],
-  "allison_model": "governmental",
+  "kind": "tramo",
+  "question": "Repeat the September warning in public?",
   "in_1962": {
    "choice": "B",
    "text": "Kennedy said nothing in public until October 22. He kept campaigning so the press would not notice."
   },
-  "question": "Repeat the September warning in public?"
- },
- "D04": {
-  "date": "OCT 17, 1962",
-  "trigger": {},
-  "cards": {
-   "A": {
-    "title": "DRAW UP STRIKE PLANS",
-    "hint": "Planes on standby. Nothing is ordered yet.",
-    "icon": "squadron",
-    "aftermath": "Tactical Air Command starts moving aircraft to bases in Florida. No one has been ordered to fly.",
-    "stats": {
-     "escalation": 1,
-     "stance": 1
-    },
-    "flag": {
-     "air_strike_ready": true
-    },
-    "trigger": {},
-    "visibility": "secret"
-   },
-   "B": {
-    "title": "DRAW UP A BLOCKADE",
-    "hint": "Ships on standby. Nothing is ordered yet.",
-    "icon": "destroyer",
-    "aftermath": "Navy staff start writing the rules for stopping a Soviet ship. No ship has sailed yet.",
-    "stats": {},
-    "flag": {
-     "blockade_ready": true
-    },
-    "trigger": {},
-    "visibility": "secret"
-   }
-  },
-  "next": [
-   "D05"
-  ],
-  "allison_model": "organizational",
-  "in_1962": {
-   "choice": "AB",
-   "text": "Both plans were prepared at the same time. The services never had to choose."
-  },
-  "question": "Which plan gets ready first?"
- },
- "D05": {
-  "date": "OCT 17, 1962",
-  "trigger": {},
-  "cards": {
-   "A": {
-    "title": "TALK TO HAVANA",
-    "hint": "A quiet channel. Castro may not want it.",
-    "icon": "envelope",
-    "aftermath": "A message is drafted for the Brazilian ambassador in Havana.",
-    "stats": {
-     "diplomacy": 1,
-     "stance": -1
-    },
-    "flag": {
-     "castro_channel": true
-    },
-    "trigger": {},
-    "visibility": "secret"
-   },
-   "B": {
-    "title": "MOSCOW'S PROBLEM",
-    "hint": "One adversary. One address.",
-    "icon": "telephone",
-    "aftermath": "Cuba drops off the agenda. In Havana, someone notices.",
-    "stats": {
-     "authority": 1,
-     "stance": 1
-    },
-    "flag": {},
-    "trigger": {},
-    "visibility": "secret"
-   }
-  },
-  "next": [
-   "D06"
-  ],
-  "allison_model": "rational",
-  "in_1962": {
-   "choice": "B",
-   "text": "Washington approved a message to Castro through Brazil on October 26. It was never delivered: Khrushchev gave in first."
-  },
-  "question": "Open a channel to Castro?"
+  "allison_model": "governmental"
  },
  "D06": {
   "date": "OCT 18, 1962",
-  "trigger": {},
+  "trigger": {
+   "any": [
+    {
+     "route_attack": true
+    },
+    {
+     "route_negotiate": true
+    }
+   ]
+  },
   "cards": {
    "A": {
     "title": "SHARE THE EVIDENCE",
     "hint": "Allies on board. Secrets in more hands.",
     "icon": "papers",
     "aftermath": "Dean Acheson is told to pack a folder of photographs for Paris.",
-    "stats": {
-     "diplomacy": 1
-    },
+    "stats": {},
     "flag": {
      "allies_briefed": true
     },
@@ -236,123 +147,28 @@
     "hint": "Full control. Allies left guessing.",
     "icon": "padlock",
     "aftermath": "The allies will hear it on the radio, like everyone else.",
-    "stats": {
-     "control": 1,
-     "authority": -1
-    },
+    "stats": {},
     "flag": {},
     "trigger": {},
     "visibility": "secret"
    }
   },
   "next": [
-   "D07"
+   "ATK_SCOPE",
+   "NEG_KEATING"
   ],
-  "allison_model": "governmental",
+  "kind": "tramo",
+  "question": "Show the allies the photographs?",
   "in_1962": {
    "choice": "A",
    "text": "Dean Acheson flew to Paris with the photographs. De Gaulle said he did not need to see them."
   },
-  "question": "Show the allies the photographs?"
- },
- "D07": {
-  "date": "OCT 18, 1962",
-  "trigger": {},
-  "cards": {
-   "A": {
-    "title": "STRIKE BEFORE THEY'RE READY",
-    "hint": "Act now, while the sites are unfinished.",
-    "icon": "squadron",
-    "aftermath": "The Joint Chiefs are told to plan for the earliest possible date.",
-    "stats": {
-     "stance": 2,
-     "escalation": 1
-    },
-    "flag": {
-     "ATTACK": true
-    },
-    "trigger": {},
-    "visibility": "public"
-   },
-   "B": {
-    "title": "GIVE THEM AN EXIT",
-    "hint": "Pressure first. Force held in reserve.",
-    "icon": "hourglass",
-    "aftermath": "In the drafts, the word 'blockade' starts turning into 'quarantine'.",
-    "stats": {
-     "stance": -1,
-     "diplomacy": 1
-    },
-    "flag": {
-     "PRESSURE": true
-    },
-    "trigger": {},
-    "visibility": "public"
-   }
-  },
-  "next": [
-   "D08",
-   "D09"
-  ],
-  "allison_model": "organizational",
-  "in_1962": {
-   "choice": "B",
-   "text": "Kennedy chose the quarantine on October 20. The air strike stayed ready, in reserve."
-  },
-  "duel_left_card": "A",
-  "question": "Strike now, or blockade first?"
- },
- "D08": {
-  "date": "OCT 19, 1962",
-  "trigger": {
-   "ATTACK": true
-  },
-  "cards": {
-   "A": {
-    "title": "MISSILES ONLY",
-    "hint": "Smaller strike. Their defenses stay up.",
-    "icon": "crosshair",
-    "aftermath": "The target list is cut to the launch sites. The Air Force says it will do its best.",
-    "stats": {
-     "escalation": 1
-    },
-    "flag": {
-     "air_strike_ready": true,
-     "limited_strike": true
-    },
-    "trigger": {},
-    "visibility": "secret"
-   },
-   "B": {
-    "title": "THE WHOLE PACKAGE",
-    "hint": "Airfields, SAMs, then an invasion force.",
-    "icon": "helmet",
-    "aftermath": "Troops start moving toward Florida. The Chiefs finally look satisfied.",
-    "stats": {
-     "escalation": 2,
-     "control": -1
-    },
-    "flag": {
-     "invasion_ready": true
-    },
-    "trigger": {},
-    "visibility": "secret"
-   }
-  },
-  "next": [
-   "D12"
-  ],
-  "allison_model": "organizational",
-  "in_1962": {
-   "choice": "none",
-   "text": "Kennedy never ordered the strike, so this choice was never made. The Air Force had told him a strike on the missiles alone was not what it had planned."
-  },
-  "question": "How big a strike?"
+  "allison_model": "governmental"
  },
  "D09": {
   "date": "OCT 20, 1962",
   "trigger": {
-   "PRESSURE": true
+   "route_trunk": true
   },
   "cards": {
    "A": {
@@ -360,10 +176,7 @@
     "hint": "Buy time. Leave Khrushchev a door.",
     "icon": "handshake",
     "aftermath": "Stevenson is told to prepare the case for the United Nations.",
-    "stats": {
-     "escalation": 1,
-     "diplomacy": 1
-    },
+    "stats": {},
     "flag": {
      "blockade": true,
      "quarantine_to_talk": true
@@ -376,10 +189,7 @@
     "hint": "Set a clock. Say it out loud.",
     "icon": "hourglass",
     "aftermath": "A deadline is written into the draft. Someone underlines it twice.",
-    "stats": {
-     "escalation": 1,
-     "stance": 1
-    },
+    "stats": {},
     "flag": {
      "blockade": true,
      "public_ultimatum": true,
@@ -392,37 +202,18 @@
   "next": [
    "D10"
   ],
-  "allison_model": "rational",
+  "kind": "tramo",
+  "question": "What is the quarantine for?",
   "in_1962": {
    "choice": "A",
    "text": "The quarantine was meant to buy time. The deadline came later, on October 27, delivered in private by Robert Kennedy."
   },
-  "question": "What is the quarantine for?"
- },
- "A01": {
-  "date": null,
-  "trigger": {
-   "intel": {
-    "<=": 1
-   },
-   "air_strike_ready": false,
-   "invasion_ready": false,
-   "blockade": false
-  },
-  "auto": {
-   "stats": {},
-   "flag": {
-    "missiles_operational": true
-   }
-  },
-  "next": [
-   "D12"
-  ]
+  "allison_model": "rational"
  },
  "D10": {
   "date": "OCT 20, 1962",
   "trigger": {
-   "blockade": true
+   "route_trunk": true
   },
   "cards": {
    "A": {
@@ -430,9 +221,7 @@
     "hint": "Narrow. Defensible. Leaves them room.",
     "icon": "missile",
     "aftermath": "The proclamation lists missiles, bombers and warheads. Nothing else.",
-    "stats": {
-     "diplomacy": 1
-    },
+    "stats": {},
     "flag": {
      "narrow_blockade": true
     },
@@ -444,10 +233,7 @@
     "hint": "Squeezes Cuba. Looks like an act of war.",
     "icon": "destroyer",
     "aftermath": "Tankers bound for Havana are added to the list. Moscow notices first.",
-    "stats": {
-     "stance": 1,
-     "escalation": 1
-    },
+    "stats": {},
     "flag": {
      "total_blockade": true
     },
@@ -458,17 +244,18 @@
   "next": [
    "D11"
   ],
-  "allison_model": "rational",
+  "kind": "tramo",
+  "question": "What does the quarantine stop?",
   "in_1962": {
    "choice": "A",
    "text": "The quarantine covered offensive weapons only. Adding fuel was discussed as a later step."
   },
-  "question": "What does the quarantine stop?"
+  "allison_model": "rational"
  },
  "D11": {
   "date": "OCT 21, 1962",
   "trigger": {
-   "blockade": true
+   "route_trunk": true
   },
   "cards": {
    "A": {
@@ -476,9 +263,7 @@
     "hint": "More time for Moscow. Less margin for us.",
     "icon": "hourglass",
     "aftermath": "The Navy redraws the line. Admiral Anderson is not pleased.",
-    "stats": {
-     "control": 1
-    },
+    "stats": {},
     "flag": {},
     "trigger": {},
     "visibility": "secret"
@@ -488,83 +273,38 @@
     "hint": "Safer for our ships. Faster to collide.",
     "icon": "destroyer",
     "aftermath": "The destroyers take their positions. The clock starts sooner.",
-    "stats": {
-     "stance": 1,
-     "escalation": 1
+    "stats": {},
+    "flag": {
+     "far_line": true
     },
-    "flag": {},
     "trigger": {},
     "visibility": "secret"
    }
   },
   "next": [
-   "D12"
+   "TRK_SPEECH"
   ],
-  "allison_model": "organizational",
+  "kind": "tramo",
+  "question": "Where do the ships intercept?",
+  "duel_left_card": "B",
   "in_1962": {
    "choice": "A",
    "text": "Kennedy pulled the line in after talking with the British ambassador. The Soviet missile ships had already turned back."
   },
-  "duel_left_card": "B",
-  "question": "Where do the ships intercept?"
- },
- "D12": {
-  "date": "OCT 22, 1962",
-  "trigger": {},
-  "cards": {
-   "A": {
-    "title": "DEMAND WITHDRAWAL",
-    "hint": "Clear. Popular. Hard to walk back.",
-    "icon": "microphone",
-    "aftermath": "At seven, the country hears the word 'withdrawal'. So does Moscow.",
-    "stats": {
-     "stance": 1,
-     "authority": 1
-    },
-    "flag": {
-     "public_ultimatum": true
-    },
-    "trigger": {},
-    "visibility": "public"
-   },
-   "B": {
-    "title": "DEMAND A FREEZE",
-    "hint": "Room to bargain. Looks softer on TV.",
-    "icon": "stop_hand",
-    "aftermath": "At seven, the country hears the word 'halt'. Some commentators call it weak.",
-    "stats": {
-     "diplomacy": 1,
-     "stance": -1
-    },
-    "flag": {
-     "freeze_offer": true
-    },
-    "trigger": {},
-    "visibility": "public"
-   }
-  },
-  "next": [
-   "D13"
-  ],
-  "allison_model": "governmental",
-  "in_1962": {
-   "choice": "A",
-   "text": "The speech of October 22 demanded that the missiles be removed."
-  },
-  "question": "What do you demand on television?"
+  "allison_model": "organizational"
  },
  "D13": {
   "date": "OCT 22, 1962",
-  "trigger": {},
+  "trigger": {
+   "route_trunk": true
+  },
   "cards": {
    "A": {
     "title": "OPEN A BACK CHANNEL",
     "hint": "Say privately what you can't say publicly.",
     "icon": "telephone",
     "aftermath": "Robert Kennedy calls the Soviet embassy and asks for a quiet meeting.",
-    "stats": {
-     "diplomacy": 1
-    },
+    "stats": {},
     "flag": {
      "private_channel": true
     },
@@ -576,34 +316,32 @@
     "hint": "Nothing said that can't be printed.",
     "icon": "papers",
     "aftermath": "Everything goes through State. Every word is on the record.",
-    "stats": {
-     "authority": 1
-    },
+    "stats": {},
     "flag": {},
     "trigger": {},
     "visibility": "public"
    }
   },
   "next": [
-   "D14",
-   "D15"
+   "D14"
   ],
-  "allison_model": "governmental",
+  "kind": "tramo",
+  "question": "Talk to Moscow off the record?",
   "in_1962": {
    "choice": "A",
    "text": "Robert Kennedy and Ambassador Dobrynin became the real channel between the two governments."
   },
-  "question": "Talk to Moscow off the record?"
+  "allison_model": "governmental"
  },
  "D14": {
   "date": "OCT 23, 1962",
   "trigger": {
    "any": [
     {
-     "air_strike_ready": true
+     "route_attack": true
     },
     {
-     "low_level_flights": true
+     "route_trunk": true
     }
    ]
   },
@@ -613,10 +351,7 @@
     "hint": "Fast response. Nobody asks you first.",
     "icon": "crosshair",
     "aftermath": "The rule goes down the chain of command. It will not come back up.",
-    "stats": {
-     "control": -1,
-     "stance": 1
-    },
+    "stats": {},
     "flag": {
      "auto_retaliation": true
     },
@@ -628,10 +363,7 @@
     "hint": "Slower. Every shot goes through you.",
     "icon": "stop_hand",
     "aftermath": "The rule goes down the chain: no retaliation without the President.",
-    "stats": {
-     "control": 1,
-     "stance": -1
-    },
+    "stats": {},
     "flag": {},
     "trigger": {},
     "visibility": "secret"
@@ -640,27 +372,34 @@
   "next": [
    "D15"
   ],
-  "allison_model": "organizational",
+  "kind": "tramo",
+  "question": "If a plane is shot down, who decides the answer?",
+  "duel_left_card": "A",
   "in_1962": {
    "choice": "A",
    "text": "The ExComm agreed to retaliate if a U-2 was shot down. On October 27 one was, and Kennedy did not order the strike."
   },
-  "duel_left_card": "A",
-  "question": "If a plane is shot down, who decides the answer?"
+  "allison_model": "organizational"
  },
  "D15": {
   "date": "OCT 24, 1962",
-  "trigger": {},
+  "trigger": {
+   "any": [
+    {
+     "route_attack": true
+    },
+    {
+     "route_trunk": true
+    }
+   ]
+  },
   "cards": {
    "A": {
     "title": "GO TO DEFCON 2",
     "hint": "Maximum readiness. Minimum margin.",
     "icon": "missile",
     "aftermath": "General Power announces the alert in the clear. Moscow hears every word.",
-    "stats": {
-     "escalation": 1,
-     "stance": 1
-    },
+    "stats": {},
     "flag": {
      "defcon2": true
     },
@@ -672,339 +411,37 @@
     "hint": "Serious, not maximal. Room to step back.",
     "icon": "hourglass",
     "aftermath": "The alert stays where it is. Some generals call that hesitation.",
-    "stats": {
-     "control": 1,
-     "stance": -1
-    },
+    "stats": {},
     "flag": {},
     "trigger": {},
     "visibility": "secret"
    }
   },
   "next": [
-   "C01",
-   "C02"
+   "ATK_BERLIN",
+   "ATK_LANDING",
+   "TRK_SHIP"
   ],
-  "allison_model": "organizational",
+  "kind": "tramo",
+  "question": "Raise the alert to DEFCON 2?",
   "in_1962": {
    "choice": "A",
    "text": "Strategic Air Command went to DEFCON 2 on October 24, the only time in the Cold War. Its commander announced it uncoded."
   },
-  "question": "Raise the alert to DEFCON 2?"
- },
- "C01": {
-  "date": "OCT 24, 1962",
-  "trigger": {
-   "ATTACK": true
-  },
-  "cards": {
-   "A": {
-    "title": "CALL IT OFF",
-    "hint": "Recall every squadron. If they can hear you.",
-    "icon": "stop_hand",
-    "aftermath": "The recall reaches every squadron. The runways go quiet.",
-    "aftermath_if_failed": "The recall reaches most squadrons. Not all of them.",
-    "stats": {
-     "escalation": -1
-    },
-    "flag": {
-     "strike_suspended": true
-    },
-    "trigger": {
-     "control": {
-      ">=": 2
-     }
-    },
-    "else": {
-     "stats": {
-      "escalation": 1
-     },
-     "flag": {
-      "strike_partial": true
-     },
-     "fail": true
-    },
-    "visibility": "secret"
-   },
-   "B": {
-    "title": "LET THEM GO",
-    "hint": "The strike proceeds as ordered.",
-    "icon": "squadron",
-    "aftermath": "Engines start across Florida. There is no second button.",
-    "stats": {
-     "escalation": 2
-    },
-    "flag": {
-     "strike_launched": true
-    },
-    "trigger": {
-     "invasion_ready": true
-    },
-    "else": {
-     "stats": {
-      "escalation": 1
-     },
-     "flag": {
-      "strike_launched": true
-     }
-    },
-    "visibility": "public"
-   }
-  },
-  "crisis": {
-   "timer": 30,
-   "on_timeout": "B",
-   "at_zero": "Aircraft take off as planned."
-  },
-  "next": [
-   "X01",
-   "D17"
-  ],
-  "allison_model": "organizational",
-  "in_1962": {
-   "choice": "none",
-   "text": "The air strike was never launched."
-  },
-  "question": "The strike is about to launch."
- },
- "X01": {
-  "date": "OCT 25, 1962",
-  "trigger": {
-   "any": [
-    {
-     "strike_launched": true
-    },
-    {
-     "strike_partial": true
-    }
-   ]
-  },
-  "cards": {
-   "A": {
-    "title": "SEND IN THE TROOPS",
-    "hint": "Finish it on the ground.",
-    "icon": "helmet",
-    "aftermath": "Landing craft leave Key West at dusk. The maps of the beaches are three weeks old.",
-    "stats": {
-     "escalation": 1
-    },
-    "flag": {
-     "landing": true,
-     "invasion_ready": true,
-     "strike_launched": true
-    },
-    "trigger": {},
-    "visibility": "public"
-   },
-   "B": {
-    "title": "HOLD THE SHORE",
-    "hint": "No landing. Make Moscow answer first.",
-    "icon": "hourglass",
-    "aftermath": "The ships stay over the horizon. In Havana, Soviet officers count what they have left.",
-    "stats": {
-     "control": 1
-    },
-    "flag": {},
-    "trigger": {},
-    "visibility": "secret"
-   }
-  },
-  "next": [
-   "X03",
-   "X02"
-  ],
-  "allison_model": "organizational",
-  "in_1962": {
-   "choice": "none",
-   "text": "No American troops landed in Cuba. Soviet forces there had tactical nuclear weapons for exactly that case."
-  },
-  "question": "Land troops in Cuba?"
- },
- "X02": {
-  "date": "OCT 26, 1962",
-  "trigger": {
-   "landing": false
-  },
-  "cards": {
-   "A": {
-    "title": "STAND FIRM IN BERLIN",
-    "hint": "No trades under fire. Anywhere.",
-    "icon": "helmet",
-    "aftermath": "American tanks roll up to Checkpoint Charlie. Soviet tanks are already there.",
-    "stats": {
-     "escalation": 2,
-     "stance": 1
-    },
-    "flag": {
-     "berlin_standoff": true
-    },
-    "trigger": {},
-    "visibility": "public"
-   },
-   "B": {
-    "title": "STOP AND TALK",
-    "hint": "Ceasefire now. Berlin pays for it.",
-    "icon": "handshake",
-    "aftermath": "The bombing stops at midnight. The roads into Berlin stay closed.",
-    "stats": {
-     "escalation": -1,
-     "diplomacy": 1
-    },
-    "flag": {
-     "strike_ceasefire": true
-    },
-    "trigger": {},
-    "available_if": {
-     "diplomacy": {
-      ">=": 1
-     }
-    },
-    "locked_text": "Moscow is not answering.",
-    "visibility": "public"
-   }
-  },
-  "next": [
-   "ENDING"
-  ],
-  "allison_model": "rational",
-  "in_1962": {
-   "choice": "none",
-   "text": "Berlin stayed quiet. Kennedy spent the whole crisis expecting that it would not."
-  },
-  "question": "Moscow closes Berlin. Hold firm or stop?"
- },
- "X03": {
-  "date": "OCT 26, 1962",
-  "trigger": {
-   "landing": true
-  },
-  "cards": {
-   "A": {
-    "title": "PULL THEM BACK",
-    "hint": "Lose the beach. Keep the war small.",
-    "icon": "stop_hand",
-    "aftermath": "The landing force re-embarks under fire. Moscow does not say whether it noticed.",
-    "stats": {
-     "escalation": -1
-    },
-    "flag": {
-     "landing_recalled": true
-    },
-    "trigger": {
-     "control": {
-      ">=": 2
-     }
-    },
-    "else": {
-     "stats": {
-      "escalation": 1
-     },
-     "flag": {
-      "order_failed": true
-     },
-     "fail": true
-    },
-    "aftermath_if_failed": "The recall reaches the beach too late. The second wave is already ashore.",
-    "visibility": "public"
-   },
-   "B": {
-    "title": "PUSH INLAND",
-    "hint": "Take the sites before they can fire.",
-    "icon": "crosshair",
-    "aftermath": "The second wave goes in. Its orders say nothing about what the Soviets brought with them.",
-    "stats": {
-     "escalation": 2
-    },
-    "flag": {},
-    "trigger": {},
-    "visibility": "public"
-   }
-  },
-  "crisis": {
-   "timer": 30,
-   "on_timeout": "B",
-   "at_zero": "The second wave goes in as planned."
-  },
-  "next": [
-   "ENDING"
-  ],
-  "allison_model": "organizational",
-  "in_1962": {
-   "choice": "none",
-   "text": "There was no landing, and no second wave."
-  },
-  "question": "The landing is taking fire."
- },
- "C02": {
-  "date": "OCT 24, 1962",
-  "trigger": {
-   "blockade": true
-  },
-  "cards": {
-   "A": {
-    "title": "STOP AND BOARD",
-    "hint": "Enforce the line. Risk the submarine.",
-    "icon": "destroyer",
-    "aftermath": "Rusk, quietly: 'We're eyeball to eyeball.' Nobody knows yet who will blink.",
-    "stats": {
-     "escalation": 1
-    },
-    "flag": {
-     "ship_stopped": true
-    },
-    "trigger": {},
-    "visibility": "public"
-   },
-   "B": {
-    "title": "LET HER PASS, FOLLOW",
-    "hint": "Avoid contact. Look like you blinked.",
-    "icon": "eye",
-    "aftermath": "The freighter crosses the line. In Congress, someone asks what the line is for.",
-    "stats": {
-     "diplomacy": 1,
-     "authority": -1
-    },
-    "flag": {
-     "ship_passed": true
-    },
-    "trigger": {},
-    "visibility": "public"
-   }
-  },
-  "crisis": {
-   "timer": 30,
-   "on_timeout": {
-    "if": {
-     "total_blockade": true
-    },
-    "then": "A",
-    "else": "B"
-   },
-   "at_zero": "The Navy applies standing orders. Under a total quarantine, it boards."
-  },
-  "next": [
-   "D17"
-  ],
-  "allison_model": "organizational",
-  "in_1962": {
-   "choice": "B",
-   "text": "The first ships were let through. The first ship boarded, on October 26, carried nothing forbidden."
-  },
-  "question": "A Soviet ship reaches the line."
+  "allison_model": "organizational"
  },
  "D17": {
   "date": "OCT 26, 1962",
-  "trigger": {},
+  "trigger": {
+   "route_trunk": true
+  },
   "cards": {
    "A": {
     "title": "PROMISE NOT TO INVADE",
     "hint": "Give him the way out he asked for.",
     "icon": "handshake",
     "aftermath": "A reply is drafted. It says 'no invasion' in plain words.",
-    "stats": {
-     "diplomacy": 1,
-     "stance": -1
-    },
+    "stats": {},
     "flag": {
      "non_invasion": true
     },
@@ -1016,524 +453,22 @@
     "hint": "Withdrawal first. Promises never.",
     "icon": "stop_hand",
     "aftermath": "The reply says nothing about Cuba's future. Moscow waits for a second answer.",
-    "stats": {
-     "stance": 1,
-     "authority": 1
-    },
+    "stats": {},
     "flag": {},
     "trigger": {},
     "visibility": "secret"
    }
   },
   "next": [
-   "D19",
-   "C03",
-   "C04",
-   "D18",
-   "D21",
-   "D22"
+   "TRK_U2"
   ],
-  "allison_model": "rational",
+  "kind": "tramo",
+  "question": "Promise not to invade Cuba?",
   "in_1962": {
    "choice": "A",
    "text": "Kennedy accepted the terms of the first letter: no invasion, if the missiles left."
   },
-  "question": "Promise not to invade Cuba?"
- },
- "D19": {
-  "date": "OCT 27, 1962",
-  "trigger": {},
-  "cards": {
-   "A": {
-    "title": "ACCEPT IN PUBLIC",
-    "hint": "End it now. Pay with the alliance.",
-    "icon": "handshake",
-    "aftermath": "In Ankara, the government asks why it heard it on the radio.",
-    "stats": {
-     "diplomacy": 2,
-     "authority": -2,
-     "stance": -1
-    },
-    "flag": {
-     "turkey_public": true
-    },
-    "trigger": {},
-    "visibility": "public"
-   },
-   "B": {
-    "title": "REJECT IN PUBLIC",
-    "hint": "No trades under pressure.",
-    "icon": "microphone",
-    "aftermath": "The rejection is broadcast. The deadline is not.",
-    "stats": {
-     "stance": 1,
-     "authority": 1
-    },
-    "flag": {
-     "hard_line_public": true
-    },
-    "trigger": {},
-    "visibility": "public"
-   }
-  },
-  "next": [
-   "C03",
-   "C04",
-   "D18",
-   "D21",
-   "D22"
-  ],
-  "allison_model": "rational",
-  "in_1962": {
-   "choice": "none",
-   "text": "Neither. Kennedy did not accept in public. He answered the first letter and accepted the Turkey trade in private."
-  },
-  "question": "Accept Moscow's public offer?"
- },
- "C03": {
-  "date": "OCT 27, 1962",
-  "trigger": {
-   "any": [
-    {
-     "low_level_flights": true
-    },
-    {
-     "air_strike_ready": true
-    }
-   ]
-  },
-  "cards": {
-   "A": {
-    "title": "HOLD AND VERIFY",
-    "hint": "Find out who fired, and why.",
-    "icon": "eye",
-    "aftermath": "The strike is held. The pilot was Major Rudolf Anderson.",
-    "aftermath_if_failed": "The hold order arrives late. The first aircraft have already fired.",
-    "stats": {
-     "escalation": -1
-    },
-    "flag": {
-     "shootdown_absorbed": true
-    },
-    "trigger": {
-     "any": [
-      {
-       "control": {
-        ">=": 2
-       }
-      },
-      {
-       "private_channel": true
-      }
-     ]
-    },
-    "else": {
-     "stats": {
-      "escalation": 1
-     },
-     "flag": {
-      "sam_strike": true,
-      "order_failed": true
-     },
-     "fail": true
-    },
-    "visibility": "secret"
-   },
-   "B": {
-    "title": "EXECUTE RETALIATION",
-    "hint": "Hit the site. Answer fire with fire.",
-    "icon": "crosshair",
-    "aftermath": "Four aircraft cross into Cuban airspace. In Moscow, it is already night.",
-    "stats": {
-     "escalation": 2
-    },
-    "flag": {
-     "sam_strike": true
-    },
-    "trigger": {
-     "any": [
-      {
-       "auto_retaliation": true
-      },
-      {
-       "defcon2": true
-      }
-     ]
-    },
-    "else": {
-     "stats": {
-      "escalation": 1
-     },
-     "flag": {
-      "sam_strike": true
-     }
-    },
-    "visibility": "public"
-   }
-  },
-  "crisis": {
-   "timer": 30,
-   "on_timeout": {
-    "if": {
-     "auto_retaliation": true
-    },
-    "then": "B",
-    "else": "A"
-   },
-   "timer_override": {
-    "if": {
-     "auto_retaliation": true
-    },
-    "seconds": 15
-   },
-   "at_zero": "Retaliation proceeds if it was pre-authorized. Otherwise, it waits."
-  },
-  "next": [
-   "C04",
-   "D18",
-   "D21",
-   "D22"
-  ],
-  "allison_model": "organizational",
-  "in_1962": {
-   "choice": "A",
-   "text": "Kennedy held back. The retaliation agreed four days earlier was never ordered."
-  },
-  "question": "A U-2 is down. Retaliate?"
- },
- "C04": {
-  "date": "OCT 27, 1962",
-  "trigger": {
-   "any": [
-    {
-     "escalation": {
-      ">=": 4
-     }
-    },
-    {
-     "sam_strike": true
-    }
-   ]
-  },
-  "cards": {
-   "A": {
-    "title": "ACCEPT THE PAUSE",
-    "hint": "Both sides freeze. For now.",
-    "icon": "hourglass",
-    "aftermath": "Forces hold on both sides. Nobody calls it a ceasefire.",
-    "available_if": {
-     "diplomacy": {
-      ">=": 1
-     }
-    },
-    "locked_text": "No channel can carry it in time.",
-    "stats": {
-     "escalation": -2
-    },
-    "flag": {
-     "reciprocal_pause": true
-    },
-    "trigger": {},
-    "visibility": "secret"
-   },
-   "B": {
-    "title": "CALL IT A TRICK",
-    "hint": "Keep the pressure. Assume the worst.",
-    "icon": "crosshair",
-    "aftermath": "The pause is refused. On both sides, the clocks start again.",
-    "stats": {
-     "escalation": 1,
-     "stance": 1
-    },
-    "flag": {},
-    "trigger": {},
-    "visibility": "secret"
-   }
-  },
-  "crisis": {
-   "timer": 30,
-   "on_timeout": "B",
-   "at_zero": "No reply is sent. Moscow reads it as a refusal."
-  },
-  "next": [
-   "X04",
-   "D18",
-   "D21",
-   "D22",
-   "ENDING"
-  ],
-  "allison_model": "governmental",
-  "in_1962": {
-   "choice": "none",
-   "text": "Moscow never asked for a pause. Khrushchev learned of the shootdown after it happened and tightened control over his commanders."
-  },
-  "question": "Moscow asks for a pause."
- },
- "X04": {
-  "date": "OCT 27, 1962",
-  "trigger": {
-   "sam_strike": true,
-   "reciprocal_pause": false
-  },
-  "cards": {
-   "A": {
-    "title": "CALL OFF THE DAWN STRIKE",
-    "hint": "Take the losses. Keep a door open.",
-    "icon": "stop_hand",
-    "aftermath": "The bases stand down. The order goes out twice, to make sure it arrives.",
-    "stats": {
-     "escalation": -1
-    },
-    "flag": {
-     "strike_halted": true
-    },
-    "trigger": {
-     "any": [
-      {
-       "control": {
-        ">=": 2
-       }
-      },
-      {
-       "private_channel": true
-      }
-     ]
-    },
-    "else": {
-     "stats": {
-      "escalation": 1
-     },
-     "flag": {
-      "strike_launched": true,
-      "order_failed": true
-     },
-     "fail": true
-    },
-    "aftermath_if_failed": "The stand-down reaches the bases after the first squadrons are airborne.",
-    "visibility": "secret"
-   },
-   "B": {
-    "title": "STRIKE AT DAWN",
-    "hint": "Air defenses first. Then the missiles.",
-    "icon": "squadron",
-    "aftermath": "At first light, the strike on Cuba begins. In Moscow, it is already afternoon.",
-    "stats": {
-     "escalation": 2
-    },
-    "flag": {
-     "strike_launched": true
-    },
-    "trigger": {},
-    "visibility": "public"
-   }
-  },
-  "crisis": {
-   "timer": 30,
-   "on_timeout": "B",
-   "at_zero": "The strike goes ahead at dawn."
-  },
-  "next": [
-   "D21",
-   "D22",
-   "ENDING"
-  ],
-  "allison_model": "organizational",
-  "in_1962": {
-   "choice": "none",
-   "text": "Kennedy called off the retaliation. There was no dawn strike."
-  },
-  "question": "The dawn strike is ready."
- },
- "D18": {
-  "date": "OCT 27, 1962",
-  "trigger": {
-   "private_channel": true,
-   "turkey_public": false,
-   "any": [
-    {
-     "sam_strike": false
-    },
-    {
-     "reciprocal_pause": true
-    }
-   ]
-  },
-  "cards": {
-   "A": {
-    "title": "MAKE THE PROMISE",
-    "hint": "Secret concession. Deniable. Binding.",
-    "icon": "padlock",
-    "aftermath": "Robert Kennedy leaves for the Justice Department. Nothing is written down.",
-    "stats": {
-     "diplomacy": 1
-    },
-    "flag": {
-     "turkey_secret": true
-    },
-    "trigger": {},
-    "visibility": "secret"
-   },
-   "B": {
-    "title": "KEEP TURKEY OUT",
-    "hint": "No link. No leak. No deal.",
-    "icon": "stop_hand",
-    "aftermath": "The meeting covers Cuba only. Dobrynin asks twice about Turkey.",
-    "stats": {
-     "stance": 1,
-     "authority": 1
-    },
-    "flag": {},
-    "trigger": {},
-    "visibility": "secret"
-   }
-  },
-  "next": [
-   "D21",
-   "D22"
-  ],
-  "allison_model": "governmental",
-  "in_1962": {
-   "choice": "A",
-   "text": "Robert Kennedy made the promise that night. It stayed secret for more than twenty years."
-  },
-  "question": "Promise to remove the missiles in Turkey, in secret?"
- },
- "D21": {
-  "date": "OCT 27, 1962",
-  "trigger": {
-   "castro_channel": true,
-   "non_invasion": true,
-   "sam_strike": false
-  },
-  "cards": {
-   "A": {
-    "title": "RECOGNIZE AND NEGOTIATE",
-    "hint": "Talk to Havana as Havana.",
-    "icon": "handshake",
-    "aftermath": "A cable goes to Rio. Nobody in Moscow is copied.",
-    "stats": {
-     "diplomacy": 1,
-     "stance": -1
-    },
-    "flag": {
-     "cuba_neutral_offer": true
-    },
-    "trigger": {},
-    "visibility": "secret"
-   },
-   "B": {
-    "title": "KEEP HIM ISOLATED",
-    "hint": "No deals with Castro. Ever.",
-    "icon": "padlock",
-    "aftermath": "Havana gets no answer. Castro gives a speech instead.",
-    "stats": {
-     "authority": 1,
-     "stance": 1
-    },
-    "flag": {},
-    "trigger": {},
-    "visibility": "secret"
-   }
-  },
-  "next": [
-   "D22",
-   "ENDING"
-  ],
-  "allison_model": "rational",
-  "in_1962": {
-   "choice": "none",
-   "text": "Castro never offered to send the weapons home. He learned of the deal from a newspaper editor."
-  },
-  "question": "Deal with Castro directly?"
- },
- "D22": {
-  "date": "OCT 28, 1962",
-  "trigger": {
-   "strike_launched": false,
-   "strike_partial": false
-  },
-  "cards": {
-   "A": {
-    "title": "INSPECT AND WATCH",
-    "hint": "Accept what can be verified.",
-    "icon": "eye",
-    "aftermath": "The first photographs show crates on the docks.",
-    "aftermath_if_failed": "Moscow stalls on the details. The crates don't move.",
-    "stats": {
-     "intel": 1
-    },
-    "flag": {
-     "soviet_withdrawal": true
-    },
-    "trigger": {
-     "any": [
-      {
-       "diplomacy": {
-        ">=": 2
-       }
-      },
-      {
-       "non_invasion": true
-      },
-      {
-       "turkey_secret": true
-      },
-      {
-       "turkey_public": true
-      }
-     ]
-    },
-    "else": {
-     "stats": {
-      "intel": 1
-     },
-     "flag": {},
-     "fail": true
-    },
-    "visibility": "public"
-   },
-   "B": {
-    "title": "FULL ACCESS NOW",
-    "hint": "Everything, immediately, or nothing.",
-    "icon": "papers",
-    "aftermath": "Moscow accepts, grudgingly. The crates start moving.",
-    "aftermath_if_failed": "Moscow calls the demand humiliating. The announcement is 'under review'.",
-    "stats": {},
-    "flag": {
-     "soviet_withdrawal": true
-    },
-    "trigger": {
-     "authority": {
-      ">=": 2
-     },
-     "any": [
-      {
-       "non_invasion": true
-      },
-      {
-       "blockade": true
-      }
-     ]
-    },
-    "else": {
-     "stats": {},
-     "flag": {},
-     "fail": true
-    },
-    "visibility": "public"
-   }
-  },
-  "next": [
-   "D23",
-   "S01",
-   "ENDING"
-  ],
-  "allison_model": "organizational",
-  "in_1962": {
-   "choice": "A",
-   "text": "Castro refused inspections. The withdrawal was checked from the air, crate by crate."
-  },
-  "question": "How do we verify the withdrawal?"
+  "allison_model": "rational"
  },
  "D23": {
   "date": "OCT 28, 1962",
@@ -1546,9 +481,7 @@
     "hint": "Signal it's over. Trust the deal.",
     "icon": "stop_hand",
     "aftermath": "The bombers come home. General LeMay calls it a defeat.",
-    "stats": {
-     "escalation": -1
-    },
+    "stats": {},
     "flag": {},
     "trigger": {},
     "visibility": "public"
@@ -1558,9 +491,7 @@
     "hint": "Keep the pressure until it's done.",
     "icon": "squadron",
     "aftermath": "The alert stays up. So does the tension, for weeks.",
-    "stats": {
-     "authority": 1
-    },
+    "stats": {},
     "flag": {
      "forces_ready": true
     },
@@ -1569,33 +500,21 @@
    }
   },
   "next": [
-   "S01",
-   "ENDING"
+   "TRK_FALSE_ALARM"
   ],
-  "allison_model": "governmental",
+  "kind": "tramo",
+  "question": "Stand the forces down?",
+  "duel_left_card": "B",
   "in_1962": {
    "choice": "B",
    "text": "The alert stayed up until November. LeMay wanted to attack anyway."
   },
-  "duel_left_card": "B",
-  "question": "Stand the forces down?"
+  "allison_model": "governmental"
  },
  "S01": {
   "date": "OCT 28, 1962",
   "trigger": {
-   "stance": {
-    "<=": -1
-   },
-   "castro_channel": true,
-   "public_ultimatum": true,
-   "turkey_public": true,
-   "non_invasion": true,
-   "authority": {
-    "==": 0
-   },
-   "diplomacy": {
-    ">=": 3
-   }
+   "secret_route": true
   },
   "cards": {
    "A": {
@@ -1603,9 +522,7 @@
     "hint": "For the peace, apparently.",
     "icon": "people",
     "aftermath": "A desk is cleared in the West Wing. The Secret Service asks for it in writing.",
-    "stats": {
-     "stance": -1
-    },
+    "stats": {},
     "flag": {
      "soviet_access_dc": true
     },
@@ -1617,10 +534,11 @@
     "hint": "Some doors stay closed.",
     "icon": "telephone",
     "aftermath": "The line goes dead. The operator writes it down anyway.",
-    "stats": {
-     "authority": 1
+    "stats": {},
+    "flag": {
+     "game_over": true,
+     "end_E08a": true
     },
-    "flag": {},
     "trigger": {},
     "visibility": "secret"
    }
@@ -1629,8 +547,9 @@
    "S02",
    "ENDING"
   ],
-  "allison_model": null,
-  "question": "A Soviet office in the White House?"
+  "kind": "tramo",
+  "question": "A Soviet office in the White House?",
+  "allison_model": null
  },
  "S02": {
   "date": "OCT 28, 1962",
@@ -1645,6 +564,8 @@
     "aftermath": "The ink dries. Somewhere, a portrait is quietly replaced.",
     "stats": {},
     "flag": {
+     "game_over": true,
+     "end_E02": true,
      "coalition_legalized": true
     },
     "trigger": {},
@@ -1655,10 +576,11 @@
     "hint": "The Constitution is not negotiable.",
     "icon": "stop_hand",
     "aftermath": "The coalition dissolves. Nobody admits having joined it.",
-    "stats": {
-     "authority": 1
+    "stats": {},
+    "flag": {
+     "game_over": true,
+     "end_E08a": true
     },
-    "flag": {},
     "trigger": {},
     "visibility": "public"
    }
@@ -1666,7 +588,1124 @@
   "next": [
    "ENDING"
   ],
-  "allison_model": null,
-  "question": "Sign the emergency order?"
+  "kind": "tramo",
+  "question": "Sign the emergency order?",
+  "allison_model": null
+ },
+ "ROOT_1": {
+  "date": "OCT 17, 1962",
+  "trigger": {},
+  "cards": {
+   "A": {
+    "title": "STRIKE BEFORE THEY'RE READY",
+    "hint": "Act while the sites are unfinished.",
+    "icon": "squadron",
+    "aftermath": "The Joint Chiefs are told to plan for the earliest possible date.",
+    "stats": {},
+    "flag": {
+     "route_attack": true,
+     "ATTACK": true
+    },
+    "trigger": {},
+    "visibility": "public"
+   },
+   "B": {
+    "title": "GIVE THEM AN EXIT",
+    "hint": "Pressure first. Force held in reserve.",
+    "icon": "hourglass",
+    "aftermath": "Nobody in the room says 'blockade' yet. Everybody is thinking it.",
+    "stats": {},
+    "flag": {
+     "route_pressure": true,
+     "PRESSURE": true
+    },
+    "trigger": {},
+    "visibility": "public"
+   }
+  },
+  "next": [
+   "D06",
+   "ROOT_2"
+  ],
+  "kind": "node",
+  "speaker": "mcnamara",
+  "line": "Two camps in this room, Mr. President. Hit the sites now, before they're ready, and accept we won't get all of them. Or squeeze them first and keep the planes for later. Whichever you pick, the other one stops being a plan.",
+  "room": "Decision",
+  "historical_note_es": "Reemplaza D04 y D07. El ataque domino la discusion del 16 y 17/10 y la Fuerza Aerea no garantizo destruir todos los misiles (Allison, cap. 4). Kennedy eligio el 20/10; aca se adelanta.",
+  "document": "TACTICAL AIR COMMAND ESTIMATE: SURGICAL STRIKE EFFECTIVENESS NOT GUARANTEED.",
+  "question": "Strike now, or blockade first?",
+  "in_1962": {
+   "choice": "B",
+   "text": "Kennedy chose the quarantine on October 20. The air strike stayed ready, in reserve."
+  },
+  "allison_model": "organizational"
+ },
+ "ROOT_2": {
+  "date": "OCT 18, 1962",
+  "trigger": {
+   "route_pressure": true
+  },
+  "cards": {
+   "A": {
+    "title": "QUARANTINE",
+    "hint": "Ships, a speech, and the whole world watching.",
+    "icon": "destroyer",
+    "aftermath": "Navy staff start writing the rules for stopping a Soviet ship.",
+    "stats": {},
+    "flag": {
+     "route_trunk": true,
+     "blockade_ready": true
+    },
+    "trigger": {},
+    "visibility": "public"
+   },
+   "B": {
+    "title": "TALK FIRST",
+    "hint": "Quietly. Before anyone knows there's a crisis.",
+    "icon": "envelope",
+    "aftermath": "The photographs go back in the drawer. On the public schedule, only Gromyko's visit.",
+    "stats": {},
+    "flag": {
+     "route_negotiate": true
+    },
+    "trigger": {},
+    "visibility": "secret"
+   }
+  },
+  "next": [
+   "D09",
+   "D06"
+  ],
+  "kind": "node",
+  "speaker": "rusk",
+  "line": "Stevenson sent you a memo last night. Before any blockade, he says, go to Khrushchev privately and put every base on the table, Turkey included. Gromyko is here at five. The Navy says it can have a quarantine ready in four days.",
+  "room": "Office",
+  "historical_note_es": "El memo de Stevenson del 17/10 existio (Turquia incluida; el 20/10 sumo Guantanamo). Kennedy lo descarto. La cuarentena se eligio el 20/10; aca se adelanta dos dias.",
+  "document": "MEMORANDUM, A. E. STEVENSON TO THE PRESIDENT, 17 OCT 62.",
+  "question": "Blockade, or talk to Moscow first?"
+ },
+ "ATK_SCOPE": {
+  "date": "OCT 19, 1962",
+  "trigger": {
+   "route_attack": true
+  },
+  "cards": {
+   "A": {
+    "title": "MISSILES ONLY",
+    "hint": "Smaller strike. Their defenses stay up.",
+    "icon": "crosshair",
+    "aftermath": "The target list is cut to the launch sites. The Air Force says it will do its best.",
+    "stats": {},
+    "flag": {
+     "air_strike_ready": true,
+     "limited_strike": true,
+     "strike_launched": true
+    },
+    "trigger": {},
+    "visibility": "secret"
+   },
+   "B": {
+    "title": "THE WHOLE PACKAGE",
+    "hint": "Airfields, SAMs, then an invasion force.",
+    "icon": "helmet",
+    "aftermath": "Troops start moving toward Florida. The Chiefs finally look satisfied.",
+    "stats": {},
+    "flag": {
+     "air_strike_ready": true,
+     "invasion_ready": true,
+     "strike_launched": true
+    },
+    "trigger": {},
+    "visibility": "secret"
+   }
+  },
+  "next": [
+   "D14"
+  ],
+  "kind": "node",
+  "speaker": "taylor",
+  "line": "If we go, we decide now how far. Hit only the missile sites and their fighters and SAMs stay up. Take those too and we are one step from invading. The Chiefs prefer the whole package.",
+  "room": "Decision",
+  "historical_note_es": "Adaptada de D08. MISSILES ONLY lleva a ATK_BERLIN, THE WHOLE PACKAGE a ATK_LANDING. OPLAN 312 y 316 existieron.",
+  "document": "JCS OPLAN 312 (AIR STRIKE) / OPLAN 316 (INVASION). COPY 4 OF 12.",
+  "question": "How big a strike?",
+  "in_1962": {
+   "choice": "none",
+   "text": "Kennedy never ordered the strike, so this choice was never made. The Air Force had told him a strike on the missiles alone was not what it had planned."
+  },
+  "allison_model": "organizational"
+ },
+ "ATK_BERLIN": {
+  "date": "OCT 24, 1962",
+  "trigger": {
+   "route_attack": true,
+   "limited_strike": true
+  },
+  "cards": {
+   "A": {
+    "title": "LET BERLIN WAIT",
+    "hint": "Keep the war in the Caribbean.",
+    "icon": "hourglass",
+    "aftermath": "West Berlin goes on rations. The allies ask who decided that.",
+    "stats": {},
+    "flag": {
+     "game_over": true,
+     "end_E09a": true,
+     "berlin_conceded": true
+    },
+    "trigger": {},
+    "visibility": "public"
+   },
+   "B": {
+    "title": "FORCE THE CORRIDOR",
+    "hint": "Send a convoy and see who stops it.",
+    "icon": "helmet",
+    "aftermath": "British and French companies join the column at Helmstedt. Nobody expects them to be enough.",
+    "stats": {},
+    "flag": {
+     "berlin_convoy": true
+    },
+    "trigger": {
+     "allies_briefed": true
+    },
+    "else": {
+     "stats": {},
+     "flag": {
+      "berlin_convoy": true,
+      "convoy_alone": true
+     },
+     "fail": true
+    },
+    "aftermath_if_failed": "The column leaves Helmstedt under one flag. London and Paris were not asked.",
+    "visibility": "public"
+   }
+  },
+  "next": [
+   "ATK_TACTICAL"
+  ],
+  "kind": "node",
+  "speaker": "rusk",
+  "line": "Thirty hours after the strike, Soviet troops closed the autobahn to West Berlin. Checkpoint Charlie is shut. Moscow's note is one sentence long: a base for a base.",
+  "room": "Crisis",
+  "historical_note_es": "Contrafactico. Berlin era el gran temor de Kennedy en el ExComm. LIVE OAK, el estado mayor aliado para contingencias en Berlin, existio. Jruschov no movio nada en Berlin durante la crisis. La 'falla' de la carta B no es una falla: solo cambia el aftermath si no informaste a los aliados (D06).",
+  "document": "LIVE OAK CONTINGENCY PLANNING: BERLIN GROUND ACCESS.",
+  "question": "Moscow closes Berlin. Force the corridor?"
+ },
+ "ATK_TACTICAL": {
+  "date": "OCT 26, 1962",
+  "trigger": {
+   "berlin_convoy": true
+  },
+  "cards": {
+   "A": {
+    "title": "GIVE HIM RELEASE",
+    "hint": "Stop them at the border. Whatever it takes.",
+    "icon": "missile",
+    "aftermath": "The authority goes out by cable to Norstad's headquarters outside Paris.",
+    "stats": {},
+    "flag": {
+     "game_over": true,
+     "end_E01b": true,
+     "nato_release": true
+    },
+    "trigger": {},
+    "visibility": "secret"
+   },
+   "B": {
+    "title": "NO NUCLEAR RELEASE",
+    "hint": "Fight it with what's on the ground.",
+    "icon": "stop_hand",
+    "aftermath": "Norstad acknowledges. He does not sound surprised. He does not sound relieved.",
+    "stats": {},
+    "flag": {
+     "game_over": true,
+     "end_E03b": true
+    },
+    "trigger": {},
+    "visibility": "secret"
+   }
+  },
+  "next": [
+   "ENDING"
+  ],
+  "kind": "node",
+  "speaker": "nato",
+  "line": "SACEUR to the President. Soviet armor is moving on the autobahn in strength. If my forward units are overrun, I need release authority for tactical nuclear weapons. Now, not when it happens.",
+  "room": "Crisis_alert",
+  "historical_note_es": "Contrafactico. El pedido nunca existio; el dilema si: los planes de la OTAN contaban con armas nucleares tacticas temprano y solo el presidente podia liberarlas. Norstad era el comandante supremo aliado.",
+  "crisis": {
+   "timer": 60,
+   "on_timeout": {
+    "if": {
+     "defcon2": true
+    },
+    "then": "A",
+    "else": "B"
+   },
+   "timer_override": {
+    "if": {
+     "defcon2": true
+    },
+    "seconds": 30
+   },
+   "at_zero": "No reply. At DEFCON 2, standing procedures fill the silence."
+  },
+  "question": "Give NATO nuclear release in Europe?"
+ },
+ "ATK_LANDING": {
+  "date": "OCT 26, 1962",
+  "trigger": {
+   "route_attack": true,
+   "invasion_ready": true
+  },
+  "cards": {
+   "A": {
+    "title": "STOP THE BOMBING",
+    "hint": "Take the deal before anyone counts the dead.",
+    "icon": "handshake",
+    "aftermath": "The last sorties are recalled. The Pentagon starts counting anyway.",
+    "stats": {},
+    "flag": {
+     "game_over": true,
+     "end_E04b": true,
+     "bombing_halted": true,
+     "soviet_withdrawal": true
+    },
+    "trigger": {},
+    "visibility": "public"
+   },
+   "B": {
+    "title": "LAND",
+    "hint": "Finish the job. No missiles, no Castro.",
+    "icon": "helmet",
+    "aftermath": "The fleet leaves Florida in the dark. The beaches have code names now.",
+    "stats": {},
+    "flag": {
+     "invasion_launched": true,
+     "strike_launched": true
+    },
+    "trigger": {},
+    "visibility": "public"
+   }
+  },
+  "next": [
+   "ATK_PREAUTH"
+  ],
+  "kind": "node",
+  "speaker": "taylor",
+  "line": "Three days of strikes, Mr. President. Through U Thant, Moscow offers to crate the missiles if the bombing stops. The Chiefs say finish it. The fleet is loaded and the beaches are marked. D-day is Monday.",
+  "room": "Decision",
+  "historical_note_es": "Contrafactico. OPLAN 316 y la fuerza de invasion fueron reales (DEF-04). U Thant ofrecio mediar desde el 24/10.",
+  "document": "JCS OPLAN 316. LANDING ZONES, NORTH COAST. D-DAY: 29 OCT 62.",
+  "question": "Stop the bombing, or land?"
+ },
+ "ATK_PREAUTH": {
+  "date": "OCT 29, 1962",
+  "trigger": {
+   "invasion_launched": true
+  },
+  "cards": {
+   "A": {
+    "title": "PRE-AUTHORIZE",
+    "hint": "If they fire, we fire. No delay.",
+    "icon": "crosshair",
+    "aftermath": "The authority goes down the chain of command. It will not come back up.",
+    "stats": {},
+    "flag": {
+     "game_over": true,
+     "end_E01a": true,
+     "predelegated": true
+    },
+    "trigger": {},
+    "visibility": "secret"
+   },
+   "B": {
+    "title": "ONLY ON MY ORDER",
+    "hint": "Every nuclear shot goes through you.",
+    "icon": "stop_hand",
+    "aftermath": "The Chiefs take it in silence. On the beach, nobody knows what was decided.",
+    "stats": {},
+    "flag": {
+     "game_over": true,
+     "end_E04a": true
+    },
+    "trigger": {},
+    "visibility": "secret"
+   }
+  },
+  "next": [
+   "ENDING"
+  ],
+  "kind": "node",
+  "speaker": "mcnamara",
+  "line": "First wave is ashore. Recon reports short-range rockets near the beaches, and the analysts can't rule out nuclear warheads. The Chiefs want authority to answer in kind if they're used on our troops. Without coming back to you first.",
+  "room": "Crisis_alert",
+  "historical_note_es": "Contrafactico. Los Luna y sus ojivas estaban en Cuba y Washington no lo supo hasta 1992 (INT-05). El 22/10 el Presidium estuvo cerca de delegar su uso y lo prohibio sin orden de Moscu (CAL-22).",
+  "document": "JCS FLASH. REQUEST: PREDELEGATED RELEASE AUTHORITY, CUBA THEATER.",
+  "question": "Who decides if the beaches go nuclear?"
+ },
+ "TRK_SPEECH": {
+  "date": "OCT 22, 1962",
+  "trigger": {
+   "route_trunk": true
+  },
+  "cards": {
+   "A": {
+    "title": "DEMAND WITHDRAWAL",
+    "hint": "Clear. Popular. Hard to walk back.",
+    "icon": "microphone",
+    "aftermath": "At seven, the country hears the word 'withdrawal'. So does Moscow.",
+    "stats": {},
+    "flag": {
+     "public_ultimatum": true
+    },
+    "trigger": {},
+    "visibility": "public"
+   },
+   "B": {
+    "title": "DEMAND A FREEZE",
+    "hint": "Room to bargain. Looks softer on TV.",
+    "icon": "stop_hand",
+    "aftermath": "At seven, the country hears the word 'halt'. By morning, the Republicans have a better word for it.",
+    "stats": {},
+    "flag": {
+     "game_over": true,
+     "end_E10a": true,
+     "freeze_offer": true
+    },
+    "trigger": {},
+    "visibility": "public"
+   }
+  },
+  "next": [
+   "D13"
+  ],
+  "kind": "node",
+  "speaker": "rfk",
+  "line": "Seven o'clock tonight, every network. The draft demands the missiles come out, full stop. Or you ask for a halt to the work, checked by the UN, and keep the harder words for later.",
+  "room": "Office",
+  "historical_note_es": "Adaptada de D12. Discurso del 22/10 a las 19 h; el texto real exigio el retiro. Pedir solo congelar es salida temprana a E10a: en septiembre ya habia dicho que no se toleraria.",
+  "document": "ADDRESS TO THE NATION, DRAFT NO. 6. HANDWRITTEN CORRECTIONS.",
+  "question": "What do you demand on television?",
+  "in_1962": {
+   "choice": "A",
+   "text": "The speech of October 22 demanded that the missiles be removed."
+  },
+  "allison_model": "governmental"
+ },
+ "TRK_SHIP": {
+  "date": "OCT 24, 1962",
+  "trigger": {
+   "route_trunk": true
+  },
+  "cards": {
+   "A": {
+    "title": "ENFORCE THE LINE",
+    "hint": "Stop the ships. Board if you have to.",
+    "icon": "destroyer",
+    "aftermath": "Rusk, quietly: 'We're eyeball to eyeball.' Nobody knows yet who will blink.",
+    "stats": {},
+    "flag": {
+     "blockade": true,
+     "ship_stopped": true
+    },
+    "trigger": {},
+    "visibility": "public"
+   },
+   "B": {
+    "title": "ACCEPT U THANT'S PAUSE",
+    "hint": "Two weeks of quiet. For everyone.",
+    "icon": "hourglass",
+    "aftermath": "The destroyers pull back. In Cuba, the work on the sites does not stop for a single night.",
+    "stats": {},
+    "flag": {
+     "game_over": true,
+     "end_E08b": true,
+     "quarantine_suspended": true
+    },
+    "trigger": {},
+    "visibility": "public"
+   }
+  },
+  "next": [
+   "TRK_SUBMARINE"
+  ],
+  "kind": "node",
+  "speaker": "navy",
+  "line": "Soviet ships approaching the line, a submarine shadowing them. And a cable from U Thant: suspend the quarantine for two weeks, Moscow suspends its shipments, everybody talks. Destroyers request instructions.",
+  "room": "Crisis",
+  "historical_note_es": "Adaptada de C02. El pedido de U Thant del 24/10 existio (STA-09) y Kennedy no suspendio la cuarentena. Los barcos con misiles ya habian dado la vuelta el 23/10 (DEF-02).",
+  "crisis": {
+   "timer": 75,
+   "on_timeout": "A",
+   "at_zero": "The Navy applies standing orders. It enforces the line."
+  },
+  "question": "Enforce the line, or accept U Thant's pause?"
+ },
+ "TRK_SUBMARINE": {
+  "date": "OCT 26, 1962",
+  "trigger": {
+   "route_trunk": true
+  },
+  "cards": {
+   "A": {
+    "title": "SIGNAL HER UP",
+    "hint": "Small charges. Down there, they won't sound small.",
+    "icon": "destroyer",
+    "aftermath": "After hours of it, she surfaces among the destroyers. Her crew looks like they've been in hell.",
+    "stats": {},
+    "flag": {
+     "near_miss": true,
+     "near_miss_sub": true
+    },
+    "trigger": {
+     "not": {
+      "total_blockade": true,
+      "far_line": true
+     }
+    },
+    "else": {
+     "stats": {},
+     "flag": {
+      "game_over": true,
+      "end_E01c": true
+     },
+     "fail": true
+    },
+    "aftermath_if_failed": "The charges fall. At that depth, nobody can tell a signal from an attack.",
+    "visibility": "secret"
+   },
+   "B": {
+    "title": "TRACK AND WAIT",
+    "hint": "Stay close. Don't touch.",
+    "icon": "eye",
+    "aftermath": "The destroyers circle her for hours. In the end, her batteries decide for her.",
+    "stats": {},
+    "flag": {
+     "sub_tracked": true
+    },
+    "trigger": {},
+    "visibility": "secret"
+   }
+  },
+  "next": [
+   "D17"
+  ],
+  "kind": "incident",
+  "speaker": "navy",
+  "line": "Soviet submarine near the line. She won't come up. The destroyers request permission to drop practice depth charges as a signal to surface. Moscow was told about the procedure. We don't know if she was.",
+  "room": "Crisis",
+  "historical_note_es": "B-59 emergio la noche del 27/10 (DEF-06); aca se adelanta un dia. La salida nuclear existe solo con cuarentena total (D10 B) y linea lejana (D11 B).",
+  "crisis": {
+   "timer": 60,
+   "on_timeout": "A",
+   "at_zero": "No order comes. The Navy follows the procedure it sent to Moscow."
+  },
+  "question": "A submarine won't surface. Signal her up?"
+ },
+ "TRK_U2": {
+  "date": "OCT 27, 1962",
+  "trigger": {
+   "route_trunk": true
+  },
+  "cards": {
+   "A": {
+    "title": "HOLD AND VERIFY",
+    "hint": "Find out who fired, and why.",
+    "icon": "eye",
+    "aftermath": "The strike is held. The pilot was Major Rudolf Anderson.",
+    "stats": {},
+    "flag": {
+     "shootdown_absorbed": true
+    },
+    "trigger": {
+     "not": {
+      "auto_retaliation": true,
+      "defcon2": true
+     }
+    },
+    "else": {
+     "stats": {},
+     "flag": {
+      "game_over": true,
+      "end_E03a": true,
+      "sam_strike": true,
+      "order_failed": true
+     },
+     "fail": true
+    },
+    "aftermath_if_failed": "The hold order arrives late. Under the standing rule, the first aircraft have already fired.",
+    "visibility": "secret"
+   },
+   "B": {
+    "title": "EXECUTE RETALIATION",
+    "hint": "Hit the site. Answer fire with fire.",
+    "icon": "crosshair",
+    "aftermath": "Four aircraft cross into Cuban airspace. In Moscow, it is already night.",
+    "stats": {},
+    "flag": {
+     "game_over": true,
+     "end_E03a": true,
+     "sam_strike": true
+    },
+    "trigger": {},
+    "visibility": "public"
+   }
+  },
+  "next": [
+   "TRK_MAULTSBY"
+  ],
+  "kind": "incident",
+  "speaker": "air_force",
+  "line": "A U-2 is down over Cuba. The pilot is dead. The retaliation strike on the SAM site is ready.",
+  "room": "Crisis",
+  "historical_note_es": "Adaptada de C03. El mayor Rudolf Anderson murio el 27/10. Kennedy no ejecuto la represalia acordada. Regla de dos rutinas, como el umbral nuclear de v0.2: con represalia automatica (D14 A) y DEFCON 2 (D15 A) a la vez, esperar falla. Con una sola, la orden de frenar llega a tiempo.",
+  "crisis": {
+   "timer": 60,
+   "on_timeout": {
+    "if": {
+     "auto_retaliation": true
+    },
+    "then": "B",
+    "else": "A"
+   },
+   "timer_override": {
+    "if": {
+     "auto_retaliation": true
+    },
+    "seconds": 35
+   },
+   "at_zero": "Retaliation proceeds if it was pre-authorized. Otherwise, it waits."
+  },
+  "question": "A U-2 is down. Retaliate?",
+  "in_1962": {
+   "choice": "A",
+   "text": "Kennedy held back. The retaliation agreed four days earlier was never ordered."
+  },
+  "allison_model": "organizational"
+ },
+ "TRK_MAULTSBY": {
+  "date": "OCT 27, 1962",
+  "trigger": {
+   "route_trunk": true
+  },
+  "cards": {
+   "A": {
+    "title": "SEND THE ESCORT",
+    "hint": "Bring him home. Armed as they are.",
+    "icon": "squadron",
+    "aftermath": "The F-102s find him gliding over the Bering Sea, engine dead. He lands on the ice at Kotzebue.",
+    "stats": {},
+    "flag": {
+     "near_miss": true,
+     "near_miss_maultsby": true
+    },
+    "trigger": {
+     "defcon2": false
+    },
+    "else": {
+     "stats": {},
+     "flag": {
+      "game_over": true,
+      "end_E03c": true
+     },
+     "fail": true
+    },
+    "aftermath_if_failed": "The MiGs and the F-102s find each other first.",
+    "visibility": "secret"
+   },
+   "B": {
+    "title": "TELL MOSCOW IT'S A MISTAKE",
+    "hint": "Explain it before they decide what it means.",
+    "icon": "telephone",
+    "aftermath": "A message goes to Moscow through the embassy. It will take hours. The pilot glides home alone.",
+    "stats": {},
+    "flag": {
+     "maultsby_explained": true
+    },
+    "trigger": {},
+    "visibility": "secret"
+   }
+  },
+  "next": [
+   "TRK_TURKEY"
+  ],
+  "kind": "incident",
+  "speaker": "air_force",
+  "line": "One of our U-2s on an air-sampling run near the Pole is lost. The pilot navigated by the stars and got it wrong. He's over Soviet territory, Chukotka. MiGs are up. Alaska wants to launch F-102s to bring him home. Their missiles are nuclear.",
+  "room": "Crisis",
+  "historical_note_es": "Hechos confirmados (DEF-09). Los F-102 despegaron por procedimiento, sin consultar al presidente: por eso el timeout los lanza. Con DEFCON 2 (D15 A), la escolta termina en combate.",
+  "crisis": {
+   "timer": 45,
+   "on_timeout": "A",
+   "at_zero": "Alaskan Air Command launches under standing orders. Nobody asked you."
+  },
+  "question": "A U-2 is lost over the USSR. Escort or explain?"
+ },
+ "TRK_TURKEY": {
+  "date": "OCT 27, 1962",
+  "trigger": {
+   "route_trunk": true
+  },
+  "cards": {
+   "A": {
+    "title": "MAKE THE SECRET PROMISE",
+    "hint": "Deniable. Binding. Never public.",
+    "icon": "padlock",
+    "aftermath": "Robert Kennedy leaves for the Justice Department. Nothing is written down.",
+    "stats": {},
+    "flag": {
+     "turkey_secret": true
+    },
+    "trigger": {},
+    "available_if": {
+     "private_channel": true
+    },
+    "locked_text": "No one can carry it to Dobrynin tonight.",
+    "visibility": "secret"
+   },
+   "B": {
+    "title": "ACCEPT IN PUBLIC",
+    "hint": "End it now. Pay with the alliance.",
+    "icon": "handshake",
+    "aftermath": "In Ankara, the government asks why it heard it on the radio.",
+    "stats": {},
+    "flag": {
+     "game_over": true,
+     "end_E07a": true,
+     "turkey_public": true
+    },
+    "trigger": {},
+    "visibility": "public"
+   }
+  },
+  "next": [
+   "TRK_VERIFY"
+  ],
+  "kind": "node",
+  "speaker": "rfk",
+  "line": "Jack, Radio Moscow wants the Jupiters out of Turkey, in public, and the crisis ends today. Dobrynin sees me tonight. I can give him the Jupiters in private instead, on one condition: they never say it was part of the deal.",
+  "room": "Office",
+  "historical_note_es": "Une D18 y D19. La segunda carta se transmitio el 27/10 a la manana; el encuentro RFK-Dobrynin fue esa noche. Sin canal (D13 A), la promesa secreta queda bloqueada.",
+  "document": "FBIS TRANSCRIPT: RADIO MOSCOW, 27 OCT 62, 10:00 EST.",
+  "question": "Trade the missiles in Turkey: in secret or in public?"
+ },
+ "TRK_VERIFY": {
+  "date": "OCT 28, 1962",
+  "trigger": {
+   "route_trunk": true
+  },
+  "cards": {
+   "A": {
+    "title": "INSPECT AND WATCH",
+    "hint": "Accept what can be verified.",
+    "icon": "eye",
+    "aftermath": "The first photographs show crates on the docks.",
+    "stats": {},
+    "flag": {
+     "soviet_withdrawal": true
+    },
+    "trigger": {
+     "non_invasion": true
+    },
+    "else": {
+     "stats": {},
+     "flag": {
+      "game_over": true,
+      "end_E09b": true
+     },
+     "fail": true
+    },
+    "aftermath_if_failed": "Moscow stalls on the details. The crates don't move.",
+    "visibility": "public"
+   },
+   "B": {
+    "title": "FULL ACCESS NOW",
+    "hint": "Everything, immediately, or nothing.",
+    "icon": "papers",
+    "aftermath": "Moscow accepts, grudgingly. The crates start moving.",
+    "stats": {},
+    "flag": {
+     "soviet_withdrawal": true,
+     "forces_ready": true
+    },
+    "trigger": {
+     "non_invasion": true
+    },
+    "else": {
+     "stats": {},
+     "flag": {
+      "game_over": true,
+      "end_E09b": true
+     },
+     "fail": true
+    },
+    "aftermath_if_failed": "Moscow calls the demand humiliating. The announcement is 'under review'.",
+    "visibility": "public"
+   }
+  },
+  "next": [
+   "D23"
+  ],
+  "kind": "node",
+  "speaker": "bundy",
+  "line": "Radio Moscow again. Khrushchev says the work will stop and the missiles will be crated and shipped home. Now we decide how we check. Surveillance and inspectors, or full access right now.",
+  "room": "Decision",
+  "historical_note_es": "Adaptada de D22. Sin promesa de no invasion (D17 B), Moscu se traba y cobra en Berlin (E09b). FULL ACCESS NOW mantiene las fuerzas en alerta (forces_ready), que pesa en la falsa alarma.",
+  "document": "FBIS TRANSCRIPT: RADIO MOSCOW, 28 OCT 62, 09:00 EST.",
+  "question": "How do we verify the withdrawal?",
+  "in_1962": {
+   "choice": "A",
+   "text": "Castro refused inspections. The withdrawal was checked from the air, crate by crate."
+  },
+  "allison_model": "organizational"
+ },
+ "TRK_FALSE_ALARM": {
+  "date": "OCT 28, 1962",
+  "trigger": {
+   "route_trunk": true
+  },
+  "cards": {
+   "A": {
+    "title": "VERIFY FIRST",
+    "hint": "Wait for a detonation that may never come.",
+    "icon": "eye",
+    "aftermath": "Nothing hits Tampa. Later, someone at Moorestown finds a test tape running in the machine.",
+    "stats": {},
+    "flag": {
+     "game_over": true,
+     "end_E06a": true,
+     "alarm_verified": true
+    },
+    "trigger": {},
+    "visibility": "secret"
+   },
+   "B": {
+    "title": "ALERT THE BOMBERS",
+    "hint": "If it's real, every minute counts.",
+    "icon": "missile",
+    "aftermath": "The bombers go to their engines. Then the news from Tampa: nothing. They stand down. Moscow saw all of it.",
+    "stats": {},
+    "flag": {
+     "game_over": true,
+     "end_E06b": true,
+     "alarm_overreaction": true
+    },
+    "trigger": {
+     "not": {
+      "forces_ready": true,
+      "any": [
+       {
+        "auto_retaliation": true
+       },
+       {
+        "defcon2": true
+       }
+      ]
+     }
+    },
+    "else": {
+     "stats": {},
+     "flag": {
+      "game_over": true,
+      "end_E01d": true
+     },
+     "fail": true
+    },
+    "aftermath_if_failed": "The alert meets a force already leaning forward. Nobody waits for Tampa.",
+    "visibility": "secret"
+   }
+  },
+  "next": [
+   "ENDING"
+  ],
+  "kind": "incident",
+  "speaker": "norad",
+  "line": "NORAD to the White House. The Moorestown radar reports a missile launched from Cuba. Projected impact: Tampa. Minutes, not hours. No detonation reported yet.",
+  "room": "Crisis_alert",
+  "historical_note_es": "Hecho confirmado: el 28/10 una cinta de prueba en Moorestown produjo la alarma (DEF-12). Lo contrafactico es que llegue al presidente.",
+  "crisis": {
+   "timer": 40,
+   "on_timeout": {
+    "if": {
+     "forces_ready": true,
+     "any": [
+      {
+       "auto_retaliation": true
+      },
+      {
+       "defcon2": true
+      }
+     ]
+    },
+    "then": "B",
+    "else": "A"
+   },
+   "timer_override": {
+    "if": {
+     "forces_ready": true
+    },
+    "seconds": 20
+   },
+   "at_zero": "Standing procedures take over."
+  },
+  "question": "A missile on radar. Verify or alert?"
+ },
+ "NEG_KEATING": {
+  "date": "OCT 18, 1962",
+  "trigger": {
+   "route_negotiate": true
+  },
+  "cards": {
+   "A": {
+    "title": "DENY IT",
+    "hint": "No evidence of offensive weapons. Officially.",
+    "icon": "microphone",
+    "aftermath": "The statement is read at noon. Keating says he can wait.",
+    "stats": {},
+    "flag": {
+     "lied_to_senate": true
+    },
+    "trigger": {
+     "broad_consultation": false
+    },
+    "else": {
+     "stats": {},
+     "flag": {
+      "game_over": true,
+      "end_E10b": true,
+      "lied_to_senate": true
+     },
+     "fail": true
+    },
+    "aftermath_if_failed": "By evening Keating has a photograph. Someone who sat in the Cabinet Room gave it to him.",
+    "visibility": "public"
+   },
+   "B": {
+    "title": "BRIEF THE LEADERS",
+    "hint": "Tell Congress in secret. More people will know.",
+    "icon": "people",
+    "aftermath": "The congressional leaders sit in the Cabinet Room. Two of them take notes.",
+    "stats": {},
+    "flag": {
+     "congress_briefed": true
+    },
+    "trigger": {},
+    "visibility": "secret"
+   }
+  },
+  "next": [
+   "NEG_WHO"
+  ],
+  "kind": "incident",
+  "speaker": "counsel",
+  "line": "Senator Keating is on the Senate floor again. Last week he said 'rocket bases'. Today he has locations. The press office needs a line before noon, and Gromyko is due at five.",
+  "room": "Office",
+  "historical_note_es": "Confirmado: Keating denuncio tropas el 31/08 y bases de 'cohetes' el 10/10. Que vuelva el 18/10 con ubicaciones es contrafactico. Kennedy reunio a los lideres del Congreso el 22/10.",
+  "document": "CONGRESSIONAL RECORD, SENATE, 10 OCT 62. REMARKS OF MR. KEATING (EXCERPT).",
+  "question": "Keating says there are missiles. What do you tell Congress?"
+ },
+ "NEG_WHO": {
+  "date": "OCT 18, 1962",
+  "trigger": {
+   "route_negotiate": true
+  },
+  "cards": {
+   "A": {
+    "title": "SHOW GROMYKO THE PHOTOS",
+    "hint": "Make Moscow answer to you, in private.",
+    "icon": "papers",
+    "aftermath": "Gromyko looks at the photographs for a long time. Then he asks for a telephone.",
+    "stats": {},
+    "flag": {
+     "moscow_channel": true
+    },
+    "trigger": {},
+    "visibility": "secret"
+   },
+   "B": {
+    "title": "GO THROUGH HAVANA",
+    "hint": "Talk to the island, not the empire.",
+    "icon": "envelope",
+    "aftermath": "A message is drafted for the Brazilian ambassador in Havana.",
+    "stats": {},
+    "flag": {
+     "castro_channel": true
+    },
+    "trigger": {},
+    "visibility": "secret"
+   }
+  },
+  "next": [
+   "NEG_TIME",
+   "NEG_CASTRO"
+  ],
+  "kind": "node",
+  "speaker": "rusk",
+  "line": "Gromyko will sit in that chair at five and tell you the weapons are defensive. You can let him, or you can open the drawer. Or we leave Moscow out and go through the Brazilians. Castro is the one who has to live next to those missiles.",
+  "room": "Office",
+  "historical_note_es": "Gromyko visito a Kennedy el 18/10 y nego todo; Kennedy no mostro las fotos (CAL-18). El canal brasileno se aprobo recien el 26/10 y nunca se uso (STA-08).",
+  "question": "Talk to Moscow or to Havana?"
+ },
+ "NEG_TIME": {
+  "date": "OCT 20, 1962",
+  "trigger": {
+   "moscow_channel": true
+  },
+  "cards": {
+   "A": {
+    "title": "WAIT FOR NOVEMBER",
+    "hint": "Quiet now. Missiles later.",
+    "icon": "hourglass",
+    "aftermath": "The last week of November is cleared on the calendar. Nothing else is decided.",
+    "stats": {},
+    "flag": {
+     "waited": true,
+     "secret_route": true
+    },
+    "trigger": {
+     "broad_consultation": true,
+     "congress_briefed": true,
+     "public_ultimatum": false
+    },
+    "else": {
+     "stats": {},
+     "flag": {
+      "game_over": true,
+      "end_E08a": true,
+      "waited": true
+     },
+     "fail": true
+    },
+    "visibility": "secret"
+   },
+   "B": {
+    "title": "SET A DEADLINE",
+    "hint": "Seven days, privately. Then you go public.",
+    "icon": "stop_hand",
+    "aftermath": "Robert Kennedy delivers the deadline to Dobrynin in person. Nothing is written down.",
+    "stats": {},
+    "flag": {
+     "private_deadline": true
+    },
+    "trigger": {},
+    "visibility": "secret"
+   }
+  },
+  "next": [
+   "S01",
+   "NEG_LEAK"
+  ],
+  "kind": "node",
+  "speaker": "rusk",
+  "line": "Moscow's answer, through Dobrynin. Khrushchev no longer denies it. He'll discuss everything when he comes to New York for the UN, late November. Until then he asks for quiet. By late November, every site will be operational.",
+  "room": "Office",
+  "historical_note_es": "Confirmado: el 16/10 Jruschov le confirmo a Kohler que iria a Nueva York a fines de noviembre (FRUS 1961-63, vol. V, doc. 248). Que pensara revelar ahi los misiles es interpretacion. La carta A usa trigger/else al reves: el 'exito' es la rama oculta S01; el 'else' es el final E08a, sin aftermath_if_failed para que se vea el mismo texto.",
+  "document": "AMEMBASSY MOSCOW, 16 OCT 62: CHAIRMAN CONFIRMED INTENTION TO COME TO NEW YORK LATTER PART OF NOVEMBER.",
+  "question": "Wait for November, or set a deadline?"
+ },
+ "NEG_LEAK": {
+  "date": "OCT 21, 1962",
+  "trigger": {
+   "private_deadline": true
+  },
+  "cards": {
+   "A": {
+    "title": "ASK THEM TO HOLD",
+    "hint": "One phone call. A promise in return.",
+    "icon": "telephone",
+    "aftermath": "Dryfoos agrees. Reston asks for one thing in return: no blood and no war while the Times stays quiet.",
+    "stats": {},
+    "flag": {
+     "game_over": true,
+     "end_E06c": true,
+     "press_held": true,
+     "turkey_secret": true,
+     "non_invasion": true,
+     "soviet_withdrawal": true
+    },
+    "trigger": {},
+    "available_if": {
+     "broad_consultation": false,
+     "congress_briefed": false
+    },
+    "locked_text": "Too many people know. Someone else will print it.",
+    "visibility": "secret"
+   },
+   "B": {
+    "title": "GO PUBLIC",
+    "hint": "Tell the country before the paper does.",
+    "icon": "microphone",
+    "aftermath": "The networks clear seven o'clock. Moscow listens, then makes its offer on the radio.",
+    "stats": {},
+    "flag": {
+     "game_over": true,
+     "end_E07b": true,
+     "went_public": true,
+     "turkey_public": true,
+     "soviet_withdrawal": true
+    },
+    "trigger": {},
+    "visibility": "public"
+   }
+  },
+  "next": [
+   "ENDING"
+  ],
+  "kind": "incident",
+  "speaker": "bundy",
+  "line": "Reston at the Times has it. Not all of it. Enough. Dryfoos, the publisher, is holding the front page for your call. If it runs tomorrow, your seven days are over, and so is everything said in private.",
+  "room": "Office",
+  "historical_note_es": "Confirmado: Kennedy convencio a Reston y Dryfoos de no publicar y Reston pidio la promesa de no sangre ni guerra (archivo Reston, UIUC). Fecha 21/10 segun Stern (CAL-21).",
+  "question": "The Times has the story. Hold it or go public?"
+ },
+ "NEG_CASTRO": {
+  "date": "OCT 20, 1962",
+  "trigger": {
+   "castro_channel": true
+  },
+  "cards": {
+   "A": {
+    "title": "ALL OF IT, MONGOOSE TOO",
+    "hint": "Recognize him. Call off the CIA.",
+    "icon": "handshake",
+    "aftermath": "A cable goes to Rio. Lansdale is told to stand down his teams. Nobody in Moscow is copied.",
+    "stats": {},
+    "flag": {
+     "game_over": true,
+     "end_E05": true,
+     "cuba_neutral_offer": true,
+     "non_invasion": true,
+     "mongoose_stopped": true
+    },
+    "trigger": {},
+    "visibility": "secret"
+   },
+   "B": {
+    "title": "THE GUARANTEE, ON PAPER",
+    "hint": "Promise him peace. Keep the teams running.",
+    "icon": "padlock",
+    "aftermath": "The cable promises no invasion. In Pinar del Rio, a CIA team is still waiting for its signal.",
+    "stats": {},
+    "flag": {
+     "game_over": true,
+     "end_E10c": true,
+     "non_invasion": true,
+     "mongoose_kept": true
+    },
+    "trigger": {},
+    "visibility": "secret"
+   }
+  },
+  "next": [
+   "ENDING"
+  ],
+  "kind": "node",
+  "speaker": "rusk",
+  "line": "Through the Brazilians, Castro answers. He will send the Soviet weapons home himself if Washington guarantees no invasion and recognizes Cuba as sovereign. And he wants the sabotage to stop. He means Mongoose.",
+  "room": "Office",
+  "historical_note_es": "Adaptada de D21. Especulacion: el mensaje via Brasil se aprobo el 26/10 y nunca se entrego; Castro nunca ofrecio expulsar las armas (CIA-04, STA-08). Mongoose existio (CIA-03).",
+  "document": "CABLE, AMEMBASSY RIO DE JANEIRO. EYES ONLY THE SECRETARY.",
+  "question": "How much do you give Castro?"
  }
 }

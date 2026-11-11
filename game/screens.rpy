@@ -600,7 +600,7 @@ screen endings_menu(new_ending=None, after_run=False):
         xsize 480
         spacing 16
         text "OUTCOMES FOUND" size 30 color "#d8d0c0"
-        text "%d / %d" % (len(persistent.endings_seen), len(endings)) size 72 color "#ffffff"
+        text "%d / %d" % (len(persistent.endings_seen), len(FAMILIES)) size 72 color "#ffffff"
         text debrief_data["goal_line"] size 30 color "#d8d0c0"
         null height 16
         text "Double-click a file or press Enter to watch its ending again." size 26 color "#a89880"
@@ -608,7 +608,7 @@ screen endings_menu(new_ending=None, after_run=False):
             null height 10
             textbutton "READ YOUR LAST REPORT" action Function(show_last_report, current["id"]) text_size 28 text_color "#e8dcc0" text_hover_color "#ffffff"
     
-    if len(persistent.endings_seen) >= len(endings) and not after_run and current is not None:
+    if len(persistent.endings_seen) >= len(FAMILIES) and not after_run and current is not None:
             fixed:
                 pos (650, 575)
                 xysize (631, 226)
@@ -662,8 +662,9 @@ init python:
     # the historical outcome first, the nuclear one second, the satirical secret last
     GALLERY_ORDER = ["E06", "E01", "E07", "E09", "E10", "E08", "E05", "E04", "E03", "E02"]
     def gallery_endings():
-        by_id = dict((e["id"], e) for e in endings)
-        return [by_id[i] for i in GALLERY_ORDER if i in by_id] + [e for e in endings if e["id"] not in GALLERY_ORDER]
+        fams = family_endings()
+        by_id = dict((e["id"], e) for e in fams)
+        return [by_id[i] for i in GALLERY_ORDER if i in by_id] + [e for e in fams if e["id"] not in GALLERY_ORDER]
 
     CHEAT_CODE = list("arkhipov")
     cheat_buffer = []
@@ -677,8 +678,10 @@ init python:
 
     def unlock_all_endings():
         for e in endings:
-            persistent.endings_seen.add(e["id"])
-            achievement.grant("ending_" + e["id"].lower())
+            persistent.variants_seen.add(e["id"])
+        for f in FAMILIES:
+            persistent.endings_seen.add(f)
+            achievement.grant("ending_" + f.lower())
         achievement.progress("all_endings", len(persistent.endings_seen))
         renpy.save_persistent()
         renpy.notify("All endings unlocked")
