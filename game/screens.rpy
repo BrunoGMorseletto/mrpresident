@@ -263,7 +263,8 @@ screen quick_menu():
     ## Ensure this appears on top of other screens.
     zorder 100
 
-    if quick_menu:
+    # hidden while the cards are on the table: nothing on top of the decision
+    if quick_menu and not renpy.get_screen("decision_folder"):
 
         hbox:
             style_prefix "quick"
@@ -291,8 +292,13 @@ style quick_button is default
 style quick_button_text is button_text
 
 style quick_menu:
-    xalign 0.5
-    yalign 1.0
+    # top right, small, on a dark strip (it used to sit on the bottom edge, over the cards)
+    xalign 1.0
+    yalign 0.0
+    xoffset -12
+    yoffset 12
+    spacing 14
+    background Frame(Solid("#000000a0"), 0, 0)
 
 style quick_button:
     properties gui.button_properties("quick_button")
