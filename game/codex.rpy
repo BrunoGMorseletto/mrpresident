@@ -264,7 +264,14 @@ init python:
     # ---- content helpers for the right page ----
     def codex_photo(entry):
         path = "images/codex/" + entry["id"] +".png"
-        return path if renpy.loadable(path) else None
+        if renpy.loadable(path):
+            return path
+        # archival photos: images/codex/real_photos/<ID>_<name>.jpg (credits in CREDITOS_fotos.csv)
+        pre = "images/codex/real_photos/" + entry["id"] + "_"
+        for f in renpy.list_files():
+            if f.startswith(pre) and f.lower().endswith((".jpg", ".png")):
+                return f
+        return None
 
     def codex_modes(entry):
         modes = []
