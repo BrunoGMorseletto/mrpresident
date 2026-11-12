@@ -729,8 +729,12 @@ init python:
             persistent.endings_seen.add(f)
             achievement.grant("ending_" + f.lower())
         achievement.progress("all_endings", len(persistent.endings_seen))
+        # the code also opens the whole codex: every scene counts as visited, every day as reached
+        for sid in events:
+            persistent.codex_scenes.add(sid)
+        persistent.codex_day = 31
         renpy.save_persistent()
-        renpy.notify("All endings unlocked")
+        renpy.notify("All endings and files unlocked")
         renpy.restart_interaction()   
 
 ## Credits Menu Screen ############################################################
