@@ -425,16 +425,6 @@ screen codex():
                 if codex_unread_in_tab(i):
                     add Solid("#d63a2a") xysize (cz(11), cz(11)) align (.9, .08)
 
-        ## ---- tooltip with the tab's full name ----
-        if tab_tip is not None:
-            $ ttx, tty, ttw, tth = [cz(v) for v in CODEX_TAB_RECTS[tab_tip]]
-            frame:
-                pos (ttx - cz(8), tty + tth // 2)
-                anchor (1.0, 0.5)
-                background Solid("#1a120bdd")
-                padding (cz(14), cz(6))
-                text CODEX_TABS[tab_tip]["full"] style "codex_text" size cz(24) color "#f0e6d0"
-
         ## ---- left page: title line ----
         $ hx, hy, hang = codex_row(1, CODEX_LIST_W, CODEX_ROW_H)
         $ got, total = codex_count_in_tab(codex_tab)
@@ -556,6 +546,16 @@ screen codex():
         ## ---- DAYS: the calendar on the desk covers the folder ----
         if codex_desk:
             use codex_desk_calendar(ids)
+
+        ## ---- tooltip with the tab's full name: drawn last, so nothing covers it ----
+        if tab_tip is not None:
+            $ ttx, tty, ttw, tth = [cz(v) for v in CODEX_TAB_RECTS[tab_tip]]
+            frame:
+                pos (ttx - cz(8), tty + tth // 2)
+                anchor (1.0, 0.5)
+                background Solid("#1a120bdd")
+                padding (cz(14), cz(6))
+                text CODEX_TABS[tab_tip]["full"] style "codex_text" size cz(24) color "#f0e6d0"
 
 
 ## ---------------------------------------------------------------------------
