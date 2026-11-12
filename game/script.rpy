@@ -1327,7 +1327,7 @@ label newsreel(reel):
     return
 
 label show_last_report_label(e, rep):
-    call screen debrief(e, rep) from _call_screen_last_report
+    call screen debrief(e, rep)
     return
 
 # Gallery replay: the ending's newsreel and film, without touching the run in progress.
