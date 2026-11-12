@@ -282,8 +282,9 @@ screen quick_menu():
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
 ## the player has not explicitly hidden the interface.
-init python:
-    config.overlay_screens.append("quick_menu")
+## Quick menu removed at Julián's request (12/11): Esc gives Save/Load/History/Preferences.
+# init python:
+#     config.overlay_screens.append("quick_menu")
 
 default quick_menu = False
 
@@ -2062,14 +2063,16 @@ screen folder_card(card, cid, zoom, xoff=0, is_default=False):
             text "NOT AVAILABLE" font "gui/fonts/VT323-Regular.ttf" size int(48 * k) color "#ffffff" xalign 0.5
 
     # crisis room: mark the card that will be carried out if the clock runs out
+    # (inside the card, along the bottom of the picture: above the card it ran into the question)
     if is_default:
         frame:
-            xpos xoff + w // 2
+            xpos xoff + ax + aw // 2
             xanchor 0.5
-            ypos -int(40 * k)
-            background Solid("#a01818")
-            padding (16, 4)
-            text "IF THE CLOCK RUNS OUT" font "gui/fonts/VT323-Regular.ttf" size int(30 * k) color "#ffffff"
+            ypos ay + ah - int(8 * k)
+            yanchor 1.0
+            background Solid("#a01818e8")
+            padding (int(12 * k), int(3 * k))
+            text "IF THE CLOCK RUNS OUT" font "gui/fonts/VT323-Regular.ttf" size int(26 * k) color "#ffffff"
 
 transform folder_fade:
     on show:
@@ -2311,8 +2314,8 @@ screen crisis_hud():
             vbox:
                 text hud_date font "gui/fonts/VT323-Regular.ttf" size 34 color "#ffffff"
                 text "DAY %d OF 13" % crisis_day(hud_date) font "gui/fonts/VT323-Regular.ttf" size 24 color "#b8b8b8"
-                # T07: secret until the speech of October 22, 7 p.m. (the decisions of the 22nd come before it)
-                if crisis_day(hud_date) <= 7:
+                # T07: secret until one of your decisions makes it public (speech, leak, strike)
+                if not flags.get("crisis_public"):
                     text "CRISIS: SECRET" font "gui/fonts/VT323-Regular.ttf" size 24 color "#d8b04a"
                 else:
                     text "CRISIS: PUBLIC" font "gui/fonts/VT323-Regular.ttf" size 24 color "#e05a4a"
