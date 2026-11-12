@@ -285,8 +285,8 @@
 					"caption": "Soviet freighters left Mariel this week. The Pentagon calls it routine traffic."
 				},
 				{
-					"image": null,
-					"caption": "Not broadcast: there were missiles in Cuba, and now there are not. The country never found out."
+					"caption": "Not broadcast: there were missiles in Cuba, and now there are not. The country never found out.",
+					"classified": true
 				}
 			]
 		},

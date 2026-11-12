@@ -768,6 +768,13 @@
     "variants": [
      {
       "if": {
+       "end_E06b": true
+      },
+      "image": "end_e06_2",
+      "text": "October 28. The missiles go home. That same morning, for a few minutes, the bombers had been on their engines."
+     },
+     {
+      "if": {
        "end_E06c": true
       },
       "image": "end_e06_2",
@@ -833,6 +840,13 @@
    },
    {
     "variants": [
+     {
+      "if": {
+       "end_E06b": true
+      },
+      "image": "end_e06_2",
+      "text": "October 28. The missiles go home. That same morning, for a few minutes, the bombers had been on their engines."
+     },
      {
       "if": {
        "end_E06c": true
@@ -901,6 +915,13 @@
    },
    {
     "variants": [
+     {
+      "if": {
+       "end_E06b": true
+      },
+      "image": "end_e06_2",
+      "text": "October 28. The missiles go home. That same morning, for a few minutes, the bombers had been on their engines."
+     },
      {
       "if": {
        "end_E06c": true
