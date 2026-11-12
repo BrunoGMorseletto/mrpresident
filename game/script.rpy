@@ -1275,7 +1275,7 @@ label ENDING:
     #call screen endings_menu(new_ending=chosen_ending, after_run=True)
 
     if len(persistent.endings_seen) >= len(FAMILIES) and not persistent.epilogue_seen:
-        call epilogue from _call_epilogue
+        call epilogue
 
     return
 
