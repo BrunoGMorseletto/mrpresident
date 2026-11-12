@@ -21,6 +21,8 @@ default codex_tab = 0
 default codex_page = 0
 default codex_sel = None
 default codex_mode = "1962"
+default codex_desk = False      # DAYS tab: the calendar lying on the desk, full screen
+default codex_prev_tab = 0
 
 
 ## ---- data and logic -------------------------------------------------------
@@ -210,11 +212,33 @@ init python:
             codex_sfx("page")
 
     def codex_set_tab(i):
-        global codex_tab, codex_page
-        codex_tab = i % len(CODEX_TABS)
+        global codex_tab, codex_page, codex_desk, codex_prev_tab
+        i = i % len(CODEX_TABS)
+        if CODEX_TABS[i]["label"] == "Calendar":
+            if CODEX_TABS[codex_tab]["label"] != "Calendar":
+                codex_prev_tab = codex_tab
+            codex_desk = True
+        else:
+            codex_desk = False
+        codex_tab = i
         codex_page = 0
         codex_select(codex_first_open(codex_tab_ids(codex_tab)), play=False)
         codex_sfx("tab")
+
+    def codex_desk_open(eid):
+        """A day on the desk calendar: read its file in the folder."""
+        global codex_desk
+        codex_select(eid)
+        codex_desk = False
+
+    def codex_desk_show():
+        global codex_desk
+        codex_desk = True
+        codex_sfx("page")
+
+    def codex_desk_back():
+        """Back to the tab you were on before the calendar."""
+        codex_set_tab(codex_prev_tab)
 
     def codex_step_tab(d):
         codex_set_tab(codex_tab + d)
@@ -419,7 +443,12 @@ screen codex():
             text CODEX_TABS[codex_tab]["label"].upper() style "codex_text" size cz(34) color "#7a2316" yalign 1.0
             text ("%d/%d" % (got, total)) style "codex_text" size cz(28) xalign 1.0 yalign 1.0
 
-        if CODEX_TABS[codex_tab]["label"] != "Calendar":
+        if CODEX_TABS[codex_tab]["label"] == "Calendar":
+            fixed at codex_rot(hx, hy, hang):
+                xysize (cz(CODEX_LIST_W), cz(CODEX_ROW_H))
+                textbutton "OPEN CALENDAR" action Function(codex_desk_show) xalign 0.62 yalign 1.0 text_style "codex_text" text_size cz(24) text_color "#7a2316" text_hover_color "#2a1d14" text_underline True
+
+        if True:
             ## ---- left page: index on the ruled lines ----
             for i, eid in enumerate(page_ids):
                 $ rx, ry, rang = codex_row(2 + i, CODEX_LIST_W, CODEX_ROW_H)
@@ -449,10 +478,9 @@ screen codex():
                     text ("%d / %d" % (codex_page + 1, pages)) style "codex_text" size cz(26) align (.5, .5)
                     textbutton ">" action Function(codex_set_page, codex_page + 1) sensitive (codex_page < pages - 1) xalign 1.0 yalign .5 text_style "codex_arrow_text" text_size cz(30)
 
-        else:
-            use codex_calendar(ids)
 
         ## ---- right page: the selected file ----
+        ## (when the desk calendar is open it covers the whole folder: see the end of the screen)
         if sel:
             $ stitle, sentry, scat = sel
             $ s_open = codex_unlocked(codex_sel)
@@ -524,6 +552,10 @@ screen codex():
         $ gt, gtotal = codex_total()
         text ("FILES %d / %d" % (gt, gtotal)) style "codex_close_text" size cz(28) xpos cz(210) ycenter cz(902)
         textbutton _("CLOSE") action Return() xcenter cz(836) ycenter cz(902) text_style "codex_close_text" text_size cz(30)
+
+        ## ---- DAYS: the calendar on the desk covers the folder ----
+        if codex_desk:
+            use codex_desk_calendar(ids)
 
 
 ## ---------------------------------------------------------------------------
@@ -644,3 +676,98 @@ screen codex_calendar(ids):
         # legend under the grid
         text "THE THIRTEEN DAYS:  OCT 16 - 28" style "codex_text" size cal_px(40) color "#7a2316" xalign 0.5 ycenter cal_px(CAL_ROWS[-1] + 34)
 
+
+
+## ---- DAYS tab: a 1962 desk calendar lying on the same desk (Julián's sheet, 12/11) ----------
+## Grid measured on gui/codex_calendar_desk.png (same 1672x941 frame as the codex): the column
+## lines lean a little, so each x is interpolated between the top and the bottom of the grid.
+define DESK_CAL_IMG = "gui/codex_calendar_desk.png"
+define DESK_ROWS = [271, 317, 417, 518, 620, 722, 824]          # header band, then the five weeks
+define DESK_COLS_TOP = [238, 412, 584, 758, 928, 1099, 1275, 1447]   # at y = 295
+define DESK_COLS_BOT = [226, 406, 580, 758, 932, 1108, 1288, 1467]   # at y = 802
+
+init python:
+    def desk_x(i, y):
+        f = (y - 295.0) / (802.0 - 295.0)
+        return DESK_COLS_TOP[i] + (DESK_COLS_BOT[i] - DESK_COLS_TOP[i]) * f
+
+    def desk_cell(c, r):
+        """Cell (column c, grid row r: 0 = weekday band) in bg px: x, y, w, h."""
+        y0, y1 = DESK_ROWS[r], DESK_ROWS[r + 1]
+        ym = (y0 + y1) / 2.0
+        x0, x1 = desk_x(c, ym), desk_x(c + 1, ym)
+        return x0, y0, x1 - x0, y1 - y0
+
+screen codex_desk_calendar(ids):
+    $ days = codex_calendar_days(ids)
+
+    # blocks clicks to the folder underneath
+    button:
+        xysize (config.screen_width, config.screen_height)
+        background None
+        action NullAction()
+
+    add Transform(DESK_CAL_IMG, xysize=(config.screen_width, config.screen_height))
+
+    # back to the tab you came from
+    textbutton "< BACK TO FILES":
+        action Function(codex_desk_back)
+        xpos cz(28)
+        ypos cz(24)
+        background Solid("#1a120bcc")
+        hover_background Solid("#3a2412ee")
+        padding (cz(16), cz(8))
+        text_style "codex_close_text"
+        text_size cz(28)
+
+    # month, with the files before and after October on its sides
+    text "OCTOBER 1962" style "codex_text" size cz(64) color "#2a1d14" xcenter cz(840) ycenter cz(220)
+    for eid, label, cx in (("CAL-00", "< BEFORE", 470), ("CAL-AFTER", "AFTER >", 1210)):
+        if eid in ids:
+            textbutton label:
+                xcenter cz(cx)
+                ycenter cz(222)
+                padding (cz(10), cz(4))
+                hover_background Solid("#0000001e")
+                text_style "codex_text"
+                text_size cz(30)
+                text_color ("#7a2316" if codex_unlocked(eid) else "#b0a08a")
+                action Function(codex_desk_open, eid)
+
+    # weekday band
+    for c, wd in enumerate(["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]):
+        $ x, y, w, h = desk_cell(c, 0)
+        text wd style "codex_text" size cz(28) color "#7a2316" xcenter cz(x + w / 2.0) ycenter cz(y + h / 2.0)
+
+    # the days: October 1, 1962 was a Monday
+    for wk in range(5):
+        for c in range(7):
+            $ d = wk * 7 + c + 1
+            if d <= 31:
+                $ x, y, w, h = desk_cell(c, wk + 1)
+                $ crisis = 16 <= d <= 28
+                $ passed = crisis and persistent.codex_day >= d
+                fixed:
+                    pos (cz(x + 3), cz(y + 3))
+                    xysize (cz(w - 6), cz(h - 6))
+                    if crisis:
+                        add Solid("#b0201a16")
+                    if d in days:
+                        $ eid = days[d]
+                        $ dopen = codex_unlocked(eid)
+                        button:
+                            xfill True
+                            yfill True
+                            hover_background Solid("#00000020")
+                            action Function(codex_desk_open, eid)
+                            text str(d) style "codex_text" size cz(40) xpos cz(10) ypos cz(4) color ("#1c120c" if dopen else "#a89880")
+                        if passed:
+                            add "gui/codex_cal_x.png" fit "contain" xysize (cz(h * 0.8), cz(h * 0.8)) align (.55, .6)
+                        if eid == codex_sel:
+                            add "gui/codex_cal_ring.png" fit "contain" xysize (cz(w * 0.62), cz(h * 0.98)) align (.5, .5)
+                        if dopen and eid in persistent.codex_new:
+                            add Solid("#c0392b") xysize (cz(12), cz(12)) align (.94, .1)
+                    else:
+                        text str(d) style "codex_text" size cz(34) xpos cz(10) ypos cz(4) color "#8a7860"
+
+    text "THE THIRTEEN DAYS: OCT 16 - 28   ·   CLICK A DAY TO READ ITS FILE" style "codex_text" size cz(22) color "#7a2316" xcenter cz(840) ycenter cz(846)
