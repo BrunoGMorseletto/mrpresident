@@ -514,9 +514,6 @@
       "unlock": {
         "scene": "TRK_SUBMARINE"
       },
-      "unlock_declassified": {
-        "endings_found": 1
-      },
       "description": {
         "1962": "Soviet diesel submarines were detected near the quarantine line. On October 23 McNamara had the Navy set up a new procedure: practice depth charges, small enough not to damage a hull, dropped as a signal to surface. The procedure was sent to Moscow that evening.",
         "declassified": "On the tapes, McNamara explains the method calmly. Kennedy is visibly uneasy. From inside a submarine at depth, a \"signal\" depth charge and a real attack sound exactly the same. The sources disagree on whether the procedure reached the submarines: Plokhy says B-59 received it and still could not tell the charges from real ones; Dobbs says its captain knew nothing about it. Either way, the message did not work."
@@ -537,9 +534,6 @@
       "id": "DEF-06",
       "unlock": {
         "scene": "TRK_SUBMARINE"
-      },
-      "unlock_declassified": {
-        "endings_found": 1
       },
       "description": {
         "1962": "On October 27, US destroyers spent hours hunting a Soviet submarine in the western Atlantic and dropping practice depth charges to force it up. That night it surfaced among the American ships, battered and out of contact with Moscow. To the Navy, it was a successful anti-submarine exercise.",
@@ -1253,9 +1247,6 @@
       "id": "PER-ARKHIPOV",
       "unlock": {
         "scene": "TRK_SUBMARINE"
-      },
-      "unlock_declassified": {
-        "endings_found": 1
       },
       "description": {
         "1962": "Soviet Navy, submarine flotilla. Age in October 1962: 36. Washington does not know his name.",

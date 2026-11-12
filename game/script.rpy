@@ -343,6 +343,9 @@ init python:
         renpy.block_rollback()   # T27/T31: rolling back can re-read text, never undo a decision
         choices_made.append((current_scene, choice))
         card = events[current_scene][cards_key][choice]
+        # T07: the crisis goes public because of a decision (speech, leak, bombs), not because of a date
+        if card.get("reveals_crisis"):
+            flags["crisis_public"] = True
         if check_trigger(card["trigger"]):
             effects = card
             aftermath = card["aftermath"]
