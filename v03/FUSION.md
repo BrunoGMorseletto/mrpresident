@@ -24,3 +24,20 @@ Sale de `beta-test-modification` (9574f71), con todo lo de las rondas de beta, y
 ## Cambios después de la primera prueba (Julián, 10/11)
 - **NEG_LEAK:** GO PUBLIC ya no termina la partida. Abre NEG_OFFER (22/10), donde Moscú ofrece por radio cambiar los misiles de Cuba por los de Turquía. Si aceptás, terminás en E07b. Si rechazás, terminás en E09c, una variante nueva llamada "Refused on the radio". Antes, E07b decía que habías aceptado el canje sin que lo hubieras elegido.
 - **Carta bloqueada:** se ve gris, con una banda NOT AVAILABLE, y el motivo aparece en rojo.
+
+## Cinemáticas y noticieros de las versiones (12/11)
+- Las versiones nuevas no tienen imágenes nuevas. Usan las cinemáticas de su familia, con texto propio donde el de la familia no correspondía:
+  - E01b, E01c y E01d;
+  - E03c;
+  - E04b;
+  - E06c;
+  - E07b;
+  - E08a y E08b;
+  - E09a;
+  - E10b y E10c.
+
+  El cuadro se elige con `end_<versión>` dentro de `variants`, y un cuadro puede saltearse con `"skip": true`.
+- Hay tres noticieros finales nuevos, también con imágenes ya existentes:
+  - E04b, sin invasión;
+  - E06c, que nunca se hace público;
+  - E09a, con Berlín cortada.

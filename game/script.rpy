@@ -1365,6 +1365,8 @@ label ending_cutscene(frames):
     python:
         for frame in frames:
             v = pick_variant(frame)
+            if v.get("skip"):
+                continue   # this version of the ending leaves the frame out
             path = "images/cutscenes/%s.png" % v.get("image", "")
             renpy.scene()
             if renpy.loadable(path):

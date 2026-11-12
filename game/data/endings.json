@@ -30,21 +30,24 @@
     "variants": [
      {
       "if": {
-       "any": [
-        {
-         "ship_stopped": true
-        },
-        {
-         "total_blockade": true
-        }
-       ],
-       "landing": false,
-       "strike_launched": false,
-       "strike_partial": false,
-       "sam_strike": false
+       "end_E01c": true
       },
       "image": "nuke_01_submarine",
       "text": "Western Atlantic. The submarine has not heard from Moscow in four days."
+     },
+     {
+      "if": {
+       "end_E01b": true
+      },
+      "image": "end_e03_2",
+      "text": "Berlin. The convoy met the tanks. NATO's commander had the release you gave him."
+     },
+     {
+      "if": {
+       "end_E01d": true
+      },
+      "image": "nuke_02_radar",
+      "text": "Moorestown, New Jersey. One screen shows a missile headed for Tampa. It is a test tape."
      },
      {
       "if": {},
@@ -54,8 +57,19 @@
     ]
    },
    {
-    "image": "nuke_02_radar",
-    "text": "Washington. The first report says “detonation.” The second report never comes."
+    "variants": [
+     {
+      "if": {
+       "end_E01d": true
+      },
+      "skip": true
+     },
+     {
+      "if": {},
+      "image": "nuke_02_radar",
+      "text": "Washington. The first report says “detonation.” The second report never comes."
+     }
+    ]
    },
    {
     "image": "nuke_03_map",
@@ -99,21 +113,24 @@
     "variants": [
      {
       "if": {
-       "any": [
-        {
-         "ship_stopped": true
-        },
-        {
-         "total_blockade": true
-        }
-       ],
-       "landing": false,
-       "strike_launched": false,
-       "strike_partial": false,
-       "sam_strike": false
+       "end_E01c": true
       },
       "image": "nuke_01_submarine",
       "text": "Western Atlantic. The submarine has not heard from Moscow in four days."
+     },
+     {
+      "if": {
+       "end_E01b": true
+      },
+      "image": "end_e03_2",
+      "text": "Berlin. The convoy met the tanks. NATO's commander had the release you gave him."
+     },
+     {
+      "if": {
+       "end_E01d": true
+      },
+      "image": "nuke_02_radar",
+      "text": "Moorestown, New Jersey. One screen shows a missile headed for Tampa. It is a test tape."
      },
      {
       "if": {},
@@ -123,8 +140,19 @@
     ]
    },
    {
-    "image": "nuke_02_radar",
-    "text": "Washington. The first report says “detonation.” The second report never comes."
+    "variants": [
+     {
+      "if": {
+       "end_E01d": true
+      },
+      "skip": true
+     },
+     {
+      "if": {},
+      "image": "nuke_02_radar",
+      "text": "Washington. The first report says “detonation.” The second report never comes."
+     }
+    ]
    },
    {
     "image": "nuke_03_map",
@@ -177,21 +205,24 @@
     "variants": [
      {
       "if": {
-       "any": [
-        {
-         "ship_stopped": true
-        },
-        {
-         "total_blockade": true
-        }
-       ],
-       "landing": false,
-       "strike_launched": false,
-       "strike_partial": false,
-       "sam_strike": false
+       "end_E01c": true
       },
       "image": "nuke_01_submarine",
       "text": "Western Atlantic. The submarine has not heard from Moscow in four days."
+     },
+     {
+      "if": {
+       "end_E01b": true
+      },
+      "image": "end_e03_2",
+      "text": "Berlin. The convoy met the tanks. NATO's commander had the release you gave him."
+     },
+     {
+      "if": {
+       "end_E01d": true
+      },
+      "image": "nuke_02_radar",
+      "text": "Moorestown, New Jersey. One screen shows a missile headed for Tampa. It is a test tape."
      },
      {
       "if": {},
@@ -201,8 +232,19 @@
     ]
    },
    {
-    "image": "nuke_02_radar",
-    "text": "Washington. The first report says “detonation.” The second report never comes."
+    "variants": [
+     {
+      "if": {
+       "end_E01d": true
+      },
+      "skip": true
+     },
+     {
+      "if": {},
+      "image": "nuke_02_radar",
+      "text": "Washington. The first report says “detonation.” The second report never comes."
+     }
+    ]
    },
    {
     "image": "nuke_03_map",
@@ -254,21 +296,24 @@
     "variants": [
      {
       "if": {
-       "any": [
-        {
-         "ship_stopped": true
-        },
-        {
-         "total_blockade": true
-        }
-       ],
-       "landing": false,
-       "strike_launched": false,
-       "strike_partial": false,
-       "sam_strike": false
+       "end_E01c": true
       },
       "image": "nuke_01_submarine",
       "text": "Western Atlantic. The submarine has not heard from Moscow in four days."
+     },
+     {
+      "if": {
+       "end_E01b": true
+      },
+      "image": "end_e03_2",
+      "text": "Berlin. The convoy met the tanks. NATO's commander had the release you gave him."
+     },
+     {
+      "if": {
+       "end_E01d": true
+      },
+      "image": "nuke_02_radar",
+      "text": "Moorestown, New Jersey. One screen shows a missile headed for Tampa. It is a test tape."
      },
      {
       "if": {},
@@ -278,8 +323,19 @@
     ]
    },
    {
-    "image": "nuke_02_radar",
-    "text": "Washington. The first report says “detonation.” The second report never comes."
+    "variants": [
+     {
+      "if": {
+       "end_E01d": true
+      },
+      "skip": true
+     },
+     {
+      "if": {},
+      "image": "nuke_02_radar",
+      "text": "Washington. The first report says “detonation.” The second report never comes."
+     }
+    ]
    },
    {
     "image": "nuke_03_map",
@@ -365,8 +421,20 @@
   ],
   "cutscene": [
    {
-    "image": "end_e03_1",
-    "text": "Cuba. Soviet units fight from the hills. Washington stops publishing casualty figures."
+    "variants": [
+     {
+      "if": {
+       "end_E03c": true
+      },
+      "image": "end_e03_1",
+      "text": "Cuba. Two MiGs went down over the Bering Sea. Moscow answered here, from the hills."
+     },
+     {
+      "if": {},
+      "image": "end_e03_1",
+      "text": "Cuba. Soviet units fight from the hills. Washington stops publishing casualty figures."
+     }
+    ]
    },
    {
     "image": "end_e03_2",
@@ -404,8 +472,20 @@
   "background": "E03.png",
   "cutscene": [
    {
-    "image": "end_e03_1",
-    "text": "Cuba. Soviet units fight from the hills. Washington stops publishing casualty figures."
+    "variants": [
+     {
+      "if": {
+       "end_E03c": true
+      },
+      "image": "end_e03_1",
+      "text": "Cuba. Two MiGs went down over the Bering Sea. Moscow answered here, from the hills."
+     },
+     {
+      "if": {},
+      "image": "end_e03_1",
+      "text": "Cuba. Soviet units fight from the hills. Washington stops publishing casualty figures."
+     }
+    ]
    },
    {
     "image": "end_e03_2",
@@ -451,8 +531,20 @@
   ],
   "cutscene": [
    {
-    "image": "end_e03_1",
-    "text": "Cuba. Soviet units fight from the hills. Washington stops publishing casualty figures."
+    "variants": [
+     {
+      "if": {
+       "end_E03c": true
+      },
+      "image": "end_e03_1",
+      "text": "Cuba. Two MiGs went down over the Bering Sea. Moscow answered here, from the hills."
+     },
+     {
+      "if": {},
+      "image": "end_e03_1",
+      "text": "Cuba. Soviet units fight from the hills. Washington stops publishing casualty figures."
+     }
+    ]
    },
    {
     "image": "end_e03_2",
@@ -493,12 +585,36 @@
   "background": "E04.png",
   "cutscene": [
    {
-    "image": "end_e04_1",
-    "text": "The missile sites fell in four days. Havana fell in nine."
+    "variants": [
+     {
+      "if": {
+       "end_E04b": true
+      },
+      "image": "end_e04_1",
+      "text": "Three days of strikes. Then they stopped, and the Marines never landed."
+     },
+     {
+      "if": {},
+      "image": "end_e04_1",
+      "text": "The missile sites fell in four days. Havana fell in nine."
+     }
+    ]
    },
    {
-    "image": "end_e04_2",
-    "text": "Near the beach, a Soviet officer sat beside a tactical rocket that Washington did not know was in Cuba. The order to fire never came."
+    "variants": [
+     {
+      "if": {
+       "end_E04b": true
+      },
+      "image": "end_e04_2",
+      "text": "In the hills, a Soviet officer sat beside a tactical rocket Washington did not know was in Cuba. Nobody came for it. The order to fire never came."
+     },
+     {
+      "if": {},
+      "image": "end_e04_2",
+      "text": "Near the beach, a Soviet officer sat beside a tactical rocket that Washington did not know was in Cuba. The order to fire never came."
+     }
+    ]
    }
   ],
   "hint": "Prepare the whole package. Then let the planes go."
@@ -531,12 +647,36 @@
   "background": "E04.png",
   "cutscene": [
    {
-    "image": "end_e04_1",
-    "text": "The missile sites fell in four days. Havana fell in nine."
+    "variants": [
+     {
+      "if": {
+       "end_E04b": true
+      },
+      "image": "end_e04_1",
+      "text": "Three days of strikes. Then they stopped, and the Marines never landed."
+     },
+     {
+      "if": {},
+      "image": "end_e04_1",
+      "text": "The missile sites fell in four days. Havana fell in nine."
+     }
+    ]
    },
    {
-    "image": "end_e04_2",
-    "text": "Near the beach, a Soviet officer sat beside a tactical rocket that Washington did not know was in Cuba. The order to fire never came."
+    "variants": [
+     {
+      "if": {
+       "end_E04b": true
+      },
+      "image": "end_e04_2",
+      "text": "In the hills, a Soviet officer sat beside a tactical rocket Washington did not know was in Cuba. Nobody came for it. The order to fire never came."
+     },
+     {
+      "if": {},
+      "image": "end_e04_2",
+      "text": "Near the beach, a Soviet officer sat beside a tactical rocket that Washington did not know was in Cuba. The order to fire never came."
+     }
+    ]
    }
   ],
   "hint": "Prepare the whole package. Then let the planes go."
@@ -609,12 +749,36 @@
   "background": "E06.png",
   "cutscene": [
    {
-    "image": "end_e06_1",
-    "text": "October 27, 7:45 p.m. The Justice Department. Nothing is written down."
+    "variants": [
+     {
+      "if": {
+       "end_E06c": true
+      },
+      "image": "end_e06_1",
+      "text": "October 1962. No speech, no quarantine. A deadline, delivered in private."
+     },
+     {
+      "if": {},
+      "image": "end_e06_1",
+      "text": "October 27, 7:45 p.m. The Justice Department. Nothing is written down."
+     }
+    ]
    },
    {
-    "image": "end_e06_2",
-    "text": "October 28. The missiles go home. In Washington, the story going around is that Khrushchev blinked."
+    "variants": [
+     {
+      "if": {
+       "end_E06c": true
+      },
+      "image": "end_e06_2",
+      "text": "The missiles come down before most Americans know they were there."
+     },
+     {
+      "if": {},
+      "image": "end_e06_2",
+      "text": "October 28. The missiles go home. In Washington, the story going around is that Khrushchev blinked."
+     }
+    ]
    },
    {
     "image": "end_e06_3",
@@ -652,12 +816,36 @@
   "background": "E06.png",
   "cutscene": [
    {
-    "image": "end_e06_1",
-    "text": "October 27, 7:45 p.m. The Justice Department. Nothing is written down."
+    "variants": [
+     {
+      "if": {
+       "end_E06c": true
+      },
+      "image": "end_e06_1",
+      "text": "October 1962. No speech, no quarantine. A deadline, delivered in private."
+     },
+     {
+      "if": {},
+      "image": "end_e06_1",
+      "text": "October 27, 7:45 p.m. The Justice Department. Nothing is written down."
+     }
+    ]
    },
    {
-    "image": "end_e06_2",
-    "text": "October 28. The missiles go home. In Washington, the story going around is that Khrushchev blinked."
+    "variants": [
+     {
+      "if": {
+       "end_E06c": true
+      },
+      "image": "end_e06_2",
+      "text": "The missiles come down before most Americans know they were there."
+     },
+     {
+      "if": {},
+      "image": "end_e06_2",
+      "text": "October 28. The missiles go home. In Washington, the story going around is that Khrushchev blinked."
+     }
+    ]
    },
    {
     "image": "end_e06_3",
@@ -696,12 +884,36 @@
   "background": "E06.png",
   "cutscene": [
    {
-    "image": "end_e06_1",
-    "text": "October 27, 7:45 p.m. The Justice Department. Nothing is written down."
+    "variants": [
+     {
+      "if": {
+       "end_E06c": true
+      },
+      "image": "end_e06_1",
+      "text": "October 1962. No speech, no quarantine. A deadline, delivered in private."
+     },
+     {
+      "if": {},
+      "image": "end_e06_1",
+      "text": "October 27, 7:45 p.m. The Justice Department. Nothing is written down."
+     }
+    ]
    },
    {
-    "image": "end_e06_2",
-    "text": "October 28. The missiles go home. In Washington, the story going around is that Khrushchev blinked."
+    "variants": [
+     {
+      "if": {
+       "end_E06c": true
+      },
+      "image": "end_e06_2",
+      "text": "The missiles come down before most Americans know they were there."
+     },
+     {
+      "if": {},
+      "image": "end_e06_2",
+      "text": "October 28. The missiles go home. In Washington, the story going around is that Khrushchev blinked."
+     }
+    ]
    },
    {
     "image": "end_e06_3",
@@ -745,8 +957,20 @@
   ],
   "cutscene": [
    {
-    "image": "end_e07_1",
-    "text": "The deal was read on the radio. Both sides confirmed it in public."
+    "variants": [
+     {
+      "if": {
+       "end_E07b": true
+      },
+      "image": "end_e07_1",
+      "text": "October 22. The offer was read on Radio Moscow. You accepted on the air."
+     },
+     {
+      "if": {},
+      "image": "end_e07_1",
+      "text": "The deal was read on the radio. Both sides confirmed it in public."
+     }
+    ]
    },
    {
     "image": "end_e07_2",
@@ -782,8 +1006,20 @@
   "background": "E07.png",
   "cutscene": [
    {
-    "image": "end_e07_1",
-    "text": "The deal was read on the radio. Both sides confirmed it in public."
+    "variants": [
+     {
+      "if": {
+       "end_E07b": true
+      },
+      "image": "end_e07_1",
+      "text": "October 22. The offer was read on Radio Moscow. You accepted on the air."
+     },
+     {
+      "if": {},
+      "image": "end_e07_1",
+      "text": "The deal was read on the radio. Both sides confirmed it in public."
+     }
+    ]
    },
    {
     "image": "end_e07_2",
@@ -820,6 +1056,20 @@
     "variants": [
      {
       "if": {
+       "end_E08b": true
+      },
+      "image": "end_e08_1b",
+      "text": "The sites stayed. The camouflage got better."
+     },
+     {
+      "if": {
+       "end_E08a": true
+      },
+      "image": "end_e08_1b",
+      "text": "The sites stayed. The camouflage got better."
+     },
+     {
+      "if": {
        "soviet_withdrawal": true
       },
       "image": "end_e08_1",
@@ -834,6 +1084,20 @@
    },
    {
     "variants": [
+     {
+      "if": {
+       "end_E08b": true
+      },
+      "image": "end_e08_2",
+      "text": "Within a year, the photographs stopped making the front page."
+     },
+     {
+      "if": {
+       "end_E08a": true
+      },
+      "image": "end_e08_2",
+      "text": "Within a year, the photographs stopped making the front page."
+     },
      {
       "if": {
        "soviet_withdrawal": true
@@ -879,6 +1143,20 @@
     "variants": [
      {
       "if": {
+       "end_E08b": true
+      },
+      "image": "end_e08_1b",
+      "text": "The sites stayed. The camouflage got better."
+     },
+     {
+      "if": {
+       "end_E08a": true
+      },
+      "image": "end_e08_1b",
+      "text": "The sites stayed. The camouflage got better."
+     },
+     {
+      "if": {
        "soviet_withdrawal": true
       },
       "image": "end_e08_1",
@@ -893,6 +1171,20 @@
    },
    {
     "variants": [
+     {
+      "if": {
+       "end_E08b": true
+      },
+      "image": "end_e08_2",
+      "text": "Within a year, the photographs stopped making the front page."
+     },
+     {
+      "if": {
+       "end_E08a": true
+      },
+      "image": "end_e08_2",
+      "text": "Within a year, the photographs stopped making the front page."
+     },
      {
       "if": {
        "soviet_withdrawal": true
@@ -937,8 +1229,20 @@
   "background": "E09.png",
   "cutscene": [
    {
-    "image": "end_e09_1",
-    "text": "Berlin, November. The first concession was small."
+    "variants": [
+     {
+      "if": {
+       "end_E09a": true
+      },
+      "image": "end_e09_1",
+      "text": "West Berlin. The airlift kept the city fed. The first concession was small."
+     },
+     {
+      "if": {},
+      "image": "end_e09_1",
+      "text": "Berlin, November. The first concession was small."
+     }
+    ]
    },
    {
     "image": "end_e09_2",
@@ -982,8 +1286,20 @@
   ],
   "cutscene": [
    {
-    "image": "end_e09_1",
-    "text": "Berlin, November. The first concession was small."
+    "variants": [
+     {
+      "if": {
+       "end_E09a": true
+      },
+      "image": "end_e09_1",
+      "text": "West Berlin. The airlift kept the city fed. The first concession was small."
+     },
+     {
+      "if": {},
+      "image": "end_e09_1",
+      "text": "Berlin, November. The first concession was small."
+     }
+    ]
    },
    {
     "image": "end_e09_2",
@@ -1027,8 +1343,20 @@
   ],
   "cutscene": [
    {
-    "image": "end_e09_1",
-    "text": "Berlin, November. The first concession was small."
+    "variants": [
+     {
+      "if": {
+       "end_E09a": true
+      },
+      "image": "end_e09_1",
+      "text": "West Berlin. The airlift kept the city fed. The first concession was small."
+     },
+     {
+      "if": {},
+      "image": "end_e09_1",
+      "text": "Berlin, November. The first concession was small."
+     }
+    ]
    },
    {
     "image": "end_e09_2",
@@ -1064,8 +1392,27 @@
   "background": "E10.png",
   "cutscene": [
    {
-    "image": "end_e10_1",
-    "text": "November 6, 1962. Election night."
+    "variants": [
+     {
+      "if": {
+       "end_E10c": true
+      },
+      "image": "end_e10_1",
+      "text": "November 6, 1962. Election night. Castro's prisoners are on every channel."
+     },
+     {
+      "if": {
+       "end_E10b": true
+      },
+      "image": "end_e10_1",
+      "text": "November 6, 1962. Election night. Keating's photograph is on every front page."
+     },
+     {
+      "if": {},
+      "image": "end_e10_1",
+      "text": "November 6, 1962. Election night."
+     }
+    ]
    },
    {
     "image": "end_e10_2",
@@ -1109,8 +1456,27 @@
   ],
   "cutscene": [
    {
-    "image": "end_e10_1",
-    "text": "November 6, 1962. Election night."
+    "variants": [
+     {
+      "if": {
+       "end_E10c": true
+      },
+      "image": "end_e10_1",
+      "text": "November 6, 1962. Election night. Castro's prisoners are on every channel."
+     },
+     {
+      "if": {
+       "end_E10b": true
+      },
+      "image": "end_e10_1",
+      "text": "November 6, 1962. Election night. Keating's photograph is on every front page."
+     },
+     {
+      "if": {},
+      "image": "end_e10_1",
+      "text": "November 6, 1962. Election night."
+     }
+    ]
    },
    {
     "image": "end_e10_2",
@@ -1146,8 +1512,27 @@
   "background": "E10.png",
   "cutscene": [
    {
-    "image": "end_e10_1",
-    "text": "November 6, 1962. Election night."
+    "variants": [
+     {
+      "if": {
+       "end_E10c": true
+      },
+      "image": "end_e10_1",
+      "text": "November 6, 1962. Election night. Castro's prisoners are on every channel."
+     },
+     {
+      "if": {
+       "end_E10b": true
+      },
+      "image": "end_e10_1",
+      "text": "November 6, 1962. Election night. Keating's photograph is on every front page."
+     },
+     {
+      "if": {},
+      "image": "end_e10_1",
+      "text": "November 6, 1962. Election night."
+     }
+    ]
    },
    {
     "image": "end_e10_2",

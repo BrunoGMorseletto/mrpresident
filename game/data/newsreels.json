@@ -212,6 +212,27 @@
 			]
 		},
 		{
+			"date": "FINAL",
+			"endings": [
+				"E04"
+			],
+			"if": {
+				"end_E04b": true
+			},
+			"frames": [
+				{
+					"image": "nr_anchor",
+					"lower_third": "BULLETIN",
+					"caption": "The Defense Department says air operations over Cuba have ended. No American troops have landed."
+				},
+				{
+					"image": "nr_crates",
+					"lower_third": "SOVIET MISSILES LEAVE UNDER ESCORT",
+					"caption": "Soviet freighters are leaving Cuban ports with U.S. Navy ships alongside. Moscow has not commented on its dead."
+				}
+			]
+		},
+		{
 			"id": "NR-F-E04",
 			"date": "FINAL",
 			"endings": [
@@ -246,6 +267,26 @@
 					"image": "nr_castro",
 					"lower_third": "CASTRO: CUBA WILL SEND THE WEAPONS HOME",
 					"caption": "Fidel Castro says Cuba will return the Soviet weapons itself, in exchange for a guarantee against invasion. Moscow has not commented."
+				}
+			]
+		},
+		{
+			"date": "FINAL",
+			"endings": [
+				"E06"
+			],
+			"if": {
+				"end_E06c": true
+			},
+			"frames": [
+				{
+					"image": "nr_crates",
+					"lower_third": "SHIPPING NOTES",
+					"caption": "Soviet freighters left Mariel this week. The Pentagon calls it routine traffic."
+				},
+				{
+					"image": null,
+					"caption": "Not broadcast: there were missiles in Cuba, and now there are not. The country never found out."
 				}
 			]
 		},
@@ -336,6 +377,27 @@
 				{
 					"classified": true,
 					"caption": "Not broadcast: the price of the ceasefire is being negotiated over Berlin."
+				}
+			]
+		},
+		{
+			"date": "FINAL",
+			"endings": [
+				"E09"
+			],
+			"if": {
+				"end_E09a": true
+			},
+			"frames": [
+				{
+					"image": "nr_berlin",
+					"lower_third": "WEST BERLIN CUT OFF",
+					"caption": "The roads into West Berlin are closed. The first cargo planes of a new airlift landed tonight."
+				},
+				{
+					"image": "nr_anchor",
+					"lower_third": "CUBA: SITES DESTROYED",
+					"caption": "The Pentagon says the missile sites in Cuba no longer exist. Asked about Berlin, it referred questions to the State Department."
 				}
 			]
 		},
