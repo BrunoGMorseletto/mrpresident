@@ -469,10 +469,20 @@ screen endings_menu(new_ending=None, after_run=False):
         key ("K_"+input_key) action Function(cheat_key, input_key)
 
     default current = new_ending if new_ending is not None else next((e for e in gallery_endings() if e["id"] in persistent.endings_seen), None)
-    if current is not None:
-        key "K_RETURN" action Function(replay_ending, current["id"])
-        key "K_KP_ENTER" action Function(replay_ending, current["id"])
     default hint = None
+    # versions of the selected ending (E01.1, E01.2...): the arrows next to FILE move between them
+    default vi = first_seen_variant(current["id"]) if current is not None else 0
+    $ fvars = family_variants(current["id"]) if current is not None else []
+    $ vi_ = min(vi, len(fvars) - 1) if fvars else 0
+    $ var = fvars[vi_] if fvars else None
+    $ var_open = var is not None and variant_seen(var)
+    $ shown = var if var_open else None
+    if shown is not None:
+        key "K_RETURN" action Function(replay_ending, shown["id"])
+        key "K_KP_ENTER" action Function(replay_ending, shown["id"])
+    if len(fvars) > 1:
+        key "K_LEFT" action SetScreenVariable("vi", (vi_ - 1) % len(fvars))
+        key "K_RIGHT" action SetScreenVariable("vi", (vi_ + 1) % len(fvars))
 
     # --- Background: the selected ending's image, or plain black ---
     if current is not None:
@@ -505,14 +515,34 @@ screen endings_menu(new_ending=None, after_run=False):
                     size 24
                     color "#2a1d14"
 
-            # Top right: file id
+            # Top right: file id, with arrows when the ending has more than one version
             fixed:
                 pos (490, 136)
                 xysize (248, 46)
-                text "FILE " + current["id"]:
-                    align (0.5, 0.5)
-                    size 24
-                    color "#2a1d14"
+                if len(fvars) > 1:
+                    text "FILE %s.%d" % (current["id"], vi_ + 1):
+                        align (0.5, 0.5)
+                        size 24
+                        color "#2a1d14"
+                    textbutton "<":
+                        xalign 0.02
+                        yalign 0.5
+                        text_size 30
+                        text_color "#a01818"
+                        text_hover_color "#2a1d14"
+                        action SetScreenVariable("vi", (vi_ - 1) % len(fvars))
+                    textbutton ">":
+                        xalign 0.98
+                        yalign 0.5
+                        text_size 30
+                        text_color "#a01818"
+                        text_hover_color "#2a1d14"
+                        action SetScreenVariable("vi", (vi_ + 1) % len(fvars))
+                else:
+                    text "FILE " + current["id"]:
+                        align (0.5, 0.5)
+                        size 24
+                        color "#2a1d14"
 
             # Big box: header + body text (scrolls if too long)
             viewport:
@@ -524,11 +554,20 @@ screen endings_menu(new_ending=None, after_run=False):
 
                 vbox:
                     spacing 14
-                    text current["header"]:
-                        size 22
-                        color "#a01818"
-                    for paragraph in gallery_paragraphs(current):
-                        text paragraph:
+                    if shown is not None:
+                        text shown["header"] + ((" · " + shown["variant_label"].upper()) if len(fvars) > 1 and shown.get("variant_label") else ""):
+                            size 22
+                            color "#a01818"
+                        for paragraph in gallery_paragraphs(shown):
+                            text paragraph:
+                                size 24
+                                color "#2a1d14"
+                                xsize 570
+                    else:
+                        text "VERSION %d OF %d · NOT FOUND YET" % (vi_ + 1, len(fvars)):
+                            size 22
+                            color "#a01818"
+                        text "This version of the ending has not happened yet. Something earlier in the crisis has to go differently.":
                             size 24
                             color "#2a1d14"
                             xsize 570
@@ -537,7 +576,7 @@ screen endings_menu(new_ending=None, after_run=False):
             fixed:
                 pos (100, 490)
                 xysize (634, 66)
-                text current["title"]:
+                text (shown["title"] if shown is not None else "?????"):
                     align (0.5, 0.5)
                     size 40
                     color "#2a1d14"
@@ -546,7 +585,7 @@ screen endings_menu(new_ending=None, after_run=False):
             fixed:
                 pos (100, 807)
                 xysize (637, 59)
-                text current["tagline"]:
+                text (shown["tagline"] if shown is not None else ""):
                     align (0.5, 0.5)
                     size 26
                     color "#a01818"
@@ -577,7 +616,7 @@ screen endings_menu(new_ending=None, after_run=False):
 
                 if got:
                     # first click selects the file; clicking the selected one again replays its film
-                    action If(current is e, Function(replay_ending, e["id"]), SetScreenVariable("current", e))
+                    action If(current is e, If(shown is not None, Function(replay_ending, shown["id"] if shown is not None else e["id"]), NullAction()), [SetScreenVariable("current", e), SetScreenVariable("vi", first_seen_variant(e["id"]))])
                 else:
                     # locked: no file, but hovering shows a clue
                     action NullAction()

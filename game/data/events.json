@@ -791,7 +791,12 @@
   "room": "Crisis",
   "historical_note_es": "Contrafactico. Berlin era el gran temor de Kennedy en el ExComm. LIVE OAK, el estado mayor aliado para contingencias en Berlin, existio. Jruschov no movio nada en Berlin durante la crisis. La 'falla' de la carta B no es una falla: solo cambia el aftermath si no informaste a los aliados (D06).",
   "document": "LIVE OAK CONTINGENCY PLANNING: BERLIN GROUND ACCESS.",
-  "question": "Moscow closes Berlin. Force the corridor?"
+  "question": "Moscow closes Berlin. Force the corridor?",
+  "crisis": {
+   "timer": 20,
+   "on_timeout": "A",
+   "at_zero": "No convoy is ordered. The autobahn stays closed."
+  }
  },
  "ATK_TACTICAL": {
   "date": "OCT 26, 1962",
@@ -938,7 +943,12 @@
   "room": "Crisis_alert",
   "historical_note_es": "Contrafactico. Los Luna y sus ojivas estaban en Cuba y Washington no lo supo hasta 1992 (INT-05). El 22/10 el Presidium estuvo cerca de delegar su uso y lo prohibio sin orden de Moscu (CAL-22).",
   "document": "JCS FLASH. REQUEST: PREDELEGATED RELEASE AUTHORITY, CUBA THEATER.",
-  "question": "Who decides if the beaches go nuclear?"
+  "question": "Who decides if the beaches go nuclear?",
+  "crisis": {
+   "timer": 20,
+   "on_timeout": "B",
+   "at_zero": "Nothing is signed. Release stays with you."
+  }
  },
  "TRK_SPEECH": {
   "date": "OCT 22, 1962",

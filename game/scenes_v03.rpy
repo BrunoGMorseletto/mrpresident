@@ -70,6 +70,7 @@ label ATK_SCOPE:
 label ATK_BERLIN:
     $ current_scene = "ATK_BERLIN"
 
+    play music "audio/crisis.ogg" fadeout 0.5 fadein 0.3 if_changed
     scene bg_crisis_normal at bg_size with  Dissolve(0.2)
 
     show expression "dean rusk" at init_pos_crisis
@@ -79,7 +80,8 @@ label ATK_BERLIN:
     $ card_a = events[current_scene][cards_key][a_card_key]
     $ card_b = events[current_scene][cards_key][b_card_key]
 
-    call screen decision_folder(card_a, card_b)
+    $ seconds, default_card = crisis_info(current_scene)
+    call screen decision_folder(card_a, card_b, seconds, default_card)
     $ choice = _return
 
     $ aftermath=apply_choice(choice, current_scene)
@@ -133,6 +135,7 @@ label ATK_LANDING:
 label ATK_PREAUTH:
     $ current_scene = "ATK_PREAUTH"
 
+    play music "audio/crisis.ogg" fadeout 0.5 fadein 0.3 if_changed
     scene bg_crisis_max at bg_size with  Dissolve(0.2)
 
     show expression "robert mcnamara" at init_pos_crisis
@@ -142,7 +145,8 @@ label ATK_PREAUTH:
     $ card_a = events[current_scene][cards_key][a_card_key]
     $ card_b = events[current_scene][cards_key][b_card_key]
 
-    call screen decision_folder(card_a, card_b)
+    $ seconds, default_card = crisis_info(current_scene)
+    call screen decision_folder(card_a, card_b, seconds, default_card)
     $ choice = _return
 
     $ aftermath=apply_choice(choice, current_scene)
