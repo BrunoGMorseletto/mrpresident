@@ -652,7 +652,7 @@ screen endings_menu(new_ending=None, after_run=False):
         text "Double-click a file or press Enter to watch its ending again." size 26 color "#a89880"
         if current is not None and current["id"] in persistent.last_reports:
             null height 10
-            textbutton "READ YOUR LAST REPORT" action Function(show_last_report, current["id"]) text_size 28 text_color "#e8dcc0" text_hover_color "#ffffff"
+            textbutton "READ YOUR LAST REPORT" action Show("debrief", ending=current, d=persistent.last_reports[current["id"]], from_gallery=True, _zorder=200) text_size 28 text_color "#e8dcc0" text_hover_color "#ffffff"
     
     if len(persistent.endings_seen) >= len(FAMILIES) and not after_run and current is not None:
             fixed:
@@ -2465,8 +2465,11 @@ style db_small is db_ink:
     size 26
     color "#4a3a2a"
 
-screen debrief(ending, d):
+screen debrief(ending, d, from_gallery=False):
     modal True
+    # opened from the gallery (READ YOUR LAST REPORT): shown on top of it (_zorder) and CONTINUE just closes it
+    if from_gallery:
+        key "game_menu" action Hide("debrief")
     default tab = 0
     add "gui/debrief/folder.png" xysize (config.screen_width, config.screen_height)
 
@@ -2573,7 +2576,7 @@ screen debrief(ending, d):
         text_size 42
         text_color "#e8e2d6"
         text_hover_color "#ffffff"
-        action Return()
+        action If(from_gallery, Hide("debrief"), Return())
 
 
 # T30: during ending films, say how to advance
