@@ -752,7 +752,7 @@
    }
   },
   "crisis": {
-   "timer": 30,
+   "timer": 20,
    "on_timeout": "B",
    "at_zero": "Aircraft take off as planned."
   },
@@ -921,7 +921,7 @@
    }
   },
   "crisis": {
-   "timer": 30,
+   "timer": 20,
    "on_timeout": "B",
    "at_zero": "The second wave goes in as planned."
   },
@@ -972,7 +972,7 @@
    }
   },
   "crisis": {
-   "timer": 30,
+   "timer": 20,
    "on_timeout": {
     "if": {
      "total_blockade": true
@@ -1172,19 +1172,13 @@
    }
   },
   "crisis": {
-   "timer": 30,
+   "timer": 20,
    "on_timeout": {
     "if": {
      "auto_retaliation": true
     },
     "then": "B",
     "else": "A"
-   },
-   "timer_override": {
-    "if": {
-     "auto_retaliation": true
-    },
-    "seconds": 15
    },
    "at_zero": "Retaliation proceeds if it was pre-authorized. Otherwise, it waits."
   },
@@ -1251,7 +1245,7 @@
    }
   },
   "crisis": {
-   "timer": 30,
+   "timer": 20,
    "on_timeout": "B",
    "at_zero": "No reply is sent. Moscow reads it as a refusal."
   },
@@ -1328,7 +1322,7 @@
    }
   },
   "crisis": {
-   "timer": 30,
+   "timer": 20,
    "on_timeout": "B",
    "at_zero": "The strike goes ahead at dawn."
   },
