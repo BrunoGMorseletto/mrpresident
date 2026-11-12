@@ -297,6 +297,24 @@ init python:
                 return f
         return None
 
+    def codex_photo_box(photo):
+        """The print takes the photo's own shape (archival photos are rarely square), top right of the page."""
+        right, top = CODEX_PHOTO[0] + CODEX_PHOTO[2], CODEX_PHOTO[1]
+        max_w, max_h = 165, 175
+        try:
+            iw, ih = renpy.image_size(photo) if photo else (1, 1)
+        except Exception:
+            iw, ih = 1, 1
+        a = iw / float(ih)
+        if abs(a - 1.0) < 0.02:
+            w = h = CODEX_PHOTO[2]
+        elif a > 1:
+            w, h = max_w, max(90, int(max_w / a))
+        else:
+            h = max_h
+            w = min(max_w, int(max_h * a))
+        return (right - w, top, w + 10, h + 10)
+
     def codex_modes(entry):
         modes = []
         if entry["description"].get("1962"):
@@ -496,13 +514,13 @@ screen codex():
 
             ## photo, or a "no photo" card for people
             if photo_slot:
-                $ phx, phy, phw, phh = CODEX_PHOTO
+                $ phx, phy, phw, phh = codex_photo_box(photo)
                 fixed at codex_rot(cz(phx + phw / 2.0), cz(phy + phh / 2.0), -2.5):
                     xysize (cz(phw), cz(phh))
                     add Solid("#efe6d0")
                     add Solid("#0000001a") xysize (cz(phw - 10), cz(phh - 10)) align (.5, .5)
                     if photo:
-                        add photo fit "cover" xysize (cz(phw - 10), cz(phh - 10)) xalign (.5) ypos (5)
+                        add photo fit "contain" xysize (cz(phw - 10), cz(phh - 10)) align (.5, .5)
                     else:
                         text "NO PHOTO\nON FILE" style "codex_text" size cz(22) align (.5, .5) text_align .5 color "#7a2316"
 
