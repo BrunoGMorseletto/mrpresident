@@ -1636,20 +1636,17 @@
     "title": "GO PUBLIC",
     "hint": "Tell the country before the paper does.",
     "icon": "microphone",
-    "aftermath": "The networks clear seven o'clock. Moscow listens, then makes its offer on the radio.",
+    "aftermath": "The networks clear seven o'clock. You tell the country there are Soviet missiles in Cuba, and that you have no answer yet.",
     "stats": {},
     "flag": {
-     "game_over": true,
-     "end_E07b": true,
-     "went_public": true,
-     "turkey_public": true,
-     "soviet_withdrawal": true
+     "went_public": true
     },
     "trigger": {},
     "visibility": "public"
    }
   },
   "next": [
+   "NEG_OFFER",
    "ENDING"
   ],
   "kind": "incident",
@@ -1707,5 +1704,50 @@
   "historical_note_es": "Adaptada de D21. Especulacion: el mensaje via Brasil se aprobo el 26/10 y nunca se entrego; Castro nunca ofrecio expulsar las armas (CIA-04, STA-08). Mongoose existio (CIA-03).",
   "document": "CABLE, AMEMBASSY RIO DE JANEIRO. EYES ONLY THE SECRETARY.",
   "question": "How much do you give Castro?"
+ },
+ "NEG_OFFER": {
+  "date": "OCT 22, 1962",
+  "trigger": {
+   "went_public": true
+  },
+  "cards": {
+   "A": {
+    "title": "ACCEPT IN PUBLIC",
+    "hint": "End it now. Pay with the alliance.",
+    "icon": "handshake",
+    "aftermath": "In Ankara, the government asks why it heard it on the radio.",
+    "stats": {},
+    "flag": {
+     "game_over": true,
+     "end_E07b": true,
+     "turkey_public": true,
+     "soviet_withdrawal": true
+    },
+    "trigger": {},
+    "visibility": "public"
+   },
+   "B": {
+    "title": "NO TRADE",
+    "hint": "No deals under pressure. Nothing else ready.",
+    "icon": "microphone",
+    "aftermath": "The refusal goes out on every network. Moscow does not answer.",
+    "stats": {},
+    "flag": {
+     "game_over": true,
+     "end_E09c": true,
+     "offer_refused": true
+    },
+    "trigger": {},
+    "visibility": "public"
+   }
+  },
+  "next": [
+   "ENDING"
+  ],
+  "kind": "node",
+  "speaker": "dean",
+  "line": "Radio Moscow, Mr. President, an hour ago. Khrushchev will take his missiles out of Cuba if we take ours out of Turkey. He said it in public, so whatever we answer, we answer in public too.",
+  "room": "Office",
+  "question": "Moscow offers Cuba for Turkey on the radio. Take it?"
  }
 }

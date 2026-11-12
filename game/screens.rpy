@@ -263,7 +263,8 @@ screen quick_menu():
     ## Ensure this appears on top of other screens.
     zorder 100
 
-    if quick_menu:
+    # hidden while the cards are on the table: nothing on top of the decision
+    if quick_menu and not renpy.get_screen("decision_folder"):
 
         hbox:
             style_prefix "quick"
@@ -291,8 +292,13 @@ style quick_button is default
 style quick_button_text is button_text
 
 style quick_menu:
-    xalign 0.5
-    yalign 1.0
+    # top right, small, on a dark strip (it used to sit on the bottom edge, over the cards)
+    xalign 1.0
+    yalign 0.0
+    xoffset -12
+    yoffset 12
+    spacing 14
+    background Frame(Solid("#000000a0"), 0, 0)
 
 style quick_button:
     properties gui.button_properties("quick_button")
@@ -2031,7 +2037,11 @@ screen folder_card(card, cid, zoom, xoff=0, is_default=False):
 
         fixed:
             area (ax, ay, aw, ah)
-            add "gui/interactives/%s.png" % card["icon"] fit "contain" xysize (aw, ah) align (.5, .5)
+            # a locked card looks dead: greyed-out art and a NOT AVAILABLE band across it
+            if locked:
+                add Transform("gui/interactives/%s.png" % card["icon"], matrixcolor=SaturationMatrix(0.0) * OpacityMatrix(0.35)) fit "contain" xysize (aw, ah) align (.5, .5)
+            else:
+                add "gui/interactives/%s.png" % card["icon"] fit "contain" xysize (aw, ah) align (.5, .5)
             # T07: who will know about this order (eye = public, crossed eye = secret)
             if card.get("visibility"):
                 add "gui/interactives/vis_%s.png" % card["visibility"] fit "contain" xysize (int(aw * 0.42), int(ah * 0.22)) align (1.0, 0.0) offset (int(6*k), -int(6*k))
@@ -2040,7 +2050,19 @@ screen folder_card(card, cid, zoom, xoff=0, is_default=False):
             area (hx, hy, hw, hh)
             $ hint_txt = card["locked_text"] if locked else card["hint"]
             $ hint_size = fit_size(hint_txt, "card_hint_text", hw, hh, int(35*k), int(14*k))
-            text hint_txt style "card_hint_text" size hint_size xsize hw
+            text hint_txt style "card_hint_text" size hint_size xsize hw color ("#7a1010" if locked else "#050505")
+
+    if locked:
+        frame:
+            xpos xoff + w // 2
+            xanchor 0.5
+            ypos ay + ah // 2
+            yanchor 0.5
+            xsize int(w * 0.9)
+            background Solid("#a01818e6")
+            padding (10, 6)
+            at Transform(rotate=-8)
+            text "NOT AVAILABLE" font "gui/fonts/VT323-Regular.ttf" size int(48 * k) color "#ffffff" xalign 0.5
 
     # crisis room: mark the card that will be carried out if the clock runs out
     if is_default:

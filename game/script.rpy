@@ -191,10 +191,18 @@ init python:
         d = {}
         # YOUR CRISIS
         skip = ending.get("recap_skip", [])
-        frags = [f["text"] for f in debrief_data["recap_fragments"]
-        if flags.get(f["flag"]) and f["flag"] not in skip]
+        # v0.3: what tipped it = the branch decisions you actually took, in order, plus the one that sealed the ending
+        frags = []
+        for s in ending.get("sealed_by", []):
+            if check_trigger(s["if"]):
+                frags.append(s["text"])
+                break
+        turns = [(sc, ch) for sc, ch in choices_made if events[sc].get("kind") in ("node", "incident")]
+        for sc, ch in turns[-4:]:
+            day = events[sc].get("date", "").split(",")[0].title()
+            frags.append("%s: %s." % (day, events[sc]["cards"][ch]["title"].capitalize()))
         d["recap"] = ending.get("recap_template", "")
-        d["fragments"] = frags[:3]
+        d["fragments"] = frags
         # WHAT REALLY HAPPENED: where this run left the record (choices first, then things that never happened)
         diverged, never = [], []
         for scene, choice in choices_made:

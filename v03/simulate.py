@@ -93,7 +93,7 @@ print("rutas con problema:", len(problems))
 for r, e in problems[:5]:
     print("  ", e, " ".join(r))
 expected = {"E01a","E01b","E01c","E01d","E02","E03a","E03b","E03c","E04a","E04b","E05",
-            "E06a","E06b","E06c","E07a","E07b","E08a","E08b","E09a","E09b","E10a","E10b","E10c"}
+            "E06a","E06b","E06c","E07a","E07b","E08a","E08b","E09a","E09b","E09c","E10a","E10b","E10c"}
 print("variantes que faltan:", sorted(expected - set(results)) or "ninguna")
 print("variantes de mas:", sorted(set(results) - expected) or "ninguna")
 # ruta de ejemplo mas corta por variante (sirven como tests)
