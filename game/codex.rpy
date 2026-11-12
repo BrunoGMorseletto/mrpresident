@@ -588,10 +588,23 @@ screen codex_calendar(ids):
         xysize (cz(bw), cz(bh))
         add CAL_IMG xysize (cz(bw), cz(bh))
 
-        text "OCTOBER 1962" style "codex_text" size cal_px(110) color "#2a1d14" xalign 0.5 ycenter cal_px(230)
+        # month title; the arrows open the files before and after October
+        text "OCTOBER 1962" style "codex_text" size cal_px(104) color "#2a1d14" xalign 0.5 ycenter cal_px(230)
+        for eid, arrow, ax in (("CAL-00", "<", 0.08), ("CAL-AFTER", ">", 0.92)):
+            if eid in ids:
+                textbutton arrow:
+                    xcenter ax
+                    ycenter cal_px(230)
+                    padding (cal_px(14), 0)
+                    background (Solid("#9a2a1c40") if eid == codex_sel else None)
+                    hover_background Solid("#0000002a")
+                    text_style "codex_text"
+                    text_size cal_px(110)
+                    text_color ("#7a2316" if codex_unlocked(eid) else "#b8a890")
+                    action Function(codex_select, eid)
 
         for c, wd in enumerate(["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]):
-            text wd style "codex_text" size cal_px(48) color "#7a2316" xcenter cal_px((CAL_COLS[c] + CAL_COLS[c + 1]) / 2.0) ycenter cal_px((CAL_ROWS[0] + CAL_ROWS[1]) / 2.0)
+            text wd style "codex_text" size cal_px(44) color "#7a2316" xcenter cal_px((CAL_COLS[c] + CAL_COLS[c + 1]) / 2.0) ycenter cal_px((CAL_ROWS[0] + CAL_ROWS[1]) / 2.0)
 
         for w in range(5):
             for c in range(7):
@@ -601,37 +614,33 @@ screen codex_calendar(ids):
                     $ y0 = cal_px(CAL_ROWS[w + 1]) + 2
                     $ cw = cal_px(CAL_COLS[c + 1]) - cal_px(CAL_COLS[c]) - 4
                     $ ch = cal_px(CAL_ROWS[w + 2]) - cal_px(CAL_ROWS[w + 1]) - 4
+                    $ crisis = 16 <= d <= 28
+                    $ passed = crisis and persistent.codex_day >= d
                     fixed:
                         pos (x0, y0)
                         xysize (cw, ch)
-                        if 16 <= d <= 28:
-                            # the thirteen days, crossed out in red pen
-                            text "X" style "codex_text" size int(ch * 1.1) color "#b0201a66" align (.5, .55)
+                        # the thirteen days: a pale red wash, so the span reads at a glance
+                        if crisis:
+                            add Solid("#b0201a18") xysize (cw, ch)
                         if d in days:
                             $ eid = days[d]
                             $ dopen = codex_unlocked(eid)
                             button:
                                 xfill True
                                 yfill True
-                                background (Solid("#9a2a1c40") if eid == codex_sel else None)
-                                hover_background Solid("#0000002a")
+                                hover_background Solid("#0000001e")
                                 action Function(codex_select, eid)
-                                text str(d) style "codex_text" size cal_px(56) xpos cal_px(12) ypos cal_px(4) color ("#2a1d14" if dopen else "#9a8a78")
-                                if dopen and eid in persistent.codex_new:
-                                    add Solid("#c0392b") xysize (cal_px(18), cal_px(18)) align (.92, .1)
+                                text str(d) style "codex_text" size cal_px(64) align (.5, .5) color ("#1c120c" if dopen else "#a89880")
+                            # days already lived get crossed out in pen; the open file gets circled
+                            if passed:
+                                add "gui/codex_cal_x.png" fit "contain" xysize (int(cw * 0.78), int(ch * 0.78)) align (.5, .52)
+                            if eid == codex_sel:
+                                add "gui/codex_cal_ring.png" fit "contain" xysize (int(cw * 1.02), int(ch * 1.02)) align (.5, .5)
+                            if dopen and eid in persistent.codex_new:
+                                add Solid("#c0392b") xysize (cal_px(16), cal_px(16)) align (.9, .12)
                         else:
-                            text str(d) style "codex_text" size cal_px(56) xpos cal_px(12) ypos cal_px(4) color "#8f7f68"
+                            text str(d) style "codex_text" size cal_px(52) align (.5, .5) color "#b0a08a"
 
-    ## before / after, on the last two ruled lines
-    for line, eid, label in [(15, "CAL-00", "< BEFORE OCTOBER"), (16, "CAL-AFTER", "AFTER OCTOBER >")]:
-        if eid in ids:
-            $ rx, ry, rang = codex_row(line, CODEX_LIST_W, CODEX_ROW_H)
-            fixed at codex_rot(rx, ry, rang):
-                xysize (cz(CODEX_LIST_W), cz(CODEX_ROW_H))
-                button:
-                    xfill True
-                    yfill True
-                    background (Solid("#9a2a1c2e") if eid == codex_sel else None)
-                    hover_background Solid("#0000001c")
-                    action Function(codex_select, eid)
-                    text label style "codex_text" size cz(26) xpos cz(22) yalign .5 color ("#2a1d14" if codex_unlocked(eid) else "#9a8a78")
+        # legend under the grid
+        text "THE THIRTEEN DAYS:  OCT 16 - 28" style "codex_text" size cal_px(40) color "#7a2316" xalign 0.5 ycenter cal_px(CAL_ROWS[-1] + 34)
+

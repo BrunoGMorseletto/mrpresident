@@ -702,7 +702,8 @@
      "strike_launched": true
     },
     "trigger": {},
-    "visibility": "secret"
+    "visibility": "public",
+    "reveals_crisis": true
    },
    "B": {
     "title": "THE WHOLE PACKAGE",
@@ -716,7 +717,8 @@
      "strike_launched": true
     },
     "trigger": {},
-    "visibility": "secret"
+    "visibility": "public",
+    "reveals_crisis": true
    }
   },
   "next": [
@@ -789,7 +791,12 @@
   "room": "Crisis",
   "historical_note_es": "Contrafactico. Berlin era el gran temor de Kennedy en el ExComm. LIVE OAK, el estado mayor aliado para contingencias en Berlin, existio. Jruschov no movio nada en Berlin durante la crisis. La 'falla' de la carta B no es una falla: solo cambia el aftermath si no informaste a los aliados (D06).",
   "document": "LIVE OAK CONTINGENCY PLANNING: BERLIN GROUND ACCESS.",
-  "question": "Moscow closes Berlin. Force the corridor?"
+  "question": "Moscow closes Berlin. Force the corridor?",
+  "crisis": {
+   "timer": 20,
+   "on_timeout": "A",
+   "at_zero": "No convoy is ordered. The autobahn stays closed."
+  }
  },
  "ATK_TACTICAL": {
   "date": "OCT 26, 1962",
@@ -834,19 +841,13 @@
   "room": "Crisis_alert",
   "historical_note_es": "Contrafactico. El pedido nunca existio; el dilema si: los planes de la OTAN contaban con armas nucleares tacticas temprano y solo el presidente podia liberarlas. Norstad era el comandante supremo aliado.",
   "crisis": {
-   "timer": 60,
+   "timer": 20,
    "on_timeout": {
     "if": {
      "defcon2": true
     },
     "then": "A",
     "else": "B"
-   },
-   "timer_override": {
-    "if": {
-     "defcon2": true
-    },
-    "seconds": 30
    },
    "at_zero": "No reply. At DEFCON 2, standing procedures fill the silence."
   },
@@ -942,7 +943,12 @@
   "room": "Crisis_alert",
   "historical_note_es": "Contrafactico. Los Luna y sus ojivas estaban en Cuba y Washington no lo supo hasta 1992 (INT-05). El 22/10 el Presidium estuvo cerca de delegar su uso y lo prohibio sin orden de Moscu (CAL-22).",
   "document": "JCS FLASH. REQUEST: PREDELEGATED RELEASE AUTHORITY, CUBA THEATER.",
-  "question": "Who decides if the beaches go nuclear?"
+  "question": "Who decides if the beaches go nuclear?",
+  "crisis": {
+   "timer": 20,
+   "on_timeout": "B",
+   "at_zero": "Nothing is signed. Release stays with you."
+  }
  },
  "TRK_SPEECH": {
   "date": "OCT 22, 1962",
@@ -960,7 +966,8 @@
      "public_ultimatum": true
     },
     "trigger": {},
-    "visibility": "public"
+    "visibility": "public",
+    "reveals_crisis": true
    },
    "B": {
     "title": "DEMAND A FREEZE",
@@ -974,7 +981,8 @@
      "freeze_offer": true
     },
     "trigger": {},
-    "visibility": "public"
+    "visibility": "public",
+    "reveals_crisis": true
    }
   },
   "next": [
@@ -1036,7 +1044,7 @@
   "room": "Crisis",
   "historical_note_es": "Adaptada de C02. El pedido de U Thant del 24/10 existio (STA-09) y Kennedy no suspendio la cuarentena. Los barcos con misiles ya habian dado la vuelta el 23/10 (DEF-02).",
   "crisis": {
-   "timer": 75,
+   "timer": 20,
    "on_timeout": "A",
    "at_zero": "The Navy applies standing orders. It enforces the line."
   },
@@ -1097,7 +1105,7 @@
   "room": "Crisis",
   "historical_note_es": "B-59 emergio la noche del 27/10 (DEF-06); aca se adelanta un dia. La salida nuclear existe solo con cuarentena total (D10 B) y linea lejana (D11 B).",
   "crisis": {
-   "timer": 60,
+   "timer": 20,
    "on_timeout": "A",
    "at_zero": "No order comes. The Navy follows the procedure it sent to Moscow."
   },
@@ -1161,19 +1169,13 @@
   "room": "Crisis",
   "historical_note_es": "Adaptada de C03. El mayor Rudolf Anderson murio el 27/10. Kennedy no ejecuto la represalia acordada. Regla de dos rutinas, como el umbral nuclear de v0.2: con represalia automatica (D14 A) y DEFCON 2 (D15 A) a la vez, esperar falla. Con una sola, la orden de frenar llega a tiempo.",
   "crisis": {
-   "timer": 60,
+   "timer": 20,
    "on_timeout": {
     "if": {
      "auto_retaliation": true
     },
     "then": "B",
     "else": "A"
-   },
-   "timer_override": {
-    "if": {
-     "auto_retaliation": true
-    },
-    "seconds": 35
    },
    "at_zero": "Retaliation proceeds if it was pre-authorized. Otherwise, it waits."
   },
@@ -1236,7 +1238,7 @@
   "room": "Crisis",
   "historical_note_es": "Hechos confirmados (DEF-09). Los F-102 despegaron por procedimiento, sin consultar al presidente: por eso el timeout los lanza. Con DEFCON 2 (D15 A), la escolta termina en combate.",
   "crisis": {
-   "timer": 45,
+   "timer": 20,
    "on_timeout": "A",
    "at_zero": "Alaskan Air Command launches under standing orders. Nobody asked you."
   },
@@ -1425,7 +1427,7 @@
   "room": "Crisis_alert",
   "historical_note_es": "Hecho confirmado: el 28/10 una cinta de prueba en Moorestown produjo la alarma (DEF-12). Lo contrafactico es que llegue al presidente.",
   "crisis": {
-   "timer": 40,
+   "timer": 20,
    "on_timeout": {
     "if": {
      "forces_ready": true,
@@ -1440,12 +1442,6 @@
     },
     "then": "B",
     "else": "A"
-   },
-   "timer_override": {
-    "if": {
-     "forces_ready": true
-    },
-    "seconds": 20
    },
    "at_zero": "Standing procedures take over."
   },
@@ -1642,7 +1638,8 @@
      "went_public": true
     },
     "trigger": {},
-    "visibility": "public"
+    "visibility": "public",
+    "reveals_crisis": true
    }
   },
   "next": [
@@ -1724,7 +1721,8 @@
      "soviet_withdrawal": true
     },
     "trigger": {},
-    "visibility": "public"
+    "visibility": "public",
+    "reveals_crisis": true
    },
    "B": {
     "title": "NO TRADE",
@@ -1738,7 +1736,8 @@
      "offer_refused": true
     },
     "trigger": {},
-    "visibility": "public"
+    "visibility": "public",
+    "reveals_crisis": true
    }
   },
   "next": [

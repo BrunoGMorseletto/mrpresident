@@ -107,6 +107,21 @@ init python:
             FAMILIES.append(_fam)
     def ending_family(e):
         return e.get("family", e["id"])
+    def family_variants(fam):
+        return [x for x in endings if ending_family(x) == fam]
+    def variant_seen(v):
+        """Seen this exact version. Saves from before v0.3 only know the family: count its first version."""
+        if v["id"] in persistent.variants_seen:
+            return True
+        vs = family_variants(ending_family(v))
+        return (ending_family(v) in persistent.endings_seen and v is vs[0]
+                and not any(x["id"] in persistent.variants_seen for x in vs))
+    def first_seen_variant(fam):
+        vs = family_variants(fam)
+        for i, v in enumerate(vs):
+            if variant_seen(v):
+                return i
+        return 0
     def family_endings():
         """One entry per family (the first variant), with the family as its id."""
         return [dict(FAMILY_REP[f], id=f) for f in FAMILIES]
@@ -343,6 +358,9 @@ init python:
         renpy.block_rollback()   # T27/T31: rolling back can re-read text, never undo a decision
         choices_made.append((current_scene, choice))
         card = events[current_scene][cards_key][choice]
+        # T07: the crisis goes public because of a decision (speech, leak, bombs), not because of a date
+        if card.get("reveals_crisis"):
+            flags["crisis_public"] = True
         if check_trigger(card["trigger"]):
             effects = card
             aftermath = card["aftermath"]
@@ -1317,14 +1335,17 @@ label replay_ending_label(eid):
     python:
         _saved_flags = dict(flags)
         _saved_music = renpy.music.get_playing()
-        _rep = [x for x in family_endings() if x["id"] == eid][0]
+        # eid is a version (E01c) from the gallery arrows, or a family (E01)
+        _match = [x for x in endings if x["id"] == eid]
+        _rep = _match[0] if _match else [x for x in family_endings() if x["id"] == eid][0]
+        _fam = ending_family(_rep) if _match else eid
         # flags that select the main version of each film (e.g. E08 with the withdrawal announced)
         flags.clear()
         flags.update(_rep["condition"]["flags"])
-        if eid == "E08":
+        if _fam == "E08":
             flags["soviet_withdrawal"] = True
-    if find_final_newsreel(eid):
-        call newsreel(find_final_newsreel(eid)) from _call_replay_newsreel
+    if find_final_newsreel(_fam):
+        call newsreel(find_final_newsreel(_fam)) from _call_replay_newsreel
     if _rep.get("cutscene"):
         call ending_cutscene(_rep["cutscene"]) from _call_replay_cutscene
     python:
