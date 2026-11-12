@@ -1275,7 +1275,7 @@ label ENDING:
     #call screen endings_menu(new_ending=chosen_ending, after_run=True)
 
     if len(persistent.endings_seen) >= len(FAMILIES) and not persistent.epilogue_seen:
-        call epilogue
+        call epilogue from _call_epilogue
 
     return
 
@@ -1301,7 +1301,7 @@ label newsreel(reel):
     return
 
 label show_last_report_label(e, rep):
-    call screen debrief(e, rep) from _call_screen_last_report
+    call screen debrief(e, rep)
     return
 
 # Gallery replay: the ending's newsreel and film, without touching the run in progress.
