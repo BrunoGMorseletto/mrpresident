@@ -1,610 +1,610 @@
 [
-	{
-		"id": "E01",
-		"title": "LAST TRANSMISSION",
-		"badge": "Catastrophe",
-		"header": "OCTOBER 1962 · ALTERNATE OUTCOME",
-		"tagline": "The crisis ended. No one could stop what came next.",
-		"body": [
-			"From there, the chain ran on its own. On the American side, the decisions that mattered had been taken days earlier: retaliation without asking the President, forces at maximum alert, a chain of command that no longer reported back. Orders to stop went out from Washington and from Moscow. They arrived late, were lost, or reached units that were already acting.",
-			"Mutual assured destruction rested on a threat: whoever started a nuclear war would also be destroyed. That made war irrational for both leaders, but it did nothing about the crews, commanders and standing plans that could start one without them. In 1962 the United States had clear nuclear superiority, and an exchange would still have destroyed American cities.",
-			"Essence of Decision shows how catastrophe could come without either leader choosing it: incomplete information, military routines, local commanders, reprisals that followed a plan written in advance. In October 1962 war was avoided through decisions, negotiation and luck. In this run the decisions left everything to luck."
-		],
-		"recap_template": "You let retaliation run on its own, raised the alert to its limit, and lost the chain of command.",
-		"condition": {
-			"flags": {
-				"nuclear_use": true
-			},
-			"stats": {}
-		},
-		"icon": "mushroom_cloud",
-		"recap_skip": [
-			"auto_retaliation",
-			"defcon2"
-		],
-		"background": "E01.png",
-		"intro_variants": [
-			{
-				"if": {
-					"landing": true
-				},
-				"text": "The Marines were ashore when the first Soviet tactical weapon was fired. Washington did not know those weapons were in Cuba: short-range rockets with nuclear warheads, sent to destroy exactly this kind of landing. The officer who fired had lost contact with Moscow and believed the island was about to fall."
-			},
-			{
-				"if": {
-					"any": [
-						{
-							"strike_launched": true
-						},
-						{
-							"strike_partial": true
-						}
-					]
-				},
-				"text": "The air strike destroyed most of the missile sites. Not all of them. The Soviet officers in charge of what was left had been told to expect an invasion and had lost contact with Moscow. Under bombardment, with no orders arriving, one of them decided not to wait."
-			},
-			{
-				"if": {
-					"sam_strike": true
-				},
-				"text": "The retaliation on the SAM site killed the Soviet crew that manned it. On the island, local commanders read it as the opening of the invasion they had been expecting for weeks. They had already fired once without asking Moscow, and they did so again."
-			},
-			{
-				"if": {
-					"any": [
-						{
-							"ship_stopped": true
-						},
-						{
-							"total_blockade": true
-						}
-					]
-				},
-				"text": "The first nuclear weapon was fired at sea. A Soviet submarine, cut off from Moscow for days and pounded by American depth charges meant only as signals, could not tell a warning from an attack. Her captain had a nuclear torpedo and the authority to use it."
-			},
-			{
-				"if": {},
-				"text": "Nobody could say afterward who fired first. Each side was reading the other's alerts as preparations for an attack, and each side had already put its forces where an order to fire would take minutes, not hours."
-			}
-		],
-		"cutscene": [
-			{
-				"variants": [
-					{
-						"if": {
-							"any": [
-								{
-									"ship_stopped": true
-								},
-								{
-									"total_blockade": true
-								}
-							],
-							"landing": false,
-							"strike_launched": false,
-							"strike_partial": false,
-							"sam_strike": false
-						},
-						"image": "nuke_01_submarine",
-						"text": "Western Atlantic. The submarine has not heard from Moscow in four days."
-					},
-					{
-						"if": {},
-						"image": "nuke_01_commander",
-						"text": "Cuba. The line to Moscow has been silent for hours."
-					}
-				]
-			},
-			{
-				"image": "nuke_02_radar",
-				"text": "Washington. The first report says “detonation.” The second report never comes."
-			},
-			{
-				"image": "nuke_03_map",
-				"text": "The plans written in advance are carried out as written."
-			},
-			{
-				"image": "nuke_04_flash",
-				"text": ""
-			}
-		],
-		"hint": "Some orders, once given, do not come back up the chain."
-	},
-	{
-		"id": "E02",
-		"title": "THE FEAR CAME TRUE",
-		"badge": "Secret · Satire",
-		"header": "OCTOBER 1962 · ALTERNATE OUTCOME",
-		"tagline": "The crisis ended. The enemy was closer than they thought.",
-		"body": [
-			"Communism was never close to taking over the United States. In 1962 the Communist Party USA was a marginal force, weakened by years of persecution, internal splits and lost members. Yet the fear of communist infiltration had taken up a disproportionate place in American politics for most of the postwar era.",
-			"In this timeline, that fear came true.",
-			"Your decisions during the crisis steadily weakened the American position, split the government and gave Moscow an influence no administration would have thought possible. What began as a negotiation to remove some missiles ended up shifting the balance of power inside the country itself.",
-			"The missile crisis ended. The revolution began."
-		],
-		"stamp": "One of the least likely outcomes. It took a very specific combination of decisions.",
-		"recap_template": "You drew a public line, conceded in public anyway, and let your authority run out.",
-		"condition": {
-			"flags": {
-				"soviet_access_dc": true,
-				"coalition_legalized": true
-			},
-			"stats": {}
-		},
-		"icon": "hammer_sickle",
-		"recap_skip": [
-			"public_ultimatum",
-			"turkey_public"
-		],
-		"background": "E02.png",
-		"hint": "?????",
-		"cutscene": [
-			{
-				"image": "end_e02_1",
-				"text": "The coordination office opened on a Monday. By Friday it had three desks, and nobody remembered approving the second one."
-			},
-			{
-				"image": "end_e02_2",
-				"text": "By Christmas, the portraits in the West Wing hallway had changed."
-			}
-		]
-	},
-	{
-		"id": "E04",
-		"title": "VICTORY AT ANY PRICE",
-		"badge": "Invasion",
-		"header": "OCTOBER 1962 · ALTERNATE OUTCOME",
-		"tagline": "The missiles are gone. So is everything that stood in the way.",
-		"body": [
-			"American forces landed in Cuba after days of air strikes. Havana fell. The missile sites were taken and the weapons shipped out under American guard. Casualties on all sides ran into the tens of thousands, and Cuba would stay occupied for years.",
-			"The invasion plans were real, and in October 1962 they had real support inside the government. What Washington did not know was that Soviet forces in Cuba also had tactical nuclear weapons, meant for exactly this situation. That only became public thirty years later.",
-			"In this timeline they were never fired. That was luck, not planning."
-		],
-		"recap_template": "You prepared the invasion, launched the strike, and did not call it back.",
-		"condition": {
-			"flags": {
-				"invasion_ready": true,
-				"strike_launched": true,
-				"landing_recalled": false
-			},
-			"stats": {}
-		},
-		"icon": "helmet_palms",
-		"recap_skip": [
-			"invasion_ready",
-			"strike_launched"
-		],
-		"background": "E04.png",
-		"intro_variants": [
-			{
-				"if": {
-					"landing": true
-				},
-				"text": "The first order said nothing about a landing. The morning after the strike, the Chiefs had one ready and you approved it."
-			},
-			{
-				"if": {},
-				"text": "The invasion was ready before the first bomb fell, and once the planes were in the air the plan ran to its end."
-			}
-		],
-		"hint": "Prepare the whole package. Then let the planes go.",
-		"cutscene": [
-			{
-				"image": "end_e04_1",
-				"text": "The missile sites fell in four days. Havana fell in nine."
-			},
-			{
-				"image": "end_e04_2",
-				"text": "Near the beach, a Soviet officer sat beside a tactical rocket that Washington did not know was in Cuba. The order to fire never came."
-			}
-		]
-	},
-	{
-		"id": "E05",
-		"title": "CUBA DECIDES",
-		"badge": "Speculative",
-		"header": "OCTOBER 1962 · ALTERNATE OUTCOME",
-		"tagline": "The crisis ended. Havana settled it.",
-		"body": [
-			"Castro ordered the Soviet weapons out of Cuba in exchange for a formal guarantee of non-invasion and recognition of Cuban sovereignty. Moscow, left out of a deal it had started, withdrew without a word. Washington found itself negotiating with the man it had tried to overthrow eighteen months earlier.",
-			"Nothing like this happened. The real Castro was furious that Khrushchev negotiated over his head, learned of the agreement from the radio, and refused on-site inspections. The Brazilian channel to Havana existed, but it never carried an offer like this one.",
-			"It is the most speculative outcome in the game. It exists to ask a question the superpowers rarely asked in 1962: what did Cuba want?"
-		],
-		"stamp": "The most speculative outcome in the file.",
-		"recap_template": "You opened a channel to Havana, promised not to invade, and made no deal with Moscow over Castro's head.",
-		"condition": {
-			"flags": {
-				"cuba_neutral_offer": true,
-				"non_invasion": true,
-				"turkey_secret": false,
-				"turkey_public": false
-			},
-			"stats": {
-				"escalation": {
-					"<=": 3
-				},
-				"diplomacy": {
-					">=": 2
-				}
-			}
-		},
-		"icon": "star_triangle",
-		"recap_skip": [
-			"cuba_neutral_offer",
-			"non_invasion"
-		],
-		"background": "E05.png",
-		"hint": "Some doors in Havana stay closed unless someone knocks early.",
-		"cutscene": [
-			{
-				"image": "end_e05_1",
-				"text": "The answer came from Havana, through Brazil, before Moscow said a word."
-			},
-			{
-				"image": "end_e05_2",
-				"text": "The weapons left on Cuban terms. In Moscow, Khrushchev learned of it from a cable."
-			}
-		]
-	},
-	{
-		"id": "E10",
-		"title": "CRUCIFIED BY CUBA",
-		"badge": "Political collapse",
-		"header": "OCTOBER 1962 · ALTERNATE OUTCOME",
-		"tagline": "The crisis ended without war. The presidency did not survive it.",
-		"body": [
-			"War was avoided, but the missiles did not leave. The President had promised the country, on television, that they would. By Election Day the opposition had a single message, the cabinet was leaking against itself, and Congress stopped returning the White House's calls. Kennedy stayed in office. He no longer governed.",
-			"The danger was real. On October 23, on the Oval Office tapes, the Kennedy brothers agreed that if the President had done nothing, he would have been impeached. The midterm elections came nine days after the crisis ended.",
-			"In 1962 the promise was kept. Here, it wasn't."
-		],
-		"recap_template": "You made a public promise, lost the authority to keep it, and never got the missiles out.",
-		"condition": {
-			"flags": {
-				"public_ultimatum": true,
-				"soviet_withdrawal": false
-			},
-			"stats": {
-				"authority": {
-					"<=": 1
-				},
-				"escalation": {
-					"<=": 4
-				}
-			}
-		},
-		"icon": "empty_chair",
-		"recap_skip": [
-			"public_ultimatum"
-		],
-		"background": "E10.png",
-		"intro_variants": [
-			{
-				"if": {
-					"hard_line_public": true
-				},
-				"text": "You rejected Moscow's offer on the radio, and then had nothing to show for it."
-			}
-		],
-		"hint": "Promise the country something on television. Then fail to deliver it.",
-		"cutscene": [
-			{
-				"image": "end_e10_1",
-				"text": "November 6, 1962. Election night."
-			},
-			{
-				"image": "end_e10_2",
-				"text": "By spring, Congress had stopped returning the White House's calls."
-			}
-		]
-	},
-	{
-		"id": "E03",
-		"title": "THE GUNS OF OCTOBER",
-		"badge": "Conventional war",
-		"header": "OCTOBER 1962 · ALTERNATE OUTCOME",
-		"tagline": "Nobody pressed the button. Everyone went to war anyway.",
-		"body": [
-			"The strikes did not end the crisis. Soviet forces in Cuba fought back, Moscow moved on Berlin, and within days American and Soviet troops were in combat for the first time since 1945. No nuclear weapon had been used when this file was closed. Nobody could say for how long.",
-			"That October, Kennedy had been reading Barbara Tuchman's The Guns of August, about how the powers of 1914 slid into a war none of them had planned. He told his brother he would not follow a course that let someone write the same book about 1962.",
-			"Essence of Decision treats the military plans of 1962 as real options, prepared in detail and waiting. In this timeline, they were used as written."
-		],
-		"recap_template": "You let the escalation climb without a deal, and neither side found the way back.",
-		"condition": {
-			"flags": {
-				"soviet_withdrawal": false
-			},
-			"stats": {
-				"escalation": {
-					">=": 5
-				}
-			}
-		},
-		"icon": "crossed_rifles",
-		"recap_skip": [],
-		"background": "E03.png",
-		"intro_variants": [
-			{
-				"if": {
-					"berlin_standoff": true
-				},
-				"text": "It started with an air strike on the missile sites. Moscow answered in Berlin, and you chose to hold the line there too."
-			},
-			{
-				"if": {
-					"landing_recalled": true
-				},
-				"text": "You pulled the Marines off the beach. It was not enough to undo what the landing had started."
-			},
-			{
-				"if": {
-					"sam_strike": true
-				},
-				"text": "It started with a single reprisal: one SAM site for one U-2. Each side answered the other's last move, and no one found the step back."
-			},
-			{
-				"if": {
-					"any": [
-						{
-							"ship_stopped": true
-						},
-						{
-							"total_blockade": true
-						}
-					]
-				},
-				"text": "It started at sea, at the quarantine line, with ships that would not stop and a Navy that had its orders."
-			}
-		],
-		"hint": "Answer every move with a bigger one, and make no deal.",
-		"cutscene": [
-			{
-				"image": "end_e03_1",
-				"text": "Cuba. Soviet units fight from the hills. Washington stops publishing casualty figures."
-			},
-			{
-				"image": "end_e03_2",
-				"text": "Berlin. The first shot at the checkpoint came from a tank whose crew had no order to fire."
-			},
-			{
-				"image": "end_e03_3",
-				"text": "In the Oval Office, a book about 1914 lies open on the desk."
-			}
-		]
-	},
-	{
-		"id": "E06",
-		"title": "THIRTEEN DAYS",
-		"tagline": "The crisis ended. Almost nobody knew how.",
-		"header": "OCTOBER 1962 · HISTORICAL OUTCOME",
-		"body": [
-			"On October 28, Khrushchev announced on Radio Moscow that the missiles would be dismantled and shipped home. In public, the United States promised not to invade Cuba. In private, Robert Kennedy had told Ambassador Dobrynin that the Jupiter missiles in Turkey would be gone within months, on one condition: it could never be presented as part of the deal.",
-			"The secret held for more than twenty years. For a generation, the crisis was remembered as a showdown Washington won by standing firm.",
-			"Essence of Decision argues that no single explanation accounts for this outcome. It took a calculated choice, organizations that carried it out imperfectly, and men in a room who disagreed until the end. It also took luck. On October 27 a U-2 was shot down over Cuba. The retaliation was already planned. It was never ordered."
-		],
-		"recap_template": "You imposed a quarantine, promised not to invade, and made a promise that could never be made public.",
-		"badge": "Historical outcome",
-		"condition": {
-			"flags": {
-				"soviet_withdrawal": true,
-				"turkey_secret": true,
-				"non_invasion": true,
-				"blockade": true
-			},
-			"stats": {}
-		},
-		"icon": "cargo_ship",
-		"recap_skip": [
-			"blockade",
-			"turkey_secret",
-			"non_invasion"
-		],
-		"background": "E06.png",
-		"intro_variants": [
-			{
-				"if": {
-					"sam_strike": true
-				},
-				"text": "You answered the U-2 with fire and still reached the deal. In 1962 Kennedy held back the retaliation; here the deal survived a strike that could have ended it."
-			}
-		],
-		"hint": "Firm in public. Generous in private.",
-		"cutscene": [
-			{
-				"image": "end_e06_1",
-				"text": "October 27, 7:45 p.m. The Justice Department. Nothing is written down."
-			},
-			{
-				"image": "end_e06_2",
-				"text": "October 28. The missiles go home. In Washington, the story going around is that Khrushchev blinked."
-			},
-			{
-				"image": "end_e06_3",
-				"text": "April 1963. In Turkey, the Jupiters are quietly taken apart. The newspapers call it routine."
-			}
-		]
-	},
-	{
-		"id": "E07",
-		"title": "MISSILES FOR MISSILES",
-		"badge": "Public deal",
-		"header": "OCTOBER 1962 · ALTERNATE OUTCOME",
-		"tagline": "The crisis ended in public. The alliance paid for it.",
-		"body": [
-			"The Soviet missiles left Cuba. The American Jupiters left Turkey. Everyone knew why, because both governments said so. The world stepped back from the edge, and within days the argument moved to Ankara, Bonn and Paris: if Washington traded an ally's security under pressure, what else would it trade?",
-			"This was not a fantasy. On October 27 several members of the ExComm, and at moments Kennedy himself, thought a public trade was reasonable. The Jupiters were already obsolete. What stopped it was not strategy but politics: how it would look to the allies, and at home.",
-			"History took the same deal and made half of it secret."
-		],
-		"recap_template": "You accepted Khrushchev's public offer and ended the crisis on the radio.",
-		"condition": {
-			"flags": {
-				"soviet_withdrawal": true,
-				"turkey_public": true
-			},
-			"stats": {}
-		},
-		"icon": "missile_swap",
-		"recap_skip": [
-			"turkey_public"
-		],
-		"background": "E07.png",
-		"intro_variants": [
-			{
-				"if": {
-					"sam_strike": true
-				},
-				"text": "The trade was on the table that morning. By the time it was done, American planes had already hit Cuba."
-			}
-		],
-		"hint": "Take Moscow's offer at face value, and say so on the radio.",
-		"cutscene": [
-			{
-				"image": "end_e07_1",
-				"text": "The deal was read on the radio. Both sides confirmed it in public."
-			},
-			{
-				"image": "end_e07_2",
-				"text": "At NATO headquarters, the allies asked who in Washington had consulted them before the broadcast."
-			}
-		]
-	},
-	{
-		"id": "E09",
-		"title": "CHECKMATE IN BERLIN",
-		"badge": "Soviet strategic win",
-		"header": "OCTOBER 1962 · ALTERNATE OUTCOME",
-		"tagline": "The crisis ended in Cuba. It was never about Cuba.",
-		"body": [
-			"The missiles stayed long enough to matter. Moscow let the crisis cool and then raised the price somewhere else: West Berlin. With Washington unwilling to risk another confrontation so soon, the Western position in the city began to give way, one concession at a time.",
-			"Allison and Zelikow argue that Berlin was at the heart of Khrushchev's gamble. Kennedy thought so too: throughout the crisis he kept asking what Moscow would do in Berlin if the United States moved in Cuba.",
-			"In this timeline, Khrushchev got the answer he was looking for."
-		],
-		"recap_template": "You avoided a public commitment, never secured a withdrawal, and left Moscow room to collect elsewhere.",
-		"condition": {
-			"flags": {
-				"soviet_withdrawal": false,
-				"public_ultimatum": false
-			},
-			"stats": {
-				"escalation": {
-					">=": 2,
-					"<=": 4
-				},
-				"diplomacy": {
-					">=": 2
-				}
-			}
-		},
-		"icon": "chess_knight",
-		"recap_skip": [
-			"public_ultimatum"
-		],
-		"background": "E09.png",
-		"alt_conditions": [
-			{
-				"flags": {
-					"strike_ceasefire": true
-				},
-				"stats": {}
-			}
-		],
-		"intro_variants": [
-			{
-				"if": {
-					"strike_ceasefire": true
-				},
-				"text": "You bombed the missile sites and then stopped. By then, Moscow had already moved the crisis to Berlin."
-			}
-		],
-		"hint": "Keep your promises private, keep the pressure on, and leave Moscow room to collect elsewhere.",
-		"cutscene": [
-			{
-				"image": "end_e09_1",
-				"text": "Berlin, November. The first concession was small."
-			},
-			{
-				"image": "end_e09_2",
-				"text": "The next ones were smaller still, and each was announced as a technical arrangement."
-			}
-		]
-	},
-	{
-		"id": "E08",
-		"title": "THE NEW NORMAL",
-		"badge": "Unfinished deal",
-		"header": "OCTOBER 1962 · ALTERNATE OUTCOME",
-		"tagline": "Nothing exploded. Nothing was settled.",
-		"body": [
-			{
-				"if": {
-					"soviet_withdrawal": true
-				},
-				"text": "Moscow announced the withdrawal, and the ships began to sail. But the deal was never written down. Castro refused inspections, the bombers stayed on the island for weeks, and Washington could only count crates from the air. Each side told its own public a different story about what had been agreed."
-			},
-			{
-				"if": {
-					"soviet_withdrawal": true
-				},
-				"text": "After October 28 the crisis dragged on for three more weeks over the Il-28 bombers, and the promise not to invade Cuba was never formalized. The story of a clean Soviet retreat leaves those weeks out."
-			},
-			{
-				"if": {
-					"soviet_withdrawal": false
-				},
-				"gallery": false,
-				"text": "On the first day of the crisis, McNamara argued that the missiles did not really change the military balance: the Soviet Union could already hit the United States. Politically it was another matter. Kennedy had promised in public that this would not be tolerated."
-			},
-			"This outcome is quieter than the others. Most real crises end this way."
-		],
-		"recap_template": "You avoided war and never forced a deal that could be checked.",
-		"condition": {
-			"flags": {},
-			"stats": {}
-		},
-		"icon": "missile_palm",
-		"recap_skip": [],
-		"background": "E08.png",
-		"intro_variants": [
-			{
-				"if": {
-					"soviet_withdrawal": false
-				},
-				"text": "Moscow never announced a withdrawal. Within a year, Americans had learned to live with Soviet missiles ninety miles away."
-			}
-		],
-		"hint": "Get the missiles out without anyone quite agreeing how.",
-		"cutscene": [
-			{
-				"variants": [
-					{
-						"if": {
-							"soviet_withdrawal": true
-						},
-						"image": "end_e08_1",
-						"text": "Washington counted the crates from the air. It never got to count them on the ground."
-					},
-					{
-						"if": {},
-						"image": "end_e08_1b",
-						"text": "The sites stayed. The camouflage got better."
-					}
-				]
-			},
-			{
-				"variants": [
-					{
-						"if": {
-							"soviet_withdrawal": true
-						},
-						"image": "end_e08_2",
-						"text": "The bombers stayed on the island for weeks, and no agreement was ever signed."
-					},
-					{
-						"if": {},
-						"image": "end_e08_2",
-						"text": "Within a year, the photographs stopped making the front page."
-					}
-				]
-			}
-		]
-	}
+ {
+  "id": "E01",
+  "title": "LAST TRANSMISSION",
+  "badge": "Catastrophe",
+  "header": "OCTOBER 1962 · ALTERNATE OUTCOME",
+  "tagline": "The crisis ended. No one could stop what came next.",
+  "body": [
+   "From there, the chain ran on its own. On the American side, the decisions that mattered had been taken days earlier: retaliation without asking the President, forces at maximum alert, a chain of command that no longer reported back. Orders to stop went out from Washington and from Moscow. They arrived late, were lost, or reached units that were already acting.",
+   "Mutual assured destruction rested on a threat: whoever started a nuclear war would also be destroyed. That made war irrational for both leaders, but it did nothing about the crews, commanders and standing plans that could start one without them. In 1962 the United States had clear nuclear superiority, and an exchange would still have destroyed American cities.",
+   "Essence of Decision shows how catastrophe could come without either leader choosing it: incomplete information, military routines, local commanders, reprisals that followed a plan written in advance. In October 1962 war was avoided through decisions, negotiation and luck. In this run the decisions left everything to luck."
+  ],
+  "recap_template": "You let retaliation run on its own, raised the alert to its limit, and lost the chain of command.",
+  "condition": {
+   "flags": {
+    "nuclear_use": true
+   },
+   "stats": {}
+  },
+  "icon": "mushroom_cloud",
+  "recap_skip": [
+   "auto_retaliation",
+   "defcon2"
+  ],
+  "background": "E01.png",
+  "intro_variants": [
+   {
+    "if": {
+     "landing": true
+    },
+    "text": "The Marines were ashore when the first Soviet tactical weapon was fired. Washington did not know those weapons were in Cuba: short-range rockets with nuclear warheads, sent to destroy exactly this kind of landing. The officer who fired had lost contact with Moscow and believed the island was about to fall."
+   },
+   {
+    "if": {
+     "any": [
+      {
+       "strike_launched": true
+      },
+      {
+       "strike_partial": true
+      }
+     ]
+    },
+    "text": "The air strike destroyed most of the missile sites. Not all of them. The Soviet officers in charge of what was left had been told to expect an invasion and had lost contact with Moscow. Under bombardment, with no orders arriving, one of them decided not to wait."
+   },
+   {
+    "if": {
+     "sam_strike": true
+    },
+    "text": "The retaliation on the SAM site killed the Soviet crew that manned it. On the island, local commanders read it as the opening of the invasion they had been expecting for weeks. They had already fired once without asking Moscow, and they did so again."
+   },
+   {
+    "if": {
+     "any": [
+      {
+       "ship_stopped": true
+      },
+      {
+       "total_blockade": true
+      }
+     ]
+    },
+    "text": "The first nuclear weapon was fired at sea. A Soviet submarine, cut off from Moscow for days and pounded by American depth charges meant only as signals, could not tell a warning from an attack. Her captain had a nuclear torpedo and the authority to use it."
+   },
+   {
+    "if": {},
+    "text": "Nobody could say afterward who fired first. Each side was reading the other's alerts as preparations for an attack, and each side had already put its forces where an order to fire would take minutes, not hours."
+   }
+  ],
+  "cutscene": [
+   {
+    "variants": [
+     {
+      "if": {
+       "any": [
+        {
+         "ship_stopped": true
+        },
+        {
+         "total_blockade": true
+        }
+       ],
+       "landing": false,
+       "strike_launched": false,
+       "strike_partial": false,
+       "sam_strike": false
+      },
+      "image": "nuke_01_submarine",
+      "text": "Western Atlantic. The submarine has not heard from Moscow in four days."
+     },
+     {
+      "if": {},
+      "image": "nuke_01_commander",
+      "text": "Cuba. The line to Moscow has been silent for hours."
+     }
+    ]
+   },
+   {
+    "image": "nuke_02_radar",
+    "text": "Washington. The first report says “detonation.” The second report never comes."
+   },
+   {
+    "image": "nuke_03_map",
+    "text": "The plans written in advance are carried out as written."
+   },
+   {
+    "image": "nuke_04_flash",
+    "text": ""
+   }
+  ],
+  "hint": "Some orders, once given, do not come back up the chain."
+ },
+ {
+  "id": "E02",
+  "title": "THE FEAR CAME TRUE",
+  "badge": "Secret · Satire",
+  "header": "OCTOBER 1962 · ALTERNATE OUTCOME",
+  "tagline": "The crisis ended. The enemy was closer than they thought.",
+  "body": [
+   "Communism was never close to taking over the United States. In 1962 the Communist Party USA was a marginal force, weakened by years of persecution, internal splits and lost members. Yet the fear of communist infiltration had taken up a disproportionate place in American politics for most of the postwar era.",
+   "In this timeline, that fear came true.",
+   "Your decisions during the crisis steadily weakened the American position, split the government and gave Moscow an influence no administration would have thought possible. What began as a negotiation to remove some missiles ended up shifting the balance of power inside the country itself.",
+   "The missile crisis ended. The revolution began."
+  ],
+  "stamp": "One of the least likely outcomes. It took a very specific combination of decisions.",
+  "recap_template": "You drew a public line, conceded in public anyway, and let your authority run out.",
+  "condition": {
+   "flags": {
+    "soviet_access_dc": true,
+    "coalition_legalized": true
+   },
+   "stats": {}
+  },
+  "icon": "hammer_sickle",
+  "recap_skip": [
+   "public_ultimatum",
+   "turkey_public"
+  ],
+  "background": "E02.png",
+  "hint": "?????",
+  "cutscene": [
+   {
+    "image": "end_e02_1",
+    "text": "The coordination office opened on a Monday. By Friday it had three desks, and nobody remembered approving the second one."
+   },
+   {
+    "image": "end_e02_2",
+    "text": "By Christmas, the portraits in the West Wing hallway had changed."
+   }
+  ]
+ },
+ {
+  "id": "E04",
+  "title": "VICTORY AT ANY PRICE",
+  "badge": "Invasion",
+  "header": "OCTOBER 1962 · ALTERNATE OUTCOME",
+  "tagline": "The missiles are gone. So is everything that stood in the way.",
+  "body": [
+   "American forces landed in Cuba after days of air strikes. Havana fell. The missile sites were taken and the weapons shipped out under American guard. Casualties on all sides ran into the tens of thousands, and Cuba would stay occupied for years.",
+   "The invasion plans were real, and in October 1962 they had real support inside the government. What Washington did not know was that Soviet forces in Cuba also had tactical nuclear weapons, meant for exactly this situation. That only became public thirty years later.",
+   "In this timeline they were never fired. That was luck, not planning."
+  ],
+  "recap_template": "You prepared the invasion, launched the strike, and did not call it back.",
+  "condition": {
+   "flags": {
+    "invasion_ready": true,
+    "strike_launched": true,
+    "landing_recalled": false
+   },
+   "stats": {}
+  },
+  "icon": "helmet_palms",
+  "recap_skip": [
+   "invasion_ready",
+   "strike_launched"
+  ],
+  "background": "E04.png",
+  "intro_variants": [
+   {
+    "if": {
+     "landing": true
+    },
+    "text": "The first order said nothing about a landing. The morning after the strike, the Chiefs had one ready and you approved it."
+   },
+   {
+    "if": {},
+    "text": "The invasion was ready before the first bomb fell, and once the planes were in the air the plan ran to its end."
+   }
+  ],
+  "hint": "Prepare the whole package. Then let the planes go.",
+  "cutscene": [
+   {
+    "image": "end_e04_1",
+    "text": "The missile sites fell in four days. Havana fell in nine."
+   },
+   {
+    "image": "end_e04_2",
+    "text": "Near the beach, a Soviet officer sat beside a tactical rocket that Washington did not know was in Cuba. The order to fire never came."
+   }
+  ]
+ },
+ {
+  "id": "E05",
+  "title": "CUBA DECIDES",
+  "badge": "Speculative",
+  "header": "OCTOBER 1962 · ALTERNATE OUTCOME",
+  "tagline": "The crisis ended. Havana settled it.",
+  "body": [
+   "Castro ordered the Soviet weapons out of Cuba in exchange for a formal guarantee of non-invasion and recognition of Cuban sovereignty. Moscow, left out of a deal it had started, withdrew without a word. Washington found itself negotiating with the man it had tried to overthrow eighteen months earlier.",
+   "Nothing like this happened. The real Castro was furious that Khrushchev negotiated over his head, learned of the agreement from the radio, and refused on-site inspections. The Brazilian channel to Havana existed, but it never carried an offer like this one.",
+   "It is the most speculative outcome in the game. It exists to ask a question the superpowers rarely asked in 1962: what did Cuba want?"
+  ],
+  "stamp": "The most speculative outcome in the file.",
+  "recap_template": "You opened a channel to Havana, promised not to invade, and made no deal with Moscow over Castro's head.",
+  "condition": {
+   "flags": {
+    "cuba_neutral_offer": true,
+    "non_invasion": true,
+    "turkey_secret": false,
+    "turkey_public": false
+   },
+   "stats": {
+    "escalation": {
+     "<=": 3
+    },
+    "diplomacy": {
+     ">=": 2
+    }
+   }
+  },
+  "icon": "star_triangle",
+  "recap_skip": [
+   "cuba_neutral_offer",
+   "non_invasion"
+  ],
+  "background": "E05.png",
+  "hint": "Some doors in Havana stay closed unless someone knocks early.",
+  "cutscene": [
+   {
+    "image": "end_e05_1",
+    "text": "The answer came from Havana, through Brazil, before Moscow said a word."
+   },
+   {
+    "image": "end_e05_2",
+    "text": "The weapons left on Cuban terms. In Moscow, Khrushchev learned of it from a cable."
+   }
+  ]
+ },
+ {
+  "id": "E10",
+  "title": "CRUCIFIED BY CUBA",
+  "badge": "Political collapse",
+  "header": "OCTOBER 1962 · ALTERNATE OUTCOME",
+  "tagline": "The crisis ended without war. The presidency did not survive it.",
+  "body": [
+   "War was avoided, but the missiles did not leave. The President had promised the country, on television, that they would. By Election Day the opposition had a single message, the cabinet was leaking against itself, and Congress stopped returning the White House's calls. Kennedy stayed in office. He no longer governed.",
+   "The danger was real. On October 23, on the Oval Office tapes, the Kennedy brothers agreed that if the President had done nothing, he would have been impeached. The midterm elections came nine days after the crisis ended.",
+   "In 1962 the promise was kept. Here, it wasn't."
+  ],
+  "recap_template": "You made a public promise, lost the authority to keep it, and never got the missiles out.",
+  "condition": {
+   "flags": {
+    "public_ultimatum": true,
+    "soviet_withdrawal": false
+   },
+   "stats": {
+    "authority": {
+     "<=": 1
+    },
+    "escalation": {
+     "<=": 4
+    }
+   }
+  },
+  "icon": "empty_chair",
+  "recap_skip": [
+   "public_ultimatum"
+  ],
+  "background": "E10.png",
+  "intro_variants": [
+   {
+    "if": {
+     "hard_line_public": true
+    },
+    "text": "You rejected Moscow's offer on the radio, and then had nothing to show for it."
+   }
+  ],
+  "hint": "Promise the country something on television. Then fail to deliver it.",
+  "cutscene": [
+   {
+    "image": "end_e10_1",
+    "text": "November 6, 1962. Election night."
+   },
+   {
+    "image": "end_e10_2",
+    "text": "By spring, Congress had stopped returning the White House's calls."
+   }
+  ]
+ },
+ {
+  "id": "E03",
+  "title": "THE GUNS OF OCTOBER",
+  "badge": "Conventional war",
+  "header": "OCTOBER 1962 · ALTERNATE OUTCOME",
+  "tagline": "Nobody pressed the button. Everyone went to war anyway.",
+  "body": [
+   "The strikes did not end the crisis. Soviet forces in Cuba fought back, Moscow moved on Berlin, and within days American and Soviet troops were in combat for the first time since 1945. No nuclear weapon had been used when this file was closed. Nobody could say for how long.",
+   "That October, Kennedy had been reading Barbara Tuchman's The Guns of August, about how the powers of 1914 slid into a war none of them had planned. He told his brother he would not follow a course that let someone write the same book about 1962.",
+   "Essence of Decision treats the military plans of 1962 as real options, prepared in detail and waiting. In this timeline, they were used as written."
+  ],
+  "recap_template": "You let the escalation climb without a deal, and neither side found the way back.",
+  "condition": {
+   "flags": {
+    "soviet_withdrawal": false
+   },
+   "stats": {
+    "escalation": {
+     ">=": 5
+    }
+   }
+  },
+  "icon": "crossed_rifles",
+  "recap_skip": [],
+  "background": "E03.png",
+  "intro_variants": [
+   {
+    "if": {
+     "berlin_standoff": true
+    },
+    "text": "It started with an air strike on the missile sites. Moscow answered in Berlin, and you chose to hold the line there too."
+   },
+   {
+    "if": {
+     "landing_recalled": true
+    },
+    "text": "You pulled the Marines off the beach. It was not enough to undo what the landing had started."
+   },
+   {
+    "if": {
+     "sam_strike": true
+    },
+    "text": "It started with a single reprisal: one SAM site for one U-2. Each side answered the other's last move, and no one found the step back."
+   },
+   {
+    "if": {
+     "any": [
+      {
+       "ship_stopped": true
+      },
+      {
+       "total_blockade": true
+      }
+     ]
+    },
+    "text": "It started at sea, at the quarantine line, with ships that would not stop and a Navy that had its orders."
+   }
+  ],
+  "hint": "Answer every move with a bigger one, and make no deal.",
+  "cutscene": [
+   {
+    "image": "end_e03_1",
+    "text": "Cuba. Soviet units fight from the hills. Washington stops publishing casualty figures."
+   },
+   {
+    "image": "end_e03_2",
+    "text": "Berlin. The first shot at the checkpoint came from a tank whose crew had no order to fire."
+   },
+   {
+    "image": "end_e03_3",
+    "text": "On the desk in the Oval Office lies The Guns of August, a book about how Europe slid into war in 1914 without anyone deciding to start one."
+   }
+  ]
+ },
+ {
+  "id": "E06",
+  "title": "THIRTEEN DAYS",
+  "tagline": "The crisis ended. Almost nobody knew how.",
+  "header": "OCTOBER 1962 · HISTORICAL OUTCOME",
+  "body": [
+   "On October 28, Khrushchev announced on Radio Moscow that the missiles would be dismantled and shipped home. In public, the United States promised not to invade Cuba. In private, Robert Kennedy had told Ambassador Dobrynin that the Jupiter missiles in Turkey would be gone within months, on one condition: it could never be presented as part of the deal.",
+   "The secret held for more than twenty years. For a generation, the crisis was remembered as a showdown Washington won by standing firm.",
+   "Essence of Decision argues that no single explanation accounts for this outcome. It took a calculated choice, organizations that carried it out imperfectly, and men in a room who disagreed until the end. It also took luck. On October 27 a U-2 was shot down over Cuba. The retaliation was already planned. It was never ordered."
+  ],
+  "recap_template": "You imposed a quarantine, promised not to invade, and made a promise that could never be made public.",
+  "badge": "Historical outcome",
+  "condition": {
+   "flags": {
+    "soviet_withdrawal": true,
+    "turkey_secret": true,
+    "non_invasion": true,
+    "blockade": true
+   },
+   "stats": {}
+  },
+  "icon": "cargo_ship",
+  "recap_skip": [
+   "blockade",
+   "turkey_secret",
+   "non_invasion"
+  ],
+  "background": "E06.png",
+  "intro_variants": [
+   {
+    "if": {
+     "sam_strike": true
+    },
+    "text": "You answered the U-2 with fire and still reached the deal. In 1962 Kennedy held back the retaliation; here the deal survived a strike that could have ended it."
+   }
+  ],
+  "hint": "Firm in public. Generous in private.",
+  "cutscene": [
+   {
+    "image": "end_e06_1",
+    "text": "October 27, 7:45 p.m. The Justice Department. Nothing is written down."
+   },
+   {
+    "image": "end_e06_2",
+    "text": "October 28. The missiles go home. In Washington, the story going around is that Khrushchev blinked."
+   },
+   {
+    "image": "end_e06_3",
+    "text": "April 1963. In Turkey, the Jupiters are quietly taken apart. The newspapers call it routine."
+   }
+  ]
+ },
+ {
+  "id": "E07",
+  "title": "MISSILES FOR MISSILES",
+  "badge": "Public deal",
+  "header": "OCTOBER 1962 · ALTERNATE OUTCOME",
+  "tagline": "The crisis ended in public. The alliance paid for it.",
+  "body": [
+   "The Soviet missiles left Cuba. The American Jupiters left Turkey. Everyone knew why, because both governments said so. The world stepped back from the edge, and within days the argument moved to Ankara, Bonn and Paris: if Washington traded an ally's security under pressure, what else would it trade?",
+   "This was not a fantasy. On October 27 several members of the ExComm, and at moments Kennedy himself, thought a public trade was reasonable. The Jupiters were already obsolete. What stopped it was not strategy but politics: how it would look to the allies, and at home.",
+   "History took the same deal and made half of it secret."
+  ],
+  "recap_template": "You accepted Khrushchev's public offer and ended the crisis on the radio.",
+  "condition": {
+   "flags": {
+    "soviet_withdrawal": true,
+    "turkey_public": true
+   },
+   "stats": {}
+  },
+  "icon": "missile_swap",
+  "recap_skip": [
+   "turkey_public"
+  ],
+  "background": "E07.png",
+  "intro_variants": [
+   {
+    "if": {
+     "sam_strike": true
+    },
+    "text": "The trade was on the table that morning. By the time it was done, American planes had already hit Cuba."
+   }
+  ],
+  "hint": "Take Moscow's offer at face value, and say so on the radio.",
+  "cutscene": [
+   {
+    "image": "end_e07_1",
+    "text": "The deal was read on the radio. Both sides confirmed it in public."
+   },
+   {
+    "image": "end_e07_2",
+    "text": "At NATO headquarters, the allies asked who in Washington had consulted them before the broadcast."
+   }
+  ]
+ },
+ {
+  "id": "E09",
+  "title": "CHECKMATE IN BERLIN",
+  "badge": "Soviet strategic win",
+  "header": "OCTOBER 1962 · ALTERNATE OUTCOME",
+  "tagline": "The crisis ended in Cuba. It was never about Cuba.",
+  "body": [
+   "The missiles stayed long enough to matter. Moscow let the crisis cool and then raised the price somewhere else: West Berlin. With Washington unwilling to risk another confrontation so soon, the Western position in the city began to give way, one concession at a time.",
+   "Allison and Zelikow argue that Berlin was at the heart of Khrushchev's gamble. Kennedy thought so too: throughout the crisis he kept asking what Moscow would do in Berlin if the United States moved in Cuba.",
+   "In this timeline, Khrushchev got the answer he was looking for."
+  ],
+  "recap_template": "You avoided a public commitment, never secured a withdrawal, and left Moscow room to collect elsewhere.",
+  "condition": {
+   "flags": {
+    "soviet_withdrawal": false,
+    "public_ultimatum": false
+   },
+   "stats": {
+    "escalation": {
+     ">=": 2,
+     "<=": 4
+    },
+    "diplomacy": {
+     ">=": 2
+    }
+   }
+  },
+  "icon": "chess_knight",
+  "recap_skip": [
+   "public_ultimatum"
+  ],
+  "background": "E09.png",
+  "alt_conditions": [
+   {
+    "flags": {
+     "strike_ceasefire": true
+    },
+    "stats": {}
+   }
+  ],
+  "intro_variants": [
+   {
+    "if": {
+     "strike_ceasefire": true
+    },
+    "text": "You bombed the missile sites and then stopped. By then, Moscow had already moved the crisis to Berlin."
+   }
+  ],
+  "hint": "Keep your promises private, keep the pressure on, and leave Moscow room to collect elsewhere.",
+  "cutscene": [
+   {
+    "image": "end_e09_1",
+    "text": "Berlin, November. The first concession was small."
+   },
+   {
+    "image": "end_e09_2",
+    "text": "The next ones were smaller still, and each was announced as a technical arrangement."
+   }
+  ]
+ },
+ {
+  "id": "E08",
+  "title": "THE NEW NORMAL",
+  "badge": "Unfinished deal",
+  "header": "OCTOBER 1962 · ALTERNATE OUTCOME",
+  "tagline": "Nothing exploded. Nothing was settled.",
+  "body": [
+   {
+    "if": {
+     "soviet_withdrawal": true
+    },
+    "text": "Moscow announced the withdrawal, and the ships began to sail. But the deal was never written down. Castro refused inspections, the bombers stayed on the island for weeks, and Washington could only count crates from the air. Each side told its own public a different story about what had been agreed."
+   },
+   {
+    "if": {
+     "soviet_withdrawal": true
+    },
+    "text": "After October 28 the crisis dragged on for three more weeks over the Il-28 bombers, and the promise not to invade Cuba was never formalized. The story of a clean Soviet retreat leaves those weeks out."
+   },
+   {
+    "if": {
+     "soviet_withdrawal": false
+    },
+    "gallery": false,
+    "text": "On the first day of the crisis, McNamara argued that the missiles did not really change the military balance: the Soviet Union could already hit the United States. Politically it was another matter. Kennedy had promised in public that this would not be tolerated."
+   },
+   "This outcome is quieter than the others. Most real crises end this way."
+  ],
+  "recap_template": "You avoided war and never forced a deal that could be checked.",
+  "condition": {
+   "flags": {},
+   "stats": {}
+  },
+  "icon": "missile_palm",
+  "recap_skip": [],
+  "background": "E08.png",
+  "intro_variants": [
+   {
+    "if": {
+     "soviet_withdrawal": false
+    },
+    "text": "Moscow never announced a withdrawal. Within a year, Americans had learned to live with Soviet missiles ninety miles away."
+   }
+  ],
+  "hint": "Get the missiles out without anyone quite agreeing how.",
+  "cutscene": [
+   {
+    "variants": [
+     {
+      "if": {
+       "soviet_withdrawal": true
+      },
+      "image": "end_e08_1",
+      "text": "Washington counted the crates from the air. It never got to count them on the ground."
+     },
+     {
+      "if": {},
+      "image": "end_e08_1b",
+      "text": "The sites stayed. The camouflage got better."
+     }
+    ]
+   },
+   {
+    "variants": [
+     {
+      "if": {
+       "soviet_withdrawal": true
+      },
+      "image": "end_e08_2",
+      "text": "The bombers stayed on the island for weeks, and no agreement was ever signed."
+     },
+     {
+      "if": {},
+      "image": "end_e08_2",
+      "text": "Within a year, the photographs stopped making the front page."
+     }
+    ]
+   }
+  ]
+ }
 ]
