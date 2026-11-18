@@ -616,7 +616,7 @@ screen endings_menu(new_ending=None, after_run=False):
 
                 if got:
                     # first click selects the file; clicking the selected one again replays its film
-                    action If(current is e, If(shown is not None, Function(replay_ending, shown["id"] if shown is not None else e["id"]), NullAction()), [SetScreenVariable("current", e), SetScreenVariable("vi", first_seen_variant(e["id"]))])
+                    action If(current["id"] is e["id"], If(shown is not None, Function(replay_ending, shown["id"] if shown is not None else e["id"]), NullAction()), [SetScreenVariable("current", e), SetScreenVariable("vi", first_seen_variant(e["id"]))])
                 else:
                     # locked: no file, but hovering shows a clue
                     action NullAction()
@@ -1830,9 +1830,11 @@ style bubble_window:
     top_padding 5
     bottom_padding 5
 
+define bubble.default_area = (15, 1.5, 8, 5)
+
 style bubble_namebox:
     xalign 0
-    yoffset -35
+    yoffset -50
     background Solid("#1A1A1A")
 
 style bubble_who:
